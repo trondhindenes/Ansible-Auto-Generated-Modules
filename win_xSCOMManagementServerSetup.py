@@ -24,3 +24,313 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSCOMManagementServerSetup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DataReader_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DataReader_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DataWriter_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DataWriter_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DwSqlServerInstance:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FirstManagementServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ManagementGroupName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlServerInstance:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ActionAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ActionAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DASAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DASAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DwDatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DwDatabaseSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnableErrorReporting:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ManagementServicePort:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProductKey:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SendCEIPReports:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SendODRReports:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UseMicrosoftUpdate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

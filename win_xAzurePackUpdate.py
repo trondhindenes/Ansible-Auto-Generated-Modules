@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzurePackUpdate
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Role:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

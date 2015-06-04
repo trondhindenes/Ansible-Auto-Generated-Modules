@@ -24,3 +24,63 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cDiskImage
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DriveLetter:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ImagePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

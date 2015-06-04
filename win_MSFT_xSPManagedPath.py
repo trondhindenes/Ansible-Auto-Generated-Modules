@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPManagedPath
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Explicit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HostHeader:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RelativeUrl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebAppUrl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

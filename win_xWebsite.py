@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xWebsite
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ApplicationPool:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BindingInfo:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DefaultPage:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PhysicalPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  State:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

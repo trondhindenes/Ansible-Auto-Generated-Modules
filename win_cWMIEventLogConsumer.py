@@ -24,3 +24,123 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cWMIEventLogConsumer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  EventID:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Category:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EventType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InsertionStringTemplates:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NumberOfInsertionStrings:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UNCServerName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xVHD
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Generation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaximumSizeBytes:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ParentPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cMARSProxy
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ProxyServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Force:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProxyCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProxyCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProxyPort:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

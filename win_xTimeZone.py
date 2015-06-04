@@ -24,3 +24,43 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xTimeZone
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  TimeZone:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

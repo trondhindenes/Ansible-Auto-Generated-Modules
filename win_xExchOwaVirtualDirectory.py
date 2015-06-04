@@ -24,3 +24,203 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchOwaVirtualDirectory
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdfsAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowServiceRestart:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BasicAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DigestAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExternalAuthenticationMethods:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExternalUrl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FormsAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstantMessagingCertificateThumbprint:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstantMessagingEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstantMessagingServerName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstantMessagingType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InternalUrl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WindowsAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

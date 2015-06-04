@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDatabaseLogin
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  LoginName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LoginPassword:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlAuthType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlConnectionCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlConnectionCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

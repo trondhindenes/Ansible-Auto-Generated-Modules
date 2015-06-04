@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchClientAccessServer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDiscoverServiceInternalUri:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDiscoverSiteScope:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

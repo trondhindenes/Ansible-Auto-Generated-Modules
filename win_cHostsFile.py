@@ -24,3 +24,63 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cHostsFile
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  hostName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ipAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

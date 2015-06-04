@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDatabase
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlServerVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BacPacPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credentials_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credentials_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DacPacApplicationName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DacPacApplicationVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DacPacPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

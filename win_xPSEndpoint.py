@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xPSEndpoint
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AccessMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RunAsCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RunAsCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecurityDescriptorSDDL:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StartupScript:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

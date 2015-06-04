@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzureSqlDatabaseServerFirewallRule
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  EndIPAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RuleName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ServerName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StartIPAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AzurePublishSettingsFile:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AzureSubscriptionName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

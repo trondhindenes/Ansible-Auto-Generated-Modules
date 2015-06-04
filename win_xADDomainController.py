@@ -24,3 +24,113 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xADDomainController
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DomainAdministratorCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainAdministratorCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SafemodeAdministratorPassword_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SafemodeAdministratorPassword_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabasePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SysvolPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xArchive
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Destination:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CompressionLevel:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DestinationType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MatchSource:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

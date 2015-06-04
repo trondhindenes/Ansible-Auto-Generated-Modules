@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xWindowsOptionalFeature
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogLevel:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NoWindowsUpdateCheck:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RemoveFilesOnDisable:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Source:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

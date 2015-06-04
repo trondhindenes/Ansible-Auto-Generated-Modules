@@ -24,3 +24,143 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xService
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BuiltInAccount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Dependencies:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Description:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DisplayName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StartupType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  State:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

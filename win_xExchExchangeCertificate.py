@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchExchangeCertificate
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Thumbprint:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowExtraServices:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CertCreds_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CertCreds_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CertFilePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Services:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

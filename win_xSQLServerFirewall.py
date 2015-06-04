@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSQLServerFirewall
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Features:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstanceName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

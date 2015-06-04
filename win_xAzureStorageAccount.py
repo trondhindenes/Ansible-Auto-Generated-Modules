@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzureStorageAccount
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  AffinityGroup:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StorageAccountName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Container:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Folder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Label:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

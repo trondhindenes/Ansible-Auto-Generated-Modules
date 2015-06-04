@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzureVMDscConfiguration
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ConfigurationPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StorageAccountName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AzurePublishSettingsPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AzureSubscriptionName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ContainerName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

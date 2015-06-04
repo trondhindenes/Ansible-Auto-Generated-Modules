@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDhcpServerReservation
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ClientMACAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IPAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ScopeID:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AddressFamily:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

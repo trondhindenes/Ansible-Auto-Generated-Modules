@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDBPackage
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SqlServerVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Type:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credentials_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credentials_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

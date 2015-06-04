@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cWMISMTPConsumer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  FromLine:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SMTPServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ToLine:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BccLine:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CcLine:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Message:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ReplyToLine:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Subject:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

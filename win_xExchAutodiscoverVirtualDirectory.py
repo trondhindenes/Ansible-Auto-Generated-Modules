@@ -24,3 +24,123 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchAutodiscoverVirtualDirectory
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowServiceRestart:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BasicAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DigestAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WindowsAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WSSecurityAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

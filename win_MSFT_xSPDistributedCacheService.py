@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPDistributedCacheService
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  CacheSizeInMB:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CreateFirewallRules:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ServiceAccount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

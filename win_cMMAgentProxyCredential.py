@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cMMAgentProxyCredential
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ProxyUserName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProxyUserPassword_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProxyUserPassword_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Force:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

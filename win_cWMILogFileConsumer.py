@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cWMILogFileConsumer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Filename:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Text:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IsUnicode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaximumFileSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

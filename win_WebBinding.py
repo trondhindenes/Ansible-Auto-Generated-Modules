@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_WebBinding
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  IPAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Port:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Protocol:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebsiteName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CertificateStoreName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CertificateThumbprint:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HostName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

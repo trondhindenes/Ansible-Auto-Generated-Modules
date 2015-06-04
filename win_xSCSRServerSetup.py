@@ -24,3 +24,193 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSCSRServerSetup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  AnalysisDatabaseServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AnalysisDatabaseServerInstance:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseServerInstance:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AnalysisDatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DWDatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RepositoryDatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SendCEIPReports:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StagingDatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UseMicrosoftUpdate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

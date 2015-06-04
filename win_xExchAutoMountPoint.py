@@ -24,3 +24,153 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchAutoMountPoint
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  AutoDagDatabasesRootFolderPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagVolumesRootFolderPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DiskToDBMap:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SpareVolumeCount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CreateSubfolders:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnsureExchangeVolumeMountPointIsLast:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FileSystem:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MinDiskSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PartitioningScheme:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UnitSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VolumePrefix:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

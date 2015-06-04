@@ -24,3 +24,403 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzurePackResourceProvider
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  AdminUri:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AuthenticationSite:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AzurePackAdminCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AzurePackAdminCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdminAuthenticationMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdminAuthenticationUser_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdminAuthenticationUser_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdminForwardingAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowAnonymousAccess:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowMultipleInstances:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DisplayName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Enabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HealthCheckAuthenticationMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HealthCheckAuthenticationUser_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HealthCheckAuthenticationUser_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HealthCheckForwardingAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstanceDisplayName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstanceId:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxQuotaUpdateBatchSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NotificationAuthenticationMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NotificationAuthenticationUser_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NotificationAuthenticationUser_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NotificationForwardingAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PassthroughEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SubscriptionStatusPollingInterval:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TenantAuthenticationMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TenantAuthenticationUser_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TenantAuthenticationUser_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TenantForwardingAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TenantSourceUriTemplate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TenantTargetUriTemplate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Type:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageAuthenticationMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageAuthenticationUser_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageAuthenticationUser_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageForwardingAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

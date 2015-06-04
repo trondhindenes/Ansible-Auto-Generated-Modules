@@ -24,3 +24,113 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPManagedAccount
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Account_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Account_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AccountName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EmailNotification:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PreExpireDays:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Schedule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

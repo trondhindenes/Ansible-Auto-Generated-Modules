@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xWebApplication
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PhysicalPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebAppPool:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Website:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

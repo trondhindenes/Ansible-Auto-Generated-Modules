@@ -24,3 +24,123 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchWaitForADPrep
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExchangeDomains:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OrganizationVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RetryCount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RetryIntervalSec:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SchemaVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

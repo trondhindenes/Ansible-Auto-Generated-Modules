@@ -24,3 +24,193 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchOutlookAnywhere
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowServiceRestart:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExtendedProtectionFlags:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExtendedProtectionSPNList:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExtendedProtectionTokenChecking:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExternalClientAuthenticationMethod:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExternalClientsRequireSsl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExternalHostname:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IISAuthenticationMethods:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InternalClientAuthenticationMethod:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InternalClientsRequireSsl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InternalHostname:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SSLOffloading:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

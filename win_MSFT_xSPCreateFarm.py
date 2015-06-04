@@ -24,3 +24,113 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPCreateFarm
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  AdminContentDatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FarmAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FarmAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FarmConfigDatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Passphrase:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

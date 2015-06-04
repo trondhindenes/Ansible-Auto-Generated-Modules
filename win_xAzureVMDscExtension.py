@@ -24,3 +24,153 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzureVMDscExtension
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ConfigurationArchive:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ServiceName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StorageAccountName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VMName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Configuration:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ConfigurationArgument:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ConfigurationDataPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ContainerName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Force:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ReferenceName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StorageEndpointSuffix:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Version:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

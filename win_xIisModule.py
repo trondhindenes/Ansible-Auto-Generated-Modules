@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xIisModule
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RequestPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Verb:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ModuleType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SiteName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchJetstressCleanup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  JetstressPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ConfigFilePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabasePaths:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DeleteAssociatedMountPoints:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogPaths:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OutputSaveLocation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RemoveBinaries:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

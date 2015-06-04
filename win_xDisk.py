@@ -24,3 +24,53 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDisk
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DiskNumber:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DriveLetter:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

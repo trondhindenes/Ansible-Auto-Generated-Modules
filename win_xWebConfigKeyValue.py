@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xWebConfigKeyValue
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ConfigSection:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Key:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebsitePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IsAttribute:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Value:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_POSTBehavior
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Category:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdapterWarnings:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Fastboot:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FnKeyEmulation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  KeyboardErrors:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Keypad:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MEBxHotKey:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MouseTouchpad:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Numlock:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  POSTHotKeys:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

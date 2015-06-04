@@ -24,3 +24,223 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xPackage
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProductId:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Arguments:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FileHash:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HashAlgorithm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstalledCheckRegKey:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstalledCheckRegValueData:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstalledCheckRegValueName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ReturnCode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RunAsCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RunAsCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ServerCertificateValidationCallback:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SignerSubject:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SignerThumbprint:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

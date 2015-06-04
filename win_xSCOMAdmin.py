@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSCOMAdmin
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Principal:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCOMAdminCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCOMAdminCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UserRole:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

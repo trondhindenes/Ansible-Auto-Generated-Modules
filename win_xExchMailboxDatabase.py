@@ -24,3 +24,343 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchMailboxDatabase
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseCopyCount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EdbFilePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogFolderPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Server:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdServerSettingsPreferredServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowServiceRestart:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagExcludeFromMonitoring:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BackgroundDatabaseMaintenance:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CalendarLoggingQuota:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CircularLoggingEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DataMoveReplicationConstraint:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DeletedItemRetention:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EventHistoryRetentionPeriod:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IndexEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IsExcludedFromProvisioning:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IssueWarningQuota:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IsSuspendedFromProvisioning:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  JournalRecipient:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MailboxRetention:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MountAtStartup:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OfflineAddressBook:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProhibitSendQuota:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProhibitSendReceiveQuota:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RecoverableItemsQuota:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RecoverableItemsWarningQuota:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RetainDeletedItemsUntilBackup:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SkipInitialDatabaseMount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

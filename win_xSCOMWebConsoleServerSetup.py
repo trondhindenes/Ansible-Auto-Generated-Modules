@@ -24,3 +24,173 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSCOMWebConsoleServerSetup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ManagementServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnableErrorReporting:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SendCEIPReports:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SendODRReports:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UseMicrosoftUpdate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebConsoleAuthorizationMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebConsoleUseSSL:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebSiteName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

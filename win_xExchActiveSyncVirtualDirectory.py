@@ -24,3 +24,193 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchActiveSyncVirtualDirectory
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowServiceRestart:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoCertBasedAuth:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoCertBasedAuthHttpsBindings:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoCertBasedAuthThumbprint:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BasicAuthEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ClientCertAuth:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CompressionEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExternalAuthenticationMethods:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExternalUrl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InternalAuthenticationMethods:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InternalUrl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WindowsAuthEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

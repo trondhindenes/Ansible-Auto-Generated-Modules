@@ -24,3 +24,163 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzureVM
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ImageName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ServiceName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StorageAccountName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExtensionContainerName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExtensionFileList:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExtensionScriptName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstanceSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Linux:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Windows:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

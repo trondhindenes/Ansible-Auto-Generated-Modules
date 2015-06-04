@@ -24,3 +24,43 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDatabaseServer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  LoginMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

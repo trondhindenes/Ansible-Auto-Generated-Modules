@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_NugetPackage
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DestinationPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallationPolicy:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaximumVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MinimumVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RequiredVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Source:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

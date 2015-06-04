@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xADDomainTrust
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  SourceDomainName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TargetDomainAdministratorCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TargetDomainAdministratorCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TargetDomainName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TrustDirection:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TrustType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

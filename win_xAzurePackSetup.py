@@ -24,3 +24,163 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzurePackSetup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Action:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Role:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  dbUser_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  dbUser_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnableCeip:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Passphrase_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Passphrase_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLInstance:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

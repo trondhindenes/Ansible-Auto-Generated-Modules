@@ -24,3 +24,563 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchReceiveConnector
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdvertiseClientSettings:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AuthMechanism:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Banner:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BareLinefeedRejectionEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  BinaryMimeEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Bindings:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ChunkingEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Comment:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ConnectionInactivityTimeout:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ConnectionTimeout:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DefaultDomain:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DeliveryStatusNotificationEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainSecureEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EightBitMimeEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnableAuthGSSAPI:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Enabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnhancedStatusCodesEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExtendedProtectionPolicy:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Fqdn:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LongAddressesEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxAcknowledgementDelay:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxHeaderSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxHopCount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxInboundConnection:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxInboundConnectionPercentagePerSource:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxInboundConnectionPerSource:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxLocalHopCount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxLogonFailures:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxMessageSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxProtocolErrors:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxRecipientsPerMessage:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MessageRateLimit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MessageRateSource:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OrarEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PermissionGroups:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PipeliningEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProtocolLoggingLevel:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RemoteIPRanges:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RequireEHLODomain:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RequireTLS:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ServiceDiscoveryFqdn:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SizeEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SuppressXAnonymousTls:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TarpitInterval:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TlsCertificateName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TlsDomainCapabilities:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TransportRole:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Usage:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

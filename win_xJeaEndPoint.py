@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xJeaEndPoint
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CleanAll:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Group:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecurityDescriptorSddl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Toolkit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDhcpServerOption
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DnsServerIPAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ScopeID:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AddressFamily:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DnsDomain:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Router:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

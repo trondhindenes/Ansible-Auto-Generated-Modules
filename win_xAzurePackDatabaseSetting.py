@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzurePackDatabaseSetting
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  AzurePackAdminCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AzurePackAdminCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Namespace:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Value:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLInstance:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

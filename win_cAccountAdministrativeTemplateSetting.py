@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cAccountAdministrativeTemplateSetting
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Account:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  KeyValueName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Data:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Type:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

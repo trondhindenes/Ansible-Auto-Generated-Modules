@@ -24,3 +24,73 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSQLServerRSSecureConnectionLevel
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  InstanceName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecureConnectionLevel:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLAdminCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLAdminCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,163 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPWebApplication
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ApplicationPool:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ApplicationPoolAccount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Url:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowAnonymous:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AuthenticationMethod:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HostHeader:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Port:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

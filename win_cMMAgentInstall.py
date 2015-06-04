@@ -24,3 +24,73 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cMMAgentInstall
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WorkspaceID:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WorkspaceKey:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

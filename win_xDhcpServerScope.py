@@ -24,3 +24,113 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDhcpServerScope
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  IPEndRange:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IPStartRange:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SubnetMask:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AddressFamily:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LeaseDuration:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  State:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

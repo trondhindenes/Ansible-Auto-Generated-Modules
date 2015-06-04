@@ -24,3 +24,173 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSCOMReportingServerSetup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DataReader_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DataReader_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ManagementServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SRSInstance:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnableErrorReporting:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SendCEIPReports:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SendODRReports:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UseMicrosoftUpdate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

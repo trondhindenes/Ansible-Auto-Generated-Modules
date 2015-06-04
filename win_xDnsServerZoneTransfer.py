@@ -24,3 +24,63 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDnsServerZoneTransfer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Type:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecondaryServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

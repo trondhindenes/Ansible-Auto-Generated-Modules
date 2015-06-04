@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cWMIActiveScriptConsumer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaximumQueueSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ScriptFileName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ScriptingEngine:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ScriptText:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

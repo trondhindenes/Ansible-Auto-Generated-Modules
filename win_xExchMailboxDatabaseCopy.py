@@ -24,3 +24,143 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchMailboxDatabaseCopy
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MailboxServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ActivationPreference:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdServerSettingsPreferredServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowServiceRestart:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ReplayLagTime:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SeedingPostponed:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  TruncationLagTime:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

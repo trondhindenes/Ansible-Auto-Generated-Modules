@@ -24,3 +24,183 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPSite
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OwnerAlias:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Url:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CompatibilityLevel:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ContentDatabase:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Description:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  HostHeaderWebApplication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Language:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OwnerEmail:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  QuotaTemplate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecondaryEmail:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecondaryOwnerAlias:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Template:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,493 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSQLServerFailoverClusterSetup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Action:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FailoverClusterNetworkName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Features:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstanceName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLSvcAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLSvcAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AgtSvcAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AgtSvcAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASBackupDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASCollation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASConfigDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASDataDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASLogDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASSvcAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASSvcAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASSysAdminAccounts:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ASTempDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ErrorReporting:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FailoverClusterGroup:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FailoverClusterIPAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallSharedDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallSharedWOWDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallSQLDataDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstanceDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstanceID:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ISFileSystemFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ISSvcAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ISSvcAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PID:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SAPwd_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SAPwd_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecurityMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLBackupDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLCollation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLSysAdminAccounts:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLTempDBDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLTempDBLogDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLUserDBDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLUserDBLogDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQMReporting:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UpdateEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UpdateSource:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

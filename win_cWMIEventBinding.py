@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cWMIEventBinding
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Consumer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ConsumerType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Filter:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DeliveryQoS:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaintainSecurityContext:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SlowDownProviders:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

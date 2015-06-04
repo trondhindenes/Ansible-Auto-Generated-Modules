@@ -24,3 +24,63 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xVhdFile
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  FileDirectory:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VhdPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CheckSum:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

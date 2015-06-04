@@ -24,3 +24,273 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchDatabaseAvailabilityGroup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  AutoDagTotalNumberOfServers:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AlternateWitnessDirectory:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AlternateWitnessServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagAutoReseedEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagDatabaseCopiesPerDatabase:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagDatabaseCopiesPerVolume:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagDatabasesRootFolderPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagDiskReclaimerEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagTotalNumberOfDatabases:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoDagVolumesRootFolderPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseAvailabilityGroupIpAddresses:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatacenterActivationMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ManualDagNetworkConfiguration:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NetworkCompression:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NetworkEncryption:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ReplayLagManagerEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ReplicationPort:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SkipDagValidation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WitnessDirectory:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WitnessServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

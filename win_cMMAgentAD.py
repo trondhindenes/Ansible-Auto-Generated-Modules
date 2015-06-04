@@ -24,3 +24,43 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cMMAgentAD
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  EnableAD:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

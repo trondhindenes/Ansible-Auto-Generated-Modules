@@ -24,3 +24,233 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPDiagnosticLoggingSettings
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogSpaceInGB:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AppAnalyticsAutomaticUploadEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CustomerExperienceImprovementProgramEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DaysToKeepLogs:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DownloadErrorReportingUpdatesEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ErrorReportingAutomaticUploadEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ErrorReportingEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EventLogFloodProtectionEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EventLogFloodProtectionNotifyInterval:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EventLogFloodProtectionQuietPeriod:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EventLogFloodProtectionThreshold:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EventLogFloodProtectionTriggerPeriod:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogCutInterval:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LogMaxDiskSpaceUsageEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ScriptErrorReportingDelay:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ScriptErrorReportingEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ScriptErrorReportingRequireAuth:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

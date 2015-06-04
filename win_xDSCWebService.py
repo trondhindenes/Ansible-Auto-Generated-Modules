@@ -24,3 +24,123 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xDSCWebService
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  CertificateThumbPrint:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EndpointName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ConfigurationPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IsComplianceServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ModulePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PhysicalPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Port:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  State:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

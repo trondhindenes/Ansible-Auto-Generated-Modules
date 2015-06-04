@@ -24,3 +24,183 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xVMHyperV
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VhdPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Generation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MACAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaximumMemory:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MinimumMemory:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Notes:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProcessorCount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RestartIfNeeded:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StartupMemory:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  State:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SwitchName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WaitForIP:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

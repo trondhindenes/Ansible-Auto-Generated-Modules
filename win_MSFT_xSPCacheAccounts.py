@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPCacheAccounts
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SuperReaderAlias:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SuperUserAlias:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebAppUrl:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

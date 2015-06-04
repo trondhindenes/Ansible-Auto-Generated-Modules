@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchJetstress
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  JetstressParams:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  JetstressPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Type:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaxWaitMinutes:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MinAchievedIOPS:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

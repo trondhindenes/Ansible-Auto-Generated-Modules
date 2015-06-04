@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cVMNetworkAdapter
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ManagementOS:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SwitchName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DynamicMacAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  StaticMacAddress:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VMName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

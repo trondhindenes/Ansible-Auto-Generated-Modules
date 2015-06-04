@@ -24,3 +24,53 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xInstallWebDeploy
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebDeployMsi:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

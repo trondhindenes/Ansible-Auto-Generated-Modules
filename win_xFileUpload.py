@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xFileUpload
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  destinationPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  sourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  certificateThumbprint:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

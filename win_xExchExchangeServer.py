@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xExchExchangeServer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Identity:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowServiceRestart:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CustomerFeedbackEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainController:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InternetWebProxy:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MonitoringGroup:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProductKey:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WorkloadManagementPolicy:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

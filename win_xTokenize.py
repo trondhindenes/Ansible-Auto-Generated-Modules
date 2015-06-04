@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xTokenize
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  path:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  recurse:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  searchPattern:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  tokens:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  useTokenFiles:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

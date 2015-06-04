@@ -24,3 +24,63 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cMARSEncryptionPhrase
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  EncryptionPassPhrase:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Force:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

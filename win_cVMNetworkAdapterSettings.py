@@ -24,3 +24,173 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cVMNetworkAdapterSettings
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ManagementOS:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SwitchName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowTeaming:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DhcpGuard:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IeeePriorityTag:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MacAddressSpoofing:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MaximumBandwidth:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MinimumBandwidthAbsolute:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MinimumBandwidthWeight:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PortMirroring:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RouterGuard:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VMName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VmqWeight:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

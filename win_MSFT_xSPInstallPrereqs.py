@@ -24,3 +24,163 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPInstallPrereqs
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  InstallerPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AppFabric:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IDFX:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  IDFX11:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  KB2671763:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MSIPCClient:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NETFX:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OnlineMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PowerShell:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SQLNCli:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Sync:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WCFDataServices:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WCFDataServices56:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

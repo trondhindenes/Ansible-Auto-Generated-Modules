@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cWMICommandLineConsumer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  CommandLineTemplate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ExecutablePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WorkingDirectory:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

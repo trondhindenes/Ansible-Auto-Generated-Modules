@@ -24,3 +24,283 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSCSPFServerSetup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DatabaseServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SetupCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdminSecurityGroupUsers:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CertificateName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabasePortNumber:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProviderSecurityGroupUsers:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCAdmin_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCAdmin_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCProvider_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCProvider_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCUsage_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCUsage_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCVMM_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCVMM_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SendCEIPReports:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SpecifyCertificate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageSecurityGroupUsers:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UseMicrosoftUpdate:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VMMSecurityGroupUsers:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  WebSitePortNumber:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

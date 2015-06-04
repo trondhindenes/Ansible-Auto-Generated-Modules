@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cVMNetworkAdapterVlan
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  ManagementOS:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdapterMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AllowedVlanIdList:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  NativeVlanId:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  PrimaryVlanId:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecondaryVlanId:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecondaryVlanIdList:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VlanId:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VMName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

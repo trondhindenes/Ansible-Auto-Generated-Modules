@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSCVMMAdmin
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Principal:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCVMMAdminCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCVMMAdminCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UserRole:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

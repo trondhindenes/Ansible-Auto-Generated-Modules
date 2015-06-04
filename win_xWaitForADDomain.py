@@ -24,3 +24,83 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xWaitForADDomain
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DomainName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainUserCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DomainUserCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RetryCount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RetryIntervalSec:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

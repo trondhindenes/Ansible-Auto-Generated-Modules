@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xRemoteFile
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  DestinationPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Uri:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Headers:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UserAgent:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

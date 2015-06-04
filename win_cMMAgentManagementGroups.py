@@ -24,3 +24,103 @@
 
 DOCUMENTATION = '''
 ---
+module: win_cMMAgentManagementGroups
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  managementGroupName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  managementServerName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  actionAccountCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  actionAccountCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Force:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  managementServerPort:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xAzureQuickVM
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ServiceName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AdminUsername:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ImageName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstanceSize:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Linux:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  LinuxUser:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Windows:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

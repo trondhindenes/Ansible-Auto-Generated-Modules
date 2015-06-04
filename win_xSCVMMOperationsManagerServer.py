@@ -24,3 +24,133 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xSCVMMOperationsManagerServer
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OpsMgrServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCVMMAdminCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SCVMMAdminCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VMMServerCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  VMMServerCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnableMaintenanceModeIntegration:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  EnablePRO:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  OpsMgrServerCredential:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UseVMMServerServiceAccount:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

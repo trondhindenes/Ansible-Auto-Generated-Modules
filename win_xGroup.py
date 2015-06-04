@@ -24,3 +24,113 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xGroup
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  GroupName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Credential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Description:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Members:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MembersToExclude:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MembersToInclude:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

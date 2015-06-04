@@ -24,3 +24,523 @@
 
 DOCUMENTATION = '''
 ---
+module: win_WebAppPool
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  autoShutdownExe:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  autoShutdownParams:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  autoStart:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  CLRConfigFile:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  cpuAction:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  cpuLimit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  cpuResetInterval:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  cpuSmpAffinitized:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  cpuSmpProcessorAffinityMask:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  cpuSmpProcessorAffinityMask2:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  disallowOverlappingRotation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  disallowRotationOnConfigChange:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  enable32BitAppOnWin64:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  enableConfigurationOverride:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  identityType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  idleTimeout:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  loadBalancerCapabilities:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  loadUserProfile:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  logEventOnRecycle:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  logonType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  managedPipelineMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  managedRuntimeLoader:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  managedRuntimeVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  manualGroupMembership:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  maxProcesses:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  orphanActionExe:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  orphanActionParams:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  orphanWorkerProcess:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  passAnonymousToken:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Password_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Password_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  pingingEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  pingInterval:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  pingResponseTime:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  queueLength:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  rapidFailProtection:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  rapidFailProtectionInterval:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  rapidFailProtectionMaxCrashes:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  restartMemoryLimit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  restartPrivateMemoryLimit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  restartRequestsLimit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  restartSchedule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  restartTimeLimit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  shutdownTimeLimit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  startMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  startupTimeLimit:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  userName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

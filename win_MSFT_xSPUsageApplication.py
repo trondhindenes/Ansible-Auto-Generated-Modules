@@ -24,3 +24,153 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPUsageApplication
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  InstallAccount_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallAccount_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseName:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabasePassword:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  DatabaseUsername:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  FailoverDatabaseServer:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageLogCutTime:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageLogLocation:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageLogMaxFileSizeKB:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  UsageLogMaxSpaceGB:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

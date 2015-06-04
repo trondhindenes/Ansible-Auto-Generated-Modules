@@ -24,3 +24,93 @@
 
 DOCUMENTATION = '''
 ---
+module: win_PSModule
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  Name:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  InstallationPolicy:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  MinimumVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Repository:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  RequiredVersion:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

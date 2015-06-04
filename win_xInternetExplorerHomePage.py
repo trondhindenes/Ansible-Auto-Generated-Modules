@@ -24,3 +24,63 @@
 
 DOCUMENTATION = '''
 ---
+module: win_xInternetExplorerHomePage
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  StartPage:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  SecondaryStartPages:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+

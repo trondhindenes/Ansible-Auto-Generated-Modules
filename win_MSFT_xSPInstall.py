@@ -24,3 +24,53 @@
 
 DOCUMENTATION = '''
 ---
+module: win_MSFT_xSPInstall
+version_added: 
+short_description: 
+description:
+     - 
+options:
+
+
+
+
+  BinaryDir:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  ProductKey:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoInstallModule:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
+  AutoConfigureLcm:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+
+
+
