@@ -26,40 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:LoginName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LoginName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $LoginName = Get-Attr -obj $params -name LoginName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:LoginPassword,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LoginPassword;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $LoginPassword = Get-Attr -obj $params -name LoginPassword -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SqlAuthType,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SqlAuthType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SqlAuthType = Get-Attr -obj $params -name SqlAuthType -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SqlConnectionCredential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SqlConnectionCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SqlConnectionCredential_username = Get-Attr -obj $params -name SqlConnectionCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlConnectionCredential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SqlConnectionCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SqlConnectionCredential_password = Get-Attr -obj $params -name SqlConnectionCredential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SqlServer,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SqlServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SqlServer = Get-Attr -obj $params -name SqlServer -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

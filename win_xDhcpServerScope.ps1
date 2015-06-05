@@ -26,46 +26,26 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:IPEndRange,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IPEndRange;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $IPEndRange = Get-Attr -obj $params -name IPEndRange -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:IPStartRange,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IPStartRange;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $IPStartRange = Get-Attr -obj $params -name IPStartRange -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SubnetMask,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SubnetMask;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SubnetMask = Get-Attr -obj $params -name SubnetMask -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AddressFamily,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AddressFamily;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AddressFamily = Get-Attr -obj $params -name AddressFamily -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:LeaseDuration,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LeaseDuration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $LeaseDuration = Get-Attr -obj $params -name LeaseDuration -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:State,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($AddressFamily)
 {
     If (('IPv4') -contains $AddressFamily ) {

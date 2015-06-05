@@ -24,105 +24,74 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSCSMAWebServiceServerSetup
+module: win_xscsmawebserviceserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ApPool_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ApPool_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   FirstWebServiceServer:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SqlInstance:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SqlServer:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdminGroupMembers:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   CertificateName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ETWManifest:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstallFolder:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MSUpdate:
     description:
@@ -171,18 +128,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProductKey:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RunbookWorkerServers:
     description:
@@ -191,18 +142,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SendCEIPReports:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SiteName:
     description:
@@ -211,18 +156,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SourceFolder:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SpecifyCertificate:
     description:
@@ -231,18 +170,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SqlDatabase:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UseSSL:
     description:
@@ -251,9 +184,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WebServicePort:
     description:
       - 
@@ -261,26 +191,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

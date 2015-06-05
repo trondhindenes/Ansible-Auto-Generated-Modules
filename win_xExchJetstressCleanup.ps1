@@ -26,42 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:JetstressPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:JetstressPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $JetstressPath = Get-Attr -obj $params -name JetstressPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ConfigFilePath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ConfigFilePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ConfigFilePath = Get-Attr -obj $params -name ConfigFilePath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DatabasePaths,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabasePaths;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabasePaths = Get-Attr -obj $params -name DatabasePaths -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DeleteAssociatedMountPoints,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DeleteAssociatedMountPoints;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DeleteAssociatedMountPoints = Get-Attr -obj $params -name DeleteAssociatedMountPoints -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:LogPaths,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LogPaths;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $LogPaths = Get-Attr -obj $params -name LogPaths -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:OutputSaveLocation,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:OutputSaveLocation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $OutputSaveLocation = Get-Attr -obj $params -name OutputSaveLocation -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RemoveBinaries,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RemoveBinaries;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RemoveBinaries = Get-Attr -obj $params -name RemoveBinaries -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 $DscResourceName = "xExchJetstressCleanup"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool

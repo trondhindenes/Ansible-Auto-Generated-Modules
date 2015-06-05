@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_MSFT_xSPBCSServiceApp
+module: win_msft_xspbcsserviceapp
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ApplicationPool:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstallAccount_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstallAccount_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DatabaseName:
     description:
@@ -81,9 +65,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   DatabaseServer:
     description:
       - 
@@ -91,26 +72,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

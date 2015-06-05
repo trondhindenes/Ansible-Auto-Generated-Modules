@@ -26,22 +26,14 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DiskNumber,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DiskNumber;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DiskNumber = Get-Attr -obj $params -name DiskNumber -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DriveLetter,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DriveLetter;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DriveLetter = Get-Attr -obj $params -name DriveLetter -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 $DscResourceName = "xDisk"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool

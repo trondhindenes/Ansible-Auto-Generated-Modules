@@ -24,73 +24,51 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xExchInstall
+module: win_xexchinstall
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Arguments:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Path:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

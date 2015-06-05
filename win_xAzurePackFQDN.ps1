@@ -26,40 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:AzurePackAdminCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AzurePackAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AzurePackAdminCredential_username = Get-Attr -obj $params -name AzurePackAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:AzurePackAdminCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AzurePackAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AzurePackAdminCredential_password = Get-Attr -obj $params -name AzurePackAdminCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:FullyQualifiedDomainName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FullyQualifiedDomainName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $FullyQualifiedDomainName = Get-Attr -obj $params -name FullyQualifiedDomainName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Namespace,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Namespace;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Namespace = Get-Attr -obj $params -name Namespace -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SQLServer,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SQLServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SQLServer = Get-Attr -obj $params -name SQLServer -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Port,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Port;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Port = Get-Attr -obj $params -name Port -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SQLInstance,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SQLInstance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SQLInstance = Get-Attr -obj $params -name SQLInstance -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Namespace)
 {
     If (('AdminSite','AuthSite','TenantSite','WindowsAuthSite') -contains $Namespace ) {

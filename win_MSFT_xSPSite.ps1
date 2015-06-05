@@ -26,72 +26,40 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:InstallAccount_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $InstallAccount_password = Get-Attr -obj $params -name InstallAccount_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:OwnerAlias,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:OwnerAlias;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $OwnerAlias = Get-Attr -obj $params -name OwnerAlias -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Url,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Url;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Url = Get-Attr -obj $params -name Url -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:CompatibilityLevel,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CompatibilityLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CompatibilityLevel = Get-Attr -obj $params -name CompatibilityLevel -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ContentDatabase,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ContentDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ContentDatabase = Get-Attr -obj $params -name ContentDatabase -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Description,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:HostHeaderWebApplication,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HostHeaderWebApplication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HostHeaderWebApplication = Get-Attr -obj $params -name HostHeaderWebApplication -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Language,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Language;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Language = Get-Attr -obj $params -name Language -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:OwnerEmail,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:OwnerEmail;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $OwnerEmail = Get-Attr -obj $params -name OwnerEmail -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:QuotaTemplate,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:QuotaTemplate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $QuotaTemplate = Get-Attr -obj $params -name QuotaTemplate -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SecondaryEmail,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SecondaryEmail;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SecondaryEmail = Get-Attr -obj $params -name SecondaryEmail -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SecondaryOwnerAlias,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SecondaryOwnerAlias;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SecondaryOwnerAlias = Get-Attr -obj $params -name SecondaryOwnerAlias -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Template,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Template;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Template = Get-Attr -obj $params -name Template -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($InstallAccount_username)
 {
 $InstallAccount_securepassword = $InstallAccount_password | ConvertTo-SecureString -asPlainText -Force

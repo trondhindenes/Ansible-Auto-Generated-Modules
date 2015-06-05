@@ -26,76 +26,42 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:AnalysisDatabaseServer,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AnalysisDatabaseServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AnalysisDatabaseServer = Get-Attr -obj $params -name AnalysisDatabaseServer -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AnalysisDatabaseServerInstance,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AnalysisDatabaseServerInstance;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AnalysisDatabaseServerInstance = Get-Attr -obj $params -name AnalysisDatabaseServerInstance -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DatabaseServer,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseServer = Get-Attr -obj $params -name DatabaseServer -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DatabaseServerInstance,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseServerInstance;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseServerInstance = Get-Attr -obj $params -name DatabaseServerInstance -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SetupCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SourcePath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AnalysisDatabaseName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AnalysisDatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AnalysisDatabaseName = Get-Attr -obj $params -name AnalysisDatabaseName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DWDatabaseName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DWDatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DWDatabaseName = Get-Attr -obj $params -name DWDatabaseName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InstallFolder,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstallFolder = Get-Attr -obj $params -name InstallFolder -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RepositoryDatabaseName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RepositoryDatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RepositoryDatabaseName = Get-Attr -obj $params -name RepositoryDatabaseName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SendCEIPReports,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SendCEIPReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SendCEIPReports = Get-Attr -obj $params -name SendCEIPReports -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SourceFolder,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:StagingDatabaseName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StagingDatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $StagingDatabaseName = Get-Attr -obj $params -name StagingDatabaseName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UseMicrosoftUpdate,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UseMicrosoftUpdate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UseMicrosoftUpdate = Get-Attr -obj $params -name UseMicrosoftUpdate -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

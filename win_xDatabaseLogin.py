@@ -24,25 +24,18 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xDatabaseLogin
+module: win_xdatabaselogin
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   LoginName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
@@ -51,18 +44,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   LoginPassword:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SqlAuthType:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SqlConnectionCredential_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SqlConnectionCredential_password:
     description:
@@ -91,9 +72,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   SqlServer:
     description:
       - 
@@ -101,26 +79,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

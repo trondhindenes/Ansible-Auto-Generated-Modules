@@ -26,26 +26,16 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Description,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Description;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Description = Get-Attr -obj $params -name Description -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RestorePointType,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RestorePointType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RestorePointType = Get-Attr -obj $params -name RestorePointType -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

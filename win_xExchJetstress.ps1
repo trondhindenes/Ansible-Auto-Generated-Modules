@@ -26,34 +26,20 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:JetstressParams,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:JetstressParams;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $JetstressParams = Get-Attr -obj $params -name JetstressParams -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:JetstressPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:JetstressPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $JetstressPath = Get-Attr -obj $params -name JetstressPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Type,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Type;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Type = Get-Attr -obj $params -name Type -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:MaxWaitMinutes,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MaxWaitMinutes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MaxWaitMinutes = Get-Attr -obj $params -name MaxWaitMinutes -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MinAchievedIOPS,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MinAchievedIOPS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MinAchievedIOPS = Get-Attr -obj $params -name MinAchievedIOPS -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Type)
 {
     If (('DatabaseBackup','Performance','SoftRecovery','Stress') -contains $Type ) {

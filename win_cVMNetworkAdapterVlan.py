@@ -24,35 +24,25 @@
 
 DOCUMENTATION = '''
 ---
-module: win_cVMNetworkAdapterVlan
+module: win_cvmnetworkadaptervlan
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ManagementOS:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdapterMode:
     description:
@@ -61,18 +51,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AllowedVlanIdList:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   NativeVlanId:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   PrimaryVlanId:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SecondaryVlanId:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SecondaryVlanIdList:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   VlanId:
     description:
@@ -121,9 +93,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   VMName:
     description:
       - 
@@ -131,26 +100,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

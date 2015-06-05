@@ -26,76 +26,44 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Ensure,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ReportingInstanceName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ReportingInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ReportingInstanceName = Get-Attr -obj $params -name ReportingInstanceName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ReportingMachineCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ReportingMachineCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ReportingMachineCredential_username = Get-Attr -obj $params -name ReportingMachineCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:ReportingMachineCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ReportingMachineCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ReportingMachineCredential_password = Get-Attr -obj $params -name ReportingMachineCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ReportingMachineName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ReportingMachineName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ReportingMachineName = Get-Attr -obj $params -name ReportingMachineName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SetupCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SourcePath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:YukonInstanceName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:YukonInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $YukonInstanceName = Get-Attr -obj $params -name YukonInstanceName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:YukonMachineCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:YukonMachineCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $YukonMachineCredential_username = Get-Attr -obj $params -name YukonMachineCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:YukonMachineCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:YukonMachineCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $YukonMachineCredential_password = Get-Attr -obj $params -name YukonMachineCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:YukonMachineName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:YukonMachineName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $YukonMachineName = Get-Attr -obj $params -name YukonMachineName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:CompanyName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CompanyName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CompanyName = Get-Attr -obj $params -name CompanyName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ProductKey,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ProductKey = Get-Attr -obj $params -name ProductKey -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ProgramFiles,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProgramFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ProgramFiles = Get-Attr -obj $params -name ProgramFiles -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SourceFolder,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UserName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UserName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UserName = Get-Attr -obj $params -name UserName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

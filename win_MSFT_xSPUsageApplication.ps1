@@ -26,60 +26,34 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:InstallAccount_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $InstallAccount_password = Get-Attr -obj $params -name InstallAccount_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DatabaseName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DatabasePassword,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabasePassword;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabasePassword = Get-Attr -obj $params -name DatabasePassword -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DatabaseServer,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseServer = Get-Attr -obj $params -name DatabaseServer -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DatabaseUsername,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseUsername;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseUsername = Get-Attr -obj $params -name DatabaseUsername -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:FailoverDatabaseServer,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FailoverDatabaseServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $FailoverDatabaseServer = Get-Attr -obj $params -name FailoverDatabaseServer -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsageLogCutTime,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageLogCutTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageLogCutTime = Get-Attr -obj $params -name UsageLogCutTime -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsageLogLocation,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageLogLocation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageLogLocation = Get-Attr -obj $params -name UsageLogLocation -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsageLogMaxFileSizeKB,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageLogMaxFileSizeKB;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageLogMaxFileSizeKB = Get-Attr -obj $params -name UsageLogMaxFileSizeKB -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsageLogMaxSpaceGB,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageLogMaxSpaceGB;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageLogMaxSpaceGB = Get-Attr -obj $params -name UsageLogMaxSpaceGB -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($InstallAccount_username)
 {
 $InstallAccount_securepassword = $InstallAccount_password | ConvertTo-SecureString -asPlainText -Force

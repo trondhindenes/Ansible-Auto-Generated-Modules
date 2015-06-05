@@ -26,38 +26,22 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Path,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Generation,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Generation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Generation = Get-Attr -obj $params -name Generation -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MaximumSizeBytes,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MaximumSizeBytes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MaximumSizeBytes = Get-Attr -obj $params -name MaximumSizeBytes -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ParentPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ParentPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ParentPath = Get-Attr -obj $params -name ParentPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

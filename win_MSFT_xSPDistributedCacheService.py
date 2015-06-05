@@ -24,103 +24,72 @@
 
 DOCUMENTATION = '''
 ---
-module: win_MSFT_xSPDistributedCacheService
+module: win_msft_xspdistributedcacheservice
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   CacheSizeInMB:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   CreateFirewallRules:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstallAccount_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstallAccount_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ServiceAccount:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

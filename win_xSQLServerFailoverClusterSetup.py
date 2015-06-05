@@ -24,105 +24,74 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSQLServerFailoverClusterSetup
+module: win_xsqlserverfailoverclustersetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Action:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   FailoverClusterNetworkName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Features:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstanceName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SQLSvcAccount_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SQLSvcAccount_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AgtSvcAccount_username:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AgtSvcAccount_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASBackupDir:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ASCollation:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASConfigDir:
     description:
@@ -171,18 +128,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ASDataDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASLogDir:
     description:
@@ -191,18 +142,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ASSvcAccount_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASSvcAccount_password:
     description:
@@ -211,18 +156,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ASSysAdminAccounts:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASTempDir:
     description:
@@ -231,18 +170,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ErrorReporting:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   FailoverClusterGroup:
     description:
@@ -251,18 +184,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   FailoverClusterIPAddress:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstallSharedDir:
     description:
@@ -271,18 +198,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstallSharedWOWDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstallSQLDataDir:
     description:
@@ -291,18 +212,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstanceDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstanceID:
     description:
@@ -311,18 +226,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ISFileSystemFolder:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ISSvcAccount_username:
     description:
@@ -331,18 +240,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ISSvcAccount_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   PID:
     description:
@@ -351,18 +254,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SAPwd_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SAPwd_password:
     description:
@@ -371,18 +268,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SecurityMode:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SourceFolder:
     description:
@@ -391,18 +282,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLBackupDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQLCollation:
     description:
@@ -411,18 +296,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLSysAdminAccounts:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQLTempDBDir:
     description:
@@ -431,18 +310,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLTempDBLogDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQLUserDBDir:
     description:
@@ -451,18 +324,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLUserDBLogDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQMReporting:
     description:
@@ -471,18 +338,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   UpdateEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UpdateSource:
     description:
@@ -491,26 +352,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

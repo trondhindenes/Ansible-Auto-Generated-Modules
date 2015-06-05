@@ -24,25 +24,18 @@
 
 DOCUMENTATION = '''
 ---
-module: win_PSModule
+module: win_psmodule
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
@@ -51,18 +44,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstallationPolicy:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MinimumVersion:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Repository:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RequiredVersion:
     description:
@@ -91,26 +72,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

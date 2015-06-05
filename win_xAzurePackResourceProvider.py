@@ -24,65 +24,46 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xAzurePackResourceProvider
+module: win_xazurepackresourceprovider
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   AdminUri:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AuthenticationSite:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AzurePackAdminCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AzurePackAdminCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdminAuthenticationMode:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AdminAuthenticationUser_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AdminAuthenticationUser_password:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AdminForwardingAddress:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AllowAnonymousAccess:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AllowMultipleInstances:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DisplayName:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Enabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   HealthCheckAuthenticationMode:
     description:
@@ -171,18 +128,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   HealthCheckAuthenticationUser_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   HealthCheckAuthenticationUser_password:
     description:
@@ -191,18 +142,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   HealthCheckForwardingAddress:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstanceDisplayName:
     description:
@@ -211,18 +156,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstanceId:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MaxQuotaUpdateBatchSize:
     description:
@@ -231,18 +170,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   NotificationAuthenticationMode:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   NotificationAuthenticationUser_username:
     description:
@@ -251,18 +184,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   NotificationAuthenticationUser_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   NotificationForwardingAddress:
     description:
@@ -271,18 +198,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   PassthroughEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SubscriptionStatusPollingInterval:
     description:
@@ -291,18 +212,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   TenantAuthenticationMode:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   TenantAuthenticationUser_username:
     description:
@@ -311,18 +226,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   TenantAuthenticationUser_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   TenantForwardingAddress:
     description:
@@ -331,18 +240,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   TenantSourceUriTemplate:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   TenantTargetUriTemplate:
     description:
@@ -351,18 +254,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Type:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UsageAuthenticationMode:
     description:
@@ -371,18 +268,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   UsageAuthenticationUser_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UsageAuthenticationUser_password:
     description:
@@ -391,9 +282,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   UsageForwardingAddress:
     description:
       - 
@@ -401,26 +289,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

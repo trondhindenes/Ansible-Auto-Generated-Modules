@@ -24,85 +24,60 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xExchMailboxDatabase
+module: win_xexchmailboxdatabase
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Credential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DatabaseCopyCount:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   EdbFilePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   LogFolderPath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Server:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdServerSettingsPreferredServer:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AllowServiceRestart:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoDagExcludeFromMonitoring:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   BackgroundDatabaseMaintenance:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   CalendarLoggingQuota:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   CircularLoggingEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DataMoveReplicationConstraint:
     description:
@@ -171,18 +128,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DeletedItemRetention:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DomainController:
     description:
@@ -191,18 +142,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   EventHistoryRetentionPeriod:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   IndexEnabled:
     description:
@@ -211,18 +156,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   IsExcludedFromProvisioning:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   IssueWarningQuota:
     description:
@@ -231,18 +170,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   IsSuspendedFromProvisioning:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   JournalRecipient:
     description:
@@ -251,18 +184,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MailboxRetention:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MountAtStartup:
     description:
@@ -271,18 +198,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   OfflineAddressBook:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ProhibitSendQuota:
     description:
@@ -291,18 +212,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProhibitSendReceiveQuota:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RecoverableItemsQuota:
     description:
@@ -311,18 +226,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   RecoverableItemsWarningQuota:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RetainDeletedItemsUntilBackup:
     description:
@@ -331,9 +240,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   SkipInitialDatabaseMount:
     description:
       - 
@@ -341,26 +247,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

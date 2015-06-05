@@ -26,40 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DatabaseName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Path,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SqlServer,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SqlServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SqlServer = Get-Attr -obj $params -name SqlServer -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SqlServerVersion,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SqlServerVersion;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SqlServerVersion = Get-Attr -obj $params -name SqlServerVersion -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Type,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Type;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Type = Get-Attr -obj $params -name Type -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Credentials_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credentials_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credentials_username = Get-Attr -obj $params -name Credentials_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credentials_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credentials_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credentials_password = Get-Attr -obj $params -name Credentials_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($SqlServerVersion)
 {
     If (('2008-R2','2012','2014') -contains $SqlServerVersion ) {

@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSQLServerSetup
+module: win_xsqlserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   InstanceName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AgtSvcAccount_username:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AgtSvcAccount_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASBackupDir:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ASCollation:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASConfigDir:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ASDataDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASLogDir:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ASSvcAccount_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASSvcAccount_password:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ASSysAdminAccounts:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ASTempDir:
     description:
@@ -181,18 +135,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ErrorReporting:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Features:
     description:
@@ -201,18 +149,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   FTSvcAccount_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   FTSvcAccount_password:
     description:
@@ -221,18 +163,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstallSharedDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstallSharedWOWDir:
     description:
@@ -241,18 +177,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstallSQLDataDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstanceDir:
     description:
@@ -261,18 +191,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstanceID:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ISSvcAccount_username:
     description:
@@ -281,18 +205,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ISSvcAccount_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   PID:
     description:
@@ -301,18 +219,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   RSSvcAccount_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RSSvcAccount_password:
     description:
@@ -321,18 +233,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SAPwd_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SAPwd_password:
     description:
@@ -341,18 +247,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SecurityMode:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SourceFolder:
     description:
@@ -361,18 +261,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLBackupDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQLCollation:
     description:
@@ -381,18 +275,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLSvcAccount_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQLSvcAccount_password:
     description:
@@ -401,18 +289,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLSysAdminAccounts:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQLTempDBDir:
     description:
@@ -421,18 +303,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLTempDBLogDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQLUserDBDir:
     description:
@@ -441,18 +317,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SQLUserDBLogDir:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQMReporting:
     description:
@@ -461,18 +331,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   UpdateEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UpdateSource:
     description:
@@ -481,26 +345,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

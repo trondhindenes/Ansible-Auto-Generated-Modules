@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xADUser
+module: win_xaduser
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   DomainAdministratorCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DomainAdministratorCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DomainName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   UserName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Password_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Password_password:
     description:
@@ -101,26 +79,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

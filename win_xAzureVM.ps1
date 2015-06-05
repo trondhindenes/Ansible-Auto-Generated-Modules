@@ -26,64 +26,36 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ImageName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ImageName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ImageName = Get-Attr -obj $params -name ImageName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ServiceName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ServiceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ServiceName = Get-Attr -obj $params -name ServiceName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:StorageAccountName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StorageAccountName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $StorageAccountName = Get-Attr -obj $params -name StorageAccountName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Credential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ExtensionContainerName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ExtensionContainerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ExtensionContainerName = Get-Attr -obj $params -name ExtensionContainerName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ExtensionFileList,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ExtensionFileList;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ExtensionFileList = Get-Attr -obj $params -name ExtensionFileList -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ExtensionScriptName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ExtensionScriptName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ExtensionScriptName = Get-Attr -obj $params -name ExtensionScriptName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InstanceSize,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstanceSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstanceSize = Get-Attr -obj $params -name InstanceSize -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Linux,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Linux;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Linux = Get-Attr -obj $params -name Linux -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Windows,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Windows;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Windows = Get-Attr -obj $params -name Windows -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

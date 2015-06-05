@@ -26,24 +26,16 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:AutoAdminCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AutoAdminCredential_username = Get-Attr -obj $params -name AutoAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:AutoAdminCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AutoAdminCredential_password = Get-Attr -obj $params -name AutoAdminCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($AutoAdminCredential_username)
 {
 $AutoAdminCredential_securepassword = $AutoAdminCredential_password | ConvertTo-SecureString -asPlainText -Force

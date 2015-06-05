@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xAzureSqlDatabaseServerFirewallRule
+module: win_xazuresqldatabaseserverfirewallrule
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   EndIPAddress:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   RuleName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ServerName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   StartIPAddress:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AzurePublishSettingsFile:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AzureSubscriptionName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
@@ -101,26 +79,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

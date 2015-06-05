@@ -24,45 +24,32 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xExchExchangeServer
+module: win_xexchexchangeserver
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Credential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Identity:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AllowServiceRestart:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   CustomerFeedbackEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DomainController:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InternetWebProxy:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MonitoringGroup:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProductKey:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   WorkloadManagementPolicy:
     description:
@@ -131,26 +100,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

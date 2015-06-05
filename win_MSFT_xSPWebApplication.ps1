@@ -26,64 +26,36 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ApplicationPool,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ApplicationPool;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ApplicationPool = Get-Attr -obj $params -name ApplicationPool -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ApplicationPoolAccount,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ApplicationPoolAccount;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ApplicationPoolAccount = Get-Attr -obj $params -name ApplicationPoolAccount -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:InstallAccount_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $InstallAccount_password = Get-Attr -obj $params -name InstallAccount_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Url,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Url;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Url = Get-Attr -obj $params -name Url -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AllowAnonymous,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowAnonymous;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowAnonymous = Get-Attr -obj $params -name AllowAnonymous -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AuthenticationMethod,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AuthenticationMethod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AuthenticationMethod = Get-Attr -obj $params -name AuthenticationMethod -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DatabaseName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DatabaseServer,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseServer = Get-Attr -obj $params -name DatabaseServer -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:HostHeader,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HostHeader;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HostHeader = Get-Attr -obj $params -name HostHeader -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Path,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Path = Get-Attr -obj $params -name Path -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Port,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Port;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Port = Get-Attr -obj $params -name Port -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($AuthenticationMethod)
 {
     If (('Kerberos','NTLM') -contains $AuthenticationMethod ) {

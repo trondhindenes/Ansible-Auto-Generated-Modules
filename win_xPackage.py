@@ -24,45 +24,32 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xPackage
+module: win_xpackage
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Path:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ProductId:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Arguments:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Credential_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Credential_password:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Ensure:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   FileHash:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   HashAlgorithm:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstalledCheckRegKey:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstalledCheckRegValueData:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstalledCheckRegValueName:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   LogPath:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ReturnCode:
     description:
@@ -171,18 +128,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   RunAsCredential_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RunAsCredential_password:
     description:
@@ -191,18 +142,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ServerCertificateValidationCallback:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SignerSubject:
     description:
@@ -211,9 +156,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   SignerThumbprint:
     description:
       - 
@@ -221,26 +163,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

@@ -26,40 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SCSPFAdminCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCSPFAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SCSPFAdminCredential_username = Get-Attr -obj $params -name SCSPFAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SCSPFAdminCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCSPFAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SCSPFAdminCredential_password = Get-Attr -obj $params -name SCSPFAdminCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ServerName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ServerName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ServerName = Get-Attr -obj $params -name ServerName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SettingType,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SettingType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SettingType = Get-Attr -obj $params -name SettingType -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Value,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Value;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Value = Get-Attr -obj $params -name Value -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($SettingType)
 {
     If (('DatabaseConnectionString','EndPointConnectionString') -contains $SettingType ) {

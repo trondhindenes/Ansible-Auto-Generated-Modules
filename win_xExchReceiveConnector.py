@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xExchReceiveConnector
+module: win_xexchreceiveconnector
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Credential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Identity:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdvertiseClientSettings:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AuthMechanism:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Banner:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   BareLinefeedRejectionEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   BinaryMimeEnabled:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Bindings:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ChunkingEnabled:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Comment:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ConnectionInactivityTimeout:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ConnectionTimeout:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DefaultDomain:
     description:
@@ -181,18 +135,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DeliveryStatusNotificationEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DomainController:
     description:
@@ -201,18 +149,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DomainSecureEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   EightBitMimeEnabled:
     description:
@@ -221,18 +163,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   EnableAuthGSSAPI:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Enabled:
     description:
@@ -241,18 +177,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   EnhancedStatusCodesEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ExtendedProtectionPolicy:
     description:
@@ -261,18 +191,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Fqdn:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   LongAddressesEnabled:
     description:
@@ -281,18 +205,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MaxAcknowledgementDelay:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MaxHeaderSize:
     description:
@@ -301,18 +219,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MaxHopCount:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MaxInboundConnection:
     description:
@@ -321,18 +233,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MaxInboundConnectionPercentagePerSource:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MaxInboundConnectionPerSource:
     description:
@@ -341,18 +247,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MaxLocalHopCount:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MaxLogonFailures:
     description:
@@ -361,18 +261,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MaxMessageSize:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MaxProtocolErrors:
     description:
@@ -381,18 +275,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MaxRecipientsPerMessage:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MessageRateLimit:
     description:
@@ -401,18 +289,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MessageRateSource:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   OrarEnabled:
     description:
@@ -421,18 +303,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   PermissionGroups:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   PipeliningEnabled:
     description:
@@ -441,18 +317,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProtocolLoggingLevel:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RemoteIPRanges:
     description:
@@ -461,18 +331,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   RequireEHLODomain:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RequireTLS:
     description:
@@ -481,18 +345,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ServiceDiscoveryFqdn:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SizeEnabled:
     description:
@@ -501,18 +359,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SuppressXAnonymousTls:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   TarpitInterval:
     description:
@@ -521,18 +373,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   TlsCertificateName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   TlsDomainCapabilities:
     description:
@@ -541,18 +387,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   TransportRole:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Usage:
     description:
@@ -561,26 +401,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

@@ -26,34 +26,20 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Account,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Account;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Account = Get-Attr -obj $params -name Account -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:KeyValueName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:KeyValueName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $KeyValueName = Get-Attr -obj $params -name KeyValueName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Data,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Data;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Data = Get-Attr -obj $params -name Data -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Type,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Type;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Type = Get-Attr -obj $params -name Type -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

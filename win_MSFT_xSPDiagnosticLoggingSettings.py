@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_MSFT_xSPDiagnosticLoggingSettings
+module: win_msft_xspdiagnosticloggingsettings
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   InstallAccount_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstallAccount_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   LogPath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   LogSpaceInGB:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AppAnalyticsAutomaticUploadEnabled:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   CustomerExperienceImprovementProgramEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DaysToKeepLogs:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DownloadErrorReportingUpdatesEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ErrorReportingAutomaticUploadEnabled:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ErrorReportingEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   EventLogFloodProtectionEnabled:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   EventLogFloodProtectionNotifyInterval:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   EventLogFloodProtectionQuietPeriod:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   EventLogFloodProtectionThreshold:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   EventLogFloodProtectionTriggerPeriod:
     description:
@@ -181,18 +135,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   LogCutInterval:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   LogMaxDiskSpaceUsageEnabled:
     description:
@@ -201,18 +149,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ScriptErrorReportingDelay:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ScriptErrorReportingEnabled:
     description:
@@ -221,9 +163,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   ScriptErrorReportingRequireAuth:
     description:
       - 
@@ -231,26 +170,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

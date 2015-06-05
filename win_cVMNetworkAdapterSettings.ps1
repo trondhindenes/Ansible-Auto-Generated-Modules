@@ -26,70 +26,38 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ManagementOS,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ManagementOS;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ManagementOS = Get-Attr -obj $params -name ManagementOS -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SwitchName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SwitchName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SwitchName = Get-Attr -obj $params -name SwitchName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AllowTeaming,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowTeaming;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowTeaming = Get-Attr -obj $params -name AllowTeaming -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DhcpGuard,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DhcpGuard;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DhcpGuard = Get-Attr -obj $params -name DhcpGuard -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IeeePriorityTag,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IeeePriorityTag;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IeeePriorityTag = Get-Attr -obj $params -name IeeePriorityTag -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MacAddressSpoofing,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MacAddressSpoofing;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MacAddressSpoofing = Get-Attr -obj $params -name MacAddressSpoofing -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MaximumBandwidth,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MaximumBandwidth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MaximumBandwidth = Get-Attr -obj $params -name MaximumBandwidth -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MinimumBandwidthAbsolute,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MinimumBandwidthAbsolute;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MinimumBandwidthAbsolute = Get-Attr -obj $params -name MinimumBandwidthAbsolute -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MinimumBandwidthWeight,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MinimumBandwidthWeight;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MinimumBandwidthWeight = Get-Attr -obj $params -name MinimumBandwidthWeight -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:PortMirroring,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:PortMirroring;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $PortMirroring = Get-Attr -obj $params -name PortMirroring -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RouterGuard,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RouterGuard;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RouterGuard = Get-Attr -obj $params -name RouterGuard -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:VMName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:VMName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $VMName = Get-Attr -obj $params -name VMName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:VmqWeight,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:VmqWeight;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $VmqWeight = Get-Attr -obj $params -name VmqWeight -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($AllowTeaming)
 {
     If (('Off','On') -contains $AllowTeaming ) {

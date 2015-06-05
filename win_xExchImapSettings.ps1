@@ -26,36 +26,22 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Server,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Server;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Server = Get-Attr -obj $params -name Server -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AllowServiceRestart,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DomainController,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:LoginType,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LoginType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $LoginType = Get-Attr -obj $params -name LoginType -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($LoginType)
 {
     If (('PlainTextAuthentication','PlainTextLogin','SecureLogin') -contains $LoginType ) {

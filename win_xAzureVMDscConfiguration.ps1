@@ -26,38 +26,22 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ConfigurationPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ConfigurationPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ConfigurationPath = Get-Attr -obj $params -name ConfigurationPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:StorageAccountName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StorageAccountName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $StorageAccountName = Get-Attr -obj $params -name StorageAccountName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AzurePublishSettingsPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AzurePublishSettingsPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AzurePublishSettingsPath = Get-Attr -obj $params -name AzurePublishSettingsPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AzureSubscriptionName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AzureSubscriptionName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AzureSubscriptionName = Get-Attr -obj $params -name AzureSubscriptionName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ContainerName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ContainerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ContainerName = Get-Attr -obj $params -name ContainerName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

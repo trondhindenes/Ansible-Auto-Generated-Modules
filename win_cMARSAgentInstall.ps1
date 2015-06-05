@@ -26,26 +26,16 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:SetupPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupPath = Get-Attr -obj $params -name SetupPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:EnableWindowsUpdate,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:EnableWindowsUpdate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $EnableWindowsUpdate = Get-Attr -obj $params -name EnableWindowsUpdate -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 $DscResourceName = "cMARSAgentInstall"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool

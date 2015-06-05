@@ -26,98 +26,52 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Category,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Category;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Category = Get-Attr -obj $params -name Category -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ACBehavior,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ACBehavior;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ACBehavior = Get-Attr -obj $params -name ACBehavior -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoOnFriday,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoOnFriday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoOnFriday = Get-Attr -obj $params -name AutoOnFriday -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoOnMonday,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoOnMonday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoOnMonday = Get-Attr -obj $params -name AutoOnMonday -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoOnSaturday,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoOnSaturday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoOnSaturday = Get-Attr -obj $params -name AutoOnSaturday -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoOnSunday,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoOnSunday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoOnSunday = Get-Attr -obj $params -name AutoOnSunday -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoOnThursday,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoOnThursday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoOnThursday = Get-Attr -obj $params -name AutoOnThursday -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoOnTime,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoOnTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoOnTime = Get-Attr -obj $params -name AutoOnTime -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoOnTuesday,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoOnTuesday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoOnTuesday = Get-Attr -obj $params -name AutoOnTuesday -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoOnWednesday,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoOnWednesday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoOnWednesday = Get-Attr -obj $params -name AutoOnWednesday -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:BatterySliceChargeConfiguration,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:BatterySliceChargeConfiguration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $BatterySliceChargeConfiguration = Get-Attr -obj $params -name BatterySliceChargeConfiguration -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:BlockSleepS3State,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:BlockSleepS3State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $BlockSleepS3State = Get-Attr -obj $params -name BlockSleepS3State -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ControlWLANRadio,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ControlWLANRadio;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ControlWLANRadio = Get-Attr -obj $params -name ControlWLANRadio -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ControlWWANRadio,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ControlWWANRadio;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ControlWWANRadio = Get-Attr -obj $params -name ControlWWANRadio -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DeepSleepControl,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DeepSleepControl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DeepSleepControl = Get-Attr -obj $params -name DeepSleepControl -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:FanControlOverride,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FanControlOverride;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $FanControlOverride = Get-Attr -obj $params -name FanControlOverride -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:FanSpeedControl,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FanSpeedControl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $FanSpeedControl = Get-Attr -obj $params -name FanSpeedControl -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IntelSmartConnect,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IntelSmartConnect;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IntelSmartConnect = Get-Attr -obj $params -name IntelSmartConnect -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:PrimaryBatteryChargeConfiguration,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:PrimaryBatteryChargeConfiguration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $PrimaryBatteryChargeConfiguration = Get-Attr -obj $params -name PrimaryBatteryChargeConfiguration -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:USBWakesupport,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:USBWakesupport;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $USBWakesupport = Get-Attr -obj $params -name USBWakesupport -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WakeonLANorWLAN,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WakeonLANorWLAN;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WakeonLANorWLAN = Get-Attr -obj $params -name WakeonLANorWLAN -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($ACBehavior)
 {
     If (('LastPowerState','PowerOff','PowerOn') -contains $ACBehavior ) {

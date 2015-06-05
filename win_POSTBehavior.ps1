@@ -26,54 +26,30 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Category,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Category;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Category = Get-Attr -obj $params -name Category -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AdapterWarnings,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdapterWarnings;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdapterWarnings = Get-Attr -obj $params -name AdapterWarnings -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Fastboot,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Fastboot;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Fastboot = Get-Attr -obj $params -name Fastboot -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:FnKeyEmulation,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FnKeyEmulation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $FnKeyEmulation = Get-Attr -obj $params -name FnKeyEmulation -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:KeyboardErrors,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:KeyboardErrors;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $KeyboardErrors = Get-Attr -obj $params -name KeyboardErrors -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Keypad,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Keypad;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Keypad = Get-Attr -obj $params -name Keypad -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MEBxHotKey,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MEBxHotKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MEBxHotKey = Get-Attr -obj $params -name MEBxHotKey -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MouseTouchpad,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MouseTouchpad;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MouseTouchpad = Get-Attr -obj $params -name MouseTouchpad -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Numlock,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Numlock;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Numlock = Get-Attr -obj $params -name Numlock -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:POSTHotKeys,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:POSTHotKeys;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $POSTHotKeys = Get-Attr -obj $params -name POSTHotKeys -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($AdapterWarnings)
 {
     If (('Disabled','Enabled') -contains $AdapterWarnings ) {

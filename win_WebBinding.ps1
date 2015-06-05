@@ -26,42 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:IPAddress,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $IPAddress = Get-Attr -obj $params -name IPAddress -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Port,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Port;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Port = Get-Attr -obj $params -name Port -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Protocol,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Protocol;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Protocol = Get-Attr -obj $params -name Protocol -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:WebsiteName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WebsiteName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $WebsiteName = Get-Attr -obj $params -name WebsiteName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:CertificateStoreName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CertificateStoreName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CertificateStoreName = Get-Attr -obj $params -name CertificateStoreName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:CertificateThumbprint,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CertificateThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CertificateThumbprint = Get-Attr -obj $params -name CertificateThumbprint -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:HostName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HostName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HostName = Get-Attr -obj $params -name HostName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Protocol)
 {
     If (('http','https') -contains $Protocol ) {

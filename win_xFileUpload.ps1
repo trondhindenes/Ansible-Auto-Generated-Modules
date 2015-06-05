@@ -26,32 +26,20 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:destinationPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:destinationPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $destinationPath = Get-Attr -obj $params -name destinationPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:sourcePath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:sourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $sourcePath = Get-Attr -obj $params -name sourcePath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:credential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $credential_username = Get-Attr -obj $params -name credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:credential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $credential_password = Get-Attr -obj $params -name credential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:certificateThumbprint,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:certificateThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $certificateThumbprint = Get-Attr -obj $params -name certificateThumbprint -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($credential_username)
 {
 $credential_securepassword = $credential_password | ConvertTo-SecureString -asPlainText -Force

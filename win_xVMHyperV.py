@@ -24,35 +24,25 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xVMHyperV
+module: win_xvmhyperv
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   VhdPath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
@@ -61,18 +51,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Generation:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MACAddress:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MaximumMemory:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MinimumMemory:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Notes:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Path:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProcessorCount:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RestartIfNeeded:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   StartupMemory:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   State:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SwitchName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   WaitForIP:
     description:
@@ -181,26 +135,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

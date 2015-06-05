@@ -26,18 +26,12 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:LoginMode,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LoginMode;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $LoginMode = Get-Attr -obj $params -name LoginMode -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($LoginMode)
 {
     If (('Mixed','Windows') -contains $LoginMode ) {

@@ -26,54 +26,30 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:FromLine,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FromLine;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $FromLine = Get-Attr -obj $params -name FromLine -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SMTPServer,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SMTPServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SMTPServer = Get-Attr -obj $params -name SMTPServer -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ToLine,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ToLine;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ToLine = Get-Attr -obj $params -name ToLine -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:BccLine,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:BccLine;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $BccLine = Get-Attr -obj $params -name BccLine -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:CcLine,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CcLine;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CcLine = Get-Attr -obj $params -name CcLine -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Message,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Message;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Message = Get-Attr -obj $params -name Message -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ReplyToLine,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ReplyToLine;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ReplyToLine = Get-Attr -obj $params -name ReplyToLine -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Subject,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Subject;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Subject = Get-Attr -obj $params -name Subject -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

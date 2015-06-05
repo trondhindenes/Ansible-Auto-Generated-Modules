@@ -26,38 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Credential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DomainName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DomainName = Get-Attr -obj $params -name DomainName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UnjoinCredential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UnjoinCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UnjoinCredential_username = Get-Attr -obj $params -name UnjoinCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:UnjoinCredential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UnjoinCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UnjoinCredential_password = Get-Attr -obj $params -name UnjoinCredential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WorkGroupName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WorkGroupName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WorkGroupName = Get-Attr -obj $params -name WorkGroupName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($Credential_username)
 {
 $Credential_securepassword = $Credential_password | ConvertTo-SecureString -asPlainText -Force

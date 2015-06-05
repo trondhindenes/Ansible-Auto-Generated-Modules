@@ -24,45 +24,32 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xDhcpServerReservation
+module: win_xdhcpserverreservation
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ClientMACAddress:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   IPAddress:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ScopeID:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AddressFamily:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Ensure:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
@@ -91,26 +72,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

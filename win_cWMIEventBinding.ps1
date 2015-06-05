@@ -26,42 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Consumer,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Consumer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Consumer = Get-Attr -obj $params -name Consumer -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ConsumerType,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ConsumerType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ConsumerType = Get-Attr -obj $params -name ConsumerType -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Filter,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Filter;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Filter = Get-Attr -obj $params -name Filter -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DeliveryQoS,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DeliveryQoS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DeliveryQoS = Get-Attr -obj $params -name DeliveryQoS -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MaintainSecurityContext,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MaintainSecurityContext;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MaintainSecurityContext = Get-Attr -obj $params -name MaintainSecurityContext -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SlowDownProviders,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SlowDownProviders;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SlowDownProviders = Get-Attr -obj $params -name SlowDownProviders -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($ConsumerType)
 {
     If (('CommandLine','EventLog','LogFile','Script','SMTP') -contains $ConsumerType ) {

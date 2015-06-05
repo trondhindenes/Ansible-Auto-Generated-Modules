@@ -26,64 +26,36 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Identity,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AdfsAuthentication,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdfsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdfsAuthentication = Get-Attr -obj $params -name AdfsAuthentication -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AllowServiceRestart,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:BasicAuthentication,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:BasicAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $BasicAuthentication = Get-Attr -obj $params -name BasicAuthentication -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DigestAuthentication,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DigestAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DigestAuthentication = Get-Attr -obj $params -name DigestAuthentication -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DomainController,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ExternalAuthenticationMethods,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ExternalAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ExternalAuthenticationMethods = Get-Attr -obj $params -name ExternalAuthenticationMethods -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ExternalUrl,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ExternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ExternalUrl = Get-Attr -obj $params -name ExternalUrl -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:FormsAuthentication,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FormsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $FormsAuthentication = Get-Attr -obj $params -name FormsAuthentication -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InternalUrl,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InternalUrl = Get-Attr -obj $params -name InternalUrl -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WindowsAuthentication,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WindowsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WindowsAuthentication = Get-Attr -obj $params -name WindowsAuthentication -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($Credential_username)
 {
 $Credential_securepassword = $Credential_password | ConvertTo-SecureString -asPlainText -Force

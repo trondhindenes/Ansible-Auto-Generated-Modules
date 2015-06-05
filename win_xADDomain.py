@@ -24,65 +24,46 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xADDomain
+module: win_xaddomain
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   DomainAdministratorCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DomainAdministratorCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DomainName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SafemodeAdministratorPassword_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SafemodeAdministratorPassword_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DatabasePath:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DnsDelegationCredential_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DnsDelegationCredential_password:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DomainNetbiosName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   LogPath:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ParentDomainName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SysvolPath:
     description:
@@ -151,26 +114,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

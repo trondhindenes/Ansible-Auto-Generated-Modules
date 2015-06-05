@@ -24,35 +24,25 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xDnsServerZoneTransfer
+module: win_xdnsserverzonetransfer
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Type:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SecondaryServer:
     description:
@@ -61,26 +51,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

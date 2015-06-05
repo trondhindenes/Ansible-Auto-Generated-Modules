@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xAzureVMDscExtension
+module: win_xazurevmdscextension
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ConfigurationArchive:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ServiceName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   StorageAccountName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   VMName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Configuration:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ConfigurationArgument:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ConfigurationDataPath:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ContainerName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Force:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ReferenceName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   StorageEndpointSuffix:
     description:
@@ -141,9 +107,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   Version:
     description:
       - 
@@ -151,26 +114,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

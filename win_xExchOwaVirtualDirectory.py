@@ -24,45 +24,32 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xExchOwaVirtualDirectory
+module: win_xexchowavirtualdirectory
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Credential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Identity:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdfsAuthentication:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AllowServiceRestart:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   BasicAuthentication:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DigestAuthentication:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DomainController:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ExternalAuthenticationMethods:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ExternalUrl:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   FormsAuthentication:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstantMessagingCertificateThumbprint:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstantMessagingEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstantMessagingServerName:
     description:
@@ -171,18 +128,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstantMessagingType:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InternalUrl:
     description:
@@ -191,9 +142,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WindowsAuthentication:
     description:
       - 
@@ -201,26 +149,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

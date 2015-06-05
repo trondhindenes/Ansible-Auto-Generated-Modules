@@ -24,25 +24,18 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xComputer
+module: win_xcomputer
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_username:
     description:
@@ -51,18 +44,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Credential_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DomainName:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   UnjoinCredential_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UnjoinCredential_password:
     description:
@@ -91,9 +72,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WorkGroupName:
     description:
       - 
@@ -101,26 +79,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

@@ -26,48 +26,28 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Arguments,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Arguments;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Arguments = Get-Attr -obj $params -name Arguments -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Path,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Credential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:StandardErrorPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StandardErrorPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $StandardErrorPath = Get-Attr -obj $params -name StandardErrorPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:StandardInputPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StandardInputPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $StandardInputPath = Get-Attr -obj $params -name StandardInputPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:StandardOutputPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StandardOutputPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $StandardOutputPath = Get-Attr -obj $params -name StandardOutputPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WorkingDirectory,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WorkingDirectory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WorkingDirectory = Get-Attr -obj $params -name WorkingDirectory -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

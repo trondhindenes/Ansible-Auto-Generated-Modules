@@ -26,74 +26,40 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:VhdPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:VhdPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $VhdPath = Get-Attr -obj $params -name VhdPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Generation,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Generation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Generation = Get-Attr -obj $params -name Generation -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MACAddress,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MACAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MACAddress = Get-Attr -obj $params -name MACAddress -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MaximumMemory,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MaximumMemory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MaximumMemory = Get-Attr -obj $params -name MaximumMemory -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MinimumMemory,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MinimumMemory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MinimumMemory = Get-Attr -obj $params -name MinimumMemory -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Notes,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Notes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Notes = Get-Attr -obj $params -name Notes -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Path,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Path = Get-Attr -obj $params -name Path -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ProcessorCount,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProcessorCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ProcessorCount = Get-Attr -obj $params -name ProcessorCount -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RestartIfNeeded,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RestartIfNeeded;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RestartIfNeeded = Get-Attr -obj $params -name RestartIfNeeded -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:StartupMemory,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StartupMemory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $StartupMemory = Get-Attr -obj $params -name StartupMemory -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:State,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SwitchName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SwitchName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SwitchName = Get-Attr -obj $params -name SwitchName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WaitForIP,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WaitForIP;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WaitForIP = Get-Attr -obj $params -name WaitForIP -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

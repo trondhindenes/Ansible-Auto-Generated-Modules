@@ -26,50 +26,28 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:EventID,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:EventID;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $EventID = Get-Attr -obj $params -name EventID -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Category,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Category;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Category = Get-Attr -obj $params -name Category -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:EventType,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:EventType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $EventType = Get-Attr -obj $params -name EventType -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InsertionStringTemplates,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InsertionStringTemplates;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InsertionStringTemplates = Get-Attr -obj $params -name InsertionStringTemplates -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:NumberOfInsertionStrings,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:NumberOfInsertionStrings;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $NumberOfInsertionStrings = Get-Attr -obj $params -name NumberOfInsertionStrings -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SourceName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourceName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SourceName = Get-Attr -obj $params -name SourceName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UNCServerName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UNCServerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UNCServerName = Get-Attr -obj $params -name UNCServerName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

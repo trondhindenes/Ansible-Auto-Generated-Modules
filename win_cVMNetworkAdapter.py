@@ -24,45 +24,32 @@
 
 DOCUMENTATION = '''
 ---
-module: win_cVMNetworkAdapter
+module: win_cvmnetworkadapter
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ManagementOS:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SwitchName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DynamicMacAddress:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Ensure:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   StaticMacAddress:
     description:
@@ -91,9 +72,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   VMName:
     description:
       - 
@@ -101,26 +79,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

@@ -26,32 +26,20 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ProxyUserName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProxyUserName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ProxyUserName = Get-Attr -obj $params -name ProxyUserName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ProxyUserPassword_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProxyUserPassword_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ProxyUserPassword_username = Get-Attr -obj $params -name ProxyUserPassword_username -failifempty $True -resultobj $result
-#ATTRIBUTE:ProxyUserPassword_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProxyUserPassword_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ProxyUserPassword_password = Get-Attr -obj $params -name ProxyUserPassword_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Force,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Force;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Force = Get-Attr -obj $params -name Force -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

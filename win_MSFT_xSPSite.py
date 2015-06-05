@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_MSFT_xSPSite
+module: win_msft_xspsite
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   InstallAccount_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstallAccount_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   OwnerAlias:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Url:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   CompatibilityLevel:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ContentDatabase:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Description:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   HostHeaderWebApplication:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Language:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Name:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   OwnerEmail:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   QuotaTemplate:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SecondaryEmail:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SecondaryOwnerAlias:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Template:
     description:
@@ -181,26 +135,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

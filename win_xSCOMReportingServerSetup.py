@@ -24,95 +24,67 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSCOMReportingServerSetup
+module: win_xscomreportingserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   DataReader_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DataReader_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ManagementServer:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SRSInstance:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   EnableErrorReporting:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstallPath:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SendCEIPReports:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SendODRReports:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SourceFolder:
     description:
@@ -161,9 +121,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   UseMicrosoftUpdate:
     description:
       - 
@@ -171,26 +128,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

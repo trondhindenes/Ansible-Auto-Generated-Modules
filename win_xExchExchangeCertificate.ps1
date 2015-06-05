@@ -26,50 +26,30 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Thumbprint,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Thumbprint;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Thumbprint = Get-Attr -obj $params -name Thumbprint -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AllowExtraServices,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowExtraServices;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowExtraServices = Get-Attr -obj $params -name AllowExtraServices -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:CertCreds_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CertCreds_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CertCreds_username = Get-Attr -obj $params -name CertCreds_username -failifempty $False -resultobj $result
-#ATTRIBUTE:CertCreds_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CertCreds_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CertCreds_password = Get-Attr -obj $params -name CertCreds_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:CertFilePath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CertFilePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CertFilePath = Get-Attr -obj $params -name CertFilePath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DomainController,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Services,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Services;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Services = Get-Attr -obj $params -name Services -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

@@ -24,75 +24,53 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSCVMMManagementServerSetup
+module: win_xscvmmmanagementserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SqlInstanceName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SqlMachineName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   BitsTcpPort:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ClusterManagementServer:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   CompanyName:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   CreateNewLibraryShare:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   CreateNewSqlDatabase:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   FirstManagementServer:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ForceHAVMMUninstall:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   IndigoHTTPPort:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   IndigoHTTPSPort:
     description:
@@ -181,18 +135,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   IndigoNETTCPPort:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   IndigoTcpPort:
     description:
@@ -201,18 +149,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   LibraryShareDescription:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   LibraryShareName:
     description:
@@ -221,18 +163,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   LibrarySharePath:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MUOptIn:
     description:
@@ -241,18 +177,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProductKey:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ProgramFiles:
     description:
@@ -261,18 +191,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   RetainSqlDatabase:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SourceFolder:
     description:
@@ -281,18 +205,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SqlDatabaseName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQMOptIn:
     description:
@@ -301,18 +219,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   TopContainerName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UserName:
     description:
@@ -321,18 +233,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   VmmServerName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   vmmService_username:
     description:
@@ -341,18 +247,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   vmmService_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   VMMStaticIPAddress:
     description:
@@ -361,9 +261,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WSManTcpPort:
     description:
       - 
@@ -371,26 +268,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

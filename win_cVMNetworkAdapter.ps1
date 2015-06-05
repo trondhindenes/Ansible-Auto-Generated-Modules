@@ -26,42 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ManagementOS,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ManagementOS;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ManagementOS = Get-Attr -obj $params -name ManagementOS -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SwitchName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SwitchName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SwitchName = Get-Attr -obj $params -name SwitchName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DynamicMacAddress,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DynamicMacAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DynamicMacAddress = Get-Attr -obj $params -name DynamicMacAddress -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:StaticMacAddress,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StaticMacAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $StaticMacAddress = Get-Attr -obj $params -name StaticMacAddress -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:VMName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:VMName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $VMName = Get-Attr -obj $params -name VMName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

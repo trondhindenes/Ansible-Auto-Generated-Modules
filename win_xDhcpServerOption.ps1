@@ -26,38 +26,22 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DnsServerIPAddress,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DnsServerIPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DnsServerIPAddress = Get-Attr -obj $params -name DnsServerIPAddress -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ScopeID,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ScopeID;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ScopeID = Get-Attr -obj $params -name ScopeID -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AddressFamily,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AddressFamily;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AddressFamily = Get-Attr -obj $params -name AddressFamily -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DnsDomain,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DnsDomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DnsDomain = Get-Attr -obj $params -name DnsDomain -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Router,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Router;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Router = Get-Attr -obj $params -name Router -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($AddressFamily)
 {
     If (('IPv4') -contains $AddressFamily ) {

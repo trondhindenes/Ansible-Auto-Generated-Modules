@@ -26,38 +26,22 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ConfigSection,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ConfigSection;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ConfigSection = Get-Attr -obj $params -name ConfigSection -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Key,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Key;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Key = Get-Attr -obj $params -name Key -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:WebsitePath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WebsitePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $WebsitePath = Get-Attr -obj $params -name WebsitePath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IsAttribute,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IsAttribute;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IsAttribute = Get-Attr -obj $params -name IsAttribute -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Value,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Value;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Value = Get-Attr -obj $params -name Value -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($ConfigSection)
 {
     If (('AppSettings') -contains $ConfigSection ) {

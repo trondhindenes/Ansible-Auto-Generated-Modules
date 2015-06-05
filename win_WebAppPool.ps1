@@ -26,208 +26,108 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:autoShutdownExe,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:autoShutdownExe;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $autoShutdownExe = Get-Attr -obj $params -name autoShutdownExe -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:autoShutdownParams,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:autoShutdownParams;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $autoShutdownParams = Get-Attr -obj $params -name autoShutdownParams -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:autoStart,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:autoStart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $autoStart = Get-Attr -obj $params -name autoStart -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:CLRConfigFile,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CLRConfigFile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CLRConfigFile = Get-Attr -obj $params -name CLRConfigFile -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:cpuAction,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:cpuAction;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $cpuAction = Get-Attr -obj $params -name cpuAction -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:cpuLimit,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:cpuLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $cpuLimit = Get-Attr -obj $params -name cpuLimit -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:cpuResetInterval,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:cpuResetInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $cpuResetInterval = Get-Attr -obj $params -name cpuResetInterval -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:cpuSmpAffinitized,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:cpuSmpAffinitized;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $cpuSmpAffinitized = Get-Attr -obj $params -name cpuSmpAffinitized -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:cpuSmpProcessorAffinityMask,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:cpuSmpProcessorAffinityMask;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $cpuSmpProcessorAffinityMask = Get-Attr -obj $params -name cpuSmpProcessorAffinityMask -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:cpuSmpProcessorAffinityMask2,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:cpuSmpProcessorAffinityMask2;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $cpuSmpProcessorAffinityMask2 = Get-Attr -obj $params -name cpuSmpProcessorAffinityMask2 -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:disallowOverlappingRotation,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:disallowOverlappingRotation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $disallowOverlappingRotation = Get-Attr -obj $params -name disallowOverlappingRotation -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:disallowRotationOnConfigChange,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:disallowRotationOnConfigChange;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $disallowRotationOnConfigChange = Get-Attr -obj $params -name disallowRotationOnConfigChange -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:enable32BitAppOnWin64,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:enable32BitAppOnWin64;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $enable32BitAppOnWin64 = Get-Attr -obj $params -name enable32BitAppOnWin64 -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:enableConfigurationOverride,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:enableConfigurationOverride;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $enableConfigurationOverride = Get-Attr -obj $params -name enableConfigurationOverride -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:identityType,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:identityType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $identityType = Get-Attr -obj $params -name identityType -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:idleTimeout,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:idleTimeout;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $idleTimeout = Get-Attr -obj $params -name idleTimeout -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:loadBalancerCapabilities,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:loadBalancerCapabilities;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $loadBalancerCapabilities = Get-Attr -obj $params -name loadBalancerCapabilities -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:loadUserProfile,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:loadUserProfile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $loadUserProfile = Get-Attr -obj $params -name loadUserProfile -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:logEventOnRecycle,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:logEventOnRecycle;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $logEventOnRecycle = Get-Attr -obj $params -name logEventOnRecycle -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:logonType,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:logonType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $logonType = Get-Attr -obj $params -name logonType -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:managedPipelineMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:managedPipelineMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $managedPipelineMode = Get-Attr -obj $params -name managedPipelineMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:managedRuntimeLoader,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:managedRuntimeLoader;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $managedRuntimeLoader = Get-Attr -obj $params -name managedRuntimeLoader -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:managedRuntimeVersion,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:managedRuntimeVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $managedRuntimeVersion = Get-Attr -obj $params -name managedRuntimeVersion -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:manualGroupMembership,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:manualGroupMembership;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $manualGroupMembership = Get-Attr -obj $params -name manualGroupMembership -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:maxProcesses,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:maxProcesses;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $maxProcesses = Get-Attr -obj $params -name maxProcesses -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:orphanActionExe,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:orphanActionExe;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $orphanActionExe = Get-Attr -obj $params -name orphanActionExe -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:orphanActionParams,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:orphanActionParams;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $orphanActionParams = Get-Attr -obj $params -name orphanActionParams -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:orphanWorkerProcess,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:orphanWorkerProcess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $orphanWorkerProcess = Get-Attr -obj $params -name orphanWorkerProcess -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:passAnonymousToken,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:passAnonymousToken;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $passAnonymousToken = Get-Attr -obj $params -name passAnonymousToken -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Password_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Password_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Password_username = Get-Attr -obj $params -name Password_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Password_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Password_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Password_password = Get-Attr -obj $params -name Password_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:pingingEnabled,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:pingingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $pingingEnabled = Get-Attr -obj $params -name pingingEnabled -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:pingInterval,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:pingInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $pingInterval = Get-Attr -obj $params -name pingInterval -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:pingResponseTime,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:pingResponseTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $pingResponseTime = Get-Attr -obj $params -name pingResponseTime -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:queueLength,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:queueLength;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $queueLength = Get-Attr -obj $params -name queueLength -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:rapidFailProtection,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:rapidFailProtection;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $rapidFailProtection = Get-Attr -obj $params -name rapidFailProtection -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:rapidFailProtectionInterval,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:rapidFailProtectionInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $rapidFailProtectionInterval = Get-Attr -obj $params -name rapidFailProtectionInterval -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:rapidFailProtectionMaxCrashes,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:rapidFailProtectionMaxCrashes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $rapidFailProtectionMaxCrashes = Get-Attr -obj $params -name rapidFailProtectionMaxCrashes -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:restartMemoryLimit,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:restartMemoryLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $restartMemoryLimit = Get-Attr -obj $params -name restartMemoryLimit -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:restartPrivateMemoryLimit,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:restartPrivateMemoryLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $restartPrivateMemoryLimit = Get-Attr -obj $params -name restartPrivateMemoryLimit -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:restartRequestsLimit,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:restartRequestsLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $restartRequestsLimit = Get-Attr -obj $params -name restartRequestsLimit -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:restartSchedule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:restartSchedule;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $restartSchedule = Get-Attr -obj $params -name restartSchedule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:restartTimeLimit,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:restartTimeLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $restartTimeLimit = Get-Attr -obj $params -name restartTimeLimit -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:shutdownTimeLimit,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:shutdownTimeLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $shutdownTimeLimit = Get-Attr -obj $params -name shutdownTimeLimit -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:startMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:startMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $startMode = Get-Attr -obj $params -name startMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:startupTimeLimit,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:startupTimeLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $startupTimeLimit = Get-Attr -obj $params -name startupTimeLimit -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:userName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:userName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $userName = Get-Attr -obj $params -name userName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($autoStart)
 {
     If (('false','true') -contains $autoStart ) {

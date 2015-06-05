@@ -26,42 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:LogLevel,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LogLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $LogLevel = Get-Attr -obj $params -name LogLevel -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:LogPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $LogPath = Get-Attr -obj $params -name LogPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:NoWindowsUpdateCheck,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:NoWindowsUpdateCheck;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $NoWindowsUpdateCheck = Get-Attr -obj $params -name NoWindowsUpdateCheck -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RemoveFilesOnDisable,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RemoveFilesOnDisable;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RemoveFilesOnDisable = Get-Attr -obj $params -name RemoveFilesOnDisable -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Source,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Source;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Source = Get-Attr -obj $params -name Source -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

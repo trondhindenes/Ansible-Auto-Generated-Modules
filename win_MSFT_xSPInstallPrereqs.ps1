@@ -26,66 +26,36 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:InstallerPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallerPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $InstallerPath = Get-Attr -obj $params -name InstallerPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AppFabric,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AppFabric;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AppFabric = Get-Attr -obj $params -name AppFabric -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IDFX,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IDFX;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IDFX = Get-Attr -obj $params -name IDFX -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IDFX11,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IDFX11;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IDFX11 = Get-Attr -obj $params -name IDFX11 -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:KB2671763,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:KB2671763;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $KB2671763 = Get-Attr -obj $params -name KB2671763 -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MSIPCClient,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MSIPCClient;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MSIPCClient = Get-Attr -obj $params -name MSIPCClient -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:NETFX,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:NETFX;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $NETFX = Get-Attr -obj $params -name NETFX -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:OnlineMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:OnlineMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $OnlineMode = Get-Attr -obj $params -name OnlineMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:PowerShell,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:PowerShell;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $PowerShell = Get-Attr -obj $params -name PowerShell -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SQLNCli,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SQLNCli;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SQLNCli = Get-Attr -obj $params -name SQLNCli -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Sync,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Sync;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Sync = Get-Attr -obj $params -name Sync -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WCFDataServices,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WCFDataServices;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WCFDataServices = Get-Attr -obj $params -name WCFDataServices -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WCFDataServices56,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WCFDataServices56;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WCFDataServices56 = Get-Attr -obj $params -name WCFDataServices56 -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 $DscResourceName = "MSFT_xSPInstallPrereqs"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool

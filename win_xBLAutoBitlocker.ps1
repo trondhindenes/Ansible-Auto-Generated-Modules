@@ -26,98 +26,54 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DriveType,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DriveType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DriveType = Get-Attr -obj $params -name DriveType -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:PrimaryProtector,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:PrimaryProtector;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $PrimaryProtector = Get-Attr -obj $params -name PrimaryProtector -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AdAccountOrGroup,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdAccountOrGroup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdAccountOrGroup = Get-Attr -obj $params -name AdAccountOrGroup -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AdAccountOrGroupProtector,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdAccountOrGroupProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdAccountOrGroupProtector = Get-Attr -obj $params -name AdAccountOrGroupProtector -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoUnlock,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoUnlock;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoUnlock = Get-Attr -obj $params -name AutoUnlock -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:EncryptionMethod,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:EncryptionMethod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $EncryptionMethod = Get-Attr -obj $params -name EncryptionMethod -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:HardwareEncryption,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HardwareEncryption;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HardwareEncryption = Get-Attr -obj $params -name HardwareEncryption -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MinDiskCapacityGB,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MinDiskCapacityGB;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MinDiskCapacityGB = Get-Attr -obj $params -name MinDiskCapacityGB -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Password_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Password_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Password_username = Get-Attr -obj $params -name Password_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Password_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Password_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Password_password = Get-Attr -obj $params -name Password_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:PasswordProtector,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:PasswordProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $PasswordProtector = Get-Attr -obj $params -name PasswordProtector -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Pin_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Pin_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Pin_username = Get-Attr -obj $params -name Pin_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Pin_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Pin_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Pin_password = Get-Attr -obj $params -name Pin_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RecoveryKeyPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RecoveryKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RecoveryKeyPath = Get-Attr -obj $params -name RecoveryKeyPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RecoveryKeyProtector,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RecoveryKeyProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RecoveryKeyProtector = Get-Attr -obj $params -name RecoveryKeyProtector -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RecoveryPasswordProtector,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RecoveryPasswordProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RecoveryPasswordProtector = Get-Attr -obj $params -name RecoveryPasswordProtector -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Service,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Service;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Service = Get-Attr -obj $params -name Service -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SkipHardwareTest,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SkipHardwareTest;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SkipHardwareTest = Get-Attr -obj $params -name SkipHardwareTest -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:StartupKeyPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StartupKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $StartupKeyPath = Get-Attr -obj $params -name StartupKeyPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:StartupKeyProtector,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:StartupKeyProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $StartupKeyProtector = Get-Attr -obj $params -name StartupKeyProtector -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:TpmProtector,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:TpmProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $TpmProtector = Get-Attr -obj $params -name TpmProtector -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsedSpaceOnly,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsedSpaceOnly;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsedSpaceOnly = Get-Attr -obj $params -name UsedSpaceOnly -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($DriveType)
 {
     If (('Fixed','Removable') -contains $DriveType ) {

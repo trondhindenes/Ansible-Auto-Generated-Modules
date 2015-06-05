@@ -26,52 +26,30 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ServerCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ServerCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ServerCredential_username = Get-Attr -obj $params -name ServerCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:ServerCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ServerCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ServerCredential_password = Get-Attr -obj $params -name ServerCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ServerName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ServerName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ServerName = Get-Attr -obj $params -name ServerName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AzurePublishSettingsFile,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AzurePublishSettingsFile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AzurePublishSettingsFile = Get-Attr -obj $params -name AzurePublishSettingsFile -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AzureSubscriptionName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AzureSubscriptionName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AzureSubscriptionName = Get-Attr -obj $params -name AzureSubscriptionName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Collation,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Collation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Collation = Get-Attr -obj $params -name Collation -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Edition,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Edition;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Edition = Get-Attr -obj $params -name Edition -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MaximumSizeInGB,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MaximumSizeInGB;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MaximumSizeInGB = Get-Attr -obj $params -name MaximumSizeInGB -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

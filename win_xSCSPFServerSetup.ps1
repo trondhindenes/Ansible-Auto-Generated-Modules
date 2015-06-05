@@ -26,104 +26,60 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DatabaseServer,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseServer = Get-Attr -obj $params -name DatabaseServer -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SetupCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SourcePath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AdminSecurityGroupUsers,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdminSecurityGroupUsers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdminSecurityGroupUsers = Get-Attr -obj $params -name AdminSecurityGroupUsers -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:CertificateName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CertificateName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CertificateName = Get-Attr -obj $params -name CertificateName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DatabaseName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DatabasePortNumber,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabasePortNumber;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabasePortNumber = Get-Attr -obj $params -name DatabasePortNumber -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ProviderSecurityGroupUsers,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProviderSecurityGroupUsers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ProviderSecurityGroupUsers = Get-Attr -obj $params -name ProviderSecurityGroupUsers -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SCAdmin_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCAdmin_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SCAdmin_username = Get-Attr -obj $params -name SCAdmin_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SCAdmin_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCAdmin_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SCAdmin_password = Get-Attr -obj $params -name SCAdmin_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SCProvider_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCProvider_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SCProvider_username = Get-Attr -obj $params -name SCProvider_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SCProvider_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCProvider_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SCProvider_password = Get-Attr -obj $params -name SCProvider_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SCUsage_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCUsage_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SCUsage_username = Get-Attr -obj $params -name SCUsage_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SCUsage_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCUsage_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SCUsage_password = Get-Attr -obj $params -name SCUsage_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SCVMM_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCVMM_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SCVMM_username = Get-Attr -obj $params -name SCVMM_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SCVMM_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCVMM_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SCVMM_password = Get-Attr -obj $params -name SCVMM_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SendCEIPReports,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SendCEIPReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SendCEIPReports = Get-Attr -obj $params -name SendCEIPReports -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SourceFolder,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SpecifyCertificate,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SpecifyCertificate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SpecifyCertificate = Get-Attr -obj $params -name SpecifyCertificate -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsageSecurityGroupUsers,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageSecurityGroupUsers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageSecurityGroupUsers = Get-Attr -obj $params -name UsageSecurityGroupUsers -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UseMicrosoftUpdate,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UseMicrosoftUpdate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UseMicrosoftUpdate = Get-Attr -obj $params -name UseMicrosoftUpdate -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:VMMSecurityGroupUsers,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:VMMSecurityGroupUsers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $VMMSecurityGroupUsers = Get-Attr -obj $params -name VMMSecurityGroupUsers -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WebSitePortNumber,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WebSitePortNumber;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WebSitePortNumber = Get-Attr -obj $params -name WebSitePortNumber -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

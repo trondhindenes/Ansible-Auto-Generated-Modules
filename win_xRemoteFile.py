@@ -24,35 +24,25 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xRemoteFile
+module: win_xremotefile
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   DestinationPath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Uri:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_username:
     description:
@@ -61,18 +51,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Credential_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Headers:
     description:
@@ -81,9 +65,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   UserAgent:
     description:
       - 
@@ -91,26 +72,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

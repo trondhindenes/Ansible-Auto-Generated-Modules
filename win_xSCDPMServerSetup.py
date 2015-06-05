@@ -24,135 +24,95 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSCDPMServerSetup
+module: win_xscdpmserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ReportingInstanceName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ReportingMachineCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ReportingMachineCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ReportingMachineName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   YukonInstanceName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   YukonMachineCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   YukonMachineCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   YukonMachineName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   CompanyName:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProductKey:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ProgramFiles:
     description:
@@ -181,18 +135,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SourceFolder:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UserName:
     description:
@@ -201,26 +149,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

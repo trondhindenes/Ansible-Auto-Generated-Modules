@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xExchDatabaseAvailabilityGroup
+module: win_xexchdatabaseavailabilitygroup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   AutoDagTotalNumberOfServers:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AlternateWitnessDirectory:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AlternateWitnessServer:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoDagAutoReseedEnabled:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoDagDatabaseCopiesPerDatabase:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoDagDatabaseCopiesPerVolume:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoDagDatabasesRootFolderPath:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoDagDiskReclaimerEnabled:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoDagTotalNumberOfDatabases:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoDagVolumesRootFolderPath:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DatabaseAvailabilityGroupIpAddresses:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DatacenterActivationMode:
     description:
@@ -181,18 +135,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DomainController:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ManualDagNetworkConfiguration:
     description:
@@ -201,18 +149,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   NetworkCompression:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   NetworkEncryption:
     description:
@@ -221,18 +163,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ReplayLagManagerEnabled:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ReplicationPort:
     description:
@@ -241,18 +177,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SkipDagValidation:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   WitnessDirectory:
     description:
@@ -261,9 +191,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WitnessServer:
     description:
       - 
@@ -271,26 +198,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

@@ -24,45 +24,32 @@
 
 DOCUMENTATION = '''
 ---
-module: win_cVMNetworkAdapterSettings
+module: win_cvmnetworkadaptersettings
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ManagementOS:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SwitchName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AllowTeaming:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DhcpGuard:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   IeeePriorityTag:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MacAddressSpoofing:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MaximumBandwidth:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MinimumBandwidthAbsolute:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MinimumBandwidthWeight:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   PortMirroring:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RouterGuard:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   VMName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   VmqWeight:
     description:
@@ -171,26 +128,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

@@ -26,32 +26,20 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Principal,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Principal;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Principal = Get-Attr -obj $params -name Principal -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SCOMAdminCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCOMAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SCOMAdminCredential_username = Get-Attr -obj $params -name SCOMAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SCOMAdminCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCOMAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SCOMAdminCredential_password = Get-Attr -obj $params -name SCOMAdminCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:UserRole,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UserRole;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $UserRole = Get-Attr -obj $params -name UserRole -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

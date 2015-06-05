@@ -26,48 +26,28 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Identity,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Credential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DomainVersion,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DomainVersion = Get-Attr -obj $params -name DomainVersion -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ExchangeDomains,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ExchangeDomains;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ExchangeDomains = Get-Attr -obj $params -name ExchangeDomains -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:OrganizationVersion,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:OrganizationVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $OrganizationVersion = Get-Attr -obj $params -name OrganizationVersion -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RetryCount,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RetryCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RetryCount = Get-Attr -obj $params -name RetryCount -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RetryIntervalSec,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RetryIntervalSec;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RetryIntervalSec = Get-Attr -obj $params -name RetryIntervalSec -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SchemaVersion,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SchemaVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SchemaVersion = Get-Attr -obj $params -name SchemaVersion -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($Credential_username)
 {
 $Credential_securepassword = $Credential_password | ConvertTo-SecureString -asPlainText -Force

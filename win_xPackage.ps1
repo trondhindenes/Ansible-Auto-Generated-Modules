@@ -26,86 +26,48 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Path,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ProductId,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProductId;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ProductId = Get-Attr -obj $params -name ProductId -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Arguments,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Arguments;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Arguments = Get-Attr -obj $params -name Arguments -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Credential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:FileHash,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FileHash;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $FileHash = Get-Attr -obj $params -name FileHash -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:HashAlgorithm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HashAlgorithm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HashAlgorithm = Get-Attr -obj $params -name HashAlgorithm -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InstalledCheckRegKey,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstalledCheckRegKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstalledCheckRegKey = Get-Attr -obj $params -name InstalledCheckRegKey -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InstalledCheckRegValueData,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstalledCheckRegValueData;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstalledCheckRegValueData = Get-Attr -obj $params -name InstalledCheckRegValueData -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InstalledCheckRegValueName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstalledCheckRegValueName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstalledCheckRegValueName = Get-Attr -obj $params -name InstalledCheckRegValueName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:LogPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $LogPath = Get-Attr -obj $params -name LogPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ReturnCode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ReturnCode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ReturnCode = Get-Attr -obj $params -name ReturnCode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RunAsCredential_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RunAsCredential_username = Get-Attr -obj $params -name RunAsCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:RunAsCredential_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RunAsCredential_password = Get-Attr -obj $params -name RunAsCredential_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ServerCertificateValidationCallback,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ServerCertificateValidationCallback;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ServerCertificateValidationCallback = Get-Attr -obj $params -name ServerCertificateValidationCallback -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SignerSubject,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SignerSubject;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SignerSubject = Get-Attr -obj $params -name SignerSubject -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SignerThumbprint,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SignerThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SignerThumbprint = Get-Attr -obj $params -name SignerThumbprint -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

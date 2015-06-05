@@ -24,135 +24,95 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSCOMManagementServerSetup
+module: win_xscommanagementserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   DataReader_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DataReader_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DataWriter_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DataWriter_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DwSqlServerInstance:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   FirstManagementServer:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ManagementGroupName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SqlServerInstance:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ActionAccount_username:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ActionAccount_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DASAccount_username:
     description:
@@ -181,18 +135,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DASAccount_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DatabaseName:
     description:
@@ -201,18 +149,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DatabaseSize:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DwDatabaseName:
     description:
@@ -221,18 +163,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DwDatabaseSize:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   EnableErrorReporting:
     description:
@@ -241,18 +177,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstallPath:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ManagementServicePort:
     description:
@@ -261,18 +191,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProductKey:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SendCEIPReports:
     description:
@@ -281,18 +205,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SendODRReports:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SourceFolder:
     description:
@@ -301,9 +219,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   UseMicrosoftUpdate:
     description:
       - 
@@ -311,26 +226,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

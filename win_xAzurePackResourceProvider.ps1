@@ -26,150 +26,84 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:AdminUri,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdminUri;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AdminUri = Get-Attr -obj $params -name AdminUri -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AuthenticationSite,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AuthenticationSite;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AuthenticationSite = Get-Attr -obj $params -name AuthenticationSite -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AzurePackAdminCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AzurePackAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AzurePackAdminCredential_username = Get-Attr -obj $params -name AzurePackAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:AzurePackAdminCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AzurePackAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $AzurePackAdminCredential_password = Get-Attr -obj $params -name AzurePackAdminCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AdminAuthenticationMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdminAuthenticationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdminAuthenticationMode = Get-Attr -obj $params -name AdminAuthenticationMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AdminAuthenticationUser_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdminAuthenticationUser_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdminAuthenticationUser_username = Get-Attr -obj $params -name AdminAuthenticationUser_username -failifempty $False -resultobj $result
-#ATTRIBUTE:AdminAuthenticationUser_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdminAuthenticationUser_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdminAuthenticationUser_password = Get-Attr -obj $params -name AdminAuthenticationUser_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AdminForwardingAddress,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdminForwardingAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdminForwardingAddress = Get-Attr -obj $params -name AdminForwardingAddress -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AllowAnonymousAccess,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowAnonymousAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowAnonymousAccess = Get-Attr -obj $params -name AllowAnonymousAccess -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AllowMultipleInstances,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowMultipleInstances;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowMultipleInstances = Get-Attr -obj $params -name AllowMultipleInstances -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DisplayName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DisplayName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DisplayName = Get-Attr -obj $params -name DisplayName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Enabled,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Enabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Enabled = Get-Attr -obj $params -name Enabled -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:HealthCheckAuthenticationMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HealthCheckAuthenticationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HealthCheckAuthenticationMode = Get-Attr -obj $params -name HealthCheckAuthenticationMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:HealthCheckAuthenticationUser_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HealthCheckAuthenticationUser_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HealthCheckAuthenticationUser_username = Get-Attr -obj $params -name HealthCheckAuthenticationUser_username -failifempty $False -resultobj $result
-#ATTRIBUTE:HealthCheckAuthenticationUser_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HealthCheckAuthenticationUser_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HealthCheckAuthenticationUser_password = Get-Attr -obj $params -name HealthCheckAuthenticationUser_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:HealthCheckForwardingAddress,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:HealthCheckForwardingAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HealthCheckForwardingAddress = Get-Attr -obj $params -name HealthCheckForwardingAddress -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InstanceDisplayName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstanceDisplayName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstanceDisplayName = Get-Attr -obj $params -name InstanceDisplayName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InstanceId,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstanceId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstanceId = Get-Attr -obj $params -name InstanceId -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MaxQuotaUpdateBatchSize,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MaxQuotaUpdateBatchSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MaxQuotaUpdateBatchSize = Get-Attr -obj $params -name MaxQuotaUpdateBatchSize -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:NotificationAuthenticationMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:NotificationAuthenticationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $NotificationAuthenticationMode = Get-Attr -obj $params -name NotificationAuthenticationMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:NotificationAuthenticationUser_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:NotificationAuthenticationUser_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $NotificationAuthenticationUser_username = Get-Attr -obj $params -name NotificationAuthenticationUser_username -failifempty $False -resultobj $result
-#ATTRIBUTE:NotificationAuthenticationUser_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:NotificationAuthenticationUser_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $NotificationAuthenticationUser_password = Get-Attr -obj $params -name NotificationAuthenticationUser_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:NotificationForwardingAddress,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:NotificationForwardingAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $NotificationForwardingAddress = Get-Attr -obj $params -name NotificationForwardingAddress -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:PassthroughEnabled,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:PassthroughEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $PassthroughEnabled = Get-Attr -obj $params -name PassthroughEnabled -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SubscriptionStatusPollingInterval,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SubscriptionStatusPollingInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SubscriptionStatusPollingInterval = Get-Attr -obj $params -name SubscriptionStatusPollingInterval -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:TenantAuthenticationMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:TenantAuthenticationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $TenantAuthenticationMode = Get-Attr -obj $params -name TenantAuthenticationMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:TenantAuthenticationUser_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:TenantAuthenticationUser_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $TenantAuthenticationUser_username = Get-Attr -obj $params -name TenantAuthenticationUser_username -failifempty $False -resultobj $result
-#ATTRIBUTE:TenantAuthenticationUser_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:TenantAuthenticationUser_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $TenantAuthenticationUser_password = Get-Attr -obj $params -name TenantAuthenticationUser_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:TenantForwardingAddress,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:TenantForwardingAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $TenantForwardingAddress = Get-Attr -obj $params -name TenantForwardingAddress -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:TenantSourceUriTemplate,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:TenantSourceUriTemplate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $TenantSourceUriTemplate = Get-Attr -obj $params -name TenantSourceUriTemplate -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:TenantTargetUriTemplate,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:TenantTargetUriTemplate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $TenantTargetUriTemplate = Get-Attr -obj $params -name TenantTargetUriTemplate -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Type,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Type;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Type = Get-Attr -obj $params -name Type -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsageAuthenticationMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageAuthenticationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageAuthenticationMode = Get-Attr -obj $params -name UsageAuthenticationMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsageAuthenticationUser_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageAuthenticationUser_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageAuthenticationUser_username = Get-Attr -obj $params -name UsageAuthenticationUser_username -failifempty $False -resultobj $result
-#ATTRIBUTE:UsageAuthenticationUser_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageAuthenticationUser_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageAuthenticationUser_password = Get-Attr -obj $params -name UsageAuthenticationUser_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UsageForwardingAddress,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UsageForwardingAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UsageForwardingAddress = Get-Attr -obj $params -name UsageForwardingAddress -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($AdminAuthenticationMode)
 {
     If (('Basic','None','Windows') -contains $AdminAuthenticationMode ) {

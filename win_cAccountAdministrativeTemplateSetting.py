@@ -24,35 +24,25 @@
 
 DOCUMENTATION = '''
 ---
-module: win_cAccountAdministrativeTemplateSetting
+module: win_caccountadministrativetemplatesetting
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Account:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   KeyValueName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Data:
     description:
@@ -61,18 +51,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Ensure:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Type:
     description:
@@ -81,26 +65,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

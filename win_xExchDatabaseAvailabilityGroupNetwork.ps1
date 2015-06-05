@@ -26,48 +26,28 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DatabaseAvailabilityGroup,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseAvailabilityGroup;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseAvailabilityGroup = Get-Attr -obj $params -name DatabaseAvailabilityGroup -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DomainController,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IgnoreNetwork,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IgnoreNetwork;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IgnoreNetwork = Get-Attr -obj $params -name IgnoreNetwork -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ReplicationEnabled,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ReplicationEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ReplicationEnabled = Get-Attr -obj $params -name ReplicationEnabled -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Subnets,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Subnets;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Subnets = Get-Attr -obj $params -name Subnets -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

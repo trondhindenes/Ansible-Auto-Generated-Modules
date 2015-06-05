@@ -24,45 +24,32 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xExchOabVirtualDirectory
+module: win_xexchoabvirtualdirectory
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Credential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Identity:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AllowServiceRestart:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   BasicAuthentication:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DomainController:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ExtendedProtectionFlags:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ExtendedProtectionSPNList:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ExtendedProtectionTokenChecking:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ExternalUrl:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InternalUrl:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   OABsToDistribute:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   PollInterval:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   RequireSSL:
     description:
@@ -171,9 +128,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WindowsAuthentication:
     description:
       - 
@@ -181,26 +135,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

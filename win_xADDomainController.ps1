@@ -26,42 +26,26 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DomainAdministratorCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainAdministratorCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DomainAdministratorCredential_username = Get-Attr -obj $params -name DomainAdministratorCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:DomainAdministratorCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainAdministratorCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DomainAdministratorCredential_password = Get-Attr -obj $params -name DomainAdministratorCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DomainName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DomainName = Get-Attr -obj $params -name DomainName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SafemodeAdministratorPassword_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SafemodeAdministratorPassword_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SafemodeAdministratorPassword_username = Get-Attr -obj $params -name SafemodeAdministratorPassword_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SafemodeAdministratorPassword_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SafemodeAdministratorPassword_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SafemodeAdministratorPassword_password = Get-Attr -obj $params -name SafemodeAdministratorPassword_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DatabasePath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabasePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DatabasePath = Get-Attr -obj $params -name DatabasePath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:LogPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $LogPath = Get-Attr -obj $params -name LogPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SysvolPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SysvolPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SysvolPath = Get-Attr -obj $params -name SysvolPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($DomainAdministratorCredential_username)
 {
 $DomainAdministratorCredential_securepassword = $DomainAdministratorCredential_password | ConvertTo-SecureString -asPlainText -Force

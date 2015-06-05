@@ -26,26 +26,16 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:FileDirectory,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:FileDirectory;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $FileDirectory = Get-Attr -obj $params -name FileDirectory -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:VhdPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:VhdPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $VhdPath = Get-Attr -obj $params -name VhdPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:CheckSum,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CheckSum;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CheckSum = Get-Attr -obj $params -name CheckSum -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($CheckSum)
 {
     If (('ModifiedDate','SHA-1','SHA-256','SHA-512') -contains $CheckSum ) {

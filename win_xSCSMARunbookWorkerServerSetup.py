@@ -24,95 +24,67 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSCSMARunbookWorkerServerSetup
+module: win_xscsmarunbookworkerserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Service_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Service_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SqlInstance:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SqlServer:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ETWManifest:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstallFolder:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MSUpdate:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProductKey:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SendCEIPReports:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SourceFolder:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SqlDatabase:
     description:
@@ -181,26 +135,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

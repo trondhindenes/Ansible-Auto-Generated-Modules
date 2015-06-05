@@ -24,45 +24,32 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xDatabase
+module: win_xdatabase
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   DatabaseName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SqlServerVersion:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   BacPacPath:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Credentials_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Credentials_password:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DacPacApplicationName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DacPacApplicationVersion:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DacPacPath:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SqlServer:
     description:
@@ -131,26 +100,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

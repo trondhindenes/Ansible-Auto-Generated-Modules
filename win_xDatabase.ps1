@@ -26,52 +26,30 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DatabaseName,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SqlServerVersion,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SqlServerVersion;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SqlServerVersion = Get-Attr -obj $params -name SqlServerVersion -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:BacPacPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:BacPacPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $BacPacPath = Get-Attr -obj $params -name BacPacPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Credentials_username,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credentials_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credentials_username = Get-Attr -obj $params -name Credentials_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credentials_password,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credentials_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Credentials_password = Get-Attr -obj $params -name Credentials_password -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DacPacApplicationName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DacPacApplicationName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DacPacApplicationName = Get-Attr -obj $params -name DacPacApplicationName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DacPacApplicationVersion,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DacPacApplicationVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DacPacApplicationVersion = Get-Attr -obj $params -name DacPacApplicationVersion -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DacPacPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DacPacPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DacPacPath = Get-Attr -obj $params -name DacPacPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SqlServer,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SqlServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SqlServer = Get-Attr -obj $params -name SqlServer -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

@@ -24,65 +24,46 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSCSPFServerSetup
+module: win_xscspfserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   DatabaseServer:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdminSecurityGroupUsers:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   CertificateName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   DatabaseName:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DatabasePortNumber:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ProviderSecurityGroupUsers:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SCAdmin_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SCAdmin_password:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SCProvider_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SCProvider_password:
     description:
@@ -171,18 +128,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SCUsage_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SCUsage_password:
     description:
@@ -191,18 +142,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SCVMM_username:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SCVMM_password:
     description:
@@ -211,18 +156,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SendCEIPReports:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SourceFolder:
     description:
@@ -231,18 +170,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SpecifyCertificate:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   UsageSecurityGroupUsers:
     description:
@@ -251,18 +184,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   UseMicrosoftUpdate:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   VMMSecurityGroupUsers:
     description:
@@ -271,9 +198,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WebSitePortNumber:
     description:
       - 
@@ -281,26 +205,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

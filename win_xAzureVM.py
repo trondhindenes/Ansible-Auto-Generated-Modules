@@ -24,55 +24,39 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xAzureVM
+module: win_xazurevm
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ImageName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ServiceName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   StorageAccountName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Credential_username:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Credential_password:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ExtensionContainerName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ExtensionFileList:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ExtensionScriptName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstanceSize:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Linux:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Windows:
     description:
@@ -161,26 +121,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

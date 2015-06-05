@@ -24,95 +24,67 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xSCSRServerSetup
+module: win_xscsrserversetup
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   AnalysisDatabaseServer:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AnalysisDatabaseServerInstance:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DatabaseServer:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DatabaseServerInstance:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Ensure:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SetupCredential_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SourcePath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AnalysisDatabaseName:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DWDatabaseName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   InstallFolder:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   RepositoryDatabaseName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SendCEIPReports:
     description:
@@ -161,18 +121,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SourceFolder:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   StagingDatabaseName:
     description:
@@ -181,9 +135,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   UseMicrosoftUpdate:
     description:
       - 
@@ -191,26 +142,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

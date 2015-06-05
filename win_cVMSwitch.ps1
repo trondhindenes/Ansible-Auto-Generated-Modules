@@ -26,42 +26,24 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Type,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Type;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Type = Get-Attr -obj $params -name Type -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AllowManagementOS,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowManagementOS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowManagementOS = Get-Attr -obj $params -name AllowManagementOS -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:EnableIov,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:EnableIov;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $EnableIov = Get-Attr -obj $params -name EnableIov -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MinimumBandwidthMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MinimumBandwidthMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MinimumBandwidthMode = Get-Attr -obj $params -name MinimumBandwidthMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:NetAdapterName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:NetAdapterName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $NetAdapterName = Get-Attr -obj $params -name NetAdapterName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Type)
 {
     If (('External','Internal','Private') -contains $Type ) {

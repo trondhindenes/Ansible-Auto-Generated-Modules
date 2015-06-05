@@ -26,44 +26,26 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SCOMAdminCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCOMAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SCOMAdminCredential_username = Get-Attr -obj $params -name SCOMAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SCOMAdminCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SCOMAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SCOMAdminCredential_password = Get-Attr -obj $params -name SCOMAdminCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SourceFile,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourceFile;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SourceFile = Get-Attr -obj $params -name SourceFile -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SourceFolder,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:MinVersion,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MinVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MinVersion = Get-Attr -obj $params -name MinVersion -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SourcePath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:Version,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Version;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Version = Get-Attr -obj $params -name Version -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 if ($SCOMAdminCredential_username)
 {
 $SCOMAdminCredential_securepassword = $SCOMAdminCredential_password | ConvertTo-SecureString -asPlainText -Force

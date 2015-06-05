@@ -24,65 +24,46 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xExchAutoMountPoint
+module: win_xexchautomountpoint
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   AutoDagDatabasesRootFolderPath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AutoDagVolumesRootFolderPath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   DiskToDBMap:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Identity:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   SpareVolumeCount:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   CreateSubfolders:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   EnsureExchangeVolumeMountPointIsLast:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   FileSystem:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MinDiskSize:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   PartitioningScheme:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   UnitSize:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   VolumePrefix:
     description:
@@ -151,26 +114,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

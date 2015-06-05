@@ -26,38 +26,22 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Ensure,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MaximumQueueSize,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MaximumQueueSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MaximumQueueSize = Get-Attr -obj $params -name MaximumQueueSize -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ScriptFileName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ScriptFileName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ScriptFileName = Get-Attr -obj $params -name ScriptFileName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ScriptingEngine,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ScriptingEngine;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ScriptingEngine = Get-Attr -obj $params -name ScriptingEngine -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ScriptText,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ScriptText;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ScriptText = Get-Attr -obj $params -name ScriptText -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

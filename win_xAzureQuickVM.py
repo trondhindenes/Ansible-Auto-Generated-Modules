@@ -24,35 +24,25 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xAzureQuickVM
+module: win_xazurequickvm
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ServiceName:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdminUsername:
     description:
@@ -61,18 +51,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Ensure:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ImageName:
     description:
@@ -81,18 +65,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   InstanceSize:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Linux:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   LinuxUser:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Password:
     description:
@@ -121,9 +93,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   Windows:
     description:
       - 
@@ -131,26 +100,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

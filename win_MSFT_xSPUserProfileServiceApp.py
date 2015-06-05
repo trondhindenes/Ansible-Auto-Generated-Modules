@@ -24,75 +24,53 @@
 
 DOCUMENTATION = '''
 ---
-module: win_MSFT_xSPUserProfileServiceApp
+module: win_msft_xspuserprofileserviceapp
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   ApplicationPool:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   FarmAccount_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   FarmAccount_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstallAccount_username:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   InstallAccount_password:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   Name:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   MySiteHostLocation:
     description:
@@ -101,18 +79,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ProfileDBName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ProfileDBServer:
     description:
@@ -121,18 +93,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SocialDBName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SocialDBServer:
     description:
@@ -141,18 +107,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   SyncDBName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SyncDBServer:
     description:
@@ -161,26 +121,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

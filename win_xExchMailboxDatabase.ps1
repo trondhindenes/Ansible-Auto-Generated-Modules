@@ -26,136 +26,72 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:DatabaseCopyCount,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DatabaseCopyCount;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $DatabaseCopyCount = Get-Attr -obj $params -name DatabaseCopyCount -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:EdbFilePath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:EdbFilePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $EdbFilePath = Get-Attr -obj $params -name EdbFilePath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:LogFolderPath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:LogFolderPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $LogFolderPath = Get-Attr -obj $params -name LogFolderPath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Name,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:Server,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Server;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Server = Get-Attr -obj $params -name Server -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:AdServerSettingsPreferredServer,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AdServerSettingsPreferredServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AdServerSettingsPreferredServer = Get-Attr -obj $params -name AdServerSettingsPreferredServer -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AllowServiceRestart,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoDagExcludeFromMonitoring,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoDagExcludeFromMonitoring;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $AutoDagExcludeFromMonitoring = Get-Attr -obj $params -name AutoDagExcludeFromMonitoring -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:BackgroundDatabaseMaintenance,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:BackgroundDatabaseMaintenance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $BackgroundDatabaseMaintenance = Get-Attr -obj $params -name BackgroundDatabaseMaintenance -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:CalendarLoggingQuota,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CalendarLoggingQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CalendarLoggingQuota = Get-Attr -obj $params -name CalendarLoggingQuota -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:CircularLoggingEnabled,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:CircularLoggingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $CircularLoggingEnabled = Get-Attr -obj $params -name CircularLoggingEnabled -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DataMoveReplicationConstraint,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DataMoveReplicationConstraint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DataMoveReplicationConstraint = Get-Attr -obj $params -name DataMoveReplicationConstraint -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DeletedItemRetention,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DeletedItemRetention;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DeletedItemRetention = Get-Attr -obj $params -name DeletedItemRetention -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:DomainController,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:EventHistoryRetentionPeriod,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:EventHistoryRetentionPeriod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $EventHistoryRetentionPeriod = Get-Attr -obj $params -name EventHistoryRetentionPeriod -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IndexEnabled,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IndexEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IndexEnabled = Get-Attr -obj $params -name IndexEnabled -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IsExcludedFromProvisioning,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IsExcludedFromProvisioning;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IsExcludedFromProvisioning = Get-Attr -obj $params -name IsExcludedFromProvisioning -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IssueWarningQuota,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IssueWarningQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IssueWarningQuota = Get-Attr -obj $params -name IssueWarningQuota -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:IsSuspendedFromProvisioning,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:IsSuspendedFromProvisioning;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $IsSuspendedFromProvisioning = Get-Attr -obj $params -name IsSuspendedFromProvisioning -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:JournalRecipient,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:JournalRecipient;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $JournalRecipient = Get-Attr -obj $params -name JournalRecipient -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MailboxRetention,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MailboxRetention;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MailboxRetention = Get-Attr -obj $params -name MailboxRetention -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:MountAtStartup,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:MountAtStartup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $MountAtStartup = Get-Attr -obj $params -name MountAtStartup -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:OfflineAddressBook,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:OfflineAddressBook;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $OfflineAddressBook = Get-Attr -obj $params -name OfflineAddressBook -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ProhibitSendQuota,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProhibitSendQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ProhibitSendQuota = Get-Attr -obj $params -name ProhibitSendQuota -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:ProhibitSendReceiveQuota,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ProhibitSendReceiveQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ProhibitSendReceiveQuota = Get-Attr -obj $params -name ProhibitSendReceiveQuota -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RecoverableItemsQuota,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RecoverableItemsQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RecoverableItemsQuota = Get-Attr -obj $params -name RecoverableItemsQuota -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RecoverableItemsWarningQuota,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RecoverableItemsWarningQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RecoverableItemsWarningQuota = Get-Attr -obj $params -name RecoverableItemsWarningQuota -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:RetainDeletedItemsUntilBackup,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:RetainDeletedItemsUntilBackup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $RetainDeletedItemsUntilBackup = Get-Attr -obj $params -name RetainDeletedItemsUntilBackup -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SkipInitialDatabaseMount,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SkipInitialDatabaseMount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SkipInitialDatabaseMount = Get-Attr -obj $params -name SkipInitialDatabaseMount -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($DataMoveReplicationConstraint)
 {
     If (('AllCopies','AllDatacenters','None','SecondCopy','SecondDatacenter') -contains $DataMoveReplicationConstraint ) {

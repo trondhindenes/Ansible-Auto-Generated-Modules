@@ -24,25 +24,18 @@
 
 DOCUMENTATION = '''
 ---
-module: win_POSTBehavior
+module: win_postbehavior
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Category:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AdapterWarnings:
     description:
@@ -51,18 +44,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Fastboot:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   FnKeyEmulation:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   KeyboardErrors:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   Keypad:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   MEBxHotKey:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MouseTouchpad:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Numlock:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   POSTHotKeys:
     description:
@@ -131,26 +100,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

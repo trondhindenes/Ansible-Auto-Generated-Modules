@@ -26,68 +26,38 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Ensure,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:ManagementServer,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:ManagementServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $ManagementServer = Get-Attr -obj $params -name ManagementServer -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SetupCredential_username,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:SourcePath,MANDATORY:True,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-
-
-#ATTRIBUTE:EnableErrorReporting,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:EnableErrorReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $EnableErrorReporting = Get-Attr -obj $params -name EnableErrorReporting -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:InstallPath,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:InstallPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstallPath = Get-Attr -obj $params -name InstallPath -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SendCEIPReports,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SendCEIPReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SendCEIPReports = Get-Attr -obj $params -name SendCEIPReports -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SendODRReports,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SendODRReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SendODRReports = Get-Attr -obj $params -name SendODRReports -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:SourceFolder,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:UseMicrosoftUpdate,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:UseMicrosoftUpdate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $UseMicrosoftUpdate = Get-Attr -obj $params -name UseMicrosoftUpdate -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WebConsoleAuthorizationMode,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WebConsoleAuthorizationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WebConsoleAuthorizationMode = Get-Attr -obj $params -name WebConsoleAuthorizationMode -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WebConsoleUseSSL,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WebConsoleUseSSL;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WebConsoleUseSSL = Get-Attr -obj $params -name WebConsoleUseSSL -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:WebSiteName,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:WebSiteName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $WebSiteName = Get-Attr -obj $params -name WebSiteName -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoInstallModule,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-
-
-#ATTRIBUTE:AutoConfigureLcm,MANDATORY:False,DEFAULTVALUE:,DESCRIPTION:
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-
-
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {

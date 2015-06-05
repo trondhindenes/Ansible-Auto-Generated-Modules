@@ -24,25 +24,18 @@
 
 DOCUMENTATION = '''
 ---
-module: win_PowerManagement
+module: win_powermanagement
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   Category:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   ACBehavior:
     description:
@@ -51,18 +44,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoOnFriday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoOnMonday:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoOnSaturday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoOnSunday:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoOnThursday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoOnTime:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoOnTuesday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   AutoOnWednesday:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   BatterySliceChargeConfiguration:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   BlockSleepS3State:
     description:
@@ -151,18 +114,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   ControlWLANRadio:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   ControlWWANRadio:
     description:
@@ -171,18 +128,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   DeepSleepControl:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   FanControlOverride:
     description:
@@ -191,18 +142,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   FanSpeedControl:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   IntelSmartConnect:
     description:
@@ -211,18 +156,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   PrimaryBatteryChargeConfiguration:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   USBWakesupport:
     description:
@@ -231,9 +170,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WakeonLANorWLAN:
     description:
       - 
@@ -241,26 +177,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 

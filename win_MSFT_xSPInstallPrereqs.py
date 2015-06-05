@@ -24,25 +24,18 @@
 
 DOCUMENTATION = '''
 ---
-module: win_MSFT_xSPInstallPrereqs
+module: win_msft_xspinstallprereqs
 version_added: 
 short_description: 
 description:
      - 
 options:
-
-
-
-
   InstallerPath:
     description:
       - 
-    required: False
+    required: True
     default: 
     aliases: []
-
-
-
 
   AppFabric:
     description:
@@ -51,18 +44,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   IDFX:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   IDFX11:
     description:
@@ -71,18 +58,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   KB2671763:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   MSIPCClient:
     description:
@@ -91,18 +72,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   NETFX:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   OnlineMode:
     description:
@@ -111,18 +86,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   PowerShell:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   SQLNCli:
     description:
@@ -131,18 +100,12 @@ options:
     default: 
     aliases: []
 
-
-
-
   Sync:
     description:
       - 
     required: False
     default: 
     aliases: []
-
-
-
 
   WCFDataServices:
     description:
@@ -151,9 +114,6 @@ options:
     default: 
     aliases: []
 
-
-
-
   WCFDataServices56:
     description:
       - 
@@ -161,26 +121,17 @@ options:
     default: 
     aliases: []
 
-
-
-
   AutoInstallModule:
     description:
-      - 
+      - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
-    default: 
+    default: false
     aliases: []
-
-
-
 
   AutoConfigureLcm:
     description:
-      - 
+      - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
-
-
 
