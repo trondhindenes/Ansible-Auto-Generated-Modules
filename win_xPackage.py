@@ -80,7 +80,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Absent      - Present
   FileHash:
     description:
       - 
@@ -94,14 +94,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - MD5      - RIPEMD160      - SHA1      - SHA256      - SHA384      - SHA512
   InstalledCheckRegHive:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - CurrentUser      - LocalMachine
   InstalledCheckRegKey:
     description:
       - 
@@ -178,11 +178,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

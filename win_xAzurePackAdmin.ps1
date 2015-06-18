@@ -26,21 +26,21 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:AzurePackAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AzurePackAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AzurePackAdminCredential_username = Get-Attr -obj $params -name AzurePackAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:AzurePackAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AzurePackAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AzurePackAdminCredential_password = Get-Attr -obj $params -name AzurePackAdminCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Principal;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Principal;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Principal = Get-Attr -obj $params -name Principal -failifempty $True -resultobj $result
-#ATTRIBUTE:SQLServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLServer = Get-Attr -obj $params -name SQLServer -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLInstance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLInstance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLInstance = Get-Attr -obj $params -name SQLInstance -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -49,6 +49,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

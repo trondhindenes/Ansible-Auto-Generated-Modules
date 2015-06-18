@@ -26,19 +26,19 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Destination;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Destination;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Destination = Get-Attr -obj $params -name Destination -failifempty $True -resultobj $result
-#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
-#ATTRIBUTE:CompressionLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CompressionLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Fastest,NoCompression,Optimal
 $CompressionLevel = Get-Attr -obj $params -name CompressionLevel -failifempty $False -resultobj $result
-#ATTRIBUTE:DestinationType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DestinationType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Directory,File
 $DestinationType = Get-Attr -obj $params -name DestinationType -failifempty $False -resultobj $result
-#ATTRIBUTE:MatchSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MatchSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MatchSource = Get-Attr -obj $params -name MatchSource -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($CompressionLevel)
 {
@@ -58,6 +58,28 @@ If ($DestinationType)
     Else
     {
         Fail-Json $result "Option DestinationType has invalid value $DestinationType. Valid values are 'Directory','File'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

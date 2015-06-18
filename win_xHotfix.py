@@ -64,7 +64,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Absent      - Present
   Log:
     description:
       - 
@@ -78,11 +78,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

@@ -26,71 +26,71 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:DatabaseCopyCount;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DatabaseCopyCount;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseCopyCount = Get-Attr -obj $params -name DatabaseCopyCount -failifempty $True -resultobj $result
-#ATTRIBUTE:EdbFilePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EdbFilePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EdbFilePath = Get-Attr -obj $params -name EdbFilePath -failifempty $True -resultobj $result
-#ATTRIBUTE:LogFolderPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogFolderPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogFolderPath = Get-Attr -obj $params -name LogFolderPath -failifempty $True -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:Server;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Server;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Server = Get-Attr -obj $params -name Server -failifempty $True -resultobj $result
-#ATTRIBUTE:AdServerSettingsPreferredServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdServerSettingsPreferredServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AdServerSettingsPreferredServer = Get-Attr -obj $params -name AdServerSettingsPreferredServer -failifempty $False -resultobj $result
-#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoDagExcludeFromMonitoring;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagExcludeFromMonitoring;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagExcludeFromMonitoring = Get-Attr -obj $params -name AutoDagExcludeFromMonitoring -failifempty $False -resultobj $result
-#ATTRIBUTE:BackgroundDatabaseMaintenance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BackgroundDatabaseMaintenance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BackgroundDatabaseMaintenance = Get-Attr -obj $params -name BackgroundDatabaseMaintenance -failifempty $False -resultobj $result
-#ATTRIBUTE:CalendarLoggingQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CalendarLoggingQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CalendarLoggingQuota = Get-Attr -obj $params -name CalendarLoggingQuota -failifempty $False -resultobj $result
-#ATTRIBUTE:CircularLoggingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CircularLoggingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CircularLoggingEnabled = Get-Attr -obj $params -name CircularLoggingEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:DataMoveReplicationConstraint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DataMoveReplicationConstraint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:AllCopies,AllDatacenters,None,SecondCopy,SecondDatacenter
 $DataMoveReplicationConstraint = Get-Attr -obj $params -name DataMoveReplicationConstraint -failifempty $False -resultobj $result
-#ATTRIBUTE:DeletedItemRetention;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DeletedItemRetention;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DeletedItemRetention = Get-Attr -obj $params -name DeletedItemRetention -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-#ATTRIBUTE:EventHistoryRetentionPeriod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EventHistoryRetentionPeriod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EventHistoryRetentionPeriod = Get-Attr -obj $params -name EventHistoryRetentionPeriod -failifempty $False -resultobj $result
-#ATTRIBUTE:IndexEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IndexEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IndexEnabled = Get-Attr -obj $params -name IndexEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:IsExcludedFromProvisioning;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IsExcludedFromProvisioning;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IsExcludedFromProvisioning = Get-Attr -obj $params -name IsExcludedFromProvisioning -failifempty $False -resultobj $result
-#ATTRIBUTE:IssueWarningQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IssueWarningQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IssueWarningQuota = Get-Attr -obj $params -name IssueWarningQuota -failifempty $False -resultobj $result
-#ATTRIBUTE:IsSuspendedFromProvisioning;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IsSuspendedFromProvisioning;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IsSuspendedFromProvisioning = Get-Attr -obj $params -name IsSuspendedFromProvisioning -failifempty $False -resultobj $result
-#ATTRIBUTE:JournalRecipient;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:JournalRecipient;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $JournalRecipient = Get-Attr -obj $params -name JournalRecipient -failifempty $False -resultobj $result
-#ATTRIBUTE:MailboxRetention;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MailboxRetention;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MailboxRetention = Get-Attr -obj $params -name MailboxRetention -failifempty $False -resultobj $result
-#ATTRIBUTE:MountAtStartup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MountAtStartup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MountAtStartup = Get-Attr -obj $params -name MountAtStartup -failifempty $False -resultobj $result
-#ATTRIBUTE:OfflineAddressBook;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:OfflineAddressBook;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $OfflineAddressBook = Get-Attr -obj $params -name OfflineAddressBook -failifempty $False -resultobj $result
-#ATTRIBUTE:ProhibitSendQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProhibitSendQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProhibitSendQuota = Get-Attr -obj $params -name ProhibitSendQuota -failifempty $False -resultobj $result
-#ATTRIBUTE:ProhibitSendReceiveQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProhibitSendReceiveQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProhibitSendReceiveQuota = Get-Attr -obj $params -name ProhibitSendReceiveQuota -failifempty $False -resultobj $result
-#ATTRIBUTE:RecoverableItemsQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RecoverableItemsQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RecoverableItemsQuota = Get-Attr -obj $params -name RecoverableItemsQuota -failifempty $False -resultobj $result
-#ATTRIBUTE:RecoverableItemsWarningQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RecoverableItemsWarningQuota;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RecoverableItemsWarningQuota = Get-Attr -obj $params -name RecoverableItemsWarningQuota -failifempty $False -resultobj $result
-#ATTRIBUTE:RetainDeletedItemsUntilBackup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RetainDeletedItemsUntilBackup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RetainDeletedItemsUntilBackup = Get-Attr -obj $params -name RetainDeletedItemsUntilBackup -failifempty $False -resultobj $result
-#ATTRIBUTE:SkipInitialDatabaseMount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SkipInitialDatabaseMount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SkipInitialDatabaseMount = Get-Attr -obj $params -name SkipInitialDatabaseMount -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($DataMoveReplicationConstraint)
 {
@@ -99,6 +99,28 @@ If ($DataMoveReplicationConstraint)
     Else
     {
         Fail-Json $result "Option DataMoveReplicationConstraint has invalid value $DataMoveReplicationConstraint. Valid values are 'AllCopies','AllDatacenters','None','SecondCopy','SecondDatacenter'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

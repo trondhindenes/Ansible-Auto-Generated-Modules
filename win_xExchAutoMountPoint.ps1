@@ -26,33 +26,33 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:AutoDagDatabasesRootFolderPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagDatabasesRootFolderPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagDatabasesRootFolderPath = Get-Attr -obj $params -name AutoDagDatabasesRootFolderPath -failifempty $True -resultobj $result
-#ATTRIBUTE:AutoDagVolumesRootFolderPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagVolumesRootFolderPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagVolumesRootFolderPath = Get-Attr -obj $params -name AutoDagVolumesRootFolderPath -failifempty $True -resultobj $result
-#ATTRIBUTE:DiskToDBMap;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DiskToDBMap;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DiskToDBMap = Get-Attr -obj $params -name DiskToDBMap -failifempty $True -resultobj $result
-#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-#ATTRIBUTE:SpareVolumeCount;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SpareVolumeCount;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SpareVolumeCount = Get-Attr -obj $params -name SpareVolumeCount -failifempty $True -resultobj $result
-#ATTRIBUTE:CreateSubfolders;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CreateSubfolders;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CreateSubfolders = Get-Attr -obj $params -name CreateSubfolders -failifempty $False -resultobj $result
-#ATTRIBUTE:EnsureExchangeVolumeMountPointIsLast;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EnsureExchangeVolumeMountPointIsLast;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EnsureExchangeVolumeMountPointIsLast = Get-Attr -obj $params -name EnsureExchangeVolumeMountPointIsLast -failifempty $False -resultobj $result
-#ATTRIBUTE:FileSystem;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FileSystem;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:NTFS,REFS
 $FileSystem = Get-Attr -obj $params -name FileSystem -failifempty $False -resultobj $result
-#ATTRIBUTE:MinDiskSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MinDiskSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MinDiskSize = Get-Attr -obj $params -name MinDiskSize -failifempty $False -resultobj $result
-#ATTRIBUTE:PartitioningScheme;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PartitioningScheme;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:GPT,MBR
 $PartitioningScheme = Get-Attr -obj $params -name PartitioningScheme -failifempty $False -resultobj $result
-#ATTRIBUTE:UnitSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UnitSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UnitSize = Get-Attr -obj $params -name UnitSize -failifempty $False -resultobj $result
-#ATTRIBUTE:VolumePrefix;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VolumePrefix;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VolumePrefix = Get-Attr -obj $params -name VolumePrefix -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($FileSystem)
 {
@@ -72,6 +72,28 @@ If ($PartitioningScheme)
     Else
     {
         Fail-Json $result "Option PartitioningScheme has invalid value $PartitioningScheme. Valid values are 'GPT','MBR'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

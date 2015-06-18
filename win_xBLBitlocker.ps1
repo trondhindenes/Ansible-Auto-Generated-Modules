@@ -26,53 +26,53 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:MountPoint;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MountPoint;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MountPoint = Get-Attr -obj $params -name MountPoint -failifempty $True -resultobj $result
-#ATTRIBUTE:PrimaryProtector;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PrimaryProtector;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:PasswordProtector,RecoveryPasswordProtector,StartupKeyProtector,TpmProtector
 $PrimaryProtector = Get-Attr -obj $params -name PrimaryProtector -failifempty $True -resultobj $result
-#ATTRIBUTE:AdAccountOrGroup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdAccountOrGroup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AdAccountOrGroup = Get-Attr -obj $params -name AdAccountOrGroup -failifempty $False -resultobj $result
-#ATTRIBUTE:AdAccountOrGroupProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdAccountOrGroupProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AdAccountOrGroupProtector = Get-Attr -obj $params -name AdAccountOrGroupProtector -failifempty $False -resultobj $result
-#ATTRIBUTE:AllowImmediateReboot;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowImmediateReboot;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowImmediateReboot = Get-Attr -obj $params -name AllowImmediateReboot -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoUnlock;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoUnlock;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoUnlock = Get-Attr -obj $params -name AutoUnlock -failifempty $False -resultobj $result
-#ATTRIBUTE:EncryptionMethod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EncryptionMethod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Aes128,Aes256
 $EncryptionMethod = Get-Attr -obj $params -name EncryptionMethod -failifempty $False -resultobj $result
-#ATTRIBUTE:HardwareEncryption;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:HardwareEncryption;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $HardwareEncryption = Get-Attr -obj $params -name HardwareEncryption -failifempty $False -resultobj $result
-#ATTRIBUTE:Password_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Password_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Password_username = Get-Attr -obj $params -name Password_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Password_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Password_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Password_password = Get-Attr -obj $params -name Password_password -failifempty $False -resultobj $result
-#ATTRIBUTE:PasswordProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PasswordProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PasswordProtector = Get-Attr -obj $params -name PasswordProtector -failifempty $False -resultobj $result
-#ATTRIBUTE:Pin_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Pin_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Pin_username = Get-Attr -obj $params -name Pin_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Pin_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Pin_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Pin_password = Get-Attr -obj $params -name Pin_password -failifempty $False -resultobj $result
-#ATTRIBUTE:RecoveryKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RecoveryKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RecoveryKeyPath = Get-Attr -obj $params -name RecoveryKeyPath -failifempty $False -resultobj $result
-#ATTRIBUTE:RecoveryKeyProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RecoveryKeyProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RecoveryKeyProtector = Get-Attr -obj $params -name RecoveryKeyProtector -failifempty $False -resultobj $result
-#ATTRIBUTE:RecoveryPasswordProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RecoveryPasswordProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RecoveryPasswordProtector = Get-Attr -obj $params -name RecoveryPasswordProtector -failifempty $False -resultobj $result
-#ATTRIBUTE:Service;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Service;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Service = Get-Attr -obj $params -name Service -failifempty $False -resultobj $result
-#ATTRIBUTE:SkipHardwareTest;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SkipHardwareTest;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SkipHardwareTest = Get-Attr -obj $params -name SkipHardwareTest -failifempty $False -resultobj $result
-#ATTRIBUTE:StartupKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:StartupKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $StartupKeyPath = Get-Attr -obj $params -name StartupKeyPath -failifempty $False -resultobj $result
-#ATTRIBUTE:StartupKeyProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:StartupKeyProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $StartupKeyProtector = Get-Attr -obj $params -name StartupKeyProtector -failifempty $False -resultobj $result
-#ATTRIBUTE:TpmProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TpmProtector;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TpmProtector = Get-Attr -obj $params -name TpmProtector -failifempty $False -resultobj $result
-#ATTRIBUTE:UsedSpaceOnly;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UsedSpaceOnly;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UsedSpaceOnly = Get-Attr -obj $params -name UsedSpaceOnly -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($PrimaryProtector)
 {
@@ -92,6 +92,28 @@ If ($EncryptionMethod)
     Else
     {
         Fail-Json $result "Option EncryptionMethod has invalid value $EncryptionMethod. Valid values are 'Aes128','Aes256'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

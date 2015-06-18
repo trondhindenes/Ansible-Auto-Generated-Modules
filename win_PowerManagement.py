@@ -43,151 +43,151 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - LastPowerState      - PowerOff      - PowerOn
   AutoOnFriday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   AutoOnMonday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   AutoOnSaturday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   AutoOnSunday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   AutoOnThursday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   AutoOnTime:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - EveryDay      - SelectDays      - WeekDays
   AutoOnTuesday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   AutoOnWednesday:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   BatterySliceChargeConfiguration:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - ExpressCharge      - Standard
   BlockSleepS3State:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   ControlWLANRadio:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   ControlWWANRadio:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   DeepSleepControl:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - EnabledinS4andS5      - EnabledinS5only
   FanControlOverride:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   FanSpeedControl:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Auto      - High      - Low      - Medium      - MediumHigh      - MediumLow
   IntelSmartConnect:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   PrimaryBatteryChargeConfiguration:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Adaptive      - Custom      - ExpressCharge      - PrimarilyACUse      - Standard
   USBWakesupport:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Enabled      - Off
   WakeonLANorWLAN:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled      - LANonly      - LANorWLAN      - WLANonly
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

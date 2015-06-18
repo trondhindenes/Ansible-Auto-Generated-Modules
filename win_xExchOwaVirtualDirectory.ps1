@@ -26,43 +26,43 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-#ATTRIBUTE:AdfsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdfsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AdfsAuthentication = Get-Attr -obj $params -name AdfsAuthentication -failifempty $False -resultobj $result
-#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifempty $False -resultobj $result
-#ATTRIBUTE:BasicAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BasicAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BasicAuthentication = Get-Attr -obj $params -name BasicAuthentication -failifempty $False -resultobj $result
-#ATTRIBUTE:DigestAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DigestAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DigestAuthentication = Get-Attr -obj $params -name DigestAuthentication -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-#ATTRIBUTE:ExternalAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExternalAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExternalAuthenticationMethods = Get-Attr -obj $params -name ExternalAuthenticationMethods -failifempty $False -resultobj $result
-#ATTRIBUTE:ExternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExternalUrl = Get-Attr -obj $params -name ExternalUrl -failifempty $False -resultobj $result
-#ATTRIBUTE:FormsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FormsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FormsAuthentication = Get-Attr -obj $params -name FormsAuthentication -failifempty $False -resultobj $result
-#ATTRIBUTE:InstantMessagingCertificateThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstantMessagingCertificateThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstantMessagingCertificateThumbprint = Get-Attr -obj $params -name InstantMessagingCertificateThumbprint -failifempty $False -resultobj $result
-#ATTRIBUTE:InstantMessagingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstantMessagingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstantMessagingEnabled = Get-Attr -obj $params -name InstantMessagingEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:InstantMessagingServerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstantMessagingServerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstantMessagingServerName = Get-Attr -obj $params -name InstantMessagingServerName -failifempty $False -resultobj $result
-#ATTRIBUTE:InstantMessagingType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstantMessagingType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:None,Ocs
 $InstantMessagingType = Get-Attr -obj $params -name InstantMessagingType -failifempty $False -resultobj $result
-#ATTRIBUTE:InternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InternalUrl = Get-Attr -obj $params -name InternalUrl -failifempty $False -resultobj $result
-#ATTRIBUTE:WindowsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WindowsAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WindowsAuthentication = Get-Attr -obj $params -name WindowsAuthentication -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($InstantMessagingType)
 {
@@ -71,6 +71,28 @@ If ($InstantMessagingType)
     Else
     {
         Fail-Json $result "Option InstantMessagingType has invalid value $InstantMessagingType. Valid values are 'None','Ocs'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

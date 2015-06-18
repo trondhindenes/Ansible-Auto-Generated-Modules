@@ -26,37 +26,37 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ManagementOS;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ManagementOS;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ManagementOS = Get-Attr -obj $params -name ManagementOS -failifempty $True -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:SwitchName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SwitchName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SwitchName = Get-Attr -obj $params -name SwitchName -failifempty $True -resultobj $result
-#ATTRIBUTE:AllowTeaming;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowTeaming;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Off,On
 $AllowTeaming = Get-Attr -obj $params -name AllowTeaming -failifempty $False -resultobj $result
-#ATTRIBUTE:DhcpGuard;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DhcpGuard;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Off,On
 $DhcpGuard = Get-Attr -obj $params -name DhcpGuard -failifempty $False -resultobj $result
-#ATTRIBUTE:IeeePriorityTag;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IeeePriorityTag;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Off,On
 $IeeePriorityTag = Get-Attr -obj $params -name IeeePriorityTag -failifempty $False -resultobj $result
-#ATTRIBUTE:MacAddressSpoofing;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MacAddressSpoofing;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Off,On
 $MacAddressSpoofing = Get-Attr -obj $params -name MacAddressSpoofing -failifempty $False -resultobj $result
-#ATTRIBUTE:MaximumBandwidth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaximumBandwidth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaximumBandwidth = Get-Attr -obj $params -name MaximumBandwidth -failifempty $False -resultobj $result
-#ATTRIBUTE:MinimumBandwidthAbsolute;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MinimumBandwidthAbsolute;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MinimumBandwidthAbsolute = Get-Attr -obj $params -name MinimumBandwidthAbsolute -failifempty $False -resultobj $result
-#ATTRIBUTE:MinimumBandwidthWeight;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MinimumBandwidthWeight;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MinimumBandwidthWeight = Get-Attr -obj $params -name MinimumBandwidthWeight -failifempty $False -resultobj $result
-#ATTRIBUTE:PortMirroring;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PortMirroring;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Destination,None,Source
 $PortMirroring = Get-Attr -obj $params -name PortMirroring -failifempty $False -resultobj $result
-#ATTRIBUTE:RouterGuard;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RouterGuard;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Off,On
 $RouterGuard = Get-Attr -obj $params -name RouterGuard -failifempty $False -resultobj $result
-#ATTRIBUTE:VMName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VMName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMName = Get-Attr -obj $params -name VMName -failifempty $False -resultobj $result
-#ATTRIBUTE:VmqWeight;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VmqWeight;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VmqWeight = Get-Attr -obj $params -name VmqWeight -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($AllowTeaming)
 {
@@ -120,6 +120,28 @@ If ($RouterGuard)
     Else
     {
         Fail-Json $result "Option RouterGuard has invalid value $RouterGuard. Valid values are 'Off','On'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

@@ -26,25 +26,25 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-#ATTRIBUTE:IndigoTcpPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IndigoTcpPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IndigoTcpPort = Get-Attr -obj $params -name IndigoTcpPort -failifempty $False -resultobj $result
-#ATTRIBUTE:MUOptIn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MUOptIn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MUOptIn = Get-Attr -obj $params -name MUOptIn -failifempty $False -resultobj $result
-#ATTRIBUTE:ProgramFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProgramFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProgramFiles = Get-Attr -obj $params -name ProgramFiles -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -53,6 +53,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

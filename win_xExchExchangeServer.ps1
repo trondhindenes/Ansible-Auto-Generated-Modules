@@ -26,30 +26,52 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifempty $False -resultobj $result
-#ATTRIBUTE:CustomerFeedbackEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CustomerFeedbackEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CustomerFeedbackEnabled = Get-Attr -obj $params -name CustomerFeedbackEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-#ATTRIBUTE:InternetWebProxy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InternetWebProxy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InternetWebProxy = Get-Attr -obj $params -name InternetWebProxy -failifempty $False -resultobj $result
-#ATTRIBUTE:MonitoringGroup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MonitoringGroup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MonitoringGroup = Get-Attr -obj $params -name MonitoringGroup -failifempty $False -resultobj $result
-#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProductKey = Get-Attr -obj $params -name ProductKey -failifempty $False -resultobj $result
-#ATTRIBUTE:WorkloadManagementPolicy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WorkloadManagementPolicy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WorkloadManagementPolicy = Get-Attr -obj $params -name WorkloadManagementPolicy -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 if ($Credential_username)
 {
 $Credential_securepassword = $Credential_password | ConvertTo-SecureString -asPlainText -Force

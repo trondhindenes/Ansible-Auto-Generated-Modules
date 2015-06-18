@@ -26,34 +26,56 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Destination;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Destination;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Destination = Get-Attr -obj $params -name Destination -failifempty $True -resultobj $result
-#ATTRIBUTE:Source;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Source;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Source = Get-Attr -obj $params -name Source -failifempty $True -resultobj $result
-#ATTRIBUTE:AdditionalArgs;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdditionalArgs;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AdditionalArgs = Get-Attr -obj $params -name AdditionalArgs -failifempty $False -resultobj $result
-#ATTRIBUTE:AppendLog;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AppendLog;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AppendLog = Get-Attr -obj $params -name AppendLog -failifempty $False -resultobj $result
-#ATTRIBUTE:ExcludeFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExcludeFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExcludeFiles = Get-Attr -obj $params -name ExcludeFiles -failifempty $False -resultobj $result
-#ATTRIBUTE:Files;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Files;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Files = Get-Attr -obj $params -name Files -failifempty $False -resultobj $result
-#ATTRIBUTE:LogOutput;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogOutput;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogOutput = Get-Attr -obj $params -name LogOutput -failifempty $False -resultobj $result
-#ATTRIBUTE:MultiThreaded;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MultiThreaded;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MultiThreaded = Get-Attr -obj $params -name MultiThreaded -failifempty $False -resultobj $result
-#ATTRIBUTE:Restartable;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Restartable;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Restartable = Get-Attr -obj $params -name Restartable -failifempty $False -resultobj $result
-#ATTRIBUTE:Retry;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Retry;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Retry = Get-Attr -obj $params -name Retry -failifempty $False -resultobj $result
-#ATTRIBUTE:SubdirectoriesIncludingEmpty;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SubdirectoriesIncludingEmpty;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SubdirectoriesIncludingEmpty = Get-Attr -obj $params -name SubdirectoriesIncludingEmpty -failifempty $False -resultobj $result
-#ATTRIBUTE:Wait;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Wait;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Wait = Get-Attr -obj $params -name Wait -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 $DscResourceName = "xRobocopy"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool

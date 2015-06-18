@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlalias
 version_added: 
-short_description: Generated from DSC module mlSqlPs version 1.0.0.0
+short_description: Generated from DSC module mlSqlPs version 1.0.0.1
 description:
      - SQL module. Modified from xSqlPs.
 options:
@@ -43,14 +43,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Absent      - Present
   Protocol:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - NP      - TCP
   ServerName:
     description:
       - 
@@ -71,11 +71,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

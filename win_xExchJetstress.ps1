@@ -26,19 +26,19 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:JetstressParams;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:JetstressParams;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $JetstressParams = Get-Attr -obj $params -name JetstressParams -failifempty $True -resultobj $result
-#ATTRIBUTE:JetstressPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:JetstressPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $JetstressPath = Get-Attr -obj $params -name JetstressPath -failifempty $True -resultobj $result
-#ATTRIBUTE:Type;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Type;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:DatabaseBackup,Performance,SoftRecovery,Stress
 $Type = Get-Attr -obj $params -name Type -failifempty $True -resultobj $result
-#ATTRIBUTE:MaxWaitMinutes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxWaitMinutes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxWaitMinutes = Get-Attr -obj $params -name MaxWaitMinutes -failifempty $False -resultobj $result
-#ATTRIBUTE:MinAchievedIOPS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MinAchievedIOPS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MinAchievedIOPS = Get-Attr -obj $params -name MinAchievedIOPS -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Type)
 {
@@ -47,6 +47,28 @@ If ($Type)
     Else
     {
         Fail-Json $result "Option Type has invalid value $Type. Valid values are 'DatabaseBackup','Performance','SoftRecovery','Stress'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

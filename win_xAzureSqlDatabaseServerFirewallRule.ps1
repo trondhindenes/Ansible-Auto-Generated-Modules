@@ -26,23 +26,23 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:EndIPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EndIPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EndIPAddress = Get-Attr -obj $params -name EndIPAddress -failifempty $True -resultobj $result
-#ATTRIBUTE:RuleName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RuleName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RuleName = Get-Attr -obj $params -name RuleName -failifempty $True -resultobj $result
-#ATTRIBUTE:ServerName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ServerName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServerName = Get-Attr -obj $params -name ServerName -failifempty $True -resultobj $result
-#ATTRIBUTE:StartIPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:StartIPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $StartIPAddress = Get-Attr -obj $params -name StartIPAddress -failifempty $True -resultobj $result
-#ATTRIBUTE:AzurePublishSettingsFile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AzurePublishSettingsFile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AzurePublishSettingsFile = Get-Attr -obj $params -name AzurePublishSettingsFile -failifempty $False -resultobj $result
-#ATTRIBUTE:AzureSubscriptionName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AzureSubscriptionName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AzureSubscriptionName = Get-Attr -obj $params -name AzureSubscriptionName -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -51,6 +51,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

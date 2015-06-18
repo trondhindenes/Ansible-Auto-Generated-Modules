@@ -26,41 +26,41 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoCertBasedAuth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoCertBasedAuth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoCertBasedAuth = Get-Attr -obj $params -name AutoCertBasedAuth -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoCertBasedAuthHttpsBindings;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoCertBasedAuthHttpsBindings;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoCertBasedAuthHttpsBindings = Get-Attr -obj $params -name AutoCertBasedAuthHttpsBindings -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoCertBasedAuthThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoCertBasedAuthThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoCertBasedAuthThumbprint = Get-Attr -obj $params -name AutoCertBasedAuthThumbprint -failifempty $False -resultobj $result
-#ATTRIBUTE:BasicAuthEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BasicAuthEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BasicAuthEnabled = Get-Attr -obj $params -name BasicAuthEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:ClientCertAuth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ClientCertAuth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Allowed,Ignore,Required
 $ClientCertAuth = Get-Attr -obj $params -name ClientCertAuth -failifempty $False -resultobj $result
-#ATTRIBUTE:CompressionEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CompressionEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CompressionEnabled = Get-Attr -obj $params -name CompressionEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-#ATTRIBUTE:ExternalAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExternalAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExternalAuthenticationMethods = Get-Attr -obj $params -name ExternalAuthenticationMethods -failifempty $False -resultobj $result
-#ATTRIBUTE:ExternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExternalUrl = Get-Attr -obj $params -name ExternalUrl -failifempty $False -resultobj $result
-#ATTRIBUTE:InternalAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InternalAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InternalAuthenticationMethods = Get-Attr -obj $params -name InternalAuthenticationMethods -failifempty $False -resultobj $result
-#ATTRIBUTE:InternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InternalUrl = Get-Attr -obj $params -name InternalUrl -failifempty $False -resultobj $result
-#ATTRIBUTE:WindowsAuthEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WindowsAuthEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WindowsAuthEnabled = Get-Attr -obj $params -name WindowsAuthEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($ClientCertAuth)
 {
@@ -69,6 +69,28 @@ If ($ClientCertAuth)
     Else
     {
         Fail-Json $result "Option ClientCertAuth has invalid value $ClientCertAuth. Valid values are 'Allowed','Ignore','Required'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

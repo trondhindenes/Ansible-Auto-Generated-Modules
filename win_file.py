@@ -24,16 +24,51 @@
 
 DOCUMENTATION = '''
 ---
-module: win_xwebapppool
+module: win_file
 version_added: 
-short_description: Generated from DSC module xWebAdministration version 1.6.0.0
+short_description: 
 description:
-     - Module with DSC Resources for Web Administration
+     - 
 options:
-  Name:
+  DestinationPath:
     description:
       - 
     required: True
+    default: 
+    aliases: []
+
+  Attributes:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - Archive      - Hidden      - ReadOnly      - System
+  Checksum:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - CreatedDate      - ModifiedDate      - SHA-1      - SHA-256      - SHA-512
+  Contents:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  Credential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  Credential_password:
+    description:
+      - 
+    required: False
     default: 
     aliases: []
 
@@ -44,13 +79,41 @@ options:
     default: 
     aliases: []
     choices:      - Absent      - Present
-  State:
+  Force:
     description:
       - 
     required: False
     default: 
     aliases: []
-    choices:      - Started      - Stopped
+
+  MatchSource:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  Recurse:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SourcePath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  Type:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - Directory      - File
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager

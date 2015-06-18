@@ -26,29 +26,29 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:OpsMgrServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:OpsMgrServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $OpsMgrServer = Get-Attr -obj $params -name OpsMgrServer -failifempty $True -resultobj $result
-#ATTRIBUTE:SCVMMAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SCVMMAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SCVMMAdminCredential_username = Get-Attr -obj $params -name SCVMMAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SCVMMAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SCVMMAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SCVMMAdminCredential_password = Get-Attr -obj $params -name SCVMMAdminCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:VMMServerCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VMMServerCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMMServerCredential_username = Get-Attr -obj $params -name VMMServerCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:VMMServerCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VMMServerCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMMServerCredential_password = Get-Attr -obj $params -name VMMServerCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:EnableMaintenanceModeIntegration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EnableMaintenanceModeIntegration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EnableMaintenanceModeIntegration = Get-Attr -obj $params -name EnableMaintenanceModeIntegration -failifempty $False -resultobj $result
-#ATTRIBUTE:EnablePRO;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EnablePRO;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EnablePRO = Get-Attr -obj $params -name EnablePRO -failifempty $False -resultobj $result
-#ATTRIBUTE:OpsMgrServerCredential;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:OpsMgrServerCredential;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $OpsMgrServerCredential = Get-Attr -obj $params -name OpsMgrServerCredential -failifempty $False -resultobj $result
-#ATTRIBUTE:UseVMMServerServiceAccount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UseVMMServerServiceAccount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UseVMMServerServiceAccount = Get-Attr -obj $params -name UseVMMServerServiceAccount -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -57,6 +57,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

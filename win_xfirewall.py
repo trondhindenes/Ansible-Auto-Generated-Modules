@@ -36,7 +36,7 @@ options:
     required: True
     default: 
     aliases: []
-
+    choices:      - Allow      - Block      - NotConfigured
   Name:
     description:
       - 
@@ -64,7 +64,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Inbound      - Outbound
   DisplayGroup:
     description:
       - 
@@ -85,7 +85,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Absent      - Present
   LocalPort:
     description:
       - 
@@ -127,18 +127,18 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

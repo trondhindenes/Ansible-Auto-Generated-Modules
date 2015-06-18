@@ -26,23 +26,23 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:IPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IPAddress = Get-Attr -obj $params -name IPAddress -failifempty $True -resultobj $result
-#ATTRIBUTE:Port;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Port;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Port = Get-Attr -obj $params -name Port -failifempty $True -resultobj $result
-#ATTRIBUTE:Protocol;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Protocol;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:http,https
 $Protocol = Get-Attr -obj $params -name Protocol -failifempty $True -resultobj $result
-#ATTRIBUTE:WebsiteName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WebsiteName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WebsiteName = Get-Attr -obj $params -name WebsiteName -failifempty $True -resultobj $result
-#ATTRIBUTE:CertificateStoreName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CertificateStoreName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Personal,WebHosting
 $CertificateStoreName = Get-Attr -obj $params -name CertificateStoreName -failifempty $False -resultobj $result
-#ATTRIBUTE:CertificateThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CertificateThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CertificateThumbprint = Get-Attr -obj $params -name CertificateThumbprint -failifempty $False -resultobj $result
-#ATTRIBUTE:HostName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:HostName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $HostName = Get-Attr -obj $params -name HostName -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Protocol)
 {
@@ -62,6 +62,28 @@ If ($CertificateStoreName)
     Else
     {
         Fail-Json $result "Option CertificateStoreName has invalid value $CertificateStoreName. Valid values are 'Personal','WebHosting'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

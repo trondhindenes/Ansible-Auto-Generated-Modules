@@ -43,7 +43,7 @@ options:
     required: True
     default: 
     aliases: []
-
+    choices:      - CollectorInitiated      - SourceInitiated
   Address:
     description:
       - 
@@ -78,14 +78,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Basic      - Default      - Digest      - Negotiate
   DeliveryMode:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Pull      - Push
   Description:
     description:
       - 
@@ -99,14 +99,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   Ensure:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Absent      - Present
   HeartBeatInterval:
     description:
       - 
@@ -155,14 +155,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   TransportName:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - HTTP      - HTTPS
   TransportPort:
     description:
       - 
@@ -176,11 +176,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

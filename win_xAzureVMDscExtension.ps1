@@ -26,34 +26,56 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ConfigurationArchive;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConfigurationArchive;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ConfigurationArchive = Get-Attr -obj $params -name ConfigurationArchive -failifempty $True -resultobj $result
-#ATTRIBUTE:ServiceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ServiceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServiceName = Get-Attr -obj $params -name ServiceName -failifempty $True -resultobj $result
-#ATTRIBUTE:StorageAccountName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:StorageAccountName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $StorageAccountName = Get-Attr -obj $params -name StorageAccountName -failifempty $True -resultobj $result
-#ATTRIBUTE:VMName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VMName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMName = Get-Attr -obj $params -name VMName -failifempty $True -resultobj $result
-#ATTRIBUTE:Configuration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Configuration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Configuration = Get-Attr -obj $params -name Configuration -failifempty $False -resultobj $result
-#ATTRIBUTE:ConfigurationArgument;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConfigurationArgument;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ConfigurationArgument = Get-Attr -obj $params -name ConfigurationArgument -failifempty $False -resultobj $result
-#ATTRIBUTE:ConfigurationDataPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConfigurationDataPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ConfigurationDataPath = Get-Attr -obj $params -name ConfigurationDataPath -failifempty $False -resultobj $result
-#ATTRIBUTE:ContainerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ContainerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ContainerName = Get-Attr -obj $params -name ContainerName -failifempty $False -resultobj $result
-#ATTRIBUTE:Force;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Force;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Force = Get-Attr -obj $params -name Force -failifempty $False -resultobj $result
-#ATTRIBUTE:ReferenceName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReferenceName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReferenceName = Get-Attr -obj $params -name ReferenceName -failifempty $False -resultobj $result
-#ATTRIBUTE:StorageEndpointSuffix;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:StorageEndpointSuffix;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $StorageEndpointSuffix = Get-Attr -obj $params -name StorageEndpointSuffix -failifempty $False -resultobj $result
-#ATTRIBUTE:Version;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Version;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Version = Get-Attr -obj $params -name Version -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 $DscResourceName = "xAzureVMDscExtension"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool

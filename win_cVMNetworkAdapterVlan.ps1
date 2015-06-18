@@ -26,29 +26,29 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ManagementOS;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ManagementOS;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ManagementOS = Get-Attr -obj $params -name ManagementOS -failifempty $True -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:AdapterMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdapterMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Access,Communnity,Isolated,Promiscuous,Trunk,Untagged
 $AdapterMode = Get-Attr -obj $params -name AdapterMode -failifempty $False -resultobj $result
-#ATTRIBUTE:AllowedVlanIdList;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowedVlanIdList;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowedVlanIdList = Get-Attr -obj $params -name AllowedVlanIdList -failifempty $False -resultobj $result
-#ATTRIBUTE:NativeVlanId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:NativeVlanId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $NativeVlanId = Get-Attr -obj $params -name NativeVlanId -failifempty $False -resultobj $result
-#ATTRIBUTE:PrimaryVlanId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PrimaryVlanId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PrimaryVlanId = Get-Attr -obj $params -name PrimaryVlanId -failifempty $False -resultobj $result
-#ATTRIBUTE:SecondaryVlanId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SecondaryVlanId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SecondaryVlanId = Get-Attr -obj $params -name SecondaryVlanId -failifempty $False -resultobj $result
-#ATTRIBUTE:SecondaryVlanIdList;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SecondaryVlanIdList;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SecondaryVlanIdList = Get-Attr -obj $params -name SecondaryVlanIdList -failifempty $False -resultobj $result
-#ATTRIBUTE:VlanId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VlanId;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VlanId = Get-Attr -obj $params -name VlanId -failifempty $False -resultobj $result
-#ATTRIBUTE:VMName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VMName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMName = Get-Attr -obj $params -name VMName -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($AdapterMode)
 {
@@ -57,6 +57,28 @@ If ($AdapterMode)
     Else
     {
         Fail-Json $result "Option AdapterMode has invalid value $AdapterMode. Valid values are 'Access','Communnity','Isolated','Promiscuous','Trunk','Untagged'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

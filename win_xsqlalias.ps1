@@ -26,19 +26,19 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:SQLServerName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLServerName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLServerName = Get-Attr -obj $params -name SQLServerName -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:Protocol;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Protocol;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:NP,TCP
 $Protocol = Get-Attr -obj $params -name Protocol -failifempty $False -resultobj $result
-#ATTRIBUTE:ServerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ServerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServerName = Get-Attr -obj $params -name ServerName -failifempty $False -resultobj $result
-#ATTRIBUTE:TCPPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TCPPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TCPPort = Get-Attr -obj $params -name TCPPort -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -58,6 +58,28 @@ If ($Protocol)
     Else
     {
         Fail-Json $result "Option Protocol has invalid value $Protocol. Valid values are 'NP','TCP'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

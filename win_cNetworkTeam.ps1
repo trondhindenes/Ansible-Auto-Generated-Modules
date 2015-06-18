@@ -26,19 +26,19 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:TeamMembers;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TeamMembers;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TeamMembers = Get-Attr -obj $params -name TeamMembers -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:LoadBalancingAlgorithm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LoadBalancingAlgorithm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Dynamic,HyperVPort,IPAddresses,MacAddresses,TransportPorts
 $LoadBalancingAlgorithm = Get-Attr -obj $params -name LoadBalancingAlgorithm -failifempty $False -resultobj $result
-#ATTRIBUTE:TeamingMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TeamingMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:LACP,Static,SwitchIndependent
 $TeamingMode = Get-Attr -obj $params -name TeamingMode -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -69,6 +69,28 @@ If ($TeamingMode)
     Else
     {
         Fail-Json $result "Option TeamingMode has invalid value $TeamingMode. Valid values are 'LACP','Static','SwitchIndependent'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

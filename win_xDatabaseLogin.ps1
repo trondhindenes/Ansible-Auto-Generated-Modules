@@ -26,23 +26,23 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:LoginName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LoginName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LoginName = Get-Attr -obj $params -name LoginName -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:LoginPassword;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LoginPassword;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LoginPassword = Get-Attr -obj $params -name LoginPassword -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlAuthType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlAuthType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:SQL,Windows
 $SqlAuthType = Get-Attr -obj $params -name SqlAuthType -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlConnectionCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlConnectionCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlConnectionCredential_username = Get-Attr -obj $params -name SqlConnectionCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlConnectionCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlConnectionCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlConnectionCredential_password = Get-Attr -obj $params -name SqlConnectionCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlServer = Get-Attr -obj $params -name SqlServer -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -62,6 +62,28 @@ If ($SqlAuthType)
     Else
     {
         Fail-Json $result "Option SqlAuthType has invalid value $SqlAuthType. Valid values are 'SQL','Windows'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

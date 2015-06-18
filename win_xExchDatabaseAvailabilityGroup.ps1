@@ -26,57 +26,57 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:AutoDagTotalNumberOfServers;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagTotalNumberOfServers;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagTotalNumberOfServers = Get-Attr -obj $params -name AutoDagTotalNumberOfServers -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:AlternateWitnessDirectory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AlternateWitnessDirectory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AlternateWitnessDirectory = Get-Attr -obj $params -name AlternateWitnessDirectory -failifempty $False -resultobj $result
-#ATTRIBUTE:AlternateWitnessServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AlternateWitnessServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AlternateWitnessServer = Get-Attr -obj $params -name AlternateWitnessServer -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoDagAutoReseedEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagAutoReseedEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagAutoReseedEnabled = Get-Attr -obj $params -name AutoDagAutoReseedEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoDagDatabaseCopiesPerDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagDatabaseCopiesPerDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagDatabaseCopiesPerDatabase = Get-Attr -obj $params -name AutoDagDatabaseCopiesPerDatabase -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoDagDatabaseCopiesPerVolume;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagDatabaseCopiesPerVolume;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagDatabaseCopiesPerVolume = Get-Attr -obj $params -name AutoDagDatabaseCopiesPerVolume -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoDagDatabasesRootFolderPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagDatabasesRootFolderPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagDatabasesRootFolderPath = Get-Attr -obj $params -name AutoDagDatabasesRootFolderPath -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoDagDiskReclaimerEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagDiskReclaimerEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagDiskReclaimerEnabled = Get-Attr -obj $params -name AutoDagDiskReclaimerEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoDagTotalNumberOfDatabases;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagTotalNumberOfDatabases;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagTotalNumberOfDatabases = Get-Attr -obj $params -name AutoDagTotalNumberOfDatabases -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoDagVolumesRootFolderPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoDagVolumesRootFolderPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoDagVolumesRootFolderPath = Get-Attr -obj $params -name AutoDagVolumesRootFolderPath -failifempty $False -resultobj $result
-#ATTRIBUTE:DatabaseAvailabilityGroupIpAddresses;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DatabaseAvailabilityGroupIpAddresses;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseAvailabilityGroupIpAddresses = Get-Attr -obj $params -name DatabaseAvailabilityGroupIpAddresses -failifempty $False -resultobj $result
-#ATTRIBUTE:DatacenterActivationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DatacenterActivationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:DagOnly,Off
 $DatacenterActivationMode = Get-Attr -obj $params -name DatacenterActivationMode -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-#ATTRIBUTE:ManualDagNetworkConfiguration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ManualDagNetworkConfiguration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ManualDagNetworkConfiguration = Get-Attr -obj $params -name ManualDagNetworkConfiguration -failifempty $False -resultobj $result
-#ATTRIBUTE:NetworkCompression;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:NetworkCompression;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled,InterSubnetOnly,SeedOnly
 $NetworkCompression = Get-Attr -obj $params -name NetworkCompression -failifempty $False -resultobj $result
-#ATTRIBUTE:NetworkEncryption;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:NetworkEncryption;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled,InterSubnetOnly,SeedOnly
 $NetworkEncryption = Get-Attr -obj $params -name NetworkEncryption -failifempty $False -resultobj $result
-#ATTRIBUTE:ReplayLagManagerEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReplayLagManagerEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReplayLagManagerEnabled = Get-Attr -obj $params -name ReplayLagManagerEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:ReplicationPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReplicationPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReplicationPort = Get-Attr -obj $params -name ReplicationPort -failifempty $False -resultobj $result
-#ATTRIBUTE:SkipDagValidation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SkipDagValidation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SkipDagValidation = Get-Attr -obj $params -name SkipDagValidation -failifempty $False -resultobj $result
-#ATTRIBUTE:WitnessDirectory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WitnessDirectory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WitnessDirectory = Get-Attr -obj $params -name WitnessDirectory -failifempty $False -resultobj $result
-#ATTRIBUTE:WitnessServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WitnessServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WitnessServer = Get-Attr -obj $params -name WitnessServer -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($DatacenterActivationMode)
 {
@@ -107,6 +107,28 @@ If ($NetworkEncryption)
     Else
     {
         Fail-Json $result "Option NetworkEncryption has invalid value $NetworkEncryption. Valid values are 'Disabled','Enabled','InterSubnetOnly','SeedOnly'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

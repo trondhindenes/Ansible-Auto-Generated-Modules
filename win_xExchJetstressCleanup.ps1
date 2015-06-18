@@ -26,24 +26,46 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:JetstressPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:JetstressPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $JetstressPath = Get-Attr -obj $params -name JetstressPath -failifempty $True -resultobj $result
-#ATTRIBUTE:ConfigFilePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConfigFilePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ConfigFilePath = Get-Attr -obj $params -name ConfigFilePath -failifempty $False -resultobj $result
-#ATTRIBUTE:DatabasePaths;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DatabasePaths;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabasePaths = Get-Attr -obj $params -name DatabasePaths -failifempty $False -resultobj $result
-#ATTRIBUTE:DeleteAssociatedMountPoints;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DeleteAssociatedMountPoints;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DeleteAssociatedMountPoints = Get-Attr -obj $params -name DeleteAssociatedMountPoints -failifempty $False -resultobj $result
-#ATTRIBUTE:LogPaths;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogPaths;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogPaths = Get-Attr -obj $params -name LogPaths -failifempty $False -resultobj $result
-#ATTRIBUTE:OutputSaveLocation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:OutputSaveLocation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $OutputSaveLocation = Get-Attr -obj $params -name OutputSaveLocation -failifempty $False -resultobj $result
-#ATTRIBUTE:RemoveBinaries;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RemoveBinaries;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RemoveBinaries = Get-Attr -obj $params -name RemoveBinaries -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 $DscResourceName = "xExchJetstressCleanup"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool

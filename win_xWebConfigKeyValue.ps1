@@ -26,21 +26,21 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ConfigSection;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConfigSection;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:AppSettings
 $ConfigSection = Get-Attr -obj $params -name ConfigSection -failifempty $True -resultobj $result
-#ATTRIBUTE:Key;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Key;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Key = Get-Attr -obj $params -name Key -failifempty $True -resultobj $result
-#ATTRIBUTE:WebsitePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WebsitePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WebsitePath = Get-Attr -obj $params -name WebsitePath -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:IsAttribute;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IsAttribute;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IsAttribute = Get-Attr -obj $params -name IsAttribute -failifempty $False -resultobj $result
-#ATTRIBUTE:Value;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Value;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Value = Get-Attr -obj $params -name Value -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($ConfigSection)
 {
@@ -60,6 +60,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

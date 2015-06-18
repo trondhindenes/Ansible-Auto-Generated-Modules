@@ -26,46 +26,68 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:InstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstanceName = Get-Attr -obj $params -name InstanceName -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-#ATTRIBUTE:AgentSvcAccount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AgentSvcAccount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AgentSvcAccount = Get-Attr -obj $params -name AgentSvcAccount -failifempty $False -resultobj $result
-#ATTRIBUTE:Features;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Features;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Features = Get-Attr -obj $params -name Features -failifempty $False -resultobj $result
-#ATTRIBUTE:InstallSqlDataDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallSqlDataDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallSqlDataDir = Get-Attr -obj $params -name InstallSqlDataDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SourcePathCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePathCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePathCredential_username = Get-Attr -obj $params -name SourcePathCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SourcePathCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePathCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePathCredential_password = Get-Attr -obj $params -name SourcePathCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlAdministratorCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlAdministratorCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlAdministratorCredential_username = Get-Attr -obj $params -name SqlAdministratorCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlAdministratorCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlAdministratorCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlAdministratorCredential_password = Get-Attr -obj $params -name SqlAdministratorCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlBackupDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlBackupDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlBackupDir = Get-Attr -obj $params -name SqlBackupDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlCollation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlCollation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlCollation = Get-Attr -obj $params -name SqlCollation -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlTempDBDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlTempDBDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlTempDBDir = Get-Attr -obj $params -name SqlTempDBDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlUserDBDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlUserDBDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlUserDBDir = Get-Attr -obj $params -name SqlUserDBDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlUserDBLogDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlUserDBLogDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlUserDBLogDir = Get-Attr -obj $params -name SqlUserDBLogDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SvcAccount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SvcAccount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SvcAccount = Get-Attr -obj $params -name SvcAccount -failifempty $False -resultobj $result
-#ATTRIBUTE:SysAdminAccounts;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SysAdminAccounts;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SysAdminAccounts = Get-Attr -obj $params -name SysAdminAccounts -failifempty $False -resultobj $result
-#ATTRIBUTE:UpdateEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UpdateEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UpdateEnabled = Get-Attr -obj $params -name UpdateEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:VersionID;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VersionID;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VersionID = Get-Attr -obj $params -name VersionID -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 if ($SourcePathCredential_username)
 {
 $SourcePathCredential_securepassword = $SourcePathCredential_password | ConvertTo-SecureString -asPlainText -Force

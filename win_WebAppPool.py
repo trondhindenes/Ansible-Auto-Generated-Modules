@@ -57,7 +57,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   CLRConfigFile:
     description:
       - 
@@ -71,7 +71,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - KillW3wp      - NoAction      - Throttle      - ThrottleUnderLoad
   cpuLimit:
     description:
       - 
@@ -92,7 +92,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   cpuSmpProcessorAffinityMask:
     description:
       - 
@@ -113,42 +113,42 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   disallowRotationOnConfigChange:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   enable32BitAppOnWin64:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   enableConfigurationOverride:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   Ensure:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Absent      - Present
   identityType:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - ApplicationPoolIdentity      - LocalService      - LocalSystem      - NetworkService      - SpecificUser
   idleTimeout:
     description:
       - 
@@ -162,14 +162,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - HttpLevel      - TcpLevel
   loadUserProfile:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   logEventOnRecycle:
     description:
       - 
@@ -183,14 +183,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - LogonBatch      - LogonService
   managedPipelineMode:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Classic      - Integrated
   managedRuntimeLoader:
     description:
       - 
@@ -204,14 +204,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      -       - v2.0      - v4.0
   manualGroupMembership:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   maxProcesses:
     description:
       - 
@@ -239,14 +239,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   passAnonymousToken:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   Password_username:
     description:
       - 
@@ -267,7 +267,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   pingInterval:
     description:
       - 
@@ -295,7 +295,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - false      - true
   rapidFailProtectionInterval:
     description:
       - 
@@ -358,7 +358,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - AlwaysRunning      - OnDemand
   startupTimeLimit:
     description:
       - 
@@ -379,11 +379,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

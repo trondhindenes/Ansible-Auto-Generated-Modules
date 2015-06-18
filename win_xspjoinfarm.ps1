@@ -26,28 +26,50 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DatabaseServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DatabaseServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseServer = Get-Attr -obj $params -name DatabaseServer -failifempty $True -resultobj $result
-#ATTRIBUTE:FarmAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FarmAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FarmAccount_username = Get-Attr -obj $params -name FarmAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:FarmAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FarmAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FarmAccount_password = Get-Attr -obj $params -name FarmAccount_password -failifempty $True -resultobj $result
-#ATTRIBUTE:FarmConfigDatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FarmConfigDatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FarmConfigDatabaseName = Get-Attr -obj $params -name FarmConfigDatabaseName -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_password = Get-Attr -obj $params -name InstallAccount_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Passphrase;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Passphrase;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Passphrase = Get-Attr -obj $params -name Passphrase -failifempty $True -resultobj $result
-#ATTRIBUTE:WaitCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WaitCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WaitCount = Get-Attr -obj $params -name WaitCount -failifempty $False -resultobj $result
-#ATTRIBUTE:WaitTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WaitTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WaitTime = Get-Attr -obj $params -name WaitTime -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 if ($FarmAccount_username)
 {
 $FarmAccount_securepassword = $FarmAccount_password | ConvertTo-SecureString -asPlainText -Force

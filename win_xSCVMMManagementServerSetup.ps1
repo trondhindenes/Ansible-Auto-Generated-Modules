@@ -26,77 +26,77 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-#ATTRIBUTE:SqlInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlInstanceName = Get-Attr -obj $params -name SqlInstanceName -failifempty $True -resultobj $result
-#ATTRIBUTE:SqlMachineName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlMachineName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlMachineName = Get-Attr -obj $params -name SqlMachineName -failifempty $True -resultobj $result
-#ATTRIBUTE:BitsTcpPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BitsTcpPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BitsTcpPort = Get-Attr -obj $params -name BitsTcpPort -failifempty $False -resultobj $result
-#ATTRIBUTE:ClusterManagementServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ClusterManagementServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ClusterManagementServer = Get-Attr -obj $params -name ClusterManagementServer -failifempty $False -resultobj $result
-#ATTRIBUTE:CompanyName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CompanyName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CompanyName = Get-Attr -obj $params -name CompanyName -failifempty $False -resultobj $result
-#ATTRIBUTE:CreateNewLibraryShare;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CreateNewLibraryShare;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CreateNewLibraryShare = Get-Attr -obj $params -name CreateNewLibraryShare -failifempty $False -resultobj $result
-#ATTRIBUTE:CreateNewSqlDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CreateNewSqlDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CreateNewSqlDatabase = Get-Attr -obj $params -name CreateNewSqlDatabase -failifempty $False -resultobj $result
-#ATTRIBUTE:FirstManagementServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FirstManagementServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FirstManagementServer = Get-Attr -obj $params -name FirstManagementServer -failifempty $False -resultobj $result
-#ATTRIBUTE:ForceHAVMMUninstall;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ForceHAVMMUninstall;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ForceHAVMMUninstall = Get-Attr -obj $params -name ForceHAVMMUninstall -failifempty $False -resultobj $result
-#ATTRIBUTE:IndigoHTTPPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IndigoHTTPPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IndigoHTTPPort = Get-Attr -obj $params -name IndigoHTTPPort -failifempty $False -resultobj $result
-#ATTRIBUTE:IndigoHTTPSPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IndigoHTTPSPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IndigoHTTPSPort = Get-Attr -obj $params -name IndigoHTTPSPort -failifempty $False -resultobj $result
-#ATTRIBUTE:IndigoNETTCPPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IndigoNETTCPPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IndigoNETTCPPort = Get-Attr -obj $params -name IndigoNETTCPPort -failifempty $False -resultobj $result
-#ATTRIBUTE:IndigoTcpPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IndigoTcpPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IndigoTcpPort = Get-Attr -obj $params -name IndigoTcpPort -failifempty $False -resultobj $result
-#ATTRIBUTE:LibraryShareDescription;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LibraryShareDescription;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LibraryShareDescription = Get-Attr -obj $params -name LibraryShareDescription -failifempty $False -resultobj $result
-#ATTRIBUTE:LibraryShareName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LibraryShareName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LibraryShareName = Get-Attr -obj $params -name LibraryShareName -failifempty $False -resultobj $result
-#ATTRIBUTE:LibrarySharePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LibrarySharePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LibrarySharePath = Get-Attr -obj $params -name LibrarySharePath -failifempty $False -resultobj $result
-#ATTRIBUTE:MUOptIn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MUOptIn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MUOptIn = Get-Attr -obj $params -name MUOptIn -failifempty $False -resultobj $result
-#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProductKey = Get-Attr -obj $params -name ProductKey -failifempty $False -resultobj $result
-#ATTRIBUTE:ProgramFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProgramFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProgramFiles = Get-Attr -obj $params -name ProgramFiles -failifempty $False -resultobj $result
-#ATTRIBUTE:RetainSqlDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RetainSqlDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RetainSqlDatabase = Get-Attr -obj $params -name RetainSqlDatabase -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlDatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlDatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlDatabaseName = Get-Attr -obj $params -name SqlDatabaseName -failifempty $False -resultobj $result
-#ATTRIBUTE:SQMOptIn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQMOptIn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQMOptIn = Get-Attr -obj $params -name SQMOptIn -failifempty $False -resultobj $result
-#ATTRIBUTE:TopContainerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TopContainerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TopContainerName = Get-Attr -obj $params -name TopContainerName -failifempty $False -resultobj $result
-#ATTRIBUTE:UserName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UserName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UserName = Get-Attr -obj $params -name UserName -failifempty $False -resultobj $result
-#ATTRIBUTE:VmmServerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VmmServerName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VmmServerName = Get-Attr -obj $params -name VmmServerName -failifempty $False -resultobj $result
-#ATTRIBUTE:vmmService_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:vmmService_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $vmmService_username = Get-Attr -obj $params -name vmmService_username -failifempty $False -resultobj $result
-#ATTRIBUTE:vmmService_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:vmmService_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $vmmService_password = Get-Attr -obj $params -name vmmService_password -failifempty $False -resultobj $result
-#ATTRIBUTE:VMMStaticIPAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VMMStaticIPAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMMStaticIPAddress = Get-Attr -obj $params -name VMMStaticIPAddress -failifempty $False -resultobj $result
-#ATTRIBUTE:WSManTcpPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WSManTcpPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WSManTcpPort = Get-Attr -obj $params -name WSManTcpPort -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -105,6 +105,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlhagroup
 version_added: 
-short_description: Generated from DSC module mlSqlPs version 1.0.0.0
+short_description: Generated from DSC module mlSqlPs version 1.0.0.1
 description:
      - SQL module. Modified from xSqlPs.
 options:
@@ -106,11 +106,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

@@ -26,65 +26,65 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DataReader_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DataReader_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DataReader_username = Get-Attr -obj $params -name DataReader_username -failifempty $True -resultobj $result
-#ATTRIBUTE:DataReader_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DataReader_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DataReader_password = Get-Attr -obj $params -name DataReader_password -failifempty $True -resultobj $result
-#ATTRIBUTE:DataWriter_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DataWriter_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DataWriter_username = Get-Attr -obj $params -name DataWriter_username -failifempty $True -resultobj $result
-#ATTRIBUTE:DataWriter_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DataWriter_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DataWriter_password = Get-Attr -obj $params -name DataWriter_password -failifempty $True -resultobj $result
-#ATTRIBUTE:DwSqlServerInstance;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DwSqlServerInstance;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DwSqlServerInstance = Get-Attr -obj $params -name DwSqlServerInstance -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:FirstManagementServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FirstManagementServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FirstManagementServer = Get-Attr -obj $params -name FirstManagementServer -failifempty $True -resultobj $result
-#ATTRIBUTE:ManagementGroupName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ManagementGroupName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ManagementGroupName = Get-Attr -obj $params -name ManagementGroupName -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-#ATTRIBUTE:SqlServerInstance;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlServerInstance;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlServerInstance = Get-Attr -obj $params -name SqlServerInstance -failifempty $True -resultobj $result
-#ATTRIBUTE:ActionAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ActionAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ActionAccount_username = Get-Attr -obj $params -name ActionAccount_username -failifempty $False -resultobj $result
-#ATTRIBUTE:ActionAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ActionAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ActionAccount_password = Get-Attr -obj $params -name ActionAccount_password -failifempty $False -resultobj $result
-#ATTRIBUTE:DASAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DASAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DASAccount_username = Get-Attr -obj $params -name DASAccount_username -failifempty $False -resultobj $result
-#ATTRIBUTE:DASAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DASAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DASAccount_password = Get-Attr -obj $params -name DASAccount_password -failifempty $False -resultobj $result
-#ATTRIBUTE:DatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $False -resultobj $result
-#ATTRIBUTE:DatabaseSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DatabaseSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseSize = Get-Attr -obj $params -name DatabaseSize -failifempty $False -resultobj $result
-#ATTRIBUTE:DwDatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DwDatabaseName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DwDatabaseName = Get-Attr -obj $params -name DwDatabaseName -failifempty $False -resultobj $result
-#ATTRIBUTE:DwDatabaseSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DwDatabaseSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DwDatabaseSize = Get-Attr -obj $params -name DwDatabaseSize -failifempty $False -resultobj $result
-#ATTRIBUTE:EnableErrorReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EnableErrorReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Always,Never,Queued
 $EnableErrorReporting = Get-Attr -obj $params -name EnableErrorReporting -failifempty $False -resultobj $result
-#ATTRIBUTE:InstallPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallPath = Get-Attr -obj $params -name InstallPath -failifempty $False -resultobj $result
-#ATTRIBUTE:ManagementServicePort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ManagementServicePort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ManagementServicePort = Get-Attr -obj $params -name ManagementServicePort -failifempty $False -resultobj $result
-#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProductKey = Get-Attr -obj $params -name ProductKey -failifempty $False -resultobj $result
-#ATTRIBUTE:SendCEIPReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SendCEIPReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SendCEIPReports = Get-Attr -obj $params -name SendCEIPReports -failifempty $False -resultobj $result
-#ATTRIBUTE:SendODRReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SendODRReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SendODRReports = Get-Attr -obj $params -name SendODRReports -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-#ATTRIBUTE:UseMicrosoftUpdate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UseMicrosoftUpdate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UseMicrosoftUpdate = Get-Attr -obj $params -name UseMicrosoftUpdate -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -104,6 +104,28 @@ If ($EnableErrorReporting)
     Else
     {
         Fail-Json $result "Option EnableErrorReporting has invalid value $EnableErrorReporting. Valid values are 'Always','Never','Queued'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

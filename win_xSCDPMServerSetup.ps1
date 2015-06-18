@@ -26,43 +26,43 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:ReportingInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReportingInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReportingInstanceName = Get-Attr -obj $params -name ReportingInstanceName -failifempty $True -resultobj $result
-#ATTRIBUTE:ReportingMachineCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReportingMachineCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReportingMachineCredential_username = Get-Attr -obj $params -name ReportingMachineCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:ReportingMachineCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReportingMachineCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReportingMachineCredential_password = Get-Attr -obj $params -name ReportingMachineCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:ReportingMachineName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReportingMachineName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReportingMachineName = Get-Attr -obj $params -name ReportingMachineName -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-#ATTRIBUTE:YukonInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:YukonInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $YukonInstanceName = Get-Attr -obj $params -name YukonInstanceName -failifempty $True -resultobj $result
-#ATTRIBUTE:YukonMachineCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:YukonMachineCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $YukonMachineCredential_username = Get-Attr -obj $params -name YukonMachineCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:YukonMachineCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:YukonMachineCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $YukonMachineCredential_password = Get-Attr -obj $params -name YukonMachineCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:YukonMachineName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:YukonMachineName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $YukonMachineName = Get-Attr -obj $params -name YukonMachineName -failifempty $True -resultobj $result
-#ATTRIBUTE:CompanyName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CompanyName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CompanyName = Get-Attr -obj $params -name CompanyName -failifempty $False -resultobj $result
-#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProductKey = Get-Attr -obj $params -name ProductKey -failifempty $False -resultobj $result
-#ATTRIBUTE:ProgramFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProgramFiles;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProgramFiles = Get-Attr -obj $params -name ProgramFiles -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-#ATTRIBUTE:UserName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UserName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UserName = Get-Attr -obj $params -name UserName -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -71,6 +71,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

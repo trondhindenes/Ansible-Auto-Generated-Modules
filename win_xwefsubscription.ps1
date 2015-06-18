@@ -26,49 +26,49 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:SubscriptionID;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SubscriptionID;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SubscriptionID = Get-Attr -obj $params -name SubscriptionID -failifempty $True -resultobj $result
-#ATTRIBUTE:SubscriptionType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SubscriptionType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:CollectorInitiated,SourceInitiated
 $SubscriptionType = Get-Attr -obj $params -name SubscriptionType -failifempty $True -resultobj $result
-#ATTRIBUTE:Address;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Address;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Address = Get-Attr -obj $params -name Address -failifempty $False -resultobj $result
-#ATTRIBUTE:AllowedSourceDomainComputers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowedSourceDomainComputers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowedSourceDomainComputers = Get-Attr -obj $params -name AllowedSourceDomainComputers -failifempty $False -resultobj $result
-#ATTRIBUTE:AllowedSourceNonDomainComputers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowedSourceNonDomainComputers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowedSourceNonDomainComputers = Get-Attr -obj $params -name AllowedSourceNonDomainComputers -failifempty $False -resultobj $result
-#ATTRIBUTE:ContentFormat;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ContentFormat;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ContentFormat = Get-Attr -obj $params -name ContentFormat -failifempty $False -resultobj $result
-#ATTRIBUTE:CredentialsType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CredentialsType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Basic,Default,Digest,Negotiate
 $CredentialsType = Get-Attr -obj $params -name CredentialsType -failifempty $False -resultobj $result
-#ATTRIBUTE:DeliveryMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DeliveryMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Pull,Push
 $DeliveryMode = Get-Attr -obj $params -name DeliveryMode -failifempty $False -resultobj $result
-#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
-#ATTRIBUTE:Enabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Enabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:false,true
 $Enabled = Get-Attr -obj $params -name Enabled -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:HeartBeatInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:HeartBeatInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $HeartBeatInterval = Get-Attr -obj $params -name HeartBeatInterval -failifempty $False -resultobj $result
-#ATTRIBUTE:Locale;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Locale;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Locale = Get-Attr -obj $params -name Locale -failifempty $False -resultobj $result
-#ATTRIBUTE:LogFile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogFile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogFile = Get-Attr -obj $params -name LogFile -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxItems;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxItems;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxItems = Get-Attr -obj $params -name MaxItems -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxLatencyTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxLatencyTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxLatencyTime = Get-Attr -obj $params -name MaxLatencyTime -failifempty $False -resultobj $result
-#ATTRIBUTE:Query;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Query;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Query = Get-Attr -obj $params -name Query -failifempty $False -resultobj $result
-#ATTRIBUTE:ReadExistingEvents;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReadExistingEvents;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:false,true
 $ReadExistingEvents = Get-Attr -obj $params -name ReadExistingEvents -failifempty $False -resultobj $result
-#ATTRIBUTE:TransportName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TransportName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:HTTP,HTTPS
 $TransportName = Get-Attr -obj $params -name TransportName -failifempty $False -resultobj $result
-#ATTRIBUTE:TransportPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TransportPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TransportPort = Get-Attr -obj $params -name TransportPort -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($SubscriptionType)
 {
@@ -143,6 +143,28 @@ If ($TransportName)
     Else
     {
         Fail-Json $result "Option TransportName has invalid value $TransportName. Valid values are 'HTTP','HTTPS'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

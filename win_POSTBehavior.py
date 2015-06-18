@@ -43,74 +43,74 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   Fastboot:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Auto      - Minimal      - Thorough
   FnKeyEmulation:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   KeyboardErrors:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   Keypad:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - ByNumlock      - FnKeyOnly
   MEBxHotKey:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   MouseTouchpad:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - PS2Mouse      - SerialMouse      - SwitchToExternalPS2      - SwitchToTouchpad
   Numlock:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled
   POSTHotKeys:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - DisableF12BootOptionMenu      - EnableF12BootOptionMenu
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

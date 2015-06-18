@@ -26,31 +26,31 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:CertificateThumbPrint;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CertificateThumbPrint;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CertificateThumbPrint = Get-Attr -obj $params -name CertificateThumbPrint -failifempty $True -resultobj $result
-#ATTRIBUTE:EndpointName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EndpointName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EndpointName = Get-Attr -obj $params -name EndpointName -failifempty $True -resultobj $result
-#ATTRIBUTE:AcceptSelfSignedCertificates;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AcceptSelfSignedCertificates;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AcceptSelfSignedCertificates = Get-Attr -obj $params -name AcceptSelfSignedCertificates -failifempty $False -resultobj $result
-#ATTRIBUTE:ConfigurationPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConfigurationPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ConfigurationPath = Get-Attr -obj $params -name ConfigurationPath -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:IsComplianceServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IsComplianceServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IsComplianceServer = Get-Attr -obj $params -name IsComplianceServer -failifempty $False -resultobj $result
-#ATTRIBUTE:ModulePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ModulePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ModulePath = Get-Attr -obj $params -name ModulePath -failifempty $False -resultobj $result
-#ATTRIBUTE:PhysicalPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PhysicalPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PhysicalPath = Get-Attr -obj $params -name PhysicalPath -failifempty $False -resultobj $result
-#ATTRIBUTE:Port;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Port;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Port = Get-Attr -obj $params -name Port -failifempty $False -resultobj $result
-#ATTRIBUTE:RegistrationKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RegistrationKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RegistrationKeyPath = Get-Attr -obj $params -name RegistrationKeyPath -failifempty $False -resultobj $result
-#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Started,Stopped
 $State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -70,6 +70,28 @@ If ($State)
     Else
     {
         Fail-Json $result "Option State has invalid value $State. Valid values are 'Started','Stopped'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

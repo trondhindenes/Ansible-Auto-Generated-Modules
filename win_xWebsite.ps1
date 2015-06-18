@@ -26,23 +26,23 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:ApplicationPool;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ApplicationPool;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ApplicationPool = Get-Attr -obj $params -name ApplicationPool -failifempty $False -resultobj $result
-#ATTRIBUTE:BindingInfo;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BindingInfo;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BindingInfo = Get-Attr -obj $params -name BindingInfo -failifempty $False -resultobj $result
-#ATTRIBUTE:DefaultPage;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DefaultPage;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DefaultPage = Get-Attr -obj $params -name DefaultPage -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:PhysicalPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PhysicalPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PhysicalPath = Get-Attr -obj $params -name PhysicalPath -failifempty $False -resultobj $result
-#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Started,Stopped
 $State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -62,6 +62,28 @@ If ($State)
     Else
     {
         Fail-Json $result "Option State has invalid value $State. Valid values are 'Started','Stopped'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

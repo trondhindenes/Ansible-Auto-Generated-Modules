@@ -26,20 +26,56 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:PhysicalPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$PhysicalPath = Get-Attr -obj $params -name PhysicalPath -failifempty $True -resultobj $result
-#ATTRIBUTE:WebAppPool;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$WebAppPool = Get-Attr -obj $params -name WebAppPool -failifempty $True -resultobj $result
-#ATTRIBUTE:Website;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Website = Get-Attr -obj $params -name Website -failifempty $True -resultobj $result
+#ATTRIBUTE:DestinationPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DestinationPath = Get-Attr -obj $params -name DestinationPath -failifempty $True -resultobj $result
+#ATTRIBUTE:Attributes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Archive,Hidden,ReadOnly,System
+$Attributes = Get-Attr -obj $params -name Attributes -failifempty $False -resultobj $result
+#ATTRIBUTE:Checksum;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:CreatedDate,ModifiedDate,SHA-1,SHA-256,SHA-512
+$Checksum = Get-Attr -obj $params -name Checksum -failifempty $False -resultobj $result
+#ATTRIBUTE:Contents;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Contents = Get-Attr -obj $params -name Contents -failifempty $False -resultobj $result
+#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
+#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
+#ATTRIBUTE:Force;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Force = Get-Attr -obj $params -name Force -failifempty $False -resultobj $result
+#ATTRIBUTE:MatchSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$MatchSource = Get-Attr -obj $params -name MatchSource -failifempty $False -resultobj $result
+#ATTRIBUTE:Recurse;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Recurse = Get-Attr -obj $params -name Recurse -failifempty $False -resultobj $result
+#ATTRIBUTE:SourcePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $False -resultobj $result
+#ATTRIBUTE:Type;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Directory,File
+$Type = Get-Attr -obj $params -name Type -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($Attributes)
+{
+    If (('Archive','Hidden','ReadOnly','System') -contains $Attributes ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option Attributes has invalid value $Attributes. Valid values are 'Archive','Hidden','ReadOnly','System'"
+    }
+}
+
+
+If ($Checksum)
+{
+    If (('CreatedDate','ModifiedDate','SHA-1','SHA-256','SHA-512') -contains $Checksum ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option Checksum has invalid value $Checksum. Valid values are 'CreatedDate','ModifiedDate','SHA-1','SHA-256','SHA-512'"
+    }
+}
+
+
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {
@@ -47,6 +83,17 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($Type)
+{
+    If (('Directory','File') -contains $Type ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option Type has invalid value $Type. Valid values are 'Directory','File'"
     }
 }
 
@@ -73,7 +120,13 @@ If ($AutoConfigureLcm)
 }
 
 
-$DscResourceName = "xWebApplication"
+if ($Credential_username)
+{
+$Credential_securepassword = $Credential_password | ConvertTo-SecureString -asPlainText -Force
+$Credential = New-Object System.Management.Automation.PSCredential($Credential_username,$Credential_securepassword)
+}
+
+$DscResourceName = "file"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

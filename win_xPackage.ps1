@@ -26,49 +26,49 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
-#ATTRIBUTE:ProductId;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProductId;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProductId = Get-Attr -obj $params -name ProductId -failifempty $True -resultobj $result
-#ATTRIBUTE:Arguments;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Arguments;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Arguments = Get-Attr -obj $params -name Arguments -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:FileHash;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FileHash;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FileHash = Get-Attr -obj $params -name FileHash -failifempty $False -resultobj $result
-#ATTRIBUTE:HashAlgorithm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:HashAlgorithm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:MD5,RIPEMD160,SHA1,SHA256,SHA384,SHA512
 $HashAlgorithm = Get-Attr -obj $params -name HashAlgorithm -failifempty $False -resultobj $result
-#ATTRIBUTE:InstalledCheckRegHive;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstalledCheckRegHive;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:CurrentUser,LocalMachine
 $InstalledCheckRegHive = Get-Attr -obj $params -name InstalledCheckRegHive -failifempty $False -resultobj $result
-#ATTRIBUTE:InstalledCheckRegKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstalledCheckRegKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstalledCheckRegKey = Get-Attr -obj $params -name InstalledCheckRegKey -failifempty $False -resultobj $result
-#ATTRIBUTE:InstalledCheckRegValueData;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstalledCheckRegValueData;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstalledCheckRegValueData = Get-Attr -obj $params -name InstalledCheckRegValueData -failifempty $False -resultobj $result
-#ATTRIBUTE:InstalledCheckRegValueName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstalledCheckRegValueName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstalledCheckRegValueName = Get-Attr -obj $params -name InstalledCheckRegValueName -failifempty $False -resultobj $result
-#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogPath = Get-Attr -obj $params -name LogPath -failifempty $False -resultobj $result
-#ATTRIBUTE:ReturnCode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReturnCode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReturnCode = Get-Attr -obj $params -name ReturnCode -failifempty $False -resultobj $result
-#ATTRIBUTE:RunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RunAsCredential_username = Get-Attr -obj $params -name RunAsCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:RunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RunAsCredential_password = Get-Attr -obj $params -name RunAsCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:ServerCertificateValidationCallback;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ServerCertificateValidationCallback;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServerCertificateValidationCallback = Get-Attr -obj $params -name ServerCertificateValidationCallback -failifempty $False -resultobj $result
-#ATTRIBUTE:SignerSubject;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SignerSubject;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SignerSubject = Get-Attr -obj $params -name SignerSubject -failifempty $False -resultobj $result
-#ATTRIBUTE:SignerThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SignerThumbprint;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SignerThumbprint = Get-Attr -obj $params -name SignerThumbprint -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -99,6 +99,28 @@ If ($InstalledCheckRegHive)
     Else
     {
         Fail-Json $result "Option InstalledCheckRegHive has invalid value $InstalledCheckRegHive. Valid values are 'CurrentUser','LocalMachine'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

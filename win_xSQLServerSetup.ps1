@@ -26,100 +26,122 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:InstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstanceName = Get-Attr -obj $params -name InstanceName -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-#ATTRIBUTE:AgtSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AgtSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AgtSvcAccount_username = Get-Attr -obj $params -name AgtSvcAccount_username -failifempty $False -resultobj $result
-#ATTRIBUTE:AgtSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AgtSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AgtSvcAccount_password = Get-Attr -obj $params -name AgtSvcAccount_password -failifempty $False -resultobj $result
-#ATTRIBUTE:ASBackupDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASBackupDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASBackupDir = Get-Attr -obj $params -name ASBackupDir -failifempty $False -resultobj $result
-#ATTRIBUTE:ASCollation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASCollation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASCollation = Get-Attr -obj $params -name ASCollation -failifempty $False -resultobj $result
-#ATTRIBUTE:ASConfigDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASConfigDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASConfigDir = Get-Attr -obj $params -name ASConfigDir -failifempty $False -resultobj $result
-#ATTRIBUTE:ASDataDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASDataDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASDataDir = Get-Attr -obj $params -name ASDataDir -failifempty $False -resultobj $result
-#ATTRIBUTE:ASLogDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASLogDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASLogDir = Get-Attr -obj $params -name ASLogDir -failifempty $False -resultobj $result
-#ATTRIBUTE:ASSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASSvcAccount_username = Get-Attr -obj $params -name ASSvcAccount_username -failifempty $False -resultobj $result
-#ATTRIBUTE:ASSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASSvcAccount_password = Get-Attr -obj $params -name ASSvcAccount_password -failifempty $False -resultobj $result
-#ATTRIBUTE:ASSysAdminAccounts;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASSysAdminAccounts;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASSysAdminAccounts = Get-Attr -obj $params -name ASSysAdminAccounts -failifempty $False -resultobj $result
-#ATTRIBUTE:ASTempDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ASTempDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASTempDir = Get-Attr -obj $params -name ASTempDir -failifempty $False -resultobj $result
-#ATTRIBUTE:ErrorReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ErrorReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ErrorReporting = Get-Attr -obj $params -name ErrorReporting -failifempty $False -resultobj $result
-#ATTRIBUTE:Features;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Features;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Features = Get-Attr -obj $params -name Features -failifempty $False -resultobj $result
-#ATTRIBUTE:FTSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FTSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FTSvcAccount_username = Get-Attr -obj $params -name FTSvcAccount_username -failifempty $False -resultobj $result
-#ATTRIBUTE:FTSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FTSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FTSvcAccount_password = Get-Attr -obj $params -name FTSvcAccount_password -failifempty $False -resultobj $result
-#ATTRIBUTE:InstallSharedDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallSharedDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallSharedDir = Get-Attr -obj $params -name InstallSharedDir -failifempty $False -resultobj $result
-#ATTRIBUTE:InstallSharedWOWDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallSharedWOWDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallSharedWOWDir = Get-Attr -obj $params -name InstallSharedWOWDir -failifempty $False -resultobj $result
-#ATTRIBUTE:InstallSQLDataDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallSQLDataDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallSQLDataDir = Get-Attr -obj $params -name InstallSQLDataDir -failifempty $False -resultobj $result
-#ATTRIBUTE:InstanceDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstanceDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstanceDir = Get-Attr -obj $params -name InstanceDir -failifempty $False -resultobj $result
-#ATTRIBUTE:InstanceID;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstanceID;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstanceID = Get-Attr -obj $params -name InstanceID -failifempty $False -resultobj $result
-#ATTRIBUTE:ISSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ISSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ISSvcAccount_username = Get-Attr -obj $params -name ISSvcAccount_username -failifempty $False -resultobj $result
-#ATTRIBUTE:ISSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ISSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ISSvcAccount_password = Get-Attr -obj $params -name ISSvcAccount_password -failifempty $False -resultobj $result
-#ATTRIBUTE:PID;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PID;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PID = Get-Attr -obj $params -name PID -failifempty $False -resultobj $result
-#ATTRIBUTE:RSSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RSSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RSSvcAccount_username = Get-Attr -obj $params -name RSSvcAccount_username -failifempty $False -resultobj $result
-#ATTRIBUTE:RSSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RSSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RSSvcAccount_password = Get-Attr -obj $params -name RSSvcAccount_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SAPwd_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SAPwd_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SAPwd_username = Get-Attr -obj $params -name SAPwd_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SAPwd_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SAPwd_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SAPwd_password = Get-Attr -obj $params -name SAPwd_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SecurityMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SecurityMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SecurityMode = Get-Attr -obj $params -name SecurityMode -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLBackupDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLBackupDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLBackupDir = Get-Attr -obj $params -name SQLBackupDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLCollation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLCollation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLCollation = Get-Attr -obj $params -name SQLCollation -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLSvcAccount_username = Get-Attr -obj $params -name SQLSvcAccount_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLSvcAccount_password = Get-Attr -obj $params -name SQLSvcAccount_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLSysAdminAccounts;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLSysAdminAccounts;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLSysAdminAccounts = Get-Attr -obj $params -name SQLSysAdminAccounts -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLTempDBDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLTempDBDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLTempDBDir = Get-Attr -obj $params -name SQLTempDBDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLTempDBLogDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLTempDBLogDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLTempDBLogDir = Get-Attr -obj $params -name SQLTempDBLogDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLUserDBDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLUserDBDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLUserDBDir = Get-Attr -obj $params -name SQLUserDBDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLUserDBLogDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLUserDBLogDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLUserDBLogDir = Get-Attr -obj $params -name SQLUserDBLogDir -failifempty $False -resultobj $result
-#ATTRIBUTE:SQMReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQMReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQMReporting = Get-Attr -obj $params -name SQMReporting -failifempty $False -resultobj $result
-#ATTRIBUTE:UpdateEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UpdateEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UpdateEnabled = Get-Attr -obj $params -name UpdateEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:UpdateSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UpdateSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UpdateSource = Get-Attr -obj $params -name UpdateSource -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 if ($SetupCredential_username)
 {
 $SetupCredential_securepassword = $SetupCredential_password | ConvertTo-SecureString -asPlainText -Force

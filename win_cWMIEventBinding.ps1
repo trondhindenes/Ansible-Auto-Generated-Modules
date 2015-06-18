@@ -26,23 +26,23 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Consumer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Consumer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Consumer = Get-Attr -obj $params -name Consumer -failifempty $True -resultobj $result
-#ATTRIBUTE:ConsumerType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConsumerType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:CommandLine,EventLog,LogFile,Script,SMTP
 $ConsumerType = Get-Attr -obj $params -name ConsumerType -failifempty $True -resultobj $result
-#ATTRIBUTE:Filter;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Filter;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Filter = Get-Attr -obj $params -name Filter -failifempty $True -resultobj $result
-#ATTRIBUTE:DeliveryQoS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DeliveryQoS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DeliveryQoS = Get-Attr -obj $params -name DeliveryQoS -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:MaintainSecurityContext;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaintainSecurityContext;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaintainSecurityContext = Get-Attr -obj $params -name MaintainSecurityContext -failifempty $False -resultobj $result
-#ATTRIBUTE:SlowDownProviders;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SlowDownProviders;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SlowDownProviders = Get-Attr -obj $params -name SlowDownProviders -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($ConsumerType)
 {
@@ -62,6 +62,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

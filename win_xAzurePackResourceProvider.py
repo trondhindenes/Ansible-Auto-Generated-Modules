@@ -71,7 +71,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Basic      - None      - Windows
   AdminAuthenticationUser_username:
     description:
       - 
@@ -127,7 +127,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Basic      - None      - Windows
   HealthCheckAuthenticationUser_username:
     description:
       - 
@@ -176,7 +176,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Basic      - None      - Windows
   NotificationAuthenticationUser_username:
     description:
       - 
@@ -218,7 +218,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Basic      - None      - Windows
   TenantAuthenticationUser_username:
     description:
       - 
@@ -260,14 +260,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - CloudServiceProvider      - Standard      - UsageProvider
   UsageAuthenticationMode:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Basic      - None      - Windows
   UsageAuthenticationUser_username:
     description:
       - 
@@ -295,11 +295,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

@@ -26,21 +26,21 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DnsServerIPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DnsServerIPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DnsServerIPAddress = Get-Attr -obj $params -name DnsServerIPAddress -failifempty $True -resultobj $result
-#ATTRIBUTE:ScopeID;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ScopeID;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ScopeID = Get-Attr -obj $params -name ScopeID -failifempty $True -resultobj $result
-#ATTRIBUTE:AddressFamily;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AddressFamily;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:IPv4
 $AddressFamily = Get-Attr -obj $params -name AddressFamily -failifempty $False -resultobj $result
-#ATTRIBUTE:DnsDomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DnsDomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DnsDomain = Get-Attr -obj $params -name DnsDomain -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:Router;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Router;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Router = Get-Attr -obj $params -name Router -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($AddressFamily)
 {
@@ -60,6 +60,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

@@ -26,23 +26,23 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:AzurePackAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AzurePackAdminCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AzurePackAdminCredential_username = Get-Attr -obj $params -name AzurePackAdminCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:AzurePackAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AzurePackAdminCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AzurePackAdminCredential_password = Get-Attr -obj $params -name AzurePackAdminCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:FullyQualifiedDomainName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FullyQualifiedDomainName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FullyQualifiedDomainName = Get-Attr -obj $params -name FullyQualifiedDomainName -failifempty $True -resultobj $result
-#ATTRIBUTE:SQLServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLServer = Get-Attr -obj $params -name SQLServer -failifempty $True -resultobj $result
-#ATTRIBUTE:Target;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Target;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Admin,Tenant
 $Target = Get-Attr -obj $params -name Target -failifempty $True -resultobj $result
-#ATTRIBUTE:Port;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Port;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Port = Get-Attr -obj $params -name Port -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLInstance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLInstance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLInstance = Get-Attr -obj $params -name SQLInstance -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Target)
 {
@@ -51,6 +51,28 @@ If ($Target)
     Else
     {
         Fail-Json $result "Option Target has invalid value $Target. Valid values are 'Admin','Tenant'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

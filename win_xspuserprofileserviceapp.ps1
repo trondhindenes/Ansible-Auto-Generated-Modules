@@ -26,36 +26,58 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ApplicationPool;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ApplicationPool;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ApplicationPool = Get-Attr -obj $params -name ApplicationPool -failifempty $True -resultobj $result
-#ATTRIBUTE:FarmAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FarmAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FarmAccount_username = Get-Attr -obj $params -name FarmAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:FarmAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FarmAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FarmAccount_password = Get-Attr -obj $params -name FarmAccount_password -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_password = Get-Attr -obj $params -name InstallAccount_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:MySiteHostLocation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MySiteHostLocation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MySiteHostLocation = Get-Attr -obj $params -name MySiteHostLocation -failifempty $False -resultobj $result
-#ATTRIBUTE:ProfileDBName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProfileDBName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProfileDBName = Get-Attr -obj $params -name ProfileDBName -failifempty $False -resultobj $result
-#ATTRIBUTE:ProfileDBServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProfileDBServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProfileDBServer = Get-Attr -obj $params -name ProfileDBServer -failifempty $False -resultobj $result
-#ATTRIBUTE:SocialDBName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SocialDBName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SocialDBName = Get-Attr -obj $params -name SocialDBName -failifempty $False -resultobj $result
-#ATTRIBUTE:SocialDBServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SocialDBServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SocialDBServer = Get-Attr -obj $params -name SocialDBServer -failifempty $False -resultobj $result
-#ATTRIBUTE:SyncDBName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SyncDBName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SyncDBName = Get-Attr -obj $params -name SyncDBName -failifempty $False -resultobj $result
-#ATTRIBUTE:SyncDBServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SyncDBServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SyncDBServer = Get-Attr -obj $params -name SyncDBServer -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 if ($FarmAccount_username)
 {
 $FarmAccount_securepassword = $FarmAccount_password | ConvertTo-SecureString -asPlainText -Force

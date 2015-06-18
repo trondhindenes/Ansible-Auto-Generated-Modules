@@ -26,41 +26,41 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AllowServiceRestart;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-#ATTRIBUTE:ExtendedProtectionFlags;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExtendedProtectionFlags;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExtendedProtectionFlags = Get-Attr -obj $params -name ExtendedProtectionFlags -failifempty $False -resultobj $result
-#ATTRIBUTE:ExtendedProtectionSPNList;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExtendedProtectionSPNList;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExtendedProtectionSPNList = Get-Attr -obj $params -name ExtendedProtectionSPNList -failifempty $False -resultobj $result
-#ATTRIBUTE:ExtendedProtectionTokenChecking;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExtendedProtectionTokenChecking;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Allow,None,Require
 $ExtendedProtectionTokenChecking = Get-Attr -obj $params -name ExtendedProtectionTokenChecking -failifempty $False -resultobj $result
-#ATTRIBUTE:ExternalClientAuthenticationMethod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExternalClientAuthenticationMethod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Basic,Negotiate,Ntlm
 $ExternalClientAuthenticationMethod = Get-Attr -obj $params -name ExternalClientAuthenticationMethod -failifempty $False -resultobj $result
-#ATTRIBUTE:ExternalClientsRequireSsl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExternalClientsRequireSsl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExternalClientsRequireSsl = Get-Attr -obj $params -name ExternalClientsRequireSsl -failifempty $False -resultobj $result
-#ATTRIBUTE:ExternalHostname;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExternalHostname;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ExternalHostname = Get-Attr -obj $params -name ExternalHostname -failifempty $False -resultobj $result
-#ATTRIBUTE:IISAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IISAuthenticationMethods;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IISAuthenticationMethods = Get-Attr -obj $params -name IISAuthenticationMethods -failifempty $False -resultobj $result
-#ATTRIBUTE:InternalClientAuthenticationMethod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InternalClientAuthenticationMethod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Basic,Negotiate,Ntlm
 $InternalClientAuthenticationMethod = Get-Attr -obj $params -name InternalClientAuthenticationMethod -failifempty $False -resultobj $result
-#ATTRIBUTE:InternalClientsRequireSsl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InternalClientsRequireSsl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InternalClientsRequireSsl = Get-Attr -obj $params -name InternalClientsRequireSsl -failifempty $False -resultobj $result
-#ATTRIBUTE:InternalHostname;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InternalHostname;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InternalHostname = Get-Attr -obj $params -name InternalHostname -failifempty $False -resultobj $result
-#ATTRIBUTE:SSLOffloading;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SSLOffloading;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SSLOffloading = Get-Attr -obj $params -name SSLOffloading -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($ExtendedProtectionTokenChecking)
 {
@@ -91,6 +91,28 @@ If ($InternalClientAuthenticationMethod)
     Else
     {
         Fail-Json $result "Option InternalClientAuthenticationMethod has invalid value $InternalClientAuthenticationMethod. Valid values are 'Basic','Negotiate','Ntlm'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

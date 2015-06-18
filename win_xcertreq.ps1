@@ -26,22 +26,44 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:CARootName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CARootName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CARootName = Get-Attr -obj $params -name CARootName -failifempty $True -resultobj $result
-#ATTRIBUTE:CAServerFQDN;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CAServerFQDN;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CAServerFQDN = Get-Attr -obj $params -name CAServerFQDN -failifempty $True -resultobj $result
-#ATTRIBUTE:Subject;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Subject;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Subject = Get-Attr -obj $params -name Subject -failifempty $True -resultobj $result
-#ATTRIBUTE:AutoRenew;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoRenew;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AutoRenew = Get-Attr -obj $params -name AutoRenew -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 if ($Credential_username)
 {
 $Credential_securepassword = $Credential_password | ConvertTo-SecureString -asPlainText -Force

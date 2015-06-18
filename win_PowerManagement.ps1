@@ -26,51 +26,51 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Category;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Category;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Category = Get-Attr -obj $params -name Category -failifempty $True -resultobj $result
-#ATTRIBUTE:ACBehavior;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ACBehavior;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:LastPowerState,PowerOff,PowerOn
 $ACBehavior = Get-Attr -obj $params -name ACBehavior -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoOnFriday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoOnFriday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $AutoOnFriday = Get-Attr -obj $params -name AutoOnFriday -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoOnMonday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoOnMonday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $AutoOnMonday = Get-Attr -obj $params -name AutoOnMonday -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoOnSaturday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoOnSaturday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $AutoOnSaturday = Get-Attr -obj $params -name AutoOnSaturday -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoOnSunday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoOnSunday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $AutoOnSunday = Get-Attr -obj $params -name AutoOnSunday -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoOnThursday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoOnThursday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $AutoOnThursday = Get-Attr -obj $params -name AutoOnThursday -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoOnTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoOnTime;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,EveryDay,SelectDays,WeekDays
 $AutoOnTime = Get-Attr -obj $params -name AutoOnTime -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoOnTuesday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoOnTuesday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $AutoOnTuesday = Get-Attr -obj $params -name AutoOnTuesday -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoOnWednesday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AutoOnWednesday;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $AutoOnWednesday = Get-Attr -obj $params -name AutoOnWednesday -failifempty $False -resultobj $result
-#ATTRIBUTE:BatterySliceChargeConfiguration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BatterySliceChargeConfiguration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:ExpressCharge,Standard
 $BatterySliceChargeConfiguration = Get-Attr -obj $params -name BatterySliceChargeConfiguration -failifempty $False -resultobj $result
-#ATTRIBUTE:BlockSleepS3State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BlockSleepS3State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $BlockSleepS3State = Get-Attr -obj $params -name BlockSleepS3State -failifempty $False -resultobj $result
-#ATTRIBUTE:ControlWLANRadio;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ControlWLANRadio;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $ControlWLANRadio = Get-Attr -obj $params -name ControlWLANRadio -failifempty $False -resultobj $result
-#ATTRIBUTE:ControlWWANRadio;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ControlWWANRadio;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $ControlWWANRadio = Get-Attr -obj $params -name ControlWWANRadio -failifempty $False -resultobj $result
-#ATTRIBUTE:DeepSleepControl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DeepSleepControl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,EnabledinS4andS5,EnabledinS5only
 $DeepSleepControl = Get-Attr -obj $params -name DeepSleepControl -failifempty $False -resultobj $result
-#ATTRIBUTE:FanControlOverride;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FanControlOverride;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $FanControlOverride = Get-Attr -obj $params -name FanControlOverride -failifempty $False -resultobj $result
-#ATTRIBUTE:FanSpeedControl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FanSpeedControl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Auto,High,Low,Medium,MediumHigh,MediumLow
 $FanSpeedControl = Get-Attr -obj $params -name FanSpeedControl -failifempty $False -resultobj $result
-#ATTRIBUTE:IntelSmartConnect;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:IntelSmartConnect;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $IntelSmartConnect = Get-Attr -obj $params -name IntelSmartConnect -failifempty $False -resultobj $result
-#ATTRIBUTE:PrimaryBatteryChargeConfiguration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PrimaryBatteryChargeConfiguration;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Adaptive,Custom,ExpressCharge,PrimarilyACUse,Standard
 $PrimaryBatteryChargeConfiguration = Get-Attr -obj $params -name PrimaryBatteryChargeConfiguration -failifempty $False -resultobj $result
-#ATTRIBUTE:USBWakesupport;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:USBWakesupport;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Enabled,Off
 $USBWakesupport = Get-Attr -obj $params -name USBWakesupport -failifempty $False -resultobj $result
-#ATTRIBUTE:WakeonLANorWLAN;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WakeonLANorWLAN;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled,LANonly,LANorWLAN,WLANonly
 $WakeonLANorWLAN = Get-Attr -obj $params -name WakeonLANorWLAN -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($ACBehavior)
 {
@@ -288,6 +288,28 @@ If ($WakeonLANorWLAN)
     Else
     {
         Fail-Json $result "Option WakeonLANorWLAN has invalid value $WakeonLANorWLAN. Valid values are 'Disabled','Enabled','LANonly','LANorWLAN','WLANonly'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

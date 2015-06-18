@@ -26,15 +26,15 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Address;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Address;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Address = Get-Attr -obj $params -name Address -failifempty $True -resultobj $result
-#ATTRIBUTE:InterfaceAlias;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InterfaceAlias;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InterfaceAlias = Get-Attr -obj $params -name InterfaceAlias -failifempty $True -resultobj $result
-#ATTRIBUTE:AddressFamily;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AddressFamily;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:IPv4,IPv6
 $AddressFamily = Get-Attr -obj $params -name AddressFamily -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($AddressFamily)
 {
@@ -43,6 +43,28 @@ If ($AddressFamily)
     Else
     {
         Fail-Json $result "Option AddressFamily has invalid value $AddressFamily. Valid values are 'IPv4','IPv6'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

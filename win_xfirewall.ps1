@@ -26,37 +26,37 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Access;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Access;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Allow,Block,NotConfigured
 $Access = Get-Attr -obj $params -name Access -failifempty $True -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:ApplicationPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ApplicationPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ApplicationPath = Get-Attr -obj $params -name ApplicationPath -failifempty $False -resultobj $result
-#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
-#ATTRIBUTE:Direction;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Direction;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Inbound,Outbound
 $Direction = Get-Attr -obj $params -name Direction -failifempty $False -resultobj $result
-#ATTRIBUTE:DisplayGroup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DisplayGroup;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DisplayGroup = Get-Attr -obj $params -name DisplayGroup -failifempty $False -resultobj $result
-#ATTRIBUTE:DisplayName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DisplayName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DisplayName = Get-Attr -obj $params -name DisplayName -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:LocalPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LocalPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LocalPort = Get-Attr -obj $params -name LocalPort -failifempty $False -resultobj $result
-#ATTRIBUTE:Profile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Profile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Profile = Get-Attr -obj $params -name Profile -failifempty $False -resultobj $result
-#ATTRIBUTE:Protocol;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Protocol;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Protocol = Get-Attr -obj $params -name Protocol -failifempty $False -resultobj $result
-#ATTRIBUTE:RemotePort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RemotePort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RemotePort = Get-Attr -obj $params -name RemotePort -failifempty $False -resultobj $result
-#ATTRIBUTE:Service;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Service;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Service = Get-Attr -obj $params -name Service -failifempty $False -resultobj $result
-#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled
 $State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Access)
 {
@@ -98,6 +98,28 @@ If ($State)
     Else
     {
         Fail-Json $result "Option State has invalid value $State. Valid values are 'Disabled','Enabled'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

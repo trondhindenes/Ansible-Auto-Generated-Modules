@@ -26,35 +26,35 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Action;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Action;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Initialize,Install
 $Action = Get-Attr -obj $params -name Action -failifempty $True -resultobj $result
-#ATTRIBUTE:Role;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Role;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Admin API,Admin Authentication Site,Admin Site,MySQL Extension,SQL Server Extension,Tenant API,Tenant Authentication Site,Tenant Public API,Tenant Site
 $Role = Get-Attr -obj $params -name Role -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-#ATTRIBUTE:dbUser_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:dbUser_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $dbUser_username = Get-Attr -obj $params -name dbUser_username -failifempty $False -resultobj $result
-#ATTRIBUTE:dbUser_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:dbUser_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $dbUser_password = Get-Attr -obj $params -name dbUser_password -failifempty $False -resultobj $result
-#ATTRIBUTE:EnableCeip;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EnableCeip;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EnableCeip = Get-Attr -obj $params -name EnableCeip -failifempty $False -resultobj $result
-#ATTRIBUTE:Passphrase_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Passphrase_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Passphrase_username = Get-Attr -obj $params -name Passphrase_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Passphrase_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Passphrase_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Passphrase_password = Get-Attr -obj $params -name Passphrase_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLInstance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLInstance;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLInstance = Get-Attr -obj $params -name SQLInstance -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SQLServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLServer = Get-Attr -obj $params -name SQLServer -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Action)
 {
@@ -74,6 +74,28 @@ If ($Role)
     Else
     {
         Fail-Json $result "Option Role has invalid value $Role. Valid values are 'Admin API','Admin Authentication Site','Admin Site','MySQL Extension','SQL Server Extension','Tenant API','Tenant Authentication Site','Tenant Public API','Tenant Site'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

@@ -26,40 +26,62 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_password = Get-Attr -obj $params -name InstallAccount_password -failifempty $True -resultobj $result
-#ATTRIBUTE:OwnerAlias;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:OwnerAlias;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $OwnerAlias = Get-Attr -obj $params -name OwnerAlias -failifempty $True -resultobj $result
-#ATTRIBUTE:Url;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Url;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Url = Get-Attr -obj $params -name Url -failifempty $True -resultobj $result
-#ATTRIBUTE:CompatibilityLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CompatibilityLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CompatibilityLevel = Get-Attr -obj $params -name CompatibilityLevel -failifempty $False -resultobj $result
-#ATTRIBUTE:ContentDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ContentDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ContentDatabase = Get-Attr -obj $params -name ContentDatabase -failifempty $False -resultobj $result
-#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
-#ATTRIBUTE:HostHeaderWebApplication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:HostHeaderWebApplication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $HostHeaderWebApplication = Get-Attr -obj $params -name HostHeaderWebApplication -failifempty $False -resultobj $result
-#ATTRIBUTE:Language;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Language;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Language = Get-Attr -obj $params -name Language -failifempty $False -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $False -resultobj $result
-#ATTRIBUTE:OwnerEmail;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:OwnerEmail;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $OwnerEmail = Get-Attr -obj $params -name OwnerEmail -failifempty $False -resultobj $result
-#ATTRIBUTE:QuotaTemplate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:QuotaTemplate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $QuotaTemplate = Get-Attr -obj $params -name QuotaTemplate -failifempty $False -resultobj $result
-#ATTRIBUTE:SecondaryEmail;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SecondaryEmail;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SecondaryEmail = Get-Attr -obj $params -name SecondaryEmail -failifempty $False -resultobj $result
-#ATTRIBUTE:SecondaryOwnerAlias;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SecondaryOwnerAlias;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SecondaryOwnerAlias = Get-Attr -obj $params -name SecondaryOwnerAlias -failifempty $False -resultobj $result
-#ATTRIBUTE:Template;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Template;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Template = Get-Attr -obj $params -name Template -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 if ($InstallAccount_username)
 {
 $InstallAccount_securepassword = $InstallAccount_password | ConvertTo-SecureString -asPlainText -Force

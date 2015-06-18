@@ -26,55 +26,55 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ApPool_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ApPool_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ApPool_username = Get-Attr -obj $params -name ApPool_username -failifempty $True -resultobj $result
-#ATTRIBUTE:ApPool_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ApPool_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ApPool_password = Get-Attr -obj $params -name ApPool_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:FirstWebServiceServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FirstWebServiceServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FirstWebServiceServer = Get-Attr -obj $params -name FirstWebServiceServer -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
-#ATTRIBUTE:SqlInstance;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlInstance;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlInstance = Get-Attr -obj $params -name SqlInstance -failifempty $True -resultobj $result
-#ATTRIBUTE:SqlServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlServer = Get-Attr -obj $params -name SqlServer -failifempty $True -resultobj $result
-#ATTRIBUTE:AdminGroupMembers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdminGroupMembers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AdminGroupMembers = Get-Attr -obj $params -name AdminGroupMembers -failifempty $False -resultobj $result
-#ATTRIBUTE:CertificateName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CertificateName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CertificateName = Get-Attr -obj $params -name CertificateName -failifempty $False -resultobj $result
-#ATTRIBUTE:ETWManifest;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ETWManifest;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ETWManifest = Get-Attr -obj $params -name ETWManifest -failifempty $False -resultobj $result
-#ATTRIBUTE:InstallFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallFolder = Get-Attr -obj $params -name InstallFolder -failifempty $False -resultobj $result
-#ATTRIBUTE:MSUpdate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MSUpdate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MSUpdate = Get-Attr -obj $params -name MSUpdate -failifempty $False -resultobj $result
-#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProductKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ProductKey = Get-Attr -obj $params -name ProductKey -failifempty $False -resultobj $result
-#ATTRIBUTE:RunbookWorkerServers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RunbookWorkerServers;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RunbookWorkerServers = Get-Attr -obj $params -name RunbookWorkerServers -failifempty $False -resultobj $result
-#ATTRIBUTE:SendCEIPReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SendCEIPReports;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SendCEIPReports = Get-Attr -obj $params -name SendCEIPReports -failifempty $False -resultobj $result
-#ATTRIBUTE:SiteName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SiteName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SiteName = Get-Attr -obj $params -name SiteName -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
-#ATTRIBUTE:SpecifyCertificate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SpecifyCertificate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SpecifyCertificate = Get-Attr -obj $params -name SpecifyCertificate -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlDatabase;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlDatabase = Get-Attr -obj $params -name SqlDatabase -failifempty $False -resultobj $result
-#ATTRIBUTE:UseSSL;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:UseSSL;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UseSSL = Get-Attr -obj $params -name UseSSL -failifempty $False -resultobj $result
-#ATTRIBUTE:WebServicePort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:WebServicePort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $WebServicePort = Get-Attr -obj $params -name WebServicePort -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -83,6 +83,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

@@ -57,28 +57,28 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Off      - On
   DhcpGuard:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Off      - On
   IeeePriorityTag:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Off      - On
   MacAddressSpoofing:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Off      - On
   MaximumBandwidth:
     description:
       - 
@@ -106,14 +106,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Destination      - None      - Source
   RouterGuard:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Off      - On
   VMName:
     description:
       - 
@@ -134,11 +134,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

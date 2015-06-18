@@ -26,29 +26,29 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:ServiceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ServiceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServiceName = Get-Attr -obj $params -name ServiceName -failifempty $True -resultobj $result
-#ATTRIBUTE:AdminUsername;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdminUsername;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AdminUsername = Get-Attr -obj $params -name AdminUsername -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:ImageName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ImageName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ImageName = Get-Attr -obj $params -name ImageName -failifempty $False -resultobj $result
-#ATTRIBUTE:InstanceSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstanceSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstanceSize = Get-Attr -obj $params -name InstanceSize -failifempty $False -resultobj $result
-#ATTRIBUTE:Linux;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Linux;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Linux = Get-Attr -obj $params -name Linux -failifempty $False -resultobj $result
-#ATTRIBUTE:LinuxUser;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LinuxUser;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LinuxUser = Get-Attr -obj $params -name LinuxUser -failifempty $False -resultobj $result
-#ATTRIBUTE:Password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Password = Get-Attr -obj $params -name Password -failifempty $False -resultobj $result
-#ATTRIBUTE:Windows;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Windows;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Windows = Get-Attr -obj $params -name Windows -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -57,6 +57,28 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

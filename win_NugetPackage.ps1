@@ -26,29 +26,29 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DestinationPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DestinationPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DestinationPath = Get-Attr -obj $params -name DestinationPath -failifempty $True -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:InstallationPolicy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallationPolicy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Trusted,Untrusted
 $InstallationPolicy = Get-Attr -obj $params -name InstallationPolicy -failifempty $False -resultobj $result
-#ATTRIBUTE:MaximumVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaximumVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaximumVersion = Get-Attr -obj $params -name MaximumVersion -failifempty $False -resultobj $result
-#ATTRIBUTE:MinimumVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MinimumVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MinimumVersion = Get-Attr -obj $params -name MinimumVersion -failifempty $False -resultobj $result
-#ATTRIBUTE:RequiredVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RequiredVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RequiredVersion = Get-Attr -obj $params -name RequiredVersion -failifempty $False -resultobj $result
-#ATTRIBUTE:Source;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Source;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Source = Get-Attr -obj $params -name Source -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceCredential_username = Get-Attr -obj $params -name SourceCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:SourceCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SourceCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceCredential_password = Get-Attr -obj $params -name SourceCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -68,6 +68,28 @@ If ($InstallationPolicy)
     Else
     {
         Fail-Json $result "Option InstallationPolicy has invalid value $InstallationPolicy. Valid values are 'Trusted','Untrusted'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

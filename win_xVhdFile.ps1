@@ -26,15 +26,15 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:FileDirectory;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FileDirectory;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FileDirectory = Get-Attr -obj $params -name FileDirectory -failifempty $True -resultobj $result
-#ATTRIBUTE:VhdPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:VhdPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VhdPath = Get-Attr -obj $params -name VhdPath -failifempty $True -resultobj $result
-#ATTRIBUTE:CheckSum;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CheckSum;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:ModifiedDate,SHA-1,SHA-256,SHA-512
 $CheckSum = Get-Attr -obj $params -name CheckSum -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($CheckSum)
 {
@@ -43,6 +43,28 @@ If ($CheckSum)
     Else
     {
         Fail-Json $result "Option CheckSum has invalid value $CheckSum. Valid values are 'ModifiedDate','SHA-1','SHA-256','SHA-512'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

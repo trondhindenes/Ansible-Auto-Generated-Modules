@@ -50,7 +50,7 @@ options:
     required: True
     default: 
     aliases: []
-
+    choices:      - Absent      - Present
   Identity:
     description:
       - 
@@ -190,7 +190,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Allow      - None      - Require
   Fqdn:
     description:
       - 
@@ -295,7 +295,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - All      - IPAddress      - None      - User
   OrarEnabled:
     description:
       - 
@@ -323,7 +323,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - None      - Verbose
   RemoteIPRanges:
     description:
       - 
@@ -358,7 +358,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Disabled      - Enabled      - EnabledWithoutValue
   SuppressXAnonymousTls:
     description:
       - 
@@ -393,25 +393,25 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - FrontendTransport      - HubTransport
   Usage:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Client      - Custom      - Internal      - Internet      - Partner
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

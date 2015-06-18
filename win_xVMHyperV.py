@@ -50,14 +50,14 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Absent      - Present
   Generation:
     description:
       - 
     required: False
     default: 
     aliases: []
-
+    choices:      - Vhd      - Vhdx
   MACAddress:
     description:
       - 
@@ -120,7 +120,7 @@ options:
     required: False
     default: 
     aliases: []
-
+    choices:      - Off      - Paused      - Running
   SwitchName:
     description:
       - 
@@ -141,11 +141,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

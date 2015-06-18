@@ -26,23 +26,23 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:LogLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:ErrorsAndWarning,ErrorsAndWarningAndInformation,ErrorsOnly
 $LogLevel = Get-Attr -obj $params -name LogLevel -failifempty $False -resultobj $result
-#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogPath = Get-Attr -obj $params -name LogPath -failifempty $False -resultobj $result
-#ATTRIBUTE:NoWindowsUpdateCheck;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:NoWindowsUpdateCheck;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $NoWindowsUpdateCheck = Get-Attr -obj $params -name NoWindowsUpdateCheck -failifempty $False -resultobj $result
-#ATTRIBUTE:RemoveFilesOnDisable;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RemoveFilesOnDisable;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RemoveFilesOnDisable = Get-Attr -obj $params -name RemoveFilesOnDisable -failifempty $False -resultobj $result
-#ATTRIBUTE:Source;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Source;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Source = Get-Attr -obj $params -name Source -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -62,6 +62,28 @@ If ($LogLevel)
     Else
     {
         Fail-Json $result "Option LogLevel has invalid value $LogLevel. Valid values are 'ErrorsAndWarning','ErrorsAndWarningAndInformation','ErrorsOnly'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

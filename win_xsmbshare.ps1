@@ -26,31 +26,31 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
-#ATTRIBUTE:ChangeAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ChangeAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ChangeAccess = Get-Attr -obj $params -name ChangeAccess -failifempty $False -resultobj $result
-#ATTRIBUTE:ConcurrentUserLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConcurrentUserLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ConcurrentUserLimit = Get-Attr -obj $params -name ConcurrentUserLimit -failifempty $False -resultobj $result
-#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
-#ATTRIBUTE:EncryptData;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EncryptData;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EncryptData = Get-Attr -obj $params -name EncryptData -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:FolderEnumerationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FolderEnumerationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:AccessBased,Unrestricted
 $FolderEnumerationMode = Get-Attr -obj $params -name FolderEnumerationMode -failifempty $False -resultobj $result
-#ATTRIBUTE:FullAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:FullAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FullAccess = Get-Attr -obj $params -name FullAccess -failifempty $False -resultobj $result
-#ATTRIBUTE:NoAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:NoAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $NoAccess = Get-Attr -obj $params -name NoAccess -failifempty $False -resultobj $result
-#ATTRIBUTE:ReadAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ReadAccess;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReadAccess = Get-Attr -obj $params -name ReadAccess -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -70,6 +70,28 @@ If ($FolderEnumerationMode)
     Else
     {
         Fail-Json $result "Option FolderEnumerationMode has invalid value $FolderEnumerationMode. Valid values are 'AccessBased','Unrestricted'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

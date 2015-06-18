@@ -36,7 +36,7 @@ options:
     required: True
     default: 
     aliases: []
-
+    choices:      - Admin API      - Admin Authentication Site      - Admin Site      - MySQL Extension      - SQL Server Extension      - Tenant API      - Tenant Authentication Site      - Tenant Public API      - Tenant Site
   SetupCredential_username:
     description:
       - 
@@ -71,11 +71,11 @@ options:
     required: False
     default: false
     aliases: []
-
+    choices:      - true      - false
   AutoConfigureLcm:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
     default: 
     aliases: []
-
+    choices:      - true      - false

@@ -26,29 +26,29 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:SqlServerVersion;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlServerVersion;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:2008-R2,2012,2014
 $SqlServerVersion = Get-Attr -obj $params -name SqlServerVersion -failifempty $True -resultobj $result
-#ATTRIBUTE:BacPacPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BacPacPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BacPacPath = Get-Attr -obj $params -name BacPacPath -failifempty $False -resultobj $result
-#ATTRIBUTE:Credentials_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credentials_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credentials_username = Get-Attr -obj $params -name Credentials_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credentials_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credentials_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credentials_password = Get-Attr -obj $params -name Credentials_password -failifempty $False -resultobj $result
-#ATTRIBUTE:DacPacApplicationName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DacPacApplicationName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DacPacApplicationName = Get-Attr -obj $params -name DacPacApplicationName -failifempty $False -resultobj $result
-#ATTRIBUTE:DacPacApplicationVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DacPacApplicationVersion;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DacPacApplicationVersion = Get-Attr -obj $params -name DacPacApplicationVersion -failifempty $False -resultobj $result
-#ATTRIBUTE:DacPacPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DacPacPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DacPacPath = Get-Attr -obj $params -name DacPacPath -failifempty $False -resultobj $result
-#ATTRIBUTE:SqlServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SqlServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SqlServer = Get-Attr -obj $params -name SqlServer -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -68,6 +68,28 @@ If ($SqlServerVersion)
     Else
     {
         Fail-Json $result "Option SqlServerVersion has invalid value $SqlServerVersion. Valid values are '2008-R2','2012','2014'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 

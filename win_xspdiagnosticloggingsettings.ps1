@@ -26,50 +26,72 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -failifempty $True -resultobj $result
-#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:InstallAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_password = Get-Attr -obj $params -name InstallAccount_password -failifempty $True -resultobj $result
-#ATTRIBUTE:LogPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogPath = Get-Attr -obj $params -name LogPath -failifempty $True -resultobj $result
-#ATTRIBUTE:LogSpaceInGB;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogSpaceInGB;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogSpaceInGB = Get-Attr -obj $params -name LogSpaceInGB -failifempty $True -resultobj $result
-#ATTRIBUTE:AppAnalyticsAutomaticUploadEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AppAnalyticsAutomaticUploadEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AppAnalyticsAutomaticUploadEnabled = Get-Attr -obj $params -name AppAnalyticsAutomaticUploadEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:CustomerExperienceImprovementProgramEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:CustomerExperienceImprovementProgramEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $CustomerExperienceImprovementProgramEnabled = Get-Attr -obj $params -name CustomerExperienceImprovementProgramEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:DaysToKeepLogs;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DaysToKeepLogs;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DaysToKeepLogs = Get-Attr -obj $params -name DaysToKeepLogs -failifempty $False -resultobj $result
-#ATTRIBUTE:DownloadErrorReportingUpdatesEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DownloadErrorReportingUpdatesEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DownloadErrorReportingUpdatesEnabled = Get-Attr -obj $params -name DownloadErrorReportingUpdatesEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:ErrorReportingAutomaticUploadEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ErrorReportingAutomaticUploadEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ErrorReportingAutomaticUploadEnabled = Get-Attr -obj $params -name ErrorReportingAutomaticUploadEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:ErrorReportingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ErrorReportingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ErrorReportingEnabled = Get-Attr -obj $params -name ErrorReportingEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:EventLogFloodProtectionEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EventLogFloodProtectionEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EventLogFloodProtectionEnabled = Get-Attr -obj $params -name EventLogFloodProtectionEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:EventLogFloodProtectionNotifyInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EventLogFloodProtectionNotifyInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EventLogFloodProtectionNotifyInterval = Get-Attr -obj $params -name EventLogFloodProtectionNotifyInterval -failifempty $False -resultobj $result
-#ATTRIBUTE:EventLogFloodProtectionQuietPeriod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EventLogFloodProtectionQuietPeriod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EventLogFloodProtectionQuietPeriod = Get-Attr -obj $params -name EventLogFloodProtectionQuietPeriod -failifempty $False -resultobj $result
-#ATTRIBUTE:EventLogFloodProtectionThreshold;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EventLogFloodProtectionThreshold;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EventLogFloodProtectionThreshold = Get-Attr -obj $params -name EventLogFloodProtectionThreshold -failifempty $False -resultobj $result
-#ATTRIBUTE:EventLogFloodProtectionTriggerPeriod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EventLogFloodProtectionTriggerPeriod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EventLogFloodProtectionTriggerPeriod = Get-Attr -obj $params -name EventLogFloodProtectionTriggerPeriod -failifempty $False -resultobj $result
-#ATTRIBUTE:LogCutInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogCutInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogCutInterval = Get-Attr -obj $params -name LogCutInterval -failifempty $False -resultobj $result
-#ATTRIBUTE:LogMaxDiskSpaceUsageEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LogMaxDiskSpaceUsageEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogMaxDiskSpaceUsageEnabled = Get-Attr -obj $params -name LogMaxDiskSpaceUsageEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:ScriptErrorReportingDelay;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ScriptErrorReportingDelay;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ScriptErrorReportingDelay = Get-Attr -obj $params -name ScriptErrorReportingDelay -failifempty $False -resultobj $result
-#ATTRIBUTE:ScriptErrorReportingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ScriptErrorReportingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ScriptErrorReportingEnabled = Get-Attr -obj $params -name ScriptErrorReportingEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:ScriptErrorReportingRequireAuth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ScriptErrorReportingRequireAuth;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ScriptErrorReportingRequireAuth = Get-Attr -obj $params -name ScriptErrorReportingRequireAuth -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
+    }
+}
+
+
 if ($InstallAccount_username)
 {
 $InstallAccount_securepassword = $InstallAccount_password | ConvertTo-SecureString -asPlainText -Force

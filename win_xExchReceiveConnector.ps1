@@ -26,115 +26,115 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Credential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-#ATTRIBUTE:AdvertiseClientSettings;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AdvertiseClientSettings;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AdvertiseClientSettings = Get-Attr -obj $params -name AdvertiseClientSettings -failifempty $False -resultobj $result
-#ATTRIBUTE:AuthMechanism;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:AuthMechanism;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AuthMechanism = Get-Attr -obj $params -name AuthMechanism -failifempty $False -resultobj $result
-#ATTRIBUTE:Banner;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Banner;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Banner = Get-Attr -obj $params -name Banner -failifempty $False -resultobj $result
-#ATTRIBUTE:BareLinefeedRejectionEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BareLinefeedRejectionEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BareLinefeedRejectionEnabled = Get-Attr -obj $params -name BareLinefeedRejectionEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:BinaryMimeEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:BinaryMimeEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BinaryMimeEnabled = Get-Attr -obj $params -name BinaryMimeEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:Bindings;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Bindings;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Bindings = Get-Attr -obj $params -name Bindings -failifempty $False -resultobj $result
-#ATTRIBUTE:ChunkingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ChunkingEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ChunkingEnabled = Get-Attr -obj $params -name ChunkingEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:Comment;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Comment;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Comment = Get-Attr -obj $params -name Comment -failifempty $False -resultobj $result
-#ATTRIBUTE:ConnectionInactivityTimeout;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConnectionInactivityTimeout;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ConnectionInactivityTimeout = Get-Attr -obj $params -name ConnectionInactivityTimeout -failifempty $False -resultobj $result
-#ATTRIBUTE:ConnectionTimeout;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ConnectionTimeout;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ConnectionTimeout = Get-Attr -obj $params -name ConnectionTimeout -failifempty $False -resultobj $result
-#ATTRIBUTE:DefaultDomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DefaultDomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DefaultDomain = Get-Attr -obj $params -name DefaultDomain -failifempty $False -resultobj $result
-#ATTRIBUTE:DeliveryStatusNotificationEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DeliveryStatusNotificationEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DeliveryStatusNotificationEnabled = Get-Attr -obj $params -name DeliveryStatusNotificationEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainSecureEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:DomainSecureEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainSecureEnabled = Get-Attr -obj $params -name DomainSecureEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:EightBitMimeEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EightBitMimeEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EightBitMimeEnabled = Get-Attr -obj $params -name EightBitMimeEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:EnableAuthGSSAPI;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EnableAuthGSSAPI;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EnableAuthGSSAPI = Get-Attr -obj $params -name EnableAuthGSSAPI -failifempty $False -resultobj $result
-#ATTRIBUTE:Enabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Enabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Enabled = Get-Attr -obj $params -name Enabled -failifempty $False -resultobj $result
-#ATTRIBUTE:EnhancedStatusCodesEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:EnhancedStatusCodesEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $EnhancedStatusCodesEnabled = Get-Attr -obj $params -name EnhancedStatusCodesEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:ExtendedProtectionPolicy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ExtendedProtectionPolicy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Allow,None,Require
 $ExtendedProtectionPolicy = Get-Attr -obj $params -name ExtendedProtectionPolicy -failifempty $False -resultobj $result
-#ATTRIBUTE:Fqdn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Fqdn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Fqdn = Get-Attr -obj $params -name Fqdn -failifempty $False -resultobj $result
-#ATTRIBUTE:LongAddressesEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:LongAddressesEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LongAddressesEnabled = Get-Attr -obj $params -name LongAddressesEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxAcknowledgementDelay;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxAcknowledgementDelay;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxAcknowledgementDelay = Get-Attr -obj $params -name MaxAcknowledgementDelay -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxHeaderSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxHeaderSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxHeaderSize = Get-Attr -obj $params -name MaxHeaderSize -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxHopCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxHopCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxHopCount = Get-Attr -obj $params -name MaxHopCount -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxInboundConnection;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxInboundConnection;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxInboundConnection = Get-Attr -obj $params -name MaxInboundConnection -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxInboundConnectionPercentagePerSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxInboundConnectionPercentagePerSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxInboundConnectionPercentagePerSource = Get-Attr -obj $params -name MaxInboundConnectionPercentagePerSource -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxInboundConnectionPerSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxInboundConnectionPerSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxInboundConnectionPerSource = Get-Attr -obj $params -name MaxInboundConnectionPerSource -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxLocalHopCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxLocalHopCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxLocalHopCount = Get-Attr -obj $params -name MaxLocalHopCount -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxLogonFailures;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxLogonFailures;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxLogonFailures = Get-Attr -obj $params -name MaxLogonFailures -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxMessageSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxMessageSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxMessageSize = Get-Attr -obj $params -name MaxMessageSize -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxProtocolErrors;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxProtocolErrors;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxProtocolErrors = Get-Attr -obj $params -name MaxProtocolErrors -failifempty $False -resultobj $result
-#ATTRIBUTE:MaxRecipientsPerMessage;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MaxRecipientsPerMessage;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MaxRecipientsPerMessage = Get-Attr -obj $params -name MaxRecipientsPerMessage -failifempty $False -resultobj $result
-#ATTRIBUTE:MessageRateLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MessageRateLimit;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MessageRateLimit = Get-Attr -obj $params -name MessageRateLimit -failifempty $False -resultobj $result
-#ATTRIBUTE:MessageRateSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:MessageRateSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:All,IPAddress,None,User
 $MessageRateSource = Get-Attr -obj $params -name MessageRateSource -failifempty $False -resultobj $result
-#ATTRIBUTE:OrarEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:OrarEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $OrarEnabled = Get-Attr -obj $params -name OrarEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:PermissionGroups;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PermissionGroups;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PermissionGroups = Get-Attr -obj $params -name PermissionGroups -failifempty $False -resultobj $result
-#ATTRIBUTE:PipeliningEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PipeliningEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PipeliningEnabled = Get-Attr -obj $params -name PipeliningEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:ProtocolLoggingLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ProtocolLoggingLevel;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:None,Verbose
 $ProtocolLoggingLevel = Get-Attr -obj $params -name ProtocolLoggingLevel -failifempty $False -resultobj $result
-#ATTRIBUTE:RemoteIPRanges;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RemoteIPRanges;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RemoteIPRanges = Get-Attr -obj $params -name RemoteIPRanges -failifempty $False -resultobj $result
-#ATTRIBUTE:RequireEHLODomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RequireEHLODomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RequireEHLODomain = Get-Attr -obj $params -name RequireEHLODomain -failifempty $False -resultobj $result
-#ATTRIBUTE:RequireTLS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:RequireTLS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RequireTLS = Get-Attr -obj $params -name RequireTLS -failifempty $False -resultobj $result
-#ATTRIBUTE:ServiceDiscoveryFqdn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:ServiceDiscoveryFqdn;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServiceDiscoveryFqdn = Get-Attr -obj $params -name ServiceDiscoveryFqdn -failifempty $False -resultobj $result
-#ATTRIBUTE:SizeEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SizeEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Disabled,Enabled,EnabledWithoutValue
 $SizeEnabled = Get-Attr -obj $params -name SizeEnabled -failifempty $False -resultobj $result
-#ATTRIBUTE:SuppressXAnonymousTls;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:SuppressXAnonymousTls;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SuppressXAnonymousTls = Get-Attr -obj $params -name SuppressXAnonymousTls -failifempty $False -resultobj $result
-#ATTRIBUTE:TarpitInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TarpitInterval;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TarpitInterval = Get-Attr -obj $params -name TarpitInterval -failifempty $False -resultobj $result
-#ATTRIBUTE:TlsCertificateName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TlsCertificateName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TlsCertificateName = Get-Attr -obj $params -name TlsCertificateName -failifempty $False -resultobj $result
-#ATTRIBUTE:TlsDomainCapabilities;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TlsDomainCapabilities;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TlsDomainCapabilities = Get-Attr -obj $params -name TlsDomainCapabilities -failifempty $False -resultobj $result
-#ATTRIBUTE:TransportRole;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:TransportRole;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:FrontendTransport,HubTransport
 $TransportRole = Get-Attr -obj $params -name TransportRole -failifempty $False -resultobj $result
-#ATTRIBUTE:Usage;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Usage;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Client,Custom,Internal,Internet,Partner
 $Usage = Get-Attr -obj $params -name Usage -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($Ensure)
 {
@@ -209,6 +209,28 @@ If ($Usage)
     Else
     {
         Fail-Json $result "Option Usage has invalid value $Usage. Valid values are 'Client','Custom','Internal','Internet','Partner'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 
