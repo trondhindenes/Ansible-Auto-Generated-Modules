@@ -10,5 +10,5 @@ In order to auto-download the required DSC resource, the following option can be
 The following option must be set to "true" (one-time setting) on the target node in order to allow direct invocation of DSC resource: "AutoConfigureLcm". This disables DSC push/pull functionality, so make sure you're not using that.
 
 
-Auto-generating help content in the corresponding .py file is in progress...
+Auto-generating help content in the corresponding .py file is in progress and will be improved (for example, the current implementation doesn't provide info about valid option values).
 
