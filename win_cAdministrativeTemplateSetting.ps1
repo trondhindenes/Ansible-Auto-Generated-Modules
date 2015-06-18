@@ -26,19 +26,19 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:KeyValueName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:KeyValueName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $KeyValueName = Get-Attr -obj $params -name KeyValueName -failifempty $True -resultobj $result
-#ATTRIBUTE:PolicyType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:PolicyType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Administrators,Machine,NonAdministrators,User
 $PolicyType = Get-Attr -obj $params -name PolicyType -failifempty $True -resultobj $result
-#ATTRIBUTE:Data;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Data;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Data = Get-Attr -obj $params -name Data -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:Type;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+#ATTRIBUTE:Type;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Binary,DWord,ExpandString,MultiString,None,QWord,String,Unknown
 $Type = Get-Attr -obj $params -name Type -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
+#ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
 If ($PolicyType)
 {
@@ -69,6 +69,28 @@ If ($Type)
     Else
     {
         Fail-Json $result "Option Type has invalid value $Type. Valid values are 'Binary','DWord','ExpandString','MultiString','None','QWord','String','Unknown'"
+    }
+}
+
+
+If ($AutoInstallModule)
+{
+    If (('true','false') -contains $AutoInstallModule ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoInstallModule has invalid value $AutoInstallModule. Valid values are 'true','false'"
+    }
+}
+
+
+If ($AutoConfigureLcm)
+{
+    If (('true','false') -contains $AutoConfigureLcm ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option AutoConfigureLcm has invalid value $AutoConfigureLcm. Valid values are 'true','false'"
     }
 }
 
