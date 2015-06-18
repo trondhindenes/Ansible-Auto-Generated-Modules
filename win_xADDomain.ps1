@@ -36,20 +36,12 @@ $DomainName = Get-Attr -obj $params -name DomainName -failifempty $True -resulto
 $SafemodeAdministratorPassword_username = Get-Attr -obj $params -name SafemodeAdministratorPassword_username -failifempty $True -resultobj $result
 #ATTRIBUTE:SafemodeAdministratorPassword_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $SafemodeAdministratorPassword_password = Get-Attr -obj $params -name SafemodeAdministratorPassword_password -failifempty $True -resultobj $result
-#ATTRIBUTE:DatabasePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
-$DatabasePath = Get-Attr -obj $params -name DatabasePath -failifempty $False -resultobj $result
 #ATTRIBUTE:DnsDelegationCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DnsDelegationCredential_username = Get-Attr -obj $params -name DnsDelegationCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:DnsDelegationCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $DnsDelegationCredential_password = Get-Attr -obj $params -name DnsDelegationCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:DomainNetbiosName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
-$DomainNetbiosName = Get-Attr -obj $params -name DomainNetbiosName -failifempty $False -resultobj $result
-#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
-$LogPath = Get-Attr -obj $params -name LogPath -failifempty $False -resultobj $result
 #ATTRIBUTE:ParentDomainName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ParentDomainName = Get-Attr -obj $params -name ParentDomainName -failifempty $False -resultobj $result
-#ATTRIBUTE:SysvolPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
-$SysvolPath = Get-Attr -obj $params -name SysvolPath -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)

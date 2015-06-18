@@ -30,6 +30,8 @@ Set-Attr $result "changed" $false
 $CertificateThumbPrint = Get-Attr -obj $params -name CertificateThumbPrint -failifempty $True -resultobj $result
 #ATTRIBUTE:EndpointName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:
 $EndpointName = Get-Attr -obj $params -name EndpointName -failifempty $True -resultobj $result
+#ATTRIBUTE:AcceptSelfSignedCertificates;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+$AcceptSelfSignedCertificates = Get-Attr -obj $params -name AcceptSelfSignedCertificates -failifempty $False -resultobj $result
 #ATTRIBUTE:ConfigurationPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $ConfigurationPath = Get-Attr -obj $params -name ConfigurationPath -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
@@ -42,6 +44,8 @@ $ModulePath = Get-Attr -obj $params -name ModulePath -failifempty $False -result
 $PhysicalPath = Get-Attr -obj $params -name PhysicalPath -failifempty $False -resultobj $result
 #ATTRIBUTE:Port;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $Port = Get-Attr -obj $params -name Port -failifempty $False -resultobj $result
+#ATTRIBUTE:RegistrationKeyPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+$RegistrationKeyPath = Get-Attr -obj $params -name RegistrationKeyPath -failifempty $False -resultobj $result
 #ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager

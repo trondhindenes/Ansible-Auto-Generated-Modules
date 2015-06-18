@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_webbinding
 version_added: 
-short_description: 
+short_description: Generated from DSC module ChefConfSamples version 0.9.0
 description:
-     - 
+     - Module with DSC Resources for Web Administration
 options:
   IPAddress:
     description:

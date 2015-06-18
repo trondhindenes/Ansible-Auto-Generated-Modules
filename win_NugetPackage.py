@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_nugetpackage
 version_added: 
-short_description: 
+short_description: Generated from DSC module PackageManagementProviderResource version 1.0.2
 description:
-     - 
+     - Modules with DSC resources for the package management.
 options:
   DestinationPath:
     description:

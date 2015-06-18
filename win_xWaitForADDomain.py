@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xwaitforaddomain
 version_added: 
-short_description: 
+short_description: Generated from DSC module xActiveDirectory version 2.4.0.0
 description:
-     - 
+     - Module with DSC Resources for Active Directory
 options:
   DomainName:
     description:

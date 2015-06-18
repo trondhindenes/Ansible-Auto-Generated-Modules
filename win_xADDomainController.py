@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xaddomaincontroller
 version_added: 
-short_description: 
+short_description: Generated from DSC module xActiveDirectory version 2.4.0.0
 description:
-     - 
+     - Module with DSC Resources for Active Directory
 options:
   DomainAdministratorCredential_username:
     description:
@@ -62,27 +62,6 @@ options:
     description:
       - 
     required: True
-    default: 
-    aliases: []
-
-  DatabasePath:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  LogPath:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  SysvolPath:
-    description:
-      - 
-    required: False
     default: 
     aliases: []
 

@@ -44,6 +44,8 @@ $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $res
 $FileHash = Get-Attr -obj $params -name FileHash -failifempty $False -resultobj $result
 #ATTRIBUTE:HashAlgorithm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $HashAlgorithm = Get-Attr -obj $params -name HashAlgorithm -failifempty $False -resultobj $result
+#ATTRIBUTE:InstalledCheckRegHive;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
+$InstalledCheckRegHive = Get-Attr -obj $params -name InstalledCheckRegHive -failifempty $False -resultobj $result
 #ATTRIBUTE:InstalledCheckRegKey;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
 $InstalledCheckRegKey = Get-Attr -obj $params -name InstalledCheckRegKey -failifempty $False -resultobj $result
 #ATTRIBUTE:InstalledCheckRegValueData;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:
@@ -86,6 +88,17 @@ If ($HashAlgorithm)
     Else
     {
         Fail-Json $result "Option HashAlgorithm has invalid value $HashAlgorithm. Valid values are 'MD5','RIPEMD160','SHA1','SHA256','SHA384','SHA512'"
+    }
+}
+
+
+If ($InstalledCheckRegHive)
+{
+    If (('CurrentUser','LocalMachine') -contains $InstalledCheckRegHive ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option InstalledCheckRegHive has invalid value $InstalledCheckRegHive. Valid values are 'CurrentUser','LocalMachine'"
     }
 }
 

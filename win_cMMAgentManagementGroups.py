@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_cmmagentmanagementgroups
 version_added: 
-short_description: 
+short_description: Generated from DSC module cMMAgent version 1.2
 description:
-     - 
+     - DSC Resources for instaliling and configuring Microsoft Management Agent for Azure Operational Insights
 options:
   managementGroupName:
     description:

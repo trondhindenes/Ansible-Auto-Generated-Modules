@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xexchumservice
 version_added: 
-short_description: 
+short_description: Generated from DSC module xExchange version 1.1.0.0
 description:
-     - 
+     - This DSC Module allows you to configure many different properties of Exchange 2013 servers, including individual server properties, databases and mount points, and Database Availability Groups.
 options:
   Credential_username:
     description:

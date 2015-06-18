@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xaddomain
 version_added: 
-short_description: 
+short_description: Generated from DSC module xActiveDirectory version 2.4.0.0
 description:
-     - 
+     - Module with DSC Resources for Active Directory
 options:
   DomainAdministratorCredential_username:
     description:
@@ -65,13 +65,6 @@ options:
     default: 
     aliases: []
 
-  DatabasePath:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
   DnsDelegationCredential_username:
     description:
       - 
@@ -86,28 +79,7 @@ options:
     default: 
     aliases: []
 
-  DomainNetbiosName:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  LogPath:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
   ParentDomainName:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  SysvolPath:
     description:
       - 
     required: False

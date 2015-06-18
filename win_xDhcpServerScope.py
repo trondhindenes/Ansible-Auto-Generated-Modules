@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xdhcpserverscope
 version_added: 
-short_description: 
+short_description: Generated from DSC module xDhcpServer version 1.2
 description:
-     - 
+     - Module with DSC Resources for DHCP Server area
 options:
   IPEndRange:
     description:

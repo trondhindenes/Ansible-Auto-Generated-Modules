@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xscsmawebserviceserversetup
 version_added: 
-short_description: 
+short_description: Generated from DSC module xSCSMA version 1.2.1.0
 description:
-     - 
+     - Module with DSC Resources for deployment and configuration of Microsoft System Center Service Management Automation.
 options:
   ApPool_username:
     description:

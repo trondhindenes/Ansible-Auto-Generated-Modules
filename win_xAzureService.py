@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xazureservice
 version_added: 
-short_description: 
+short_description: Generated from DSC module xAzure version 0.1.3
 description:
-     - 
+     - Module with DSC Resources for Azure Resources
 options:
   AffinityGroup:
     description:

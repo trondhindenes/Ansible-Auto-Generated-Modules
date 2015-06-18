@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_cwmieventlogconsumer
 version_added: 
-short_description: 
+short_description: Generated from DSC module cWMIPermanentEvents version 1.1
 description:
-     - 
+     - DSC Resources for managing WMI permanent events
 options:
   EventID:
     description:

@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xscomwebconsoleserversetup
 version_added: 
-short_description: 
+short_description: Generated from DSC module xSCOM version 1.3.3.0
 description:
-     - 
+     - Module with DSC Resources for deployment and configuration of Microsoft System Center Operations Manager.
 options:
   Ensure:
     description:

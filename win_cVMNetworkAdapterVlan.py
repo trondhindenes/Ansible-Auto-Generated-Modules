@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_cvmnetworkadaptervlan
 version_added: 
-short_description: 
+short_description: Generated from DSC module cHyper-V version 2.2
 description:
-     - 
+     - Module with DSC Resources for Hyper-V area
 options:
   ManagementOS:
     description:
