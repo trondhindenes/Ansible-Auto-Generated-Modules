@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwebapppool
 version_added: 
-short_description: Generated from DSC module xWebAdministration version 1.6.0.0
+short_description: Generated from DSC module xWebAdministration version 1.6.0.0 at 6/19/2015 2:35:14 PM
 description:
      - Module with DSC Resources for Web Administration
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwineventlog
 version_added: 
-short_description: Generated from DSC module xWinEventLog version 1.0.0.0
+short_description: Generated from DSC module xWinEventLog version 1.0.0.0 at 6/19/2015 2:35:54 PM
 description:
      - Configure Windows Event Logs
 options:

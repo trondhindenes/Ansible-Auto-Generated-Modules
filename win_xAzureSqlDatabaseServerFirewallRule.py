@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazuresqldatabaseserverfirewallrule
 version_added: 
-short_description: Generated from DSC module xAzure version 0.1.3
+short_description: Generated from DSC module xAzure version 0.1.3 at 6/19/2015 2:25:46 PM
 description:
      - Module with DSC Resources for Azure Resources
 options:

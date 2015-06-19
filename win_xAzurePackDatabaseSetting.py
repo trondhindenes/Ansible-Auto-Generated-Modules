@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazurepackdatabasesetting
 version_added: 
-short_description: Generated from DSC module xAzurePack version 1.1.4.0
+short_description: Generated from DSC module xAzurePack version 1.1.4.0 at 6/19/2015 2:25:08 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft Windows Azure Pack.
 options:

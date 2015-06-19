@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xexchoabvirtualdirectory
 version_added: 
-short_description: Generated from DSC module xExchange version 1.1.0.0
+short_description: Generated from DSC module xExchange version 1.1.0.0 at 6/19/2015 2:28:31 PM
 description:
      - This DSC Module allows you to configure many different properties of Exchange 2013 servers, including individual server properties, databases and mount points, and Database Availability Groups.
 options:

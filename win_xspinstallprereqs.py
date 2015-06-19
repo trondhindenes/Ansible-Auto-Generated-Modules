@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xspinstallprereqs
 version_added: 
-short_description: Generated from DSC module xSharePoint version 0.3.0.0
+short_description: Generated from DSC module xSharePoint version 0.3.0.0 at 6/19/2015 2:32:58 PM
 description:
      - This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide range of areas including web apps, service apps and farm configuration.
 options:

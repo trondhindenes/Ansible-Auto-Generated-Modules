@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdatabaseserver
 version_added: 
-short_description: Generated from DSC module xDatabase version 1.2.0
+short_description: Generated from DSC module xDatabase version 1.2.0 at 6/19/2015 2:26:34 PM
 description:
      - This module contains 2 resources. xDatabase allows to create and deploy databases using DAC or connection string, restore a database using BACPAC and delete a database. The xDBPackage resource allows extracting a database to a DACPAC or exporting to a BACPAC
 options:

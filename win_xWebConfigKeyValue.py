@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwebconfigkeyvalue
 version_added: 
-short_description: Generated from DSC module xWebAdministration version 1.6.0.0
+short_description: Generated from DSC module xWebAdministration version 1.6.0.0 at 6/19/2015 2:35:18 PM
 description:
      - Module with DSC Resources for Web Administration
 options:

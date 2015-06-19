@@ -26,11 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xdisk
 version_added: 
-short_description: Generated from DSC module xDisk version 1.0
+short_description: Generated from DSC module xStorage version 1.0.0.0 at 6/19/2015 2:26:56 PM
 description:
-     - The xDisk module is originally part of the Windows PowerShell Desired State Configuration (DSC) Resource Kit. This version has been modified for use in Azure. This module contains the xDisk and xWaitforDisk resources. These DSC Resources allow you to perform computer management tasks, like joining a domain or initializing disks.
-
-All of the resources in the DSC Resource Kit are provided AS IS, and are not supported through any Microsoft standard support program or service.
+     - This module contains all resources related to the PowerShell Storage module, or pertaining to disk management.
 options:
   DiskNumber:
     description:

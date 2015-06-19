@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwmilogfileconsumer
 version_added: 
-short_description: Generated from DSC module cWMIPermanentEvents version 1.1
+short_description: Generated from DSC module cWMIPermanentEvents version 1.1 at 6/19/2015 2:23:59 PM
 description:
      - DSC Resources for managing WMI permanent events
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xscsrserverupdate
 version_added: 
-short_description: Generated from DSC module xSCSR version 1.3.0.0
+short_description: Generated from DSC module xSCSR version 1.3.0.0 at 6/19/2015 2:31:52 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Service Reporting.
 options:

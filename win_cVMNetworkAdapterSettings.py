@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cvmnetworkadaptersettings
 version_added: 
-short_description: Generated from DSC module cHyper-V version 2.2
+short_description: Generated from DSC module cHyper-V version 2.2 at 6/19/2015 2:23:29 PM
 description:
      - Module with DSC Resources for Hyper-V area
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xremotedesktopadmin
 version_added: 
-short_description: Generated from DSC module xRemoteDesktopAdmin version 1.0.3.0
+short_description: Generated from DSC module xRemoteDesktopAdmin version 1.0.3.0 at 6/19/2015 2:30:20 PM
 description:
      - Module with DSC Resources for enabling adminsitrative Remote Desktop Connections
 options:

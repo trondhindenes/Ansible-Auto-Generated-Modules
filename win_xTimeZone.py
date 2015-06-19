@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xtimezone
 version_added: 
-short_description: Generated from DSC module xTimeZone version 1.1.0.0
+short_description: Generated from DSC module xTimeZone version 1.1.0.0 at 6/19/2015 2:34:35 PM
 description:
      - This DSC Resources can easily set the System Time Zone.
 options:
