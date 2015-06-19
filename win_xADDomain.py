@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xaddomain
 version_added: 
-short_description: Generated from DSC module xActiveDirectory version 2.4.0.0 at 6/19/2015 2:24:34 PM
+short_description: Generated from DSC module xActiveDirectory version 2.4.0.0 at 6/19/2015 3:15:40 PM
 description:
      - Module with DSC Resources for Active Directory
 options:
