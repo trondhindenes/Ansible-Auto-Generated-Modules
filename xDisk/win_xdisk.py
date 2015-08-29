@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdisk
 version_added: 
-short_description: Generated from DSC module xDisk version 1.0 at 8/29/2015 6:56:54 PM
+short_description: Generated from DSC module xDisk version 1.0 at 8/29/2015 7:37:51 PM
 description:
      - THIS MODULE HAS BEEN DEPRECATED, PLEASE USE xStorage INSTEAD:
 https://www.powershellgallery.com/packages/xstorage

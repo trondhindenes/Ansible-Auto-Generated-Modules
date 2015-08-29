@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwebdeploy
 version_added: 
-short_description: Generated from DSC module xWebDeploy version 1.1.0.0 at 8/29/2015 7:06:14 PM
+short_description: Generated from DSC module xWebDeploy version 1.1.0.0 at 8/29/2015 7:46:28 PM
 description:
      - DSC resources for installing an IIS site using the WebDeploy IIS extension
 options:

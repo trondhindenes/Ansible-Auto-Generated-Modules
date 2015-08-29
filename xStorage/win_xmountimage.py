@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xmountimage
 version_added: 
-short_description: Generated from DSC module xStorage version 2.0.0.0 at 8/29/2015 7:00:28 PM
+short_description: Generated from DSC module xStorage version 2.0.0.0 at 8/29/2015 7:41:13 PM
 description:
      - This module contains all resources related to the PowerShell Storage module, or pertaining to disk management.
 options:

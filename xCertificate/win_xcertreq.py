@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xcertreq
 version_added: 
-short_description: Generated from DSC module xCertificate version 1.0.1.0 at 8/29/2015 6:56:20 PM
+short_description: Generated from DSC module xCertificate version 1.0.1.0 at 8/29/2015 7:37:17 PM
 description:
      - This module includes DSC resources that simplify administration of certificates on a Windows Server
 options:

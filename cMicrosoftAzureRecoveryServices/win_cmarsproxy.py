@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmarsproxy
 version_added: 
-short_description: Generated from DSC module cMicrosoftAzureRecoveryServices version 1.0 at 8/29/2015 6:52:34 PM
+short_description: Generated from DSC module cMicrosoftAzureRecoveryServices version 1.0 at 8/29/2015 7:33:20 PM
 description:
      - DSC Resources for instaliling and configuring Microsoft Azure Recovery Services Agent.
 options:

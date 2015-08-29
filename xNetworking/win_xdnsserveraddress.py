@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdnsserveraddress
 version_added: 
-short_description: Generated from DSC module xNetworking version 2.2.0.0 at 8/29/2015 6:57:01 PM
+short_description: Generated from DSC module xNetworking version 2.2.0.0 at 8/29/2015 7:37:58 PM
 description:
      - Module with DSC Resources for Networking area
 options:

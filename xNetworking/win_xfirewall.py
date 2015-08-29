@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xfirewall
 version_added: 
-short_description: Generated from DSC module xNetworking version 2.2.0.0 at 8/29/2015 6:59:33 PM
+short_description: Generated from DSC module xNetworking version 2.2.0.0 at 8/29/2015 7:40:25 PM
 description:
      - Module with DSC Resources for Networking area
 options:

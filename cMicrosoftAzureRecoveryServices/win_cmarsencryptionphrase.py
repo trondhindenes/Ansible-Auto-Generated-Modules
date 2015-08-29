@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmarsencryptionphrase
 version_added: 
-short_description: Generated from DSC module cMicrosoftAzureRecoveryServices version 1.0 at 8/29/2015 6:52:31 PM
+short_description: Generated from DSC module cMicrosoftAzureRecoveryServices version 1.0 at 8/29/2015 7:33:16 PM
 description:
      - DSC Resources for instaliling and configuring Microsoft Azure Recovery Services Agent.
 options:

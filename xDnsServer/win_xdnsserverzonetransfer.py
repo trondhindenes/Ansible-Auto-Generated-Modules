@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdnsserverzonetransfer
 version_added: 
-short_description: Generated from DSC module xDnsServer version 1.1 at 8/29/2015 6:57:07 PM
+short_description: Generated from DSC module xDnsServer version 1.1 at 8/29/2015 7:38:04 PM
 description:
      - Module with DSC Resources for DNS Server area
 options:

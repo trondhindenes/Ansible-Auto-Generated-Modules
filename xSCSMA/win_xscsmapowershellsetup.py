@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xscsmapowershellsetup
 version_added: 
-short_description: Generated from DSC module xSCSMA version 1.2.1.0 at 8/29/2015 7:01:56 PM
+short_description: Generated from DSC module xSCSMA version 1.2.1.0 at 8/29/2015 7:42:28 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Service Management Automation.
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_azureservicebuscreation
 version_added: 
-short_description: Generated from DSC module AzureServiceBusCreation version 1.0 at 8/29/2015 6:51:10 PM
+short_description: Generated from DSC module AzureServiceBusCreation version 1.0 at 8/29/2015 7:31:49 PM
 description:
      - Module with DSCResource for adding configuration nodes
 options:

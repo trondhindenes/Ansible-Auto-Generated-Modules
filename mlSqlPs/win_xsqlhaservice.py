@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlhaservice
 version_added: 
-short_description: Generated from DSC module mlSqlPs version 1.0.0.1 at 8/29/2015 7:04:46 PM
+short_description: Generated from DSC module mlSqlPs version 1.0.0.1 at 8/29/2015 7:45:07 PM
 description:
      - SQL module. Modified from xSqlPs.
 options:

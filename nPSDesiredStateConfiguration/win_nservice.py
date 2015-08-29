@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_nservice
 version_added: 
-short_description: Generated from DSC module nPSDesiredStateConfiguration version 1.0 at 8/29/2015 6:53:48 PM
+short_description: Generated from DSC module nPSDesiredStateConfiguration version 1.0 at 8/29/2015 7:34:44 PM
 description:
      - Contains service resource
 options:

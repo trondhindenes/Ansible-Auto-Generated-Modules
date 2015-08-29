@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xvhdfile
 version_added: 
-short_description: Generated from DSC module xHyper-V version 3.1.0.0 at 8/29/2015 7:05:35 PM
+short_description: Generated from DSC module xHyper-V version 3.1.0.0 at 8/29/2015 7:45:49 PM
 description:
      - Module with DSC Resources for Hyper-V area
 options:

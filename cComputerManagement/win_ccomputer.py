@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ccomputer
 version_added: 
-short_description: Generated from DSC module cComputerManagement version 1.1.1 at 8/29/2015 6:51:46 PM
+short_description: Generated from DSC module cComputerManagement version 1.1.1 at 8/29/2015 7:32:27 PM
 description:
      - Module with DSC Resources for Computer Management area
 options:

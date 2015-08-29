@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazurevm
 version_added: 
-short_description: Generated from DSC module xAzure version 0.1.3 at 8/29/2015 6:56:00 PM
+short_description: Generated from DSC module xAzure version 0.1.3 at 8/29/2015 7:36:56 PM
 description:
      - Module with DSC Resources for Azure Resources
 options:

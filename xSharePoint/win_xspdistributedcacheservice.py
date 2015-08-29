@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xspdistributedcacheservice
 version_added: 
-short_description: Generated from DSC module xSharePoint version 0.4.0.0 at 8/29/2015 7:03:25 PM
+short_description: Generated from DSC module xSharePoint version 0.4.0.0 at 8/29/2015 7:43:49 PM
 description:
      - This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide range of areas including web apps, service apps and farm configuration.
 options:

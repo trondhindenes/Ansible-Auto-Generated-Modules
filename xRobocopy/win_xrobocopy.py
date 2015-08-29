@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xrobocopy
 version_added: 
-short_description: Generated from DSC module xRobocopy version 1.1.0.0 at 8/29/2015 7:01:05 PM
+short_description: Generated from DSC module xRobocopy version 1.1.0.0 at 8/29/2015 7:41:42 PM
 description:
      - This module is used to facilitate large file copies with complex requirements such as multithreading, restarts, and exclusions when recursing content.
 options:

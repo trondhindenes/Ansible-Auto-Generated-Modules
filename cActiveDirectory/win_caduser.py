@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_caduser
 version_added: 
-short_description: Generated from DSC module cActiveDirectory version 1.1.1 at 8/29/2015 6:51:33 PM
+short_description: Generated from DSC module cActiveDirectory version 1.1.1 at 8/29/2015 7:32:15 PM
 description:
      - Module with DSC Resources for Active Directory
 options:

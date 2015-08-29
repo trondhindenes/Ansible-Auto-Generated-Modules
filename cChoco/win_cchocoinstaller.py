@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cchocoinstaller
 version_added: 
-short_description: Generated from DSC module cChoco version 2.0 at 8/29/2015 6:51:40 PM
+short_description: Generated from DSC module cChoco version 2.0 at 8/29/2015 7:32:21 PM
 description:
      - Module with DSC Resources for using Chocolatey http://chocolatey.org/
 options:

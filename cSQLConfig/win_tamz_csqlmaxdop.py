@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_tamz_csqlmaxdop
 version_added: 
-short_description: Generated from DSC module cSQLConfig version 1.4 at 8/29/2015 6:54:17 PM
+short_description: Generated from DSC module cSQLConfig version 1.4 at 8/29/2015 7:35:13 PM
 description:
      - DSC Module to configure SQL Server once installed.
 options:

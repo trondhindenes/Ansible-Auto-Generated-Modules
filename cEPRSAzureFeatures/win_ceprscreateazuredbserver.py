@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprscreateazuredbserver
 version_added: 
-short_description: Generated from DSC module cEPRSAzureFeatures version 1.0.0.0 at 8/29/2015 6:51:56 PM
+short_description: Generated from DSC module cEPRSAzureFeatures version 1.0.0.0 at 8/29/2015 7:32:38 PM
 description:
      - This module helps in managing your Azure resources like Managing a Cloud service, its deployments, certificates associated to your service.
 options:

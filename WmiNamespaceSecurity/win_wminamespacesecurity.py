@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_wminamespacesecurity
 version_added: 
-short_description: Generated from DSC module WmiNamespaceSecurity version 0.1.0 at 8/29/2015 6:54:38 PM
+short_description: Generated from DSC module WmiNamespaceSecurity version 0.1.0 at 8/29/2015 7:35:34 PM
 description:
      - DSC resource provider and cmdlets for managing WMI namespace security
 options:

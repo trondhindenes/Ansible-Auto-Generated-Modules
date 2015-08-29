@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xexchmailboxdatabase
 version_added: 
-short_description: Generated from DSC module xExchange version 1.2.0.0 at 8/29/2015 6:58:27 PM
+short_description: Generated from DSC module xExchange version 1.2.0.0 at 8/29/2015 7:39:18 PM
 description:
      - This DSC Module allows you to configure many different properties of Exchange 2013 servers, including individual server properties, databases and mount points, and Database Availability Groups.
 options:
