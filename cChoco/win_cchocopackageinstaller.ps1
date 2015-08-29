@@ -88,7 +88,7 @@ if ($AutoInstallModule)
 }
 
 
-$ResourceExists = Get-DscResource $dscresourcename -ErrorAction SilentlyContinue
+$ResourceExists = Get-DscResource $dscresourcename -list -ErrorAction SilentlyContinue
 
 if (!$ResourceExists)
 {
