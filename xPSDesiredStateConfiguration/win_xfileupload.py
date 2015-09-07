@@ -26,47 +26,12 @@ DOCUMENTATION = '''
 ---
 module: win_xfileupload
 version_added: 
-short_description: Generated from DSC module xPSDesiredStateConfiguration version 3.4.0.0 at 8/29/2015 7:40:22 PM
+short_description: Generated from DSC module xpsdesiredstateconfiguration version 3.4.0.0 at 9/7/2015 7:57:47 PM
 description:
      - The xPSDesiredStateConfiguration module is a part of the Windows PowerShell Desired State Configuration (DSC) Resource Kit, which is a collection of DSC Resources produced by the PowerShell Team. This module contains the xDscWebService, xWindowsProcess, xService, xPackage, xArchive, xRemoteFile, xPSEndpoint and xWindowsOptionalFeature resources. Please see the Details section for more information on the functionalities provided by these resources.
 
 All of the resources in the DSC Resource Kit are provided AS IS, and are not supported through any Microsoft standard support program or service. The "x" in xPSDesiredStateConfiguration stands for experimental, which means that these resources will be fix forward and monitored by the module owner(s).
 options:
-  destinationPath:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  sourcePath:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  credential_username:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  credential_password:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  certificateThumbprint:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
@@ -78,6 +43,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

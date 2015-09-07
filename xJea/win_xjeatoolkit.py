@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xjeatoolkit
 version_added: 
-short_description: Generated from DSC module xJea version 0.2.16.6 at 8/29/2015 7:41:07 PM
+short_description: Generated from DSC module xjea version 0.2.16.6 at 9/7/2015 7:58:29 PM
 description:
      - Module with DSC Resources for Just Enough Admin (JEA).  Jea makes it simple to create custom RBAC solutions using PowerShell.
 options:
@@ -90,6 +90,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

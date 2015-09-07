@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_psmodule
 version_added: 
-short_description: Generated from DSC module PackageManagementProviderResource version 1.0.2 at 8/29/2015 7:35:03 PM
+short_description: Generated from DSC module packagemanagementproviderresource version 1.0.2 at 9/7/2015 7:52:39 PM
 description:
      - Modules with DSC resources for the package management.
 options:
@@ -97,6 +97,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

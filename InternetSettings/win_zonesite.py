@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_zonesite
 version_added: 
-short_description: Generated from DSC module InternetSettings version 1.0.1 at 8/29/2015 7:47:04 PM
+short_description: Generated from DSC module internetsettings version 1.0.1 at 9/7/2015 8:03:44 PM
 description:
      - Contains the ZoneSite resource, which adds or removes sites from zones for the current user in Internet Exporer Internet Settings.
 options:
@@ -90,6 +90,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

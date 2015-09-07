@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdisk
 version_added: 
-short_description: Generated from DSC module xDisk version 1.0 at 8/29/2015 7:37:51 PM
+short_description: Generated from DSC module xdisk version 1.0 at 9/7/2015 7:55:16 PM
 description:
      - THIS MODULE HAS BEEN DEPRECATED, PLEASE USE xStorage INSTEAD:
 https://www.powershellgallery.com/packages/xstorage
@@ -75,6 +75,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

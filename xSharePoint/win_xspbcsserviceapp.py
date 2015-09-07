@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xspbcsserviceapp
 version_added: 
-short_description: Generated from DSC module xSharePoint version 0.4.0.0 at 8/29/2015 7:43:30 PM
+short_description: Generated from DSC module xsharepoint version 0.4.0.0 at 9/7/2015 8:00:46 PM
 description:
      - This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide range of areas including web apps, service apps and farm configuration.
 options:
@@ -97,6 +97,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

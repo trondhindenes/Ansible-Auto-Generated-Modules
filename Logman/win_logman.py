@@ -26,45 +26,10 @@ DOCUMENTATION = '''
 ---
 module: win_logman
 version_added: 
-short_description: Generated from DSC module Logman version 1.0 at 8/29/2015 7:34:41 PM
+short_description: Generated from DSC module logman version 1.0 at 9/7/2015 7:52:16 PM
 description:
      - DSC Resource for importing data collector sets to Performance Monitor using logman.exe.
 options:
-  DataCollectorSetName:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  Ensure:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-    choices:      - Absent      - Present
-  XmlTemplatePath:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  PsDscRunAsCredential_username:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  PsDscRunAsCredential_password:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager
@@ -76,6 +41,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

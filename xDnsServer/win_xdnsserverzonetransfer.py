@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdnsserverzonetransfer
 version_added: 
-short_description: Generated from DSC module xDnsServer version 1.1 at 8/29/2015 7:38:04 PM
+short_description: Generated from DSC module xdnsserver version 1.1 at 9/7/2015 7:55:34 PM
 description:
      - Module with DSC Resources for DNS Server area
 options:
@@ -76,6 +76,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

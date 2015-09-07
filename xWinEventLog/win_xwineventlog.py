@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwineventlog
 version_added: 
-short_description: Generated from DSC module xWinEventLog version 1.0.0.0 at 8/29/2015 7:47:01 PM
+short_description: Generated from DSC module xwineventlog version 1.0.0.0 at 9/7/2015 8:03:41 PM
 description:
      - Configure Windows Event Logs
 options:
@@ -90,6 +90,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_azureservicebuscreation
 version_added: 
-short_description: Generated from DSC module AzureServiceBusCreation version 1.0 at 8/29/2015 7:31:49 PM
+short_description: Generated from DSC module azureservicebuscreation version 1.0 at 9/7/2015 7:49:26 PM
 description:
      - Module with DSCResource for adding configuration nodes
 options:
@@ -104,6 +104,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

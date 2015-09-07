@@ -26,24 +26,10 @@ DOCUMENTATION = '''
 ---
 module: win_ceprscreatecloudservice
 version_added: 
-short_description: Generated from DSC module cEPRSAzureFeatures version 1.0.0.0 at 8/29/2015 7:32:47 PM
+short_description: Generated from DSC module ceprsazurefeatures version 1.0.0.0 at 9/7/2015 7:50:19 PM
 description:
      - This module helps in managing your Azure resources like Managing a Cloud service, its deployments, certificates associated to your service.
 options:
-  Ensure:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-    choices:      - Absent      - Present
-  Location:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
   PublishSettingsFile:
     description:
       - 
@@ -90,6 +76,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

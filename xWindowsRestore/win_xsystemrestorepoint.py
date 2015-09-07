@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsystemrestorepoint
 version_added: 
-short_description: Generated from DSC module xWindowsRestore version 1.0.0 at 8/29/2015 7:45:35 PM
+short_description: Generated from DSC module xwindowsrestore version 1.0.0 at 9/7/2015 8:02:13 PM
 description:
      - This DSC Module includes 2 DSC resources, xSystemRestore resource can configure system restore and xSystemRestorePoint resource can create or remove an restore point in Windows.
 options:
@@ -76,6 +76,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

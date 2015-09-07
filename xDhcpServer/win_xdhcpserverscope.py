@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdhcpserverscope
 version_added: 
-short_description: Generated from DSC module xDhcpServer version 1.2 at 8/29/2015 7:37:44 PM
+short_description: Generated from DSC module xdhcpserver version 1.2 at 9/7/2015 7:55:13 PM
 description:
      - Module with DSC Resources for DHCP Server area
 options:
@@ -111,6 +111,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

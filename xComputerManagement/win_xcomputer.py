@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xcomputer
 version_added: 
-short_description: Generated from DSC module xComputerManagement version 1.3.0 at 8/29/2015 7:37:21 PM
+short_description: Generated from DSC module xcomputermanagement version 1.3.0 at 9/7/2015 7:54:48 PM
 description:
      - The xComputerManagement module is originally part of the Windows PowerShell Desired State Configuration (DSC) Resource Kit. This version has been modified for use in Azure. This module contains the xComputer and xDisk resources. These DSC Resources allow you to perform computer management tasks, like joining a domain or initializing disks.
 
@@ -106,6 +106,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

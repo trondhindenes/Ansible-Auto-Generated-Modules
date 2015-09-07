@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xscsmawebserviceserversetup
 version_added: 
-short_description: Generated from DSC module xSCSMA version 1.2.1.0 at 8/29/2015 7:42:34 PM
+short_description: Generated from DSC module xscsma version 1.2.1.0 at 9/7/2015 7:59:54 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Service Management Automation.
 options:
@@ -216,6 +216,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_chostsfile
 version_added: 
-short_description: Generated from DSC module cWindowsOS version 1.2 at 8/29/2015 7:33:05 PM
+short_description: Generated from DSC module cwindowsos version 1.2 at 9/7/2015 7:50:37 PM
 description:
      - DSC Resources for managing misc configurations on Windows OS
 options:
@@ -76,6 +76,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_powermanagement
 version_added: 
-short_description: Generated from DSC module DellBIOSProvider version 0.3 at 8/29/2015 7:34:58 PM
+short_description: Generated from DSC module dellbiosprovider version 0.3 at 9/7/2015 7:52:35 PM
 description:
      - The Dell Command PowerShell Provider (currently in Beta) provides native configuration capability of Dell Optiplex, Latitude, Precision, and Venue 11 systems within PowerShell.
 options:
@@ -202,6 +202,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

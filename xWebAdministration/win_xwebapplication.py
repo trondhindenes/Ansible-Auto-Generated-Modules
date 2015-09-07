@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwebapplication
 version_added: 
-short_description: Generated from DSC module xWebAdministration version 1.7.0.0 at 8/29/2015 7:46:13 PM
+short_description: Generated from DSC module xwebadministration version 1.7.0.0 at 9/7/2015 8:02:51 PM
 description:
      - Module with DSC Resources for Web Administration
 options:
@@ -90,6 +90,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cfolderquota
 version_added: 
-short_description: Generated from DSC module cFolderQuota version 1.0 at 8/29/2015 7:33:02 PM
+short_description: Generated from DSC module cfolderquota version 1.0 at 9/7/2015 7:50:34 PM
 description:
      - DSC Resource for Creating Quotas and Quotas Templates
 options:
@@ -83,6 +83,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

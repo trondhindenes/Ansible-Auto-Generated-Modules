@@ -32,35 +32,20 @@ $AdministratorLogin = Get-Attr -obj $params -name AdministratorLogin -failifempt
 $AdministratorPassword = Get-Attr -obj $params -name AdministratorPassword -failifempty $True -resultobj $result
 #ATTRIBUTE:DatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
-$Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
 #ATTRIBUTE:PublishSettingsFile;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PublishSettingsFile = Get-Attr -obj $params -name PublishSettingsFile -failifempty $True -resultobj $result
 #ATTRIBUTE:ServerName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServerName = Get-Attr -obj $params -name ServerName -failifempty $True -resultobj $result
 #ATTRIBUTE:SubscriptionName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SubscriptionName = Get-Attr -obj $params -name SubscriptionName -failifempty $True -resultobj $result
-#ATTRIBUTE:DatabaseEdition;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$DatabaseEdition = Get-Attr -obj $params -name DatabaseEdition -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
-$AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
-$AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
-If ($Ensure)
-{
-    If (('Absent','Present') -contains $Ensure ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
-    }
-}
-
-
+$AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
+$AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
 If ($AutoInstallModule)
 {
     If (('true','false') -contains $AutoInstallModule ) {
@@ -114,7 +99,7 @@ $ResourceExists = Get-DscResource $dscresourcename -ErrorAction SilentlyContinue
 if (!$ResourceExists)
 {
     #Download the module containing the resource if that's allowed
-    if ($AutoInstallModule)
+    if ($AutoInstallModule | convertto-bool)
     {
         #USe find-package to auto-install the nuget binaries
         Find-Package something -ForceBootstrap -ErrorAction SilentlyContinue | out-null
@@ -139,8 +124,9 @@ if (($lcm.RefreshMode) -eq "Disabled")
 }
 Else
 {
-    if ($autoconfigureLcm -eq $true)
+    if (($autoconfigureLcm | convertto-bool) -eq $true)
     {
+        $refreshmode = "Disabled"
         #Reconfigure LCM
         [DscLocalConfigurationManager()]
         Configuration Meta {
@@ -150,7 +136,7 @@ Else
         }
         try
         {
-            meta
+            & meta
             Set-DscLocalConfigurationManager -Path .\Meta  -ErrorAction Stop -ErrorVariable lcmerror
     
         }
@@ -165,6 +151,7 @@ Else
     }
 
 }
+
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}

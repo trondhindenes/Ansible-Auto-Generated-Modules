@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xrobocopy
 version_added: 
-short_description: Generated from DSC module xRobocopy version 1.1.0.0 at 8/29/2015 7:41:42 PM
+short_description: Generated from DSC module xrobocopy version 1.1.0.0 at 9/7/2015 7:59:02 PM
 description:
      - This module is used to facilitate large file copies with complex requirements such as multithreading, restarts, and exclusions when recursing content.
 options:
@@ -139,6 +139,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

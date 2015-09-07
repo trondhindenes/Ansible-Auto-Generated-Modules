@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmmagentopinsights
 version_added: 
-short_description: Generated from DSC module cMMAgent version 1.2 at 8/29/2015 7:33:40 PM
+short_description: Generated from DSC module cmmagent version 1.2 at 9/7/2015 7:51:12 PM
 description:
      - DSC Resources for instaliling and configuring Microsoft Management Agent for Azure Operational Insights
 options:
@@ -83,6 +83,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

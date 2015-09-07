@@ -26,25 +26,11 @@ DOCUMENTATION = '''
 ---
 module: win_ceprscreateazureservicebus
 version_added: 
-short_description: Generated from DSC module cEPRSAzureFeatures version 1.0.0.0 at 8/29/2015 7:32:43 PM
+short_description: Generated from DSC module ceprsazurefeatures version 1.0.0.0 at 9/7/2015 7:50:16 PM
 description:
      - This module helps in managing your Azure resources like Managing a Cloud service, its deployments, certificates associated to your service.
 options:
   CreateACSNamespace:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  Ensure:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-    choices:      - Absent      - Present
-  NamespaceType:
     description:
       - 
     required: True
@@ -62,13 +48,6 @@ options:
     description:
       - 
     required: True
-    default: 
-    aliases: []
-
-  Location:
-    description:
-      - 
-    required: False
     default: 
     aliases: []
 
@@ -104,6 +83,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

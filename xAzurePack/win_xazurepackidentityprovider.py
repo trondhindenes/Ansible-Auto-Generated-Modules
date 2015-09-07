@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazurepackidentityprovider
 version_added: 
-short_description: Generated from DSC module xAzurePack version 1.1.4.0 at 8/29/2015 7:36:16 PM
+short_description: Generated from DSC module xazurepack version 1.1.4.0 at 9/7/2015 7:53:46 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft Windows Azure Pack.
 options:
@@ -104,6 +104,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

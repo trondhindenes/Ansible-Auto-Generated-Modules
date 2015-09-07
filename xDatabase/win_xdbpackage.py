@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdbpackage
 version_added: 
-short_description: Generated from DSC module xDatabase version 1.2.0 at 8/29/2015 7:37:34 PM
+short_description: Generated from DSC module xdatabase version 1.2.0 at 9/7/2015 7:55:02 PM
 description:
      - This module contains 2 resources. xDatabase allows to create and deploy databases using DAC or connection string, restore a database using BACPAC and delete a database. The xDBPackage resource allows extracting a database to a DACPAC or exporting to a BACPAC
 options:
@@ -104,6 +104,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwaitfordisk
 version_added: 
-short_description: Generated from DSC module xStorage version 2.0.0.0 at 8/29/2015 7:46:06 PM
+short_description: Generated from DSC module xstorage version 2.0.0.0 at 9/7/2015 8:02:44 PM
 description:
      - This module contains all resources related to the PowerShell Storage module, or pertaining to disk management.
 options:
@@ -76,6 +76,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

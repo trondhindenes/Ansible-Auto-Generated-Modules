@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xmppreference
 version_added: 
-short_description: Generated from DSC module xDefender version 0.1.0.0 at 8/29/2015 7:41:17 PM
+short_description: Generated from DSC module xdefender version 0.1.0.0 at 9/7/2015 7:58:38 PM
 description:
      - The xDefender allows you to configure Windows Defender preferences.
 options:
@@ -433,6 +433,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

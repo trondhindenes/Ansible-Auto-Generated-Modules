@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xexchwaitfordag
 version_added: 
-short_description: Generated from DSC module xExchange version 1.2.0.0 at 8/29/2015 7:40:10 PM
+short_description: Generated from DSC module xexchange version 1.2.0.0 at 9/7/2015 7:57:35 PM
 description:
      - This DSC Module allows you to configure many different properties of Exchange 2013 servers, including individual server properties, databases and mount points, and Database Availability Groups.
 options:
@@ -97,6 +97,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

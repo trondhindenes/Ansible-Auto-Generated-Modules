@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cvmswitch
 version_added: 
-short_description: Generated from DSC module cHyper-V version 2.2 at 8/29/2015 7:34:08 PM
+short_description: Generated from DSC module chyper-v version 2.2 at 9/7/2015 7:51:44 PM
 description:
      - Module with DSC Resources for Hyper-V area
 options:
@@ -104,6 +104,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

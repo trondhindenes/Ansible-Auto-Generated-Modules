@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xbltpm
 version_added: 
-short_description: Generated from DSC module xBitlocker version 1.0.1.1 at 8/29/2015 7:37:14 PM
+short_description: Generated from DSC module xbitlocker version 1.0.1.1 at 9/7/2015 7:54:42 PM
 description:
      - This DSC Module allows you to configure Bitlocker on a single disk, configure a TPM chip, or automatically enable Bitlocker on multiple disks.
 options:
@@ -83,6 +83,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

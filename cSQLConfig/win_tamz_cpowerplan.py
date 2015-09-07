@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_tamz_cpowerplan
 version_added: 
-short_description: Generated from DSC module cSQLConfig version 1.4 at 8/29/2015 7:35:06 PM
+short_description: Generated from DSC module csqlconfig version 1.4 at 9/7/2015 7:52:43 PM
 description:
      - DSC Module to configure SQL Server once installed.
 options:
@@ -62,6 +62,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

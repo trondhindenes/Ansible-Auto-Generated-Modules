@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwaitforaddomain
 version_added: 
-short_description: Generated from DSC module xActiveDirectory version 2.5.0.0 at 8/29/2015 7:46:00 PM
+short_description: Generated from DSC module xactivedirectory version 2.5.0.0 at 9/7/2015 8:02:37 PM
 description:
      - The xActiveDirectory module is originally part of the Windows PowerShell Desired State Configuration (DSC) Resource Kit. This version has been modified for use in Azure. This module contains the xADDomain, xADDomainController, xADUser, and xWaitForDomain resources. These DSC Resources allow you to configure and manage Active Directory.
 
@@ -92,6 +92,6 @@ options:
     description:
       - If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules)
     required: False
-    default: 
+    default: false
     aliases: []
     choices:      - true      - false

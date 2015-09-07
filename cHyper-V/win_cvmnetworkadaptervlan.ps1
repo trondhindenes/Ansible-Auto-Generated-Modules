@@ -51,9 +51,9 @@ $VlanId = Get-Attr -obj $params -name VlanId -failifempty $False -resultobj $res
 #ATTRIBUTE:VMName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMName = Get-Attr -obj $params -name VMName -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
-$AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result
-#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
-$AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result
+$AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
+#ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
+$AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
 If ($AdapterMode)
 {
     If (('Access','Communnity','Isolated','Promiscuous','Trunk','Untagged') -contains $AdapterMode ) {
@@ -118,7 +118,7 @@ $ResourceExists = Get-DscResource $dscresourcename -ErrorAction SilentlyContinue
 if (!$ResourceExists)
 {
     #Download the module containing the resource if that's allowed
-    if ($AutoInstallModule)
+    if ($AutoInstallModule | convertto-bool)
     {
         #USe find-package to auto-install the nuget binaries
         Find-Package something -ForceBootstrap -ErrorAction SilentlyContinue | out-null
@@ -143,8 +143,9 @@ if (($lcm.RefreshMode) -eq "Disabled")
 }
 Else
 {
-    if ($autoconfigureLcm -eq $true)
+    if (($autoconfigureLcm | convertto-bool) -eq $true)
     {
+        $refreshmode = "Disabled"
         #Reconfigure LCM
         [DscLocalConfigurationManager()]
         Configuration Meta {
@@ -154,7 +155,7 @@ Else
         }
         try
         {
-            meta
+            & meta
             Set-DscLocalConfigurationManager -Path .\Meta  -ErrorAction Stop -ErrorVariable lcmerror
     
         }
@@ -169,6 +170,7 @@ Else
     }
 
 }
+
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
