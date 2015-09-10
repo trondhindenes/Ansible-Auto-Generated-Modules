@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlserverrssecureconnectionlevel
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.3.0.0 at 9/7/2015 8:02:02 PM
+short_description: Generated from DSC module xsqlserver version 1.3.0.0 at 9/10/2015 10:32:51 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:

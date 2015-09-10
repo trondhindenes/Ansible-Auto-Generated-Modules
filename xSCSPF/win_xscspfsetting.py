@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xscspfsetting
 version_added: 
-short_description: Generated from DSC module xscspf version 1.3.1.0 at 9/7/2015 8:00:07 PM
+short_description: Generated from DSC module xscspf version 1.3.1.0 at 9/10/2015 10:20:44 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Service Provider Foundation.
 options:

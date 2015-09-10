@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xscsmarunbookworkerserversetup
 version_added: 
-short_description: Generated from DSC module xscsma version 1.2.1.0 at 9/7/2015 7:59:50 PM
+short_description: Generated from DSC module xscsma version 1.2.1.0 at 9/10/2015 10:19:29 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Service Management Automation.
 options:

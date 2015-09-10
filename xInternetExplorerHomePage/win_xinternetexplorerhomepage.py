@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xinternetexplorerhomepage
 version_added: 
-short_description: Generated from DSC module xinternetexplorerhomepage version 1.0.0 at 9/7/2015 7:58:18 PM
+short_description: Generated from DSC module xinternetexplorerhomepage version 1.0.0 at 9/10/2015 10:12:15 PM
 description:
      - This DSC Resources can easily set an URL for the home page of Internet Explorer
 options:

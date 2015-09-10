@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_caddomaincontroller
 version_added: 
-short_description: Generated from DSC module cactivedirectory version 1.1.1 at 9/7/2015 7:49:37 PM
+short_description: Generated from DSC module cactivedirectory version 1.1.1 at 9/10/2015 10:02:15 PM
 description:
      - Module with DSC Resources for Active Directory
 options:

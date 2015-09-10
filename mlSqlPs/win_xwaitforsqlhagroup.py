@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwaitforsqlhagroup
 version_added: 
-short_description: Generated from DSC module mlsqlps version 1.0.0.1 at 9/7/2015 8:02:47 PM
+short_description: Generated from DSC module mlsqlps version 1.0.0.1 at 9/10/2015 10:37:26 PM
 description:
      - SQL module. Modified from xSqlPs.
 options:

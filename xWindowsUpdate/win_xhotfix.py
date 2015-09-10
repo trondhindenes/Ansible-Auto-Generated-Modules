@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xhotfix
 version_added: 
-short_description: Generated from DSC module xwindowsupdate version 2.1.0.0 at 9/7/2015 7:57:57 PM
+short_description: Generated from DSC module xwindowsupdate version 2.1.0.0 at 9/10/2015 10:11:39 PM
 description:
      - Module with DSC Resources for Windows Update
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazurepackadmin
 version_added: 
-short_description: Generated from DSC module xazurepack version 1.1.4.0 at 9/7/2015 7:53:37 PM
+short_description: Generated from DSC module xazurepack version 1.1.4.0 at 9/10/2015 10:06:40 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft Windows Azure Pack.
 options:

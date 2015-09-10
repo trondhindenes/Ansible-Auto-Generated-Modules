@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xscvmmoperationsmanagerserver
 version_added: 
-short_description: Generated from DSC module xscvmm version 1.2.4.0 at 9/7/2015 8:00:36 PM
+short_description: Generated from DSC module xscvmm version 1.2.4.0 at 9/10/2015 10:23:10 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Virtual Machine Manager.
 options:

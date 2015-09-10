@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xspjoinfarm
 version_added: 
-short_description: Generated from DSC module xsharepoint version 0.4.0.0 at 9/7/2015 8:01:04 PM
+short_description: Generated from DSC module xsharepoint version 0.4.0.0 at 9/10/2015 10:26:28 PM
 description:
      - This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide range of areas including web apps, service apps and farm configuration.
 options:

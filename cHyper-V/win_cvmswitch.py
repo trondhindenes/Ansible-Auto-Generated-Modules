@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cvmswitch
 version_added: 
-short_description: Generated from DSC module chyper-v version 2.2 at 9/7/2015 7:51:44 PM
+short_description: Generated from DSC module chyper-v version 2.2 at 9/10/2015 10:04:28 PM
 description:
      - Module with DSC Resources for Hyper-V area
 options:

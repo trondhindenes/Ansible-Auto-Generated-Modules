@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazureaffinitygroup
 version_added: 
-short_description: Generated from DSC module xazure version 0.1.3 at 9/7/2015 7:53:33 PM
+short_description: Generated from DSC module xazure version 0.1.3 at 9/10/2015 10:06:36 PM
 description:
      - Module with DSC Resources for Azure Resources
 options:

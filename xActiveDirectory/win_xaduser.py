@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xaduser
 version_added: 
-short_description: Generated from DSC module xactivedirectory version 2.5.0.0 at 9/7/2015 7:53:27 PM
+short_description: Generated from DSC module xactivedirectory version 2.5.0.0 at 9/10/2015 10:06:27 PM
 description:
      - The xActiveDirectory module is originally part of the Windows PowerShell Desired State Configuration (DSC) Resource Kit. This version has been modified for use in Azure. This module contains the xADDomain, xADDomainController, xADUser, and xWaitForDomain resources. These DSC Resources allow you to configure and manage Active Directory.
 

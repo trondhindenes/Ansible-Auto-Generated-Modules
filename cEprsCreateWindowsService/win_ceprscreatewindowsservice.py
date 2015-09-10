@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprscreatewindowsservice
 version_added: 
-short_description: Generated from DSC module ceprscreatewindowsservice version 1.0.0.0 at 9/7/2015 7:50:23 PM
+short_description: Generated from DSC module ceprscreatewindowsservice version 1.0.0.0 at 9/10/2015 10:03:06 PM
 description:
      - The module is used to install and uninstall a windows service. Using this module a windows service can be created that can run either on LocalSystem or User account.
 options:
