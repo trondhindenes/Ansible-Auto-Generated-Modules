@@ -30,6 +30,8 @@ Set-Attr $result "changed" $false
 $LogName = Get-Attr -obj $params -name LogName -failifempty $True -resultobj $result
 #ATTRIBUTE:IsEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $IsEnabled = Get-Attr -obj $params -name IsEnabled -failifempty $False -resultobj $result
+#ATTRIBUTE:LogFilePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$LogFilePath = Get-Attr -obj $params -name LogFilePath -failifempty $False -resultobj $result
 #ATTRIBUTE:LogMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:AutoBackup,Circular,Retain
 $LogMode = Get-Attr -obj $params -name LogMode -failifempty $False -resultobj $result
 #ATTRIBUTE:MaximumSizeInBytes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:

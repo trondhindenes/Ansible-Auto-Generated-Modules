@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazurestorageaccount
 version_added: 
-short_description: Generated from DSC module xazure version 0.1.3 at 9/10/2015 10:07:30 PM
+short_description: Generated from DSC module xazure version 0.2.0.0 at 9/23/2015 5:56:45 PM
 description:
      - Module with DSC Resources for Azure Resources
 options:

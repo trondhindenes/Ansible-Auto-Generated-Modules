@@ -34,10 +34,40 @@ $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredentia
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:UserAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:NonSecure,Secure
 $UserAuthentication = Get-Attr -obj $params -name UserAuthentication -failifempty $False -resultobj $result
+#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
+$Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
+#ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
+#ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:UserAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:NonSecure,Secure
+$UserAuthentication = Get-Attr -obj $params -name UserAuthentication -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
+If ($Ensure)
+{
+    If (('Absent','Present') -contains $Ensure ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($UserAuthentication)
+{
+    If (('NonSecure','Secure') -contains $UserAuthentication ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option UserAuthentication has invalid value $UserAuthentication. Valid values are 'NonSecure','Secure'"
+    }
+}
+
+
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {
@@ -81,6 +111,12 @@ If ($AutoConfigureLcm)
     }
 }
 
+
+if ($PsDscRunAsCredential_username)
+{
+$PsDscRunAsCredential_securepassword = $PsDscRunAsCredential_password | ConvertTo-SecureString -asPlainText -Force
+$PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($PsDscRunAsCredential_username,$PsDscRunAsCredential_securepassword)
+}
 
 if ($PsDscRunAsCredential_username)
 {

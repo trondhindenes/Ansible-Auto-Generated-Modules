@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_tamz_csqlchecksa
 version_added: 
-short_description: Generated from DSC module csqlconfig version 1.4 at 9/10/2015 10:05:35 PM
+short_description: Generated from DSC module csqlconfig version 1.4 at 9/23/2015 5:54:14 PM
 description:
      - DSC Module to configure SQL Server once installed.
 options:

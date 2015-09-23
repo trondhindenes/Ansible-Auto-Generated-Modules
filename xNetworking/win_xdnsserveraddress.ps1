@@ -28,10 +28,10 @@ Set-Attr $result "changed" $false
 
 #ATTRIBUTE:Address;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Address = Get-Attr -obj $params -name Address -failifempty $True -resultobj $result
+#ATTRIBUTE:AddressFamily;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:IPv4,IPv6
+$AddressFamily = Get-Attr -obj $params -name AddressFamily -failifempty $True -resultobj $result
 #ATTRIBUTE:InterfaceAlias;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InterfaceAlias = Get-Attr -obj $params -name InterfaceAlias -failifempty $True -resultobj $result
-#ATTRIBUTE:AddressFamily;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:IPv4,IPv6
-$AddressFamily = Get-Attr -obj $params -name AddressFamily -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xscdpmconsolesetup
 version_added: 
-short_description: Generated from DSC module xscdpm version 1.2.0.0 at 9/10/2015 10:15:47 PM
+short_description: Generated from DSC module xscdpm version 1.2.0.0 at 9/23/2015 6:05:46 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Data Protection Manager.
 options:

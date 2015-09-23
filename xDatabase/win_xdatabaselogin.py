@@ -26,11 +26,25 @@ DOCUMENTATION = '''
 ---
 module: win_xdatabaselogin
 version_added: 
-short_description: Generated from DSC module xdatabase version 1.2.0 at 9/10/2015 10:08:15 PM
+short_description: Generated from DSC module xdatabase version 1.3.0.0 at 9/23/2015 5:57:45 PM
 description:
      - This module contains 2 resources. xDatabase allows to create and deploy databases using DAC or connection string, restore a database using BACPAC and delete a database. The xDBPackage resource allows extracting a database to a DACPAC or exporting to a BACPAC
 options:
   LoginName:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  SqlAuthType:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+    choices:      - SQL      - Windows
+  SqlServer:
     description:
       - 
     required: True
@@ -65,13 +79,6 @@ options:
     default: 
     aliases: []
 
-  SqlAuthType:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-    choices:      - SQL      - Windows
   SqlConnectionCredential_username:
     description:
       - 
@@ -80,13 +87,6 @@ options:
     aliases: []
 
   SqlConnectionCredential_password:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  SqlServer:
     description:
       - 
     required: False

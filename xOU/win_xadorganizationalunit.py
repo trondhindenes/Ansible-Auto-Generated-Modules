@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xadorganizationalunit
 version_added: 
-short_description: Generated from DSC module xou version 1.0 at 9/10/2015 10:06:19 PM
+short_description: Generated from DSC module xou version 1.0 at 9/23/2015 5:55:16 PM
 description:
      - Module containing PowerShell Desired State Configuration (DSC) resources that can be used to configure SQL Server.
 options:

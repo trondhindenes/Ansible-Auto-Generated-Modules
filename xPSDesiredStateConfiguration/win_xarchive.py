@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xarchive
 version_added: 
-short_description: Generated from DSC module xpsdesiredstateconfiguration version 3.4.0.0 at 9/10/2015 10:06:31 PM
+short_description: Generated from DSC module xpsdesiredstateconfiguration version 3.5.0.0 at 9/23/2015 5:55:33 PM
 description:
      - The xPSDesiredStateConfiguration module is a part of the Windows PowerShell Desired State Configuration (DSC) Resource Kit, which is a collection of DSC Resources produced by the PowerShell Team. This module contains the xDscWebService, xWindowsProcess, xService, xPackage, xArchive, xRemoteFile, xPSEndpoint and xWindowsOptionalFeature resources. Please see the Details section for more information on the functionalities provided by these resources.
 

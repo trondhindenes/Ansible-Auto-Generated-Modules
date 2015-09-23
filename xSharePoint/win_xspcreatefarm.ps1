@@ -42,6 +42,8 @@ $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -
 $InstallAccount_password = Get-Attr -obj $params -name InstallAccount_password -failifempty $True -resultobj $result
 #ATTRIBUTE:Passphrase;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Passphrase = Get-Attr -obj $params -name Passphrase -failifempty $True -resultobj $result
+#ATTRIBUTE:CentralAdministrationPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$CentralAdministrationPort = Get-Attr -obj $params -name CentralAdministrationPort -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:

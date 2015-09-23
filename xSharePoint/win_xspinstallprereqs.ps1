@@ -36,8 +36,12 @@ $IDFX = Get-Attr -obj $params -name IDFX -failifempty $False -resultobj $result
 $IDFX11 = Get-Attr -obj $params -name IDFX11 -failifempty $False -resultobj $result
 #ATTRIBUTE:KB2671763;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $KB2671763 = Get-Attr -obj $params -name KB2671763 -failifempty $False -resultobj $result
+#ATTRIBUTE:KB2898850;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$KB2898850 = Get-Attr -obj $params -name KB2898850 -failifempty $False -resultobj $result
 #ATTRIBUTE:MSIPCClient;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MSIPCClient = Get-Attr -obj $params -name MSIPCClient -failifempty $False -resultobj $result
+#ATTRIBUTE:MSVCRT12;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$MSVCRT12 = Get-Attr -obj $params -name MSVCRT12 -failifempty $False -resultobj $result
 #ATTRIBUTE:NETFX;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $NETFX = Get-Attr -obj $params -name NETFX -failifempty $False -resultobj $result
 #ATTRIBUTE:OnlineMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:

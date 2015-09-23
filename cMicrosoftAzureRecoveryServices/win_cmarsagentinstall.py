@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmarsagentinstall
 version_added: 
-short_description: Generated from DSC module cmicrosoftazurerecoveryservices version 1.0 at 9/10/2015 10:03:27 PM
+short_description: Generated from DSC module cmicrosoftazurerecoveryservices version 1.0 at 9/23/2015 5:51:04 PM
 description:
      - DSC Resources for instaliling and configuring Microsoft Azure Recovery Services Agent.
 options:

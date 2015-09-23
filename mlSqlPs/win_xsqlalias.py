@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlalias
 version_added: 
-short_description: Generated from DSC module mlsqlps version 1.0.0.1 at 9/10/2015 10:30:19 PM
+short_description: Generated from DSC module mlsqlps version 1.0.0.1 at 9/23/2015 6:10:28 PM
 description:
      - SQL module. Modified from xSqlPs.
 options:

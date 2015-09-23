@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmmagentproxycredential
 version_added: 
-short_description: Generated from DSC module cmmagent version 1.2 at 9/10/2015 10:04:00 PM
+short_description: Generated from DSC module cmmagent version 1.2 at 9/23/2015 5:51:48 PM
 description:
      - DSC Resources for instaliling and configuring Microsoft Management Agent for Azure Operational Insights
 options:

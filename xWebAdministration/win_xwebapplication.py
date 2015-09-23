@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwebapplication
 version_added: 
-short_description: Generated from DSC module xwebadministration version 1.7.0.0 at 9/10/2015 10:37:46 PM
+short_description: Generated from DSC module xwebadministration version 1.7.0.0 at 9/23/2015 6:12:29 PM
 description:
      - Module with DSC Resources for Web Administration
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cloopbackcheck
 version_added: 
-short_description: Generated from DSC module cwindowsos version 1.2 at 9/10/2015 10:03:24 PM
+short_description: Generated from DSC module cwindowsos version 1.2 at 9/23/2015 5:50:57 PM
 description:
      - DSC Resources for managing misc configurations on Windows OS
 options:

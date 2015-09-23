@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwmismtpconsumer
 version_added: 
-short_description: Generated from DSC module cwmipermanentevents version 1.1 at 9/10/2015 10:05:00 PM
+short_description: Generated from DSC module cwmipermanentevents version 1.1 at 9/23/2015 5:53:06 PM
 description:
      - DSC Resources for managing WMI permanent events
 options:

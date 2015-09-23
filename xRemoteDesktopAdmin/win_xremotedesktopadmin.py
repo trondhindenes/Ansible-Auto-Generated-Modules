@@ -26,10 +26,38 @@ DOCUMENTATION = '''
 ---
 module: win_xremotedesktopadmin
 version_added: 
-short_description: Generated from DSC module xremotedesktopadmin version 1.0.3.0 at 9/10/2015 10:15:07 PM
+short_description: Generated from DSC module xremotedesktopadmin version 1.1.0.0 at 9/23/2015 6:05:25 PM
 description:
      - Module with DSC Resources for enabling adminsitrative Remote Desktop Connections
 options:
+  Ensure:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+    choices:      - Absent      - Present
+  PsDscRunAsCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  PsDscRunAsCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  UserAuthentication:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - NonSecure      - Secure
   Ensure:
     description:
       - 

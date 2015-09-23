@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_powermanagement
 version_added: 
-short_description: Generated from DSC module dellbiosprovider version 0.3 at 9/10/2015 10:05:23 PM
+short_description: Generated from DSC module dellbiosprovider version 0.3 at 9/23/2015 5:53:52 PM
 description:
      - The Dell Command PowerShell Provider (currently in Beta) provides native configuration capability of Dell Optiplex, Latitude, Precision, and Venue 11 systems within PowerShell.
 options:

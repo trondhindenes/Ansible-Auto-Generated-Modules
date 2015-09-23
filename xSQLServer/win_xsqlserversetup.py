@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlserversetup
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.3.0.0 at 9/10/2015 10:33:10 PM
+short_description: Generated from DSC module xsqlserver version 1.3.0.0 at 9/23/2015 6:11:14 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:

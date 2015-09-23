@@ -48,6 +48,8 @@ $Path = Get-Attr -obj $params -name Path -failifempty $False -resultobj $result
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:StartupTimeout;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$StartupTimeout = Get-Attr -obj $params -name StartupTimeout -failifempty $False -resultobj $result
 #ATTRIBUTE:StartupType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Automatic,Disabled,Manual
 $StartupType = Get-Attr -obj $params -name StartupType -failifempty $False -resultobj $result
 #ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Running,Stopped

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_chostsfile
 version_added: 
-short_description: Generated from DSC module cwindowsos version 1.2 at 9/10/2015 10:03:20 PM
+short_description: Generated from DSC module cwindowsos version 1.2 at 9/23/2015 5:50:55 PM
 description:
      - DSC Resources for managing misc configurations on Windows OS
 options:

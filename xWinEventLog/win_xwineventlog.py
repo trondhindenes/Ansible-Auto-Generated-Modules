@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwineventlog
 version_added: 
-short_description: Generated from DSC module xwineventlog version 1.0.0.0 at 9/10/2015 10:41:53 PM
+short_description: Generated from DSC module xwineventlog version 1.1.0.0 at 9/23/2015 6:13:40 PM
 description:
      - Configure Windows Event Logs
 options:
@@ -38,6 +38,13 @@ options:
     aliases: []
 
   IsEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  LogFilePath:
     description:
       - 
     required: False

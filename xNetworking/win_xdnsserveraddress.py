@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdnsserveraddress
 version_added: 
-short_description: Generated from DSC module xnetworking version 2.2.0.0 at 9/10/2015 10:08:52 PM
+short_description: Generated from DSC module xnetworking version 2.3.0.0 at 9/23/2015 5:58:39 PM
 description:
      - Module with DSC Resources for Networking area
 options:
@@ -37,6 +37,13 @@ options:
     default: 
     aliases: []
 
+  AddressFamily:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+    choices:      - IPv4      - IPv6
   InterfaceAlias:
     description:
       - 
@@ -44,13 +51,6 @@ options:
     default: 
     aliases: []
 
-  AddressFamily:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-    choices:      - IPv4      - IPv6
   PsDscRunAsCredential_username:
     description:
       - 

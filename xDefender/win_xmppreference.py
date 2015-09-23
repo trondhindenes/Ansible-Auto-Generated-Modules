@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xmppreference
 version_added: 
-short_description: Generated from DSC module xdefender version 0.1.0.0 at 9/10/2015 10:13:39 PM
+short_description: Generated from DSC module xdefender version 0.2.0.0 at 9/23/2015 6:03:55 PM
 description:
      - The xDefender allows you to configure Windows Defender preferences.
 options:
