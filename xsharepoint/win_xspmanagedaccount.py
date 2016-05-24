@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xspmanagedaccount
 version_added: 
-short_description: Generated from DSC module xsharepoint version 0.8.0.0 at 22.12.2015 20.03.53
+short_description: Generated from DSC module xsharepoint version 0.12.0.0 at 5/24/2016 2:07:17 AM
 description:
      - This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide range of areas including web apps, service apps and farm configuration.
 options:

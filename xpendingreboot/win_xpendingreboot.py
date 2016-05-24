@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xpendingreboot
 version_added: 
-short_description: Generated from DSC module xpendingreboot version 0.1.0.2 at 22.12.2015 19.52.41
+short_description: Generated from DSC module xpendingreboot version 0.3.0.0 at 5/24/2016 2:00:57 AM
 description:
      - This module identifies pending reboots in Windows Server and acts on them.
 options:
@@ -45,6 +45,41 @@ options:
     aliases: []
 
   PsDscRunAsCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SkipCcmClientSDK:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SkipComponentBasedServicing:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SkipPendingComputerRename:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SkipPendingFileRename:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SkipWindowsUpdate:
     description:
       - 
     required: False

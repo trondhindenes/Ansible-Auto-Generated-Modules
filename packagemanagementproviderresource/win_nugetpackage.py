@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_nugetpackage
 version_added: 
-short_description: Generated from DSC module packagemanagementproviderresource version 1.0.2 at 22.12.2015 20.07.39
+short_description: Generated from DSC module packagemanagementproviderresource version 1.0.2 at 5/24/2016 1:41:13 AM
 description:
      - Modules with DSC resources for the package management.
 options:

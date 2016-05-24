@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwebvirtualdirectory
 version_added: 
-short_description: Generated from DSC module xwebadministration version 1.8.0.0 at 22.12.2015 19.48.09
+short_description: Generated from DSC module xwebadministration version 1.11.0.0 at 5/24/2016 2:16:22 AM
 description:
      - Module with DSC Resources for Web Administration
 options:

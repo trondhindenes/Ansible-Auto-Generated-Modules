@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xvmhyperv
 version_added: 
-short_description: Generated from DSC module xhyper-v version 3.2.0.0 at 22.12.2015 19.51.52
+short_description: Generated from DSC module xhyper-v version 3.4.0.0 at 5/24/2016 2:14:42 AM
 description:
      - Module with DSC Resources for Hyper-V area
 options:
@@ -41,6 +41,13 @@ options:
     description:
       - 
     required: True
+    default: 
+    aliases: []
+
+  EnableGuestService:
+    description:
+      - 
+    required: False
     default: 
     aliases: []
 
@@ -115,6 +122,13 @@ options:
     aliases: []
 
   RestartIfNeeded:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SecureBoot:
     description:
       - 
     required: False

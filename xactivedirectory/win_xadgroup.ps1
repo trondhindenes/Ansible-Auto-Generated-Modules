@@ -44,6 +44,18 @@ $DomainController = Get-Attr -obj $params -name DomainController -failifempty $F
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:GroupScope;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:DomainLocal,Global,Universal
 $GroupScope = Get-Attr -obj $params -name GroupScope -failifempty $False -resultobj $result
+#ATTRIBUTE:ManagedBy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ManagedBy = Get-Attr -obj $params -name ManagedBy -failifempty $False -resultobj $result
+#ATTRIBUTE:Members;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Members = Get-Attr -obj $params -name Members -failifempty $False -resultobj $result
+#ATTRIBUTE:MembershipAttribute;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:DistinguishedName,ObjectGUID,SamAccountName,SID
+$MembershipAttribute = Get-Attr -obj $params -name MembershipAttribute -failifempty $False -resultobj $result
+#ATTRIBUTE:MembersToExclude;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$MembersToExclude = Get-Attr -obj $params -name MembersToExclude -failifempty $False -resultobj $result
+#ATTRIBUTE:MembersToInclude;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$MembersToInclude = Get-Attr -obj $params -name MembersToInclude -failifempty $False -resultobj $result
+#ATTRIBUTE:Notes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Notes = Get-Attr -obj $params -name Notes -failifempty $False -resultobj $result
 #ATTRIBUTE:Path;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Path = Get-Attr -obj $params -name Path -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -83,6 +95,17 @@ If ($GroupScope)
     Else
     {
         Fail-Json $result "Option GroupScope has invalid value $GroupScope. Valid values are 'DomainLocal','Global','Universal'"
+    }
+}
+
+
+If ($MembershipAttribute)
+{
+    If (('DistinguishedName','ObjectGUID','SamAccountName','SID') -contains $MembershipAttribute ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option MembershipAttribute has invalid value $MembershipAttribute. Valid values are 'DistinguishedName','ObjectGUID','SamAccountName','SID'"
     }
 }
 
@@ -194,7 +217,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -202,6 +225,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -222,7 +246,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

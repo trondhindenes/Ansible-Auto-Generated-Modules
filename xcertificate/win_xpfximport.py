@@ -26,11 +26,25 @@ DOCUMENTATION = '''
 ---
 module: win_xpfximport
 version_added: 
-short_description: Generated from DSC module xcertificate version 1.1.0.0 at 22.12.2015 20.08.44
+short_description: Generated from DSC module xcertificate version 2.0.0.0 at 5/24/2016 2:01:02 AM
 description:
      - This module includes DSC resources that simplify administration of certificates on a Windows Server
 options:
+  Location:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+    choices:      - CurrentUser      - LocalMachine
   Path:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  Store:
     description:
       - 
     required: True
@@ -58,6 +72,13 @@ options:
     default: 
     aliases: []
 
+  Ensure:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - Absent      - Present
   Exportable:
     description:
       - 
@@ -65,13 +86,6 @@ options:
     default: 
     aliases: []
 
-  Location:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-    choices:      - LocalMachine
   PsDscRunAsCredential_username:
     description:
       - 
@@ -80,13 +94,6 @@ options:
     aliases: []
 
   PsDscRunAsCredential_password:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  Store:
     description:
       - 
     required: False

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdnsarecord
 version_added: 
-short_description: Generated from DSC module xdnsserver version 1.4.0.0 at 22.12.2015 19.58.28
+short_description: Generated from DSC module xdnsserver version 1.7.0.0 at 5/24/2016 1:52:51 AM
 description:
      - Module with DSC Resources for DNS Server area
 options:

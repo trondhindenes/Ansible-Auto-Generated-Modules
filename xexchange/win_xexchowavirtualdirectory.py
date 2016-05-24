@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xexchowavirtualdirectory
 version_added: 
-short_description: Generated from DSC module xexchange version 1.5.0.0 at 22.12.2015 19.57.18
+short_description: Generated from DSC module xexchange version 1.7.0.0 at 5/24/2016 1:57:04 AM
 description:
      - This DSC Module allows you to configure many different properties of Exchange 2013 servers, including individual server properties, databases and mount points, and Database Availability Groups.
 options:
@@ -73,6 +73,13 @@ options:
     aliases: []
 
   ChangePasswordEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  DefaultDomain:
     description:
       - 
     required: False
@@ -149,6 +156,13 @@ options:
     default: 
     aliases: []
 
+  LogonFormat:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - FullDomain      - PrincipalName      - UserName
   LogonPageLightSelectionEnabled:
     description:
       - 

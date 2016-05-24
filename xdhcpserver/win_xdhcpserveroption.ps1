@@ -26,14 +26,14 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DnsServerIPAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$DnsServerIPAddress = Get-Attr -obj $params -name DnsServerIPAddress -failifempty $True -resultobj $result
 #ATTRIBUTE:ScopeID;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ScopeID = Get-Attr -obj $params -name ScopeID -failifempty $True -resultobj $result
 #ATTRIBUTE:AddressFamily;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:IPv4
 $AddressFamily = Get-Attr -obj $params -name AddressFamily -failifempty $False -resultobj $result
 #ATTRIBUTE:DnsDomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DnsDomain = Get-Attr -obj $params -name DnsDomain -failifempty $False -resultobj $result
+#ATTRIBUTE:DnsServerIPAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DnsServerIPAddress = Get-Attr -obj $params -name DnsServerIPAddress -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -169,7 +169,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -177,6 +177,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -197,7 +198,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

@@ -26,24 +26,102 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:DomainAdministratorCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$DomainAdministratorCredential_username = Get-Attr -obj $params -name DomainAdministratorCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:DomainAdministratorCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$DomainAdministratorCredential_password = Get-Attr -obj $params -name DomainAdministratorCredential_password -failifempty $True -resultobj $result
 #ATTRIBUTE:DomainName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainName = Get-Attr -obj $params -name DomainName -failifempty $True -resultobj $result
 #ATTRIBUTE:UserName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UserName = Get-Attr -obj $params -name UserName -failifempty $True -resultobj $result
+#ATTRIBUTE:CannotChangePassword;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$CannotChangePassword = Get-Attr -obj $params -name CannotChangePassword -failifempty $False -resultobj $result
+#ATTRIBUTE:City;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$City = Get-Attr -obj $params -name City -failifempty $False -resultobj $result
+#ATTRIBUTE:CommonName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$CommonName = Get-Attr -obj $params -name CommonName -failifempty $False -resultobj $result
+#ATTRIBUTE:Company;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Company = Get-Attr -obj $params -name Company -failifempty $False -resultobj $result
+#ATTRIBUTE:Country;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Country = Get-Attr -obj $params -name Country -failifempty $False -resultobj $result
+#ATTRIBUTE:Department;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Department = Get-Attr -obj $params -name Department -failifempty $False -resultobj $result
+#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
+#ATTRIBUTE:DisplayName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DisplayName = Get-Attr -obj $params -name DisplayName -failifempty $False -resultobj $result
+#ATTRIBUTE:Division;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Division = Get-Attr -obj $params -name Division -failifempty $False -resultobj $result
+#ATTRIBUTE:DomainAdministratorCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DomainAdministratorCredential_username = Get-Attr -obj $params -name DomainAdministratorCredential_username -failifempty $False -resultobj $result
+#ATTRIBUTE:DomainAdministratorCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DomainAdministratorCredential_password = Get-Attr -obj $params -name DomainAdministratorCredential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DomainController = Get-Attr -obj $params -name DomainController -failifempty $False -resultobj $result
+#ATTRIBUTE:EmailAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$EmailAddress = Get-Attr -obj $params -name EmailAddress -failifempty $False -resultobj $result
+#ATTRIBUTE:EmployeeID;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$EmployeeID = Get-Attr -obj $params -name EmployeeID -failifempty $False -resultobj $result
+#ATTRIBUTE:EmployeeNumber;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$EmployeeNumber = Get-Attr -obj $params -name EmployeeNumber -failifempty $False -resultobj $result
+#ATTRIBUTE:Enabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Enabled = Get-Attr -obj $params -name Enabled -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
+#ATTRIBUTE:Fax;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Fax = Get-Attr -obj $params -name Fax -failifempty $False -resultobj $result
+#ATTRIBUTE:GivenName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$GivenName = Get-Attr -obj $params -name GivenName -failifempty $False -resultobj $result
+#ATTRIBUTE:HomeDirectory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$HomeDirectory = Get-Attr -obj $params -name HomeDirectory -failifempty $False -resultobj $result
+#ATTRIBUTE:HomeDrive;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$HomeDrive = Get-Attr -obj $params -name HomeDrive -failifempty $False -resultobj $result
+#ATTRIBUTE:HomePage;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$HomePage = Get-Attr -obj $params -name HomePage -failifempty $False -resultobj $result
+#ATTRIBUTE:HomePhone;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$HomePhone = Get-Attr -obj $params -name HomePhone -failifempty $False -resultobj $result
+#ATTRIBUTE:Initials;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Initials = Get-Attr -obj $params -name Initials -failifempty $False -resultobj $result
+#ATTRIBUTE:IPPhone;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$IPPhone = Get-Attr -obj $params -name IPPhone -failifempty $False -resultobj $result
+#ATTRIBUTE:JobTitle;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$JobTitle = Get-Attr -obj $params -name JobTitle -failifempty $False -resultobj $result
+#ATTRIBUTE:LogonScript;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$LogonScript = Get-Attr -obj $params -name LogonScript -failifempty $False -resultobj $result
+#ATTRIBUTE:Manager;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Manager = Get-Attr -obj $params -name Manager -failifempty $False -resultobj $result
+#ATTRIBUTE:MobilePhone;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$MobilePhone = Get-Attr -obj $params -name MobilePhone -failifempty $False -resultobj $result
+#ATTRIBUTE:Notes;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Notes = Get-Attr -obj $params -name Notes -failifempty $False -resultobj $result
+#ATTRIBUTE:Office;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Office = Get-Attr -obj $params -name Office -failifempty $False -resultobj $result
+#ATTRIBUTE:OfficePhone;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$OfficePhone = Get-Attr -obj $params -name OfficePhone -failifempty $False -resultobj $result
+#ATTRIBUTE:Pager;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Pager = Get-Attr -obj $params -name Pager -failifempty $False -resultobj $result
 #ATTRIBUTE:Password_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Password_username = Get-Attr -obj $params -name Password_username -failifempty $False -resultobj $result
 #ATTRIBUTE:Password_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Password_password = Get-Attr -obj $params -name Password_password -failifempty $False -resultobj $result
+#ATTRIBUTE:PasswordNeverExpires;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PasswordNeverExpires = Get-Attr -obj $params -name PasswordNeverExpires -failifempty $False -resultobj $result
+#ATTRIBUTE:Path;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Path = Get-Attr -obj $params -name Path -failifempty $False -resultobj $result
+#ATTRIBUTE:POBox;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$POBox = Get-Attr -obj $params -name POBox -failifempty $False -resultobj $result
+#ATTRIBUTE:PostalCode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PostalCode = Get-Attr -obj $params -name PostalCode -failifempty $False -resultobj $result
+#ATTRIBUTE:ProfilePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ProfilePath = Get-Attr -obj $params -name ProfilePath -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
+#ATTRIBUTE:StreetAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$StreetAddress = Get-Attr -obj $params -name StreetAddress -failifempty $False -resultobj $result
+#ATTRIBUTE:Surname;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Surname = Get-Attr -obj $params -name Surname -failifempty $False -resultobj $result
+#ATTRIBUTE:UserPrincipalName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$UserPrincipalName = Get-Attr -obj $params -name UserPrincipalName -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
@@ -172,7 +250,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -180,6 +258,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -200,7 +279,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

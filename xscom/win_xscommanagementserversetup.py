@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xscommanagementserversetup
 version_added: 
-short_description: Generated from DSC module xscom version 1.3.3.0 at 22.12.2015 20.00.32
+short_description: Generated from DSC module xscom version 1.3.3.0 at 5/24/2016 2:02:53 AM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Operations Manager.
 options:

@@ -40,6 +40,8 @@ $AllowServiceRestart = Get-Attr -obj $params -name AllowServiceRestart -failifem
 $BasicAuthentication = Get-Attr -obj $params -name BasicAuthentication -failifempty $False -resultobj $result
 #ATTRIBUTE:ChangePasswordEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ChangePasswordEnabled = Get-Attr -obj $params -name ChangePasswordEnabled -failifempty $False -resultobj $result
+#ATTRIBUTE:DefaultDomain;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DefaultDomain = Get-Attr -obj $params -name DefaultDomain -failifempty $False -resultobj $result
 #ATTRIBUTE:DigestAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DigestAuthentication = Get-Attr -obj $params -name DigestAuthentication -failifempty $False -resultobj $result
 #ATTRIBUTE:DomainController;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -60,6 +62,8 @@ $InstantMessagingServerName = Get-Attr -obj $params -name InstantMessagingServer
 $InstantMessagingType = Get-Attr -obj $params -name InstantMessagingType -failifempty $False -resultobj $result
 #ATTRIBUTE:InternalUrl;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InternalUrl = Get-Attr -obj $params -name InternalUrl -failifempty $False -resultobj $result
+#ATTRIBUTE:LogonFormat;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:FullDomain,PrincipalName,UserName
+$LogonFormat = Get-Attr -obj $params -name LogonFormat -failifempty $False -resultobj $result
 #ATTRIBUTE:LogonPageLightSelectionEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LogonPageLightSelectionEnabled = Get-Attr -obj $params -name LogonPageLightSelectionEnabled -failifempty $False -resultobj $result
 #ATTRIBUTE:LogonPagePublicPrivateSelectionEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -81,6 +85,17 @@ If ($InstantMessagingType)
     Else
     {
         Fail-Json $result "Option InstantMessagingType has invalid value $InstantMessagingType. Valid values are 'None','Ocs'"
+    }
+}
+
+
+If ($LogonFormat)
+{
+    If (('FullDomain','PrincipalName','UserName') -contains $LogonFormat ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option LogonFormat has invalid value $LogonFormat. Valid values are 'FullDomain','PrincipalName','UserName'"
     }
 }
 
@@ -192,7 +207,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -200,6 +215,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -220,7 +236,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

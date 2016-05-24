@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xfirewall
 version_added: 
-short_description: Generated from DSC module xnetworking version 2.5.0.0 at 22.12.2015 19.48.36
+short_description: Generated from DSC module xnetworking version 2.9.0.0 at 5/24/2016 1:58:31 AM
 description:
      - Module with DSC Resources for Networking area
 options:
@@ -72,6 +72,20 @@ options:
     default: 
     aliases: []
 
+  DynamicTransport:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - Any      - ProximityApps      - ProximitySharing      - WifiDirectDevices      - WifiDirectDisplay      - WifiDirectPrinting
+  EdgeTraversalPolicy:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - Allow      - Block      - DeferToApp      - DeferToUser
   Enabled:
     description:
       - 
@@ -100,6 +114,13 @@ options:
     default: 
     aliases: []
 
+  IcmpType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
   InterfaceAlias:
     description:
       - 
@@ -121,6 +142,13 @@ options:
     default: 
     aliases: []
 
+  LocalOnlyMapping:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
   LocalPort:
     description:
       - 
@@ -129,6 +157,27 @@ options:
     aliases: []
 
   LocalUser:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  LooseSourceMapping:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  OverrideBlockRules:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  Owner:
     description:
       - 
     required: False

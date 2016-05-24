@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xpowershellexecutionpolicy
 version_added: 
-short_description: Generated from DSC module xpowershellexecutionpolicy version 1.0.0 at 22.12.2015 20.00.08
+short_description: Generated from DSC module xpowershellexecutionpolicy version 1.1.0.0 at 5/24/2016 2:01:07 AM
 description:
      - This DSC Resources can change the user preference for the Windows PowerShell execution policy.
 options:

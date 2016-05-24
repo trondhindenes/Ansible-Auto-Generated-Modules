@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xbltpm
 version_added: 
-short_description: Generated from DSC module xbitlocker version 1.0.1.1 at 22.12.2015 20.05.17
+short_description: Generated from DSC module xbitlocker version 1.1.0.0 at 5/24/2016 1:48:21 AM
 description:
      - This DSC Module allows you to configure Bitlocker on a single disk, configure a TPM chip, or automatically enable Bitlocker on multiple disks.
 options:

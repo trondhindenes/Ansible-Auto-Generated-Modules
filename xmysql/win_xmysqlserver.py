@@ -26,10 +26,17 @@ DOCUMENTATION = '''
 ---
 module: win_xmysqlserver
 version_added: 
-short_description: Generated from DSC module xmysql version 1.1.0.0 at 22.12.2015 19.59.51
+short_description: Generated from DSC module xmysql version 2.1.0.0 at 5/24/2016 2:00:17 AM
 description:
      - Module for installing an instance of mySQL
 options:
+  MySqlVersion:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
   RootPassword_username:
     description:
       - 
@@ -44,13 +51,6 @@ options:
     default: 
     aliases: []
 
-  ServiceName:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
   Ensure:
     description:
       - 
@@ -58,6 +58,13 @@ options:
     default: 
     aliases: []
     choices:      - Absent      - Present
+  Port:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
   PsDscRunAsCredential_username:
     description:
       - 

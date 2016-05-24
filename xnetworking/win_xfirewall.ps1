@@ -38,6 +38,10 @@ $Description = Get-Attr -obj $params -name Description -failifempty $False -resu
 $Direction = Get-Attr -obj $params -name Direction -failifempty $False -resultobj $result
 #ATTRIBUTE:DisplayName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DisplayName = Get-Attr -obj $params -name DisplayName -failifempty $False -resultobj $result
+#ATTRIBUTE:DynamicTransport;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Any,ProximityApps,ProximitySharing,WifiDirectDevices,WifiDirectDisplay,WifiDirectPrinting
+$DynamicTransport = Get-Attr -obj $params -name DynamicTransport -failifempty $False -resultobj $result
+#ATTRIBUTE:EdgeTraversalPolicy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Allow,Block,DeferToApp,DeferToUser
+$EdgeTraversalPolicy = Get-Attr -obj $params -name EdgeTraversalPolicy -failifempty $False -resultobj $result
 #ATTRIBUTE:Enabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:False,True
 $Enabled = Get-Attr -obj $params -name Enabled -failifempty $False -resultobj $result
 #ATTRIBUTE:Encryption;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Dynamic,NotRequired,Required
@@ -46,16 +50,26 @@ $Encryption = Get-Attr -obj $params -name Encryption -failifempty $False -result
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:Group;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Group = Get-Attr -obj $params -name Group -failifempty $False -resultobj $result
+#ATTRIBUTE:IcmpType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$IcmpType = Get-Attr -obj $params -name IcmpType -failifempty $False -resultobj $result
 #ATTRIBUTE:InterfaceAlias;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InterfaceAlias = Get-Attr -obj $params -name InterfaceAlias -failifempty $False -resultobj $result
 #ATTRIBUTE:InterfaceType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Any,RemoteAccess,Wired,Wireless
 $InterfaceType = Get-Attr -obj $params -name InterfaceType -failifempty $False -resultobj $result
 #ATTRIBUTE:LocalAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LocalAddress = Get-Attr -obj $params -name LocalAddress -failifempty $False -resultobj $result
+#ATTRIBUTE:LocalOnlyMapping;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$LocalOnlyMapping = Get-Attr -obj $params -name LocalOnlyMapping -failifempty $False -resultobj $result
 #ATTRIBUTE:LocalPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LocalPort = Get-Attr -obj $params -name LocalPort -failifempty $False -resultobj $result
 #ATTRIBUTE:LocalUser;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $LocalUser = Get-Attr -obj $params -name LocalUser -failifempty $False -resultobj $result
+#ATTRIBUTE:LooseSourceMapping;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$LooseSourceMapping = Get-Attr -obj $params -name LooseSourceMapping -failifempty $False -resultobj $result
+#ATTRIBUTE:OverrideBlockRules;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$OverrideBlockRules = Get-Attr -obj $params -name OverrideBlockRules -failifempty $False -resultobj $result
+#ATTRIBUTE:Owner;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Owner = Get-Attr -obj $params -name Owner -failifempty $False -resultobj $result
 #ATTRIBUTE:Package;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Package = Get-Attr -obj $params -name Package -failifempty $False -resultobj $result
 #ATTRIBUTE:Platform;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -113,6 +127,28 @@ If ($Direction)
     Else
     {
         Fail-Json $result "Option Direction has invalid value $Direction. Valid values are 'Inbound','Outbound'"
+    }
+}
+
+
+If ($DynamicTransport)
+{
+    If (('Any','ProximityApps','ProximitySharing','WifiDirectDevices','WifiDirectDisplay','WifiDirectPrinting') -contains $DynamicTransport ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option DynamicTransport has invalid value $DynamicTransport. Valid values are 'Any','ProximityApps','ProximitySharing','WifiDirectDevices','WifiDirectDisplay','WifiDirectPrinting'"
+    }
+}
+
+
+If ($EdgeTraversalPolicy)
+{
+    If (('Allow','Block','DeferToApp','DeferToUser') -contains $EdgeTraversalPolicy ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option EdgeTraversalPolicy has invalid value $EdgeTraversalPolicy. Valid values are 'Allow','Block','DeferToApp','DeferToUser'"
     }
 }
 
@@ -262,7 +298,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -270,6 +306,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -290,7 +327,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

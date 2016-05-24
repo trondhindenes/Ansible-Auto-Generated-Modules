@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwebsite
 version_added: 
-short_description: Generated from DSC module xwebadministration version 1.8.0.0 at 22.12.2015 19.48.01
+short_description: Generated from DSC module xwebadministration version 1.11.0.0 at 5/24/2016 2:16:10 AM
 description:
      - Module with DSC Resources for Web Administration
 options:
@@ -37,14 +37,21 @@ options:
     default: 
     aliases: []
 
-  PhysicalPath:
+  ApplicationPool:
     description:
       - 
-    required: True
+    required: False
     default: 
     aliases: []
 
-  ApplicationPool:
+  ApplicationType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  AuthenticationInfo:
     description:
       - 
     required: False
@@ -65,6 +72,13 @@ options:
     default: 
     aliases: []
 
+  EnabledProtocols:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
   Ensure:
     description:
       - 
@@ -72,6 +86,20 @@ options:
     default: 
     aliases: []
     choices:      - Absent      - Present
+  PhysicalPath:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  PreloadEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
   PsDscRunAsCredential_username:
     description:
       - 
@@ -80,6 +108,20 @@ options:
     aliases: []
 
   PsDscRunAsCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  ServiceAutoStartEnabled:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  ServiceAutoStartProvider:
     description:
       - 
     required: False

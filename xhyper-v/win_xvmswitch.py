@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xvmswitch
 version_added: 
-short_description: Generated from DSC module xhyper-v version 3.2.0.0 at 22.12.2015 19.51.55
+short_description: Generated from DSC module xhyper-v version 3.4.0.0 at 5/24/2016 2:14:47 AM
 description:
      - Module with DSC Resources for Hyper-V area
 options:
@@ -51,6 +51,13 @@ options:
     default: 
     aliases: []
 
+  BandwidthReservationMode:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - Absolute      - Default      - NA      - None      - Weight
   Ensure:
     description:
       - 

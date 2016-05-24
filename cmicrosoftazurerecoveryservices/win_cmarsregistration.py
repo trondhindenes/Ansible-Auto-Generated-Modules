@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmarsregistration
 version_added: 
-short_description: Generated from DSC module cmicrosoftazurerecoveryservices version 1.0 at 22.12.2015 20.11.39
+short_description: Generated from DSC module cmicrosoftazurerecoveryservices version 1.0 at 5/24/2016 1:34:02 AM
 description:
      - DSC Resources for instaliling and configuring Microsoft Azure Recovery Services Agent.
 options:

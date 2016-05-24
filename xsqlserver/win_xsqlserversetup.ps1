@@ -32,8 +32,6 @@ $InstanceName = Get-Attr -obj $params -name InstanceName -failifempty $True -res
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
 #ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
 #ATTRIBUTE:AgtSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AgtSvcAccount_username = Get-Attr -obj $params -name AgtSvcAccount_username -failifempty $False -resultobj $result
 #ATTRIBUTE:AgtSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -56,10 +54,14 @@ $ASSvcAccount_password = Get-Attr -obj $params -name ASSvcAccount_password -fail
 $ASSysAdminAccounts = Get-Attr -obj $params -name ASSysAdminAccounts -failifempty $False -resultobj $result
 #ATTRIBUTE:ASTempDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ASTempDir = Get-Attr -obj $params -name ASTempDir -failifempty $False -resultobj $result
+#ATTRIBUTE:BrowserSvcStartupType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Automatic,Disabled,Manual
+$BrowserSvcStartupType = Get-Attr -obj $params -name BrowserSvcStartupType -failifempty $False -resultobj $result
 #ATTRIBUTE:ErrorReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ErrorReporting = Get-Attr -obj $params -name ErrorReporting -failifempty $False -resultobj $result
 #ATTRIBUTE:Features;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Features = Get-Attr -obj $params -name Features -failifempty $False -resultobj $result
+#ATTRIBUTE:ForceReboot;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ForceReboot = Get-Attr -obj $params -name ForceReboot -failifempty $False -resultobj $result
 #ATTRIBUTE:FTSvcAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FTSvcAccount_username = Get-Attr -obj $params -name FTSvcAccount_username -failifempty $False -resultobj $result
 #ATTRIBUTE:FTSvcAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -94,8 +96,14 @@ $SAPwd_username = Get-Attr -obj $params -name SAPwd_username -failifempty $False
 $SAPwd_password = Get-Attr -obj $params -name SAPwd_password -failifempty $False -resultobj $result
 #ATTRIBUTE:SecurityMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SecurityMode = Get-Attr -obj $params -name SecurityMode -failifempty $False -resultobj $result
+#ATTRIBUTE:SourceCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SourceCredential_username = Get-Attr -obj $params -name SourceCredential_username -failifempty $False -resultobj $result
+#ATTRIBUTE:SourceCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SourceCredential_password = Get-Attr -obj $params -name SourceCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
+#ATTRIBUTE:SourcePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $False -resultobj $result
 #ATTRIBUTE:SQLBackupDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLBackupDir = Get-Attr -obj $params -name SQLBackupDir -failifempty $False -resultobj $result
 #ATTRIBUTE:SQLCollation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -116,6 +124,8 @@ $SQLUserDBDir = Get-Attr -obj $params -name SQLUserDBDir -failifempty $False -re
 $SQLUserDBLogDir = Get-Attr -obj $params -name SQLUserDBLogDir -failifempty $False -resultobj $result
 #ATTRIBUTE:SQMReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQMReporting = Get-Attr -obj $params -name SQMReporting -failifempty $False -resultobj $result
+#ATTRIBUTE:SuppressReboot;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SuppressReboot = Get-Attr -obj $params -name SuppressReboot -failifempty $False -resultobj $result
 #ATTRIBUTE:UpdateEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UpdateEnabled = Get-Attr -obj $params -name UpdateEnabled -failifempty $False -resultobj $result
 #ATTRIBUTE:UpdateSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -124,6 +134,17 @@ $UpdateSource = Get-Attr -obj $params -name UpdateSource -failifempty $False -re
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
+If ($BrowserSvcStartupType)
+{
+    If (('Automatic','Disabled','Manual') -contains $BrowserSvcStartupType ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option BrowserSvcStartupType has invalid value $BrowserSvcStartupType. Valid values are 'Automatic','Disabled','Manual'"
+    }
+}
+
+
 If ($AutoInstallModule)
 {
     If (('true','false') -contains $AutoInstallModule ) {
@@ -192,6 +213,12 @@ if ($SAPwd_username)
 {
 $SAPwd_securepassword = $SAPwd_password | ConvertTo-SecureString -asPlainText -Force
 $SAPwd = New-Object System.Management.Automation.PSCredential($SAPwd_username,$SAPwd_securepassword)
+}
+
+if ($SourceCredential_username)
+{
+$SourceCredential_securepassword = $SourceCredential_password | ConvertTo-SecureString -asPlainText -Force
+$SourceCredential = New-Object System.Management.Automation.PSCredential($SourceCredential_username,$SourceCredential_securepassword)
 }
 
 if ($SQLSvcAccount_username)
@@ -273,7 +300,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -281,6 +308,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -301,7 +329,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

@@ -28,20 +28,32 @@ Set-Attr $result "changed" $false
 
 #ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:PhysicalPath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$PhysicalPath = Get-Attr -obj $params -name PhysicalPath -failifempty $True -resultobj $result
 #ATTRIBUTE:ApplicationPool;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ApplicationPool = Get-Attr -obj $params -name ApplicationPool -failifempty $False -resultobj $result
+#ATTRIBUTE:ApplicationType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ApplicationType = Get-Attr -obj $params -name ApplicationType -failifempty $False -resultobj $result
+#ATTRIBUTE:AuthenticationInfo;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$AuthenticationInfo = Get-Attr -obj $params -name AuthenticationInfo -failifempty $False -resultobj $result
 #ATTRIBUTE:BindingInfo;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $BindingInfo = Get-Attr -obj $params -name BindingInfo -failifempty $False -resultobj $result
 #ATTRIBUTE:DefaultPage;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DefaultPage = Get-Attr -obj $params -name DefaultPage -failifempty $False -resultobj $result
+#ATTRIBUTE:EnabledProtocols;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$EnabledProtocols = Get-Attr -obj $params -name EnabledProtocols -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
+#ATTRIBUTE:PhysicalPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PhysicalPath = Get-Attr -obj $params -name PhysicalPath -failifempty $False -resultobj $result
+#ATTRIBUTE:PreloadEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PreloadEnabled = Get-Attr -obj $params -name PreloadEnabled -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:ServiceAutoStartEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ServiceAutoStartEnabled = Get-Attr -obj $params -name ServiceAutoStartEnabled -failifempty $False -resultobj $result
+#ATTRIBUTE:ServiceAutoStartProvider;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ServiceAutoStartProvider = Get-Attr -obj $params -name ServiceAutoStartProvider -failifempty $False -resultobj $result
 #ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Started,Stopped
 $State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
@@ -171,7 +183,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -179,6 +191,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -199,7 +212,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

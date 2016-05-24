@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xiisfeaturedelegation
 version_added: 
-short_description: Generated from DSC module xwebadministration version 1.8.0.0 at 22.12.2015 19.47.37
+short_description: Generated from DSC module xwebadministration version 1.11.0.0 at 5/24/2016 1:59:00 AM
 description:
      - Module with DSC Resources for Web Administration
 options:

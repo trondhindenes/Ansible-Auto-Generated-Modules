@@ -26,39 +26,46 @@ DOCUMENTATION = '''
 ---
 module: win_xmysqluser
 version_added: 
-short_description: Generated from DSC module xmysql version 1.1.0.0 at 22.12.2015 19.59.54
+short_description: Generated from DSC module xmysql version 2.1.0.0 at 5/24/2016 2:00:22 AM
 description:
      - Module for installing an instance of mySQL
 options:
-  ConnectionCredential_username:
+  MySqlVersion:
     description:
       - 
     required: True
     default: 
     aliases: []
 
-  ConnectionCredential_password:
+  RootCredential_username:
     description:
       - 
     required: True
     default: 
     aliases: []
 
-  Credential_username:
+  RootCredential_password:
     description:
       - 
     required: True
     default: 
     aliases: []
 
-  Credential_password:
+  UserCredential_username:
     description:
       - 
     required: True
     default: 
     aliases: []
 
-  Name:
+  UserCredential_password:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  UserName:
     description:
       - 
     required: True

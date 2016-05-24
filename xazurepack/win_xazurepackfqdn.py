@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazurepackfqdn
 version_added: 
-short_description: Generated from DSC module xazurepack version 1.1.4.0 at 22.12.2015 20.02.21
+short_description: Generated from DSC module xazurepack version 1.4.0.0 at 5/24/2016 1:46:51 AM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft Windows Azure Pack.
 options:
@@ -62,6 +62,20 @@ options:
     description:
       - 
     required: True
+    default: 
+    aliases: []
+
+  dbUser_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  dbUser_password:
+    description:
+      - 
+    required: False
     default: 
     aliases: []
 

@@ -38,8 +38,6 @@ $InstanceName = Get-Attr -obj $params -name InstanceName -failifempty $True -res
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
 #ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:SourcePath;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $True -resultobj $result
 #ATTRIBUTE:SQLSvcAccount_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLSvcAccount_username = Get-Attr -obj $params -name SQLSvcAccount_username -failifempty $True -resultobj $result
 #ATTRIBUTE:SQLSvcAccount_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -72,6 +70,8 @@ $ErrorReporting = Get-Attr -obj $params -name ErrorReporting -failifempty $False
 $FailoverClusterGroup = Get-Attr -obj $params -name FailoverClusterGroup -failifempty $False -resultobj $result
 #ATTRIBUTE:FailoverClusterIPAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $FailoverClusterIPAddress = Get-Attr -obj $params -name FailoverClusterIPAddress -failifempty $False -resultobj $result
+#ATTRIBUTE:ForceReboot;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ForceReboot = Get-Attr -obj $params -name ForceReboot -failifempty $False -resultobj $result
 #ATTRIBUTE:InstallSharedDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallSharedDir = Get-Attr -obj $params -name InstallSharedDir -failifempty $False -resultobj $result
 #ATTRIBUTE:InstallSharedWOWDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -100,8 +100,14 @@ $SAPwd_username = Get-Attr -obj $params -name SAPwd_username -failifempty $False
 $SAPwd_password = Get-Attr -obj $params -name SAPwd_password -failifempty $False -resultobj $result
 #ATTRIBUTE:SecurityMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SecurityMode = Get-Attr -obj $params -name SecurityMode -failifempty $False -resultobj $result
+#ATTRIBUTE:SourceCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SourceCredential_username = Get-Attr -obj $params -name SourceCredential_username -failifempty $False -resultobj $result
+#ATTRIBUTE:SourceCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SourceCredential_password = Get-Attr -obj $params -name SourceCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:SourceFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SourceFolder = Get-Attr -obj $params -name SourceFolder -failifempty $False -resultobj $result
+#ATTRIBUTE:SourcePath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SourcePath = Get-Attr -obj $params -name SourcePath -failifempty $False -resultobj $result
 #ATTRIBUTE:SQLBackupDir;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLBackupDir = Get-Attr -obj $params -name SQLBackupDir -failifempty $False -resultobj $result
 #ATTRIBUTE:SQLCollation;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -118,6 +124,8 @@ $SQLUserDBDir = Get-Attr -obj $params -name SQLUserDBDir -failifempty $False -re
 $SQLUserDBLogDir = Get-Attr -obj $params -name SQLUserDBLogDir -failifempty $False -resultobj $result
 #ATTRIBUTE:SQMReporting;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQMReporting = Get-Attr -obj $params -name SQMReporting -failifempty $False -resultobj $result
+#ATTRIBUTE:SuppressReboot;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SuppressReboot = Get-Attr -obj $params -name SuppressReboot -failifempty $False -resultobj $result
 #ATTRIBUTE:UpdateEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UpdateEnabled = Get-Attr -obj $params -name UpdateEnabled -failifempty $False -resultobj $result
 #ATTRIBUTE:UpdateSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -201,6 +209,12 @@ $SAPwd_securepassword = $SAPwd_password | ConvertTo-SecureString -asPlainText -F
 $SAPwd = New-Object System.Management.Automation.PSCredential($SAPwd_username,$SAPwd_securepassword)
 }
 
+if ($SourceCredential_username)
+{
+$SourceCredential_securepassword = $SourceCredential_password | ConvertTo-SecureString -asPlainText -Force
+$SourceCredential = New-Object System.Management.Automation.PSCredential($SourceCredential_username,$SourceCredential_securepassword)
+}
+
 $DscResourceName = "xSQLServerFailoverClusterSetup"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
@@ -274,7 +288,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -282,6 +296,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -302,7 +317,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

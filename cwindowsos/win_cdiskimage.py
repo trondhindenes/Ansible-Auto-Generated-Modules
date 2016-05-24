@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cdiskimage
 version_added: 
-short_description: Generated from DSC module cwindowsos version 1.2 at 22.12.2015 20.09.01
+short_description: Generated from DSC module cwindowsos version 1.2 at 5/24/2016 1:26:55 AM
 description:
      - DSC Resources for managing misc configurations on Windows OS
 options:

@@ -26,35 +26,48 @@ Set-Attr $result "changed" $false
 
 
 
+#ATTRIBUTE:Location;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:CurrentUser,LocalMachine
+$Location = Get-Attr -obj $params -name Location -failifempty $True -resultobj $result
 #ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
+#ATTRIBUTE:Store;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Store = Get-Attr -obj $params -name Store -failifempty $True -resultobj $result
 #ATTRIBUTE:Thumbprint;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Thumbprint = Get-Attr -obj $params -name Thumbprint -failifempty $True -resultobj $result
 #ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
+$Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:Exportable;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Exportable = Get-Attr -obj $params -name Exportable -failifempty $False -resultobj $result
-#ATTRIBUTE:Location;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:LocalMachine
-$Location = Get-Attr -obj $params -name Location -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:Store;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Store = Get-Attr -obj $params -name Store -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
 If ($Location)
 {
-    If (('LocalMachine') -contains $Location ) {
+    If (('CurrentUser','LocalMachine') -contains $Location ) {
     }
     Else
     {
-        Fail-Json $result "Option Location has invalid value $Location. Valid values are 'LocalMachine'"
+        Fail-Json $result "Option Location has invalid value $Location. Valid values are 'CurrentUser','LocalMachine'"
+    }
+}
+
+
+If ($Ensure)
+{
+    If (('Absent','Present') -contains $Ensure ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
     }
 }
 
@@ -166,7 +179,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -174,6 +187,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -194,7 +208,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

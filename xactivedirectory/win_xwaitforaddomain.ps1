@@ -28,14 +28,16 @@ Set-Attr $result "changed" $false
 
 #ATTRIBUTE:DomainName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DomainName = Get-Attr -obj $params -name DomainName -failifempty $True -resultobj $result
-#ATTRIBUTE:DomainUserCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$DomainUserCredential_username = Get-Attr -obj $params -name DomainUserCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:DomainUserCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$DomainUserCredential_password = Get-Attr -obj $params -name DomainUserCredential_password -failifempty $True -resultobj $result
+#ATTRIBUTE:DomainUserCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DomainUserCredential_username = Get-Attr -obj $params -name DomainUserCredential_username -failifempty $False -resultobj $result
+#ATTRIBUTE:DomainUserCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DomainUserCredential_password = Get-Attr -obj $params -name DomainUserCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:RebootRetryCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$RebootRetryCount = Get-Attr -obj $params -name RebootRetryCount -failifempty $False -resultobj $result
 #ATTRIBUTE:RetryCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RetryCount = Get-Attr -obj $params -name RetryCount -failifempty $False -resultobj $result
 #ATTRIBUTE:RetryIntervalSec;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -151,7 +153,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -159,6 +161,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -179,7 +182,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

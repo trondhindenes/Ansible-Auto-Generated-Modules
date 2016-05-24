@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazurepackidentityprovider
 version_added: 
-short_description: Generated from DSC module xazurepack version 1.1.4.0 at 22.12.2015 20.02.24
+short_description: Generated from DSC module xazurepack version 1.4.0.0 at 5/24/2016 1:46:56 AM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft Windows Azure Pack.
 options:
@@ -65,6 +65,20 @@ options:
     default: 
     aliases: []
     choices:      - Membership      - Windows
+  dbUser_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  dbUser_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
   Port:
     description:
       - 

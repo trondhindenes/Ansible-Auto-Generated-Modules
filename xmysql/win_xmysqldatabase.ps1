@@ -26,14 +26,16 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ConnectionCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$ConnectionCredential_username = Get-Attr -obj $params -name ConnectionCredential_username -failifempty $True -resultobj $result
-#ATTRIBUTE:ConnectionCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$ConnectionCredential_password = Get-Attr -obj $params -name ConnectionCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
-$Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $result
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
+#ATTRIBUTE:DatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $True -resultobj $result
+#ATTRIBUTE:MySqlVersion;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$MySqlVersion = Get-Attr -obj $params -name MySqlVersion -failifempty $True -resultobj $result
+#ATTRIBUTE:RootCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$RootCredential_username = Get-Attr -obj $params -name RootCredential_username -failifempty $True -resultobj $result
+#ATTRIBUTE:RootCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$RootCredential_password = Get-Attr -obj $params -name RootCredential_password -failifempty $True -resultobj $result
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
+$Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -75,10 +77,10 @@ If ($AutoConfigureLcm)
 }
 
 
-if ($ConnectionCredential_username)
+if ($RootCredential_username)
 {
-$ConnectionCredential_securepassword = $ConnectionCredential_password | ConvertTo-SecureString -asPlainText -Force
-$ConnectionCredential = New-Object System.Management.Automation.PSCredential($ConnectionCredential_username,$ConnectionCredential_securepassword)
+$RootCredential_securepassword = $RootCredential_password | ConvertTo-SecureString -asPlainText -Force
+$RootCredential = New-Object System.Management.Automation.PSCredential($RootCredential_username,$RootCredential_securepassword)
 }
 
 if ($PsDscRunAsCredential_username)
@@ -160,7 +162,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -168,6 +170,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -188,7 +191,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_clocalgroup
 version_added: 
-short_description: Generated from DSC module clocalgroup version 1.0.1 at 22.12.2015 20.18.21
+short_description: Generated from DSC module clocalgroup version 1.0.1 at 5/24/2016 1:33:37 AM
 description:
      - The cLocalGroup module contains the cLocalGroup DSC resource that provides a mechanism to manage local groups.
 options:

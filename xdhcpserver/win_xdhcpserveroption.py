@@ -26,17 +26,10 @@ DOCUMENTATION = '''
 ---
 module: win_xdhcpserveroption
 version_added: 
-short_description: Generated from DSC module xdhcpserver version 1.2 at 22.12.2015 19.58.49
+short_description: Generated from DSC module xdhcpserver version 1.4.0.0 at 5/24/2016 1:52:19 AM
 description:
      - Module with DSC Resources for DHCP Server area
 options:
-  DnsServerIPAddress:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
   ScopeID:
     description:
       - 
@@ -52,6 +45,13 @@ options:
     aliases: []
     choices:      - IPv4
   DnsDomain:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  DnsServerIPAddress:
     description:
       - 
     required: False

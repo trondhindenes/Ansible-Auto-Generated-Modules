@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_wapackvmrole
 version_added: 
-short_description: Generated from DSC module cwapack version 0.0.3.0 at 22.12.2015 20.14.36
+short_description: Generated from DSC module cwapack version 0.0.3.0 at 5/24/2016 1:44:49 AM
 description:
      - DSC Resource wrapper for WAPPublicTenantAPI module. Deploy Windows Azure Pack VMRoles using DSC.
 options:

@@ -26,9 +26,9 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlhagroup
 version_added: 
-short_description: Generated from DSC module mlsqlps version 1.0.0.1 at 22.12.2015 20.13.13
+short_description: Generated from DSC module mlsqlps version 1.0.0.3 at 5/24/2016 2:11:58 AM
 description:
-     - SQL module. Modified from xSqlPs.
+     - SQL Server Desired State Configuration module. Modified from xSqlPs and will contain all custom resources before they are Pulled back into the main xSqlPs repository. Tweet me for questions and bug fixes @matticusau
 options:
   ClusterName:
     description:

@@ -32,6 +32,8 @@ $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
 $Type = Get-Attr -obj $params -name Type -failifempty $True -resultobj $result
 #ATTRIBUTE:AllowManagementOS;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AllowManagementOS = Get-Attr -obj $params -name AllowManagementOS -failifempty $False -resultobj $result
+#ATTRIBUTE:BandwidthReservationMode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absolute,Default,NA,None,Weight
+$BandwidthReservationMode = Get-Attr -obj $params -name BandwidthReservationMode -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:NetAdapterName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -51,6 +53,17 @@ If ($Type)
     Else
     {
         Fail-Json $result "Option Type has invalid value $Type. Valid values are 'External','Internal','Private'"
+    }
+}
+
+
+If ($BandwidthReservationMode)
+{
+    If (('Absolute','Default','NA','None','Weight') -contains $BandwidthReservationMode ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option BandwidthReservationMode has invalid value $BandwidthReservationMode. Valid values are 'Absolute','Default','NA','None','Weight'"
     }
 }
 
@@ -167,7 +180,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -175,6 +188,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -195,7 +209,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

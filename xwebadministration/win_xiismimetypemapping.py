@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xiismimetypemapping
 version_added: 
-short_description: Generated from DSC module xwebadministration version 1.8.0.0 at 22.12.2015 19.47.42
+short_description: Generated from DSC module xwebadministration version 1.11.0.0 at 5/24/2016 1:59:11 AM
 description:
      - Module with DSC Resources for Web Administration
 options:

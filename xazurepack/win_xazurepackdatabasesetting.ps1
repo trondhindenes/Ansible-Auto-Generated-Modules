@@ -38,6 +38,10 @@ $Namespace = Get-Attr -obj $params -name Namespace -failifempty $True -resultobj
 $SQLServer = Get-Attr -obj $params -name SQLServer -failifempty $True -resultobj $result
 #ATTRIBUTE:Value;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Value = Get-Attr -obj $params -name Value -failifempty $True -resultobj $result
+#ATTRIBUTE:dbUser_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$dbUser_username = Get-Attr -obj $params -name dbUser_username -failifempty $False -resultobj $result
+#ATTRIBUTE:dbUser_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$dbUser_password = Get-Attr -obj $params -name dbUser_password -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -85,6 +89,12 @@ if ($AzurePackAdminCredential_username)
 {
 $AzurePackAdminCredential_securepassword = $AzurePackAdminCredential_password | ConvertTo-SecureString -asPlainText -Force
 $AzurePackAdminCredential = New-Object System.Management.Automation.PSCredential($AzurePackAdminCredential_username,$AzurePackAdminCredential_securepassword)
+}
+
+if ($dbUser_username)
+{
+$dbUser_securepassword = $dbUser_password | ConvertTo-SecureString -asPlainText -Force
+$dbUser = New-Object System.Management.Automation.PSCredential($dbUser_username,$dbUser_securepassword)
 }
 
 if ($PsDscRunAsCredential_username)
@@ -166,7 +176,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -174,6 +184,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -194,7 +205,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

@@ -26,25 +26,39 @@ DOCUMENTATION = '''
 ---
 module: win_xmysqlgrant
 version_added: 
-short_description: Generated from DSC module xmysql version 1.1.0.0 at 22.12.2015 19.59.46
+short_description: Generated from DSC module xmysql version 2.1.0.0 at 5/24/2016 2:00:06 AM
 description:
      - Module for installing an instance of mySQL
 options:
-  ConnectionCredential_username:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  ConnectionCredential_password:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
   DatabaseName:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  MySqlVersion:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  PermissionType:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+    choices:      - ALL PRIVILEGES      - CREATE      - DELETE      - DROP      - EXECUTE      - INSERT      - SELECT      - UPDATE
+  RootCredential_username:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  RootCredential_password:
     description:
       - 
     required: True
@@ -65,13 +79,6 @@ options:
     default: 
     aliases: []
     choices:      - Absent      - Present
-  PermissionType:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-    choices:      - ALL PRIVILEGES      - CREATE      - DELETE      - DROP      - EXECUTE      - INSERT      - SELECT      - UPDATE
   PsDscRunAsCredential_username:
     description:
       - 

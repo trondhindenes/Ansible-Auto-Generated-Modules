@@ -26,20 +26,26 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:ServiceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$ServiceName = Get-Attr -obj $params -name ServiceName -failifempty $True -resultobj $result
 #ATTRIBUTE:DownloadUri;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DownloadUri = Get-Attr -obj $params -name DownloadUri -failifempty $True -resultobj $result
+#ATTRIBUTE:MySQLVersion;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$MySQLVersion = Get-Attr -obj $params -name MySQLVersion -failifempty $True -resultobj $result
 #ATTRIBUTE:RootCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RootCredential_username = Get-Attr -obj $params -name RootCredential_username -failifempty $True -resultobj $result
 #ATTRIBUTE:RootCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $RootCredential_password = Get-Attr -obj $params -name RootCredential_password -failifempty $True -resultobj $result
+#ATTRIBUTE:Port;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Port = Get-Attr -obj $params -name Port -failifempty $False -resultobj $result
 #ATTRIBUTE:DatabaseName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $True -resultobj $result
+#ATTRIBUTE:UserName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$UserName = Get-Attr -obj $params -name UserName -failifempty $True -resultobj $result
 #ATTRIBUTE:UserCredential_username;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UserCredential_username = Get-Attr -obj $params -name UserCredential_username -failifempty $True -resultobj $result
 #ATTRIBUTE:UserCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UserCredential_password = Get-Attr -obj $params -name UserCredential_password -failifempty $True -resultobj $result
+#ATTRIBUTE:PermissionType;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PermissionType = Get-Attr -obj $params -name PermissionType -failifempty $True -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
@@ -151,7 +157,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -159,6 +165,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -179,7 +186,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

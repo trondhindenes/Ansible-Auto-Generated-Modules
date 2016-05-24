@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_powerplan
 version_added: 
-short_description: Generated from DSC module customizewindows10 version 0.0.0.4 at 22.12.2015 20.16.31
+short_description: Generated from DSC module customizewindows10 version 0.0.0.4 at 5/24/2016 1:41:58 AM
 description:
      - A module to customize settings and perform tweaks for Windows 10
 options:

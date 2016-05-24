@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlserversetup
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.3.0.0 at 22.12.2015 19.51.29
+short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 5/24/2016 2:13:53 AM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:
@@ -45,13 +45,6 @@ options:
     aliases: []
 
   SetupCredential_password:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  SourcePath:
     description:
       - 
     required: True
@@ -135,6 +128,13 @@ options:
     default: 
     aliases: []
 
+  BrowserSvcStartupType:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+    choices:      - Automatic      - Disabled      - Manual
   ErrorReporting:
     description:
       - 
@@ -143,6 +143,13 @@ options:
     aliases: []
 
   Features:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  ForceReboot:
     description:
       - 
     required: False
@@ -268,7 +275,28 @@ options:
     default: 
     aliases: []
 
+  SourceCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SourceCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
   SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SourcePath:
     description:
       - 
     required: False
@@ -339,6 +367,13 @@ options:
     aliases: []
 
   SQMReporting:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SuppressReboot:
     description:
       - 
     required: False

@@ -34,6 +34,10 @@ $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
 $DatabaseName = Get-Attr -obj $params -name DatabaseName -failifempty $False -resultobj $result
 #ATTRIBUTE:DatabaseServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DatabaseServer = Get-Attr -obj $params -name DatabaseServer -failifempty $False -resultobj $result
+#ATTRIBUTE:DefaultContentAccessAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DefaultContentAccessAccount_username = Get-Attr -obj $params -name DefaultContentAccessAccount_username -failifempty $False -resultobj $result
+#ATTRIBUTE:DefaultContentAccessAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DefaultContentAccessAccount_password = Get-Attr -obj $params -name DefaultContentAccessAccount_password -failifempty $False -resultobj $result
 #ATTRIBUTE:InstallAccount_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $InstallAccount_username = Get-Attr -obj $params -name InstallAccount_username -failifempty $False -resultobj $result
 #ATTRIBUTE:InstallAccount_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -67,6 +71,12 @@ If ($AutoConfigureLcm)
     }
 }
 
+
+if ($DefaultContentAccessAccount_username)
+{
+$DefaultContentAccessAccount_securepassword = $DefaultContentAccessAccount_password | ConvertTo-SecureString -asPlainText -Force
+$DefaultContentAccessAccount = New-Object System.Management.Automation.PSCredential($DefaultContentAccessAccount_username,$DefaultContentAccessAccount_securepassword)
+}
 
 if ($InstallAccount_username)
 {
@@ -153,7 +163,7 @@ Else
     }
     Else
     {
-        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to Disabled in order to auto-configure LCM" 
+        Fail-json $result "DSC Local Configuration Manager is not set to disabled. Set the module option AutoConfigureLcm to True in order to auto-configure LCM" 
     }
 
 }
@@ -161,6 +171,7 @@ Else
 $Attributes = $params | get-member | where {$_.MemberTYpe -eq "noteproperty"}  | select -ExpandProperty Name
 $Attributes = $attributes | where {$_ -ne "autoinstallmodule"}
 $Attributes = $attributes | where {$_ -ne "AutoConfigureLcm"}
+$Attributes = $attributes | where {$_ -notlike "_ansible*"}
 
 
 if (!($Attributes))
@@ -181,7 +192,7 @@ $params.Keys | foreach-object {
     }
 #>
 
-$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} |  select -ExpandProperty Name
+$Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
     $Attrib.add($key, ($params.$key))

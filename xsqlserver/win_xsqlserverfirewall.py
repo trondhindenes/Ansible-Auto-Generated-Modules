@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlserverfirewall
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.3.0.0 at 22.12.2015 19.51.20
+short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 5/24/2016 2:12:56 AM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:
@@ -38,13 +38,6 @@ options:
     aliases: []
 
   InstanceName:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  SourcePath:
     description:
       - 
     required: True
@@ -73,6 +66,13 @@ options:
     aliases: []
 
   SourceFolder:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  SourcePath:
     description:
       - 
     required: False
