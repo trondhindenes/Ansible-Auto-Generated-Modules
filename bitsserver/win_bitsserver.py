@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_bitsserver
 version_added: 
-short_description: Generated from DSC module bitsserver version 0.1.5 at 5/24/2016 1:24:15 AM
+short_description: Generated from DSC module bitsserver version 0.1.5 at 5/24/2016 8:32:50 PM
 description:
      - Configure a Bits Uploads Server
 options:

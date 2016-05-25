@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdfsreplicationgroupfolder
 version_added: 
-short_description: Generated from DSC module xdfs version 3.0.0.0 at 5/24/2016 1:51:57 AM
+short_description: Generated from DSC module xdfs version 3.0.0.0 at 5/24/2016 9:01:17 PM
 description:
      - DSC resources for configuring Distributed File System Replication and Namespaces.
 options:

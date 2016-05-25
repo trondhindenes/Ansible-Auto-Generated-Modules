@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cgitrepositorybranch
 version_added: 
-short_description: Generated from DSC module cgit version 0.1.1 at 5/24/2016 1:32:04 AM
+short_description: Generated from DSC module cgit version 0.1.1 at 5/24/2016 8:41:10 PM
 description:
      - A Demo module for working with local git repositories
 options:

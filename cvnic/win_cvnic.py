@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cvnic
 version_added: 
-short_description: Generated from DSC module cvnic version 1.0.0.0 at 5/24/2016 1:38:53 AM
+short_description: Generated from DSC module cvnic version 1.0.0.0 at 5/24/2016 8:48:24 PM
 description:
      - DSC Module to create and configuring virutal network adapters for Hyper-V host management
 options:

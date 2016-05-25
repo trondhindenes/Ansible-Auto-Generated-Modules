@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_runbookdirectory
 version_added: 
-short_description: Generated from DSC module xscsma version 1.3.0.0 at 5/24/2016 1:42:53 AM
+short_description: Generated from DSC module xscsma version 1.3.0.0 at 5/24/2016 8:52:35 PM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Service Management Automation.
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cntfspermissionentry
 version_added: 
-short_description: Generated from DSC module cntfsaccesscontrol version 1.3.0 at 5/24/2016 1:36:10 AM
+short_description: Generated from DSC module cntfsaccesscontrol version 1.3.0 at 5/24/2016 8:45:32 PM
 description:
      - The cNtfsAccessControl module contains DSC resources for NTFS access control management.
 options:

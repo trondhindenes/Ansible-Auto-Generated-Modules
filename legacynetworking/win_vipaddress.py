@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_vipaddress
 version_added: 
-short_description: Generated from DSC module legacynetworking version 1.0.1 at 5/24/2016 1:44:28 AM
+short_description: Generated from DSC module legacynetworking version 1.0.1 at 5/24/2016 8:54:13 PM
 description:
      - Module with resources for legacy (Windows 7 and Server 2008 R2) networking via WMI.
 options:

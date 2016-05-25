@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_clocalfileshare
 version_added: 
-short_description: Generated from DSC module clocalfileshare version 1.0.1 at 5/24/2016 1:33:32 AM
+short_description: Generated from DSC module clocalfileshare version 1.0.1 at 5/24/2016 8:42:43 PM
 description:
      - The cLocalFileShare module contains the cLocalFileShare DSC resource that provides a mechanism to manage local file shares. Supports Windows Server 2008 R2 and later.
 options:

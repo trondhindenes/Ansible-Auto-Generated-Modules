@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwmieventbinding
 version_added: 
-short_description: Generated from DSC module cwmipermanentevents version 1.1 at 5/24/2016 1:39:49 AM
+short_description: Generated from DSC module cwmipermanentevents version 1.1 at 5/24/2016 8:49:24 PM
 description:
      - DSC Resources for managing WMI permanent events
 options:

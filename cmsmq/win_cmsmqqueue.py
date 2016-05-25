@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmsmqqueue
 version_added: 
-short_description: Generated from DSC module cmsmq version 1.0.3 at 5/24/2016 1:35:44 AM
+short_description: Generated from DSC module cmsmq version 1.0.3 at 5/24/2016 8:45:04 PM
 description:
      - The cMsmq module contains DSC resources for managing private MSMQ queues. Supports Windows Server 2008 R2 and later.
 options:

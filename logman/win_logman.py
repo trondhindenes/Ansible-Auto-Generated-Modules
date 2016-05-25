@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_logman
 version_added: 
-short_description: Generated from DSC module logman version 1.0 at 5/24/2016 1:40:39 AM
+short_description: Generated from DSC module logman version 1.0 at 5/24/2016 8:50:16 PM
 description:
      - DSC Resource for importing data collector sets to Performance Monitor using logman.exe.
 options:

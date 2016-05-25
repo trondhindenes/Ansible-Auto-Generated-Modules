@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_clbfoteam
 version_added: 
-short_description: Generated from DSC module clbfoteam version 1.0.0.1 at 5/24/2016 1:33:22 AM
+short_description: Generated from DSC module clbfoteam version 1.0.0.1 at 5/24/2016 8:42:33 PM
 description:
      - Module with DSC Resources to configuring LBFO NIC Teaming in Windows
 options:

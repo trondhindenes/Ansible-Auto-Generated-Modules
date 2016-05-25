@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwdsbootimage
 version_added: 
-short_description: Generated from DSC module cmdt version 1.0.0.4 at 5/24/2016 1:39:07 AM
+short_description: Generated from DSC module cmdt version 1.0.0.4 at 5/24/2016 8:48:40 PM
 description:
      - A DSC Module for installing Microsoft Deployment Toolkit
 options:

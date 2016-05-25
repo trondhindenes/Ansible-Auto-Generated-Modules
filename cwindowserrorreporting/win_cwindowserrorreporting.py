@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwindowserrorreporting
 version_added: 
-short_description: Generated from DSC module cwindowserrorreporting version 1.1 at 5/24/2016 1:39:34 AM
+short_description: Generated from DSC module cwindowserrorreporting version 1.1 at 5/24/2016 8:49:08 PM
 description:
      - DSC Resource to enable or disable Windows Error Reporting
 options:

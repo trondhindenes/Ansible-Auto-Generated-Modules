@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_caddomain
 version_added: 
-short_description: Generated from DSC module cactivedirectory version 1.1.1 at 5/24/2016 1:24:32 AM
+short_description: Generated from DSC module cactivedirectory version 1.1.1 at 5/24/2016 8:33:09 PM
 description:
      - Module with DSC Resources for Active Directory
 options:

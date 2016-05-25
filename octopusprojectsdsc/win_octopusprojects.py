@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_octopusprojects
 version_added: 
-short_description: Generated from DSC module octopusprojectsdsc version 1.5.1 at 5/24/2016 1:41:26 AM
+short_description: Generated from DSC module octopusprojectsdsc version 1.5.1 at 5/24/2016 8:51:09 PM
 description:
      - This PowerShell DSC module Automates the deployment of latest release of Octopus Deploy projects based on Environment and target role. This is accomplished by using Octopus Deploy REST API calls and Octopus Tools (octo.exe)
 options:

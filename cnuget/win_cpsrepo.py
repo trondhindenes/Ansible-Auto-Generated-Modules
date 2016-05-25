@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cpsrepo
 version_added: 
-short_description: Generated from DSC module cnuget version 1.3.0 at 5/24/2016 1:37:01 AM
+short_description: Generated from DSC module cnuget version 1.3.0 at 5/24/2016 8:46:25 PM
 description:
      - Configure a local Nuget repository for PowerShell modules or other packages
 options:

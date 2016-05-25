@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_nugetpackagerepository
 version_added: 
-short_description: Generated from DSC module cnugetpackage version 1.0.1 at 5/24/2016 1:41:19 AM
+short_description: Generated from DSC module cnugetpackage version 1.0.1 at 5/24/2016 8:50:57 PM
 description:
      - A Demo module for working with NuGet Packages
 options:

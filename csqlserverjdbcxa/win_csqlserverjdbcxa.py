@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_csqlserverjdbcxa
 version_added: 
-short_description: Generated from DSC module csqlserverjdbcxa version 1.0.0 at 5/24/2016 1:37:55 AM
+short_description: Generated from DSC module csqlserverjdbcxa version 1.0.0 at 5/24/2016 8:47:22 PM
 description:
      - Enable JDBC XA Transactions on SQL Server for enable JDBC XA Transactions on SQL Server
 options:

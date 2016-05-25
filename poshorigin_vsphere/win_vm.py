@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_vm
 version_added: 
-short_description: Generated from DSC module poshorigin_vsphere version 1.1.14 at 5/24/2016 1:44:34 AM
+short_description: Generated from DSC module poshorigin_vsphere version 1.1.14 at 5/24/2016 8:54:19 PM
 description:
      - DSC resources to manage VMware vSphere with POSHOrigin.
 options:

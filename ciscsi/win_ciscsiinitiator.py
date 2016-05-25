@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ciscsiinitiator
 version_added: 
-short_description: Generated from DSC module ciscsi version 1.2.1.95 at 5/24/2016 1:33:02 AM
+short_description: Generated from DSC module ciscsi version 1.2.1.95 at 5/24/2016 8:42:11 PM
 description:
      - DSC resources for configuring Windows iSCSI Targets and Initiators.
 options:

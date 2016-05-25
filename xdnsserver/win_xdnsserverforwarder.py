@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdnsserverforwarder
 version_added: 
-short_description: Generated from DSC module xdnsserver version 1.7.0.0 at 5/24/2016 1:53:19 AM
+short_description: Generated from DSC module xdnsserver version 1.7.0.0 at 5/24/2016 9:02:40 PM
 description:
      - Module with DSC Resources for DNS Server area
 options:

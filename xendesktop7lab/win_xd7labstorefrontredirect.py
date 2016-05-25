@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xd7labstorefrontredirect
 version_added: 
-short_description: Generated from DSC module xendesktop7lab version 2.3.3 at 5/24/2016 1:50:42 AM
+short_description: Generated from DSC module xendesktop7lab version 2.3.3 at 5/24/2016 8:59:59 PM
 description:
      - Citrix XenDesktop 7 Lab DSC Composite Resources.
 options:

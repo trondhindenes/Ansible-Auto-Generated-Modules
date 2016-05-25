@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xd7catalogmachine
 version_added: 
-short_description: Generated from DSC module xendesktop7 version 2.2.7 at 5/24/2016 1:49:23 AM
+short_description: Generated from DSC module xendesktop7 version 2.2.7 at 5/24/2016 8:59:04 PM
 description:
      - The XenDesktop7 DSC resources can automate the deployment and configuration of Citrix XenDesktop 7.x. These DSC resources are provided AS IS, and are not supported through any means.
 options:

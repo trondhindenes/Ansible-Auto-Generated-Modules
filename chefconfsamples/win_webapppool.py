@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_webapppool
 version_added: 
-short_description: Generated from DSC module chefconfsamples version 0.9.0 at 5/24/2016 1:44:54 AM
+short_description: Generated from DSC module chefconfsamples version 0.9.0 at 5/24/2016 8:54:41 PM
 description:
      - Module with DSC Resources for Web Administration
 options:

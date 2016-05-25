@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cfirewallrule
 version_added: 
-short_description: Generated from DSC module cfirewall version 1.0.1 at 5/24/2016 1:30:18 AM
+short_description: Generated from DSC module cfirewall version 1.0.1 at 5/24/2016 8:39:14 PM
 description:
      - The cFirewall module contains the cFirewallRule DSC resource that provides a mechanism to manage firewall rules. Supports Windows Server 2008 R2 and later.
 options:

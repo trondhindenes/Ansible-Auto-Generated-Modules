@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsenablefirewallinboundconnections
 version_added: 
-short_description: Generated from DSC module ceprsenablefirewallinboundconnections version 1.0 at 5/24/2016 1:28:44 AM
+short_description: Generated from DSC module ceprsenablefirewallinboundconnections version 1.0 at 5/24/2016 8:37:31 PM
 description:
      - cEPRSEnableFirewallInboundConnections Module helps in Enablinng the Windows Firewall inbound Connections on a Virtual Machine
 options:

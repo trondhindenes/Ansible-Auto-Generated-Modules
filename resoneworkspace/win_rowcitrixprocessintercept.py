@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_rowcitrixprocessintercept
 version_added: 
-short_description: Generated from DSC module resoneworkspace version 1.3.1 at 5/24/2016 1:42:42 AM
+short_description: Generated from DSC module resoneworkspace version 1.3.1 at 5/24/2016 8:52:24 PM
 description:
      - RES ONE Workspace composite deployment and configuration DSC resources. These DSC resources are provided AS IS, and are not supported through any means.
 options:

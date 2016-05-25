@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsisapirestrictions
 version_added: 
-short_description: Generated from DSC module ceprswebproperties version 1.0 at 5/24/2016 1:29:12 AM
+short_description: Generated from DSC module ceprswebproperties version 1.0 at 5/24/2016 8:38:02 PM
 description:
      - cEPRSWebProperties Module helps in managing the website property resources like: cEPRSISAPIRestrictions- Resource helps in adding the API restrictions, cEPRSAutoStart- Resource helps in enabling Auto start and cEPRSExtendedProtection- Resource helps in providing the Extended Protection
 options:

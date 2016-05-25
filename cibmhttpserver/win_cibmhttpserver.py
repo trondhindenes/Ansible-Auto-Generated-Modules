@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cibmhttpserver
 version_added: 
-short_description: Generated from DSC module cibmhttpserver version 1.0.0 at 5/24/2016 1:32:28 AM
+short_description: Generated from DSC module cibmhttpserver version 1.0.0 at 5/24/2016 8:41:34 PM
 description:
      - Installs IBM HTTP Server and provides IHS Utility CmdLets
 options:

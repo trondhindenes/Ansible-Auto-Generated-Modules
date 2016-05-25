@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsinstalldotnetframework
 version_added: 
-short_description: Generated from DSC module ceprsinstalldotnetframework version 1.0 at 5/24/2016 1:29:03 AM
+short_description: Generated from DSC module ceprsinstalldotnetframework version 1.0 at 5/24/2016 8:37:52 PM
 description:
      - cEPRSInstallDotnetFramework Module helps in Installing the .Net Framework
 options:

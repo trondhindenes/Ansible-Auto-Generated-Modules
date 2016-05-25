@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmdtoperatingsystem
 version_added: 
-short_description: Generated from DSC module cmdt version 1.0.0.4 at 5/24/2016 1:34:37 AM
+short_description: Generated from DSC module cmdt version 1.0.0.4 at 5/24/2016 8:43:53 PM
 description:
      - A DSC Module for installing Microsoft Deployment Toolkit
 options:

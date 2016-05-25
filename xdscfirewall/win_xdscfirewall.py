@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdscfirewall
 version_added: 
-short_description: Generated from DSC module xdscfirewall version 1.0 at 5/24/2016 1:53:45 AM
+short_description: Generated from DSC module xdscfirewall version 1.0 at 5/24/2016 9:03:07 PM
 description:
      - Enables or disables the domain, public or private firewall zones. Config example available on project site.
 options:

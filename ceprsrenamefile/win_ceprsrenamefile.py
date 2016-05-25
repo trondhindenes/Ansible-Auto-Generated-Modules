@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsrenamefile
 version_added: 
-short_description: Generated from DSC module ceprsrenamefile version 1.0 at 5/24/2016 1:29:35 AM
+short_description: Generated from DSC module ceprsrenamefile version 1.0 at 5/24/2016 8:38:28 PM
 description:
      - cEPRSRenameFile Module helps in Renaming a File
 options:

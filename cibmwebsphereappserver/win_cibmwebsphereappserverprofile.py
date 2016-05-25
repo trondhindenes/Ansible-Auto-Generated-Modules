@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cibmwebsphereappserverprofile
 version_added: 
-short_description: Generated from DSC module cibmwebsphereappserver version 1.0.5 at 5/24/2016 1:32:43 AM
+short_description: Generated from DSC module cibmwebsphereappserver version 1.0.5 at 5/24/2016 8:41:51 PM
 description:
      - Installs IBM Application Server and provides WebSphere Utility CmdLets
 options:

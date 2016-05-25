@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmprimarysite
 version_added: 
-short_description: Generated from DSC module cconfigmgr2012 version 1.0.37 at 5/24/2016 1:35:39 AM
+short_description: Generated from DSC module cconfigmgr2012 version 1.0.37 at 5/24/2016 8:44:59 PM
 description:
      - CompositeResource Main module
 options:

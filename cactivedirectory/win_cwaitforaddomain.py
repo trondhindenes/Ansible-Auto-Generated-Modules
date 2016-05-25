@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwaitforaddomain
 version_added: 
-short_description: Generated from DSC module cactivedirectory version 1.1.1 at 5/24/2016 1:38:57 AM
+short_description: Generated from DSC module cactivedirectory version 1.1.1 at 5/24/2016 8:48:29 PM
 description:
      - Module with DSC Resources for Active Directory
 options:

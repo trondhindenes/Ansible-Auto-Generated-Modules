@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_clcmcertupdate
 version_added: 
-short_description: Generated from DSC module clcmcertmanager version 1.0.2 at 5/24/2016 1:33:27 AM
+short_description: Generated from DSC module clcmcertmanager version 1.0.2 at 5/24/2016 8:42:38 PM
 description:
      - Compares thumbprint configured in the LCM to best available certificates on the node and exports updates
 options:

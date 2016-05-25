@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsaddconfignodes
 version_added: 
-short_description: Generated from DSC module ceprsxml version 1.0 at 5/24/2016 1:27:32 AM
+short_description: Generated from DSC module ceprsxml version 1.0 at 5/24/2016 8:36:12 PM
 description:
      - cEPRSXml Module helps in managing the resources like: cEPRSLoadXml- Resource helps in loading a XML file, cEPRSReadXml- Resource helps in reading values from XML file,cEPRSXMLRemoveNode- Resource helps in removing single config node in the XML file, cEPRSXMLRemoveNodeKeyValuePair- Resource helps in removing the Key value pairs of Config nodes in the XML file, cEPRSAddConfigNodes- Resource helps in adding the config nodes,  cEPRSXmlEditSingleNode-Resource helps in modifying/editing a single node in the XML file, and cEPRSXmlEditKeyvaluePair- Resource helps in modifying/editing the Key value pairs in the XML file.
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cpowerplan
 version_added: 
-short_description: Generated from DSC module cpowerplan version 1.0.0.0 at 5/24/2016 1:36:50 AM
+short_description: Generated from DSC module cpowerplan version 1.0.0.0 at 5/24/2016 8:46:19 PM
 description:
      - Module with DSC Resources to set the desired power plan
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_powerclisnapshotcheck
 version_added: 
-short_description: Generated from DSC module dsc_powerclisnapshotcheck version 1.0 at 5/24/2016 1:41:53 AM
+short_description: Generated from DSC module dsc_powerclisnapshotcheck version 1.0 at 5/24/2016 8:51:37 PM
 description:
      - This PowerCLI DSC Resource will check’s for configurations of snapshots on a set of vm’s in a resource pool, and based on the condition “Ensure = Present” / “Ensure = Absent” takes the appropriate actions of creating snapshots on the VM’s / removing all the existing snapshots.
 

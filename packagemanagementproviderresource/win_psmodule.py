@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_psmodule
 version_added: 
-short_description: Generated from DSC module packagemanagementproviderresource version 1.0.2 at 5/24/2016 1:42:03 AM
+short_description: Generated from DSC module packagemanagementproviderresource version 1.0.2 at 5/24/2016 8:51:48 PM
 description:
      - Modules with DSC resources for the package management.
 options:

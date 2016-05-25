@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ccmcollectionrule
 version_added: 
-short_description: Generated from DSC module csccm version 1.4 at 5/24/2016 1:26:40 AM
+short_description: Generated from DSC module csccm version 1.4 at 5/24/2016 8:35:17 PM
 description:
      - Adds simple collection, collection query, and folder creation resources for SCCM
 options:

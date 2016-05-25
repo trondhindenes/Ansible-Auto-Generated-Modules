@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cswitchembeddedteam
 version_added: 
-short_description: Generated from DSC module chyper-v version 2.6.1 at 5/24/2016 1:38:00 AM
+short_description: Generated from DSC module chyper-v version 2.6.1 at 5/24/2016 8:47:27 PM
 description:
      - Module with DSC Resources for Hyper-V Networking
 options:

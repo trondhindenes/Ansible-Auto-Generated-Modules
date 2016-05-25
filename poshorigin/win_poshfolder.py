@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_poshfolder
 version_added: 
-short_description: Generated from DSC module poshorigin version 1.5.11 at 5/24/2016 1:41:48 AM
+short_description: Generated from DSC module poshorigin version 1.5.11 at 5/24/2016 8:51:32 PM
 description:
      - PowerShell framework for defining and invoking custom DSC resources to provision infrastructure.
 options:

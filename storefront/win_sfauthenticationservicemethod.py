@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_sfauthenticationservicemethod
 version_added: 
-short_description: Generated from DSC module storefront version 0.9.4 at 5/24/2016 1:43:06 AM
+short_description: Generated from DSC module storefront version 0.9.4 at 5/24/2016 8:52:48 PM
 description:
      - The Storefront DSC resources can automate the deployment and configuration of Citrix Storefront 3.5. These DSC resources are provided AS IS, and are not supported through any means.
 options:

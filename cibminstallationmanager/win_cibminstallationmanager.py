@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cibminstallationmanager
 version_added: 
-short_description: Generated from DSC module cibminstallationmanager version 1.0.6 at 5/24/2016 1:32:38 AM
+short_description: Generated from DSC module cibminstallationmanager version 1.0.6 at 5/24/2016 8:41:45 PM
 description:
      - Installs IBM Installation Manager and provides CmdLets for management of products installed via IBM Installation Manager
 options:

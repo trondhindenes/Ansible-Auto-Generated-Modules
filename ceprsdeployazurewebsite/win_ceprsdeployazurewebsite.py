@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsdeployazurewebsite
 version_added: 
-short_description: Generated from DSC module ceprsdeployazurewebsite version 1.0 at 5/24/2016 1:28:29 AM
+short_description: Generated from DSC module ceprsdeployazurewebsite version 1.0 at 5/24/2016 8:37:15 PM
 description:
      - cEPRSDeployAzureWebSite Module helps managing the resources like cEPRSCreateAzureWebsite - Resource helps in Creating the AzureWebsite and cEPRSDeployAzureWebsite - Resource helps in Deploying the Azure website
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsaddaslogonsvc
 version_added: 
-short_description: Generated from DSC module ceprsaddaslogonsvc version 1.0 at 5/24/2016 1:27:27 AM
+short_description: Generated from DSC module ceprsaddaslogonsvc version 1.0 at 5/24/2016 8:36:07 PM
 description:
      - cEPRSAddAslogOnSvc Module helps in providing the logon permissions to a Service accountaccount
 options:

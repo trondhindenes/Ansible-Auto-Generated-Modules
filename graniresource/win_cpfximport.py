@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cpfximport
 version_added: 
-short_description: Generated from DSC module graniresource version 3.7.6 at 5/24/2016 1:36:45 AM
+short_description: Generated from DSC module graniresource version 3.7.6 at 5/24/2016 8:46:08 PM
 description:
      - DSC Resource for Windows Configuration Management.
 options:

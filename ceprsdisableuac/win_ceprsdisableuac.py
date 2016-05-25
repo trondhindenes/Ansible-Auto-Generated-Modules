@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsdisableuac
 version_added: 
-short_description: Generated from DSC module ceprsdisableuac version 1.0 at 5/24/2016 1:28:39 AM
+short_description: Generated from DSC module ceprsdisableuac version 1.0 at 5/24/2016 8:37:25 PM
 description:
      - cEPRSDisableUAC Module helps in Disabling the User Access Control on a Virtual machine
 options:

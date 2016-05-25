@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xclusterdisk
 version_added: 
-short_description: Generated from DSC module xfailovercluster version 1.3.0.0 at 5/24/2016 1:48:41 AM
+short_description: Generated from DSC module xfailovercluster version 1.3.0.0 at 5/24/2016 8:58:37 PM
 description:
      - Module containing DSC resources used to configure Failover Clusters.
 options:

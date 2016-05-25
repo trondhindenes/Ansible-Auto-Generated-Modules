@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xexchexchangecertificate
 version_added: 
-short_description: Generated from DSC module xexchange version 1.7.0.0 at 5/24/2016 1:55:23 AM
+short_description: Generated from DSC module xexchange version 1.7.0.0 at 5/24/2016 9:04:45 PM
 description:
      - This DSC Module allows you to configure many different properties of Exchange 2013 servers, including individual server properties, databases and mount points, and Database Availability Groups.
 options:

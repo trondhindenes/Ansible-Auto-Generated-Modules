@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_arecord
 version_added: 
-short_description: Generated from DSC module poshorigin_activedirectorydns version 1.1.2 at 5/24/2016 1:24:04 AM
+short_description: Generated from DSC module poshorigin_activedirectorydns version 1.1.2 at 5/24/2016 8:32:39 PM
 description:
      - POSHOrigin_ActiveDirectoryDNS is a set of PowerShell 5 based DSC resources for managing Active Directory DNS objects via DSC. These resources are designed to be used with POSHOrigin as a Infrastructure as Code framework, but can be used natively by standard DSC configurations as well. Integration with POSHOrigin is accomplished via a separate Invoke.ps1 script included in the module.
 options:

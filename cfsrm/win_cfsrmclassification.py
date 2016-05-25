@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cfsrmclassification
 version_added: 
-short_description: Generated from DSC module cfsrm version 2.0.1.48 at 5/24/2016 1:30:33 AM
+short_description: Generated from DSC module cfsrm version 2.0.1.48 at 5/24/2016 8:39:31 PM
 description:
      - DSC Resources for File Server Resource Manager configuration
 options:

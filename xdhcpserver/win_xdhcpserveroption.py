@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdhcpserveroption
 version_added: 
-short_description: Generated from DSC module xdhcpserver version 1.4.0.0 at 5/24/2016 1:52:19 AM
+short_description: Generated from DSC module xdhcpserver version 1.4.0.0 at 5/24/2016 9:01:40 PM
 description:
      - Module with DSC Resources for DHCP Server area
 options:

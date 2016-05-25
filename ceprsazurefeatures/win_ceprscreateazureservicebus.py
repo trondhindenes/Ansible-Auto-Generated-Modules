@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprscreateazureservicebus
 version_added: 
-short_description: Generated from DSC module ceprsazurefeatures version 1.0.0.0 at 5/24/2016 1:28:00 AM
+short_description: Generated from DSC module ceprsazurefeatures version 1.0.0.0 at 5/24/2016 8:36:43 PM
 description:
      - This module helps in managing your Azure resources like Managing a Cloud service, its deployments, certificates associated to your service.
 options:

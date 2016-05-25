@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_roadatabaseagent
 version_added: 
-short_description: Generated from DSC module resoneautomation version 1.1.1 at 5/24/2016 1:42:32 AM
+short_description: Generated from DSC module resoneautomation version 1.1.1 at 5/24/2016 8:52:14 PM
 description:
      - RES ONE Automation deployment and configuration composite DSC resources. These DSC resources are provided AS IS, and are not supported through any means.
 options:
