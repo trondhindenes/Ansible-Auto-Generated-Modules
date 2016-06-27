@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xrdremoteapp
 version_added: 
-short_description: Generated from DSC module xremotedesktopsessionhost version 1.2.0.0 at 6/25/2016 12:53:57 AM
+short_description: Generated from DSC module xremotedesktopsessionhost version 1.2.0.0 at 6/27/2016 8:52:10 PM
 description:
      - Module with DSC Resources for Remote Desktop Session Host
 options:

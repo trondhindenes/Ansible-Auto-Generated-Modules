@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xiismodule
 version_added: 
-short_description: Generated from DSC module xwebadministration version 1.11.0.0 at 6/25/2016 12:51:51 AM
+short_description: Generated from DSC module xwebadministration version 1.11.0.0 at 6/27/2016 8:22:55 PM
 description:
      - Module with DSC Resources for Web Administration
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xmysqluser
 version_added: 
-short_description: Generated from DSC module xmysql version 2.1.0.0 at 6/25/2016 12:52:59 AM
+short_description: Generated from DSC module xmysql version 2.1.0.0 at 6/27/2016 8:52:04 PM
 description:
      - Module for installing an instance of mySQL
 options:

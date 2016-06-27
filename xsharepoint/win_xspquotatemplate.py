@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xspquotatemplate
 version_added: 
-short_description: Generated from DSC module xsharepoint version 0.12.0.0 at 6/25/2016 1:00:59 AM
+short_description: Generated from DSC module xsharepoint version 0.12.0.0 at 6/27/2016 8:34:45 PM
 description:
      - This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide range of areas including web apps, service apps and farm configuration.
 options:
