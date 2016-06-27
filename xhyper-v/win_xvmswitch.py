@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xvmswitch
 version_added: 
-short_description: Generated from DSC module xhyper-v version 3.4.0.0 at 5/24/2016 2:14:47 AM
+short_description: Generated from DSC module xhyper-v version 3.4.0.0 at 6/25/2016 1:10:00 AM
 description:
      - Module with DSC Resources for Hyper-V area
 options:

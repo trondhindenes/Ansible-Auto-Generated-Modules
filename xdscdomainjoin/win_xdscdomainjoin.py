@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdscdomainjoin
 version_added: 
-short_description: Generated from DSC module xdscdomainjoin version 1.0 at 5/24/2016 9:03:02 PM
+short_description: Generated from DSC module xdscdomainjoin version 1.1 at 6/25/2016 12:46:19 AM
 description:
      - Stripped down version of xComputer from the xComputerManagement resource that allows you to join a machine to the domain without the mandatory requirement to specify a machine name. Config example available on project site.
 options:

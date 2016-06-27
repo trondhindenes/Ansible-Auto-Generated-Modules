@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsmbshare
 version_added: 
-short_description: Generated from DSC module xsmbshare version 1.1.0.0 at 5/24/2016 2:04:55 AM
+short_description: Generated from DSC module xsmbshare version 1.1.0.0 at 6/25/2016 12:57:46 AM
 description:
      - Module with DSC Resources for SmbShare area
 options:

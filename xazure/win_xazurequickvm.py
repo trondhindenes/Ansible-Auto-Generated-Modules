@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazurequickvm
 version_added: 
-short_description: Generated from DSC module xazure version 0.2.0.0 at 5/24/2016 8:57:15 PM
+short_description: Generated from DSC module xazure version 0.2.0.0 at 6/25/2016 12:39:40 AM
 description:
      - Module with DSC Resources for Azure Resources
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_clapsnanoinstall
 version_added: 
-short_description: Generated from DSC module laps.nano.dsc version 0.9.0.5 at 5/24/2016 8:42:28 PM
+short_description: Generated from DSC module laps.nano.dsc version 0.9.0.5 at 6/25/2016 12:16:44 AM
 description:
      - DSC resource for LAPS.Nano client installation
 options:

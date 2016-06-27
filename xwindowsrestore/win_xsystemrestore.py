@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsystemrestore
 version_added: 
-short_description: Generated from DSC module xwindowsrestore version 1.0.0 at 5/24/2016 2:14:04 AM
+short_description: Generated from DSC module xwindowsrestore version 1.0.0 at 6/25/2016 1:09:16 AM
 description:
      - This DSC Module includes 2 DSC resources, xSystemRestore resource can configure system restore and xSystemRestorePoint resource can create or remove an restore point in Windows.
 options:

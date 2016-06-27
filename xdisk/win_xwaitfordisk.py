@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwaitfordisk
 version_added: 
-short_description: Generated from DSC module xdisk version 1.0 at 5/24/2016 2:15:09 AM
+short_description: Generated from DSC module xdisk version 1.0 at 6/25/2016 1:10:23 AM
 description:
      - THIS MODULE HAS BEEN DEPRECATED, PLEASE USE xStorage INSTEAD:
 https://www.powershellgallery.com/packages/xstorage

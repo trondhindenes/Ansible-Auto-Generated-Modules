@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsaddhostentry
 version_added: 
-short_description: Generated from DSC module ceprsaddhost version 1.0 at 5/24/2016 8:36:17 PM
+short_description: Generated from DSC module ceprsaddhost version 1.0 at 6/25/2016 12:10:59 AM
 description:
      - cEPRSAddHost Module helps in Adding the IP Address to the Host file.
 options:

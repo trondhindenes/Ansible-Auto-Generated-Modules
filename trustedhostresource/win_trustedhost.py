@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_trustedhost
 version_added: 
-short_description: Generated from DSC module trustedhostresource version 1.0.0.1 at 5/24/2016 8:53:46 PM
+short_description: Generated from DSC module trustedhostresource version 1.0.0.1 at 6/25/2016 12:35:53 AM
 description:
      - Module with DSC Resource to set Trusted hosts on a computer to be able to remote into them using Powershell
 options:

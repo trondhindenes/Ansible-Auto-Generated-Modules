@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cautoadminlogon
 version_added: 
-short_description: Generated from DSC module cwindowsos version 1.2 at 5/24/2016 8:34:40 PM
+short_description: Generated from DSC module cwindowsos version 1.2 at 6/25/2016 12:09:17 AM
 description:
      - DSC Resources for managing misc configurations on Windows OS
 options:

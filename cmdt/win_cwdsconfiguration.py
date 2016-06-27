@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwdsconfiguration
 version_added: 
-short_description: Generated from DSC module cmdt version 1.0.0.4 at 5/24/2016 8:48:45 PM
+short_description: Generated from DSC module cmdt version 1.0.0.4 at 6/25/2016 12:23:01 AM
 description:
      - A DSC Module for installing Microsoft Deployment Toolkit
 options:

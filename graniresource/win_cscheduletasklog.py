@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cscheduletasklog
 version_added: 
-short_description: Generated from DSC module graniresource version 3.7.6 at 5/24/2016 8:47:01 PM
+short_description: Generated from DSC module graniresource version 3.7.6 at 6/25/2016 12:21:14 AM
 description:
      - DSC Resource for Windows Configuration Management.
 options:

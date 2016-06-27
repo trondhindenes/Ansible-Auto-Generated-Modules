@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cpowerplan
 version_added: 
-short_description: Generated from DSC module csqlconfig version 1.4.1 at 5/24/2016 8:46:13 PM
+short_description: Generated from DSC module csqlconfig version 1.4.1 at 6/25/2016 12:20:19 AM
 description:
      - DSC Module to configure SQL Server once installed.
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_vdnsserveraddress
 version_added: 
-short_description: Generated from DSC module legacynetworking version 1.0.1 at 5/24/2016 8:54:02 PM
+short_description: Generated from DSC module legacynetworking version 1.0.1 at 6/25/2016 12:36:09 AM
 description:
      - Module with resources for legacy (Windows 7 and Server 2008 R2) networking via WMI.
 options:

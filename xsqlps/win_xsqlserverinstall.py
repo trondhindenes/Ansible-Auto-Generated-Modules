@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlserverinstall
 version_added: 
-short_description: Generated from DSC module xsqlps version 1.3.0.0 at 5/24/2016 2:13:01 AM
+short_description: Generated from DSC module xsqlps version 1.3.0.0 at 6/25/2016 1:08:16 AM
 description:
      - SQL module.
 options:

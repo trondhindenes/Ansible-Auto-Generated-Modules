@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsfolderpermissions
 version_added: 
-short_description: Generated from DSC module ceprsfolderpermissions version 1.0 at 5/24/2016 8:37:47 PM
+short_description: Generated from DSC module ceprsfolderpermissions version 1.0 at 6/25/2016 12:12:21 AM
 description:
      - cEPRSFolderPermissions Module helps in providing the required permissions for a User to the respective Folder
 options:

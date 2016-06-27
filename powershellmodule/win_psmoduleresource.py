@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_psmoduleresource
 version_added: 
-short_description: Generated from DSC module powershellmodule version 0.1 at 5/24/2016 8:51:53 PM
+short_description: Generated from DSC module powershellmodule version 0.1 at 6/25/2016 12:26:29 AM
 description:
      - DSC resource provider for installing Modules from the PowerShell Gallery.
 options:

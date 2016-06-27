@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprswebdirproperties
 version_added: 
-short_description: Generated from DSC module ceprswebdirproperties version 1.0 at 5/24/2016 8:38:49 PM
+short_description: Generated from DSC module ceprswebdirproperties version 1.0 at 6/25/2016 12:13:18 AM
 description:
      - cEPRSWebDirProperties Module helps in updating the WebDIRProperties like AnonymousAuthentication, WindowsAuthentication, HandlerMappingPermission, SSLSetting
 options:

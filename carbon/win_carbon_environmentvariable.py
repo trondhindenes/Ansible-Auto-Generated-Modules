@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_carbon_environmentvariable
 version_added: 
-short_description: Generated from DSC module carbon version 2.2.0 at 5/24/2016 8:33:38 PM
+short_description: Generated from DSC module carbon version 2.2.0 at 6/25/2016 12:08:16 AM
 description:
      - Carbon is a PowerShell module for automating the configuration Windows 7, 8, 2008, and 2012 and automation the installation and configuration of Windows applications, websites, and services. It can configure and manage:
 

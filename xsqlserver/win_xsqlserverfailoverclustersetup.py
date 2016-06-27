@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlserverfailoverclustersetup
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 5/24/2016 2:12:50 AM
+short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 6/25/2016 1:07:46 AM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_hybridrunbookworker
 version_added: 
-short_description: Generated from DSC module hybridrunbookworker version 1.1 at 5/24/2016 8:50:06 PM
+short_description: Generated from DSC module hybridrunbookworker version 1.1 at 6/25/2016 12:24:37 AM
 description:
      - DSC Resource to enable or disable the Hybrid Runbook Worker functionality of OMS managed machine
 options:

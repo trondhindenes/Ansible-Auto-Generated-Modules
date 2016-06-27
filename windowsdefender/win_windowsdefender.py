@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_windowsdefender
 version_added: 
-short_description: Generated from DSC module windowsdefender version 1.0.0.1 at 5/24/2016 8:54:58 PM
+short_description: Generated from DSC module windowsdefender version 1.0.0.1 at 6/25/2016 12:37:25 AM
 description:
      - Windows Defender module allows you to configure Windows Defender settings.
 options:

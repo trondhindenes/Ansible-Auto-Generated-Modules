@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlserverlogin
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 5/24/2016 2:13:13 AM
+short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 6/25/2016 1:08:22 AM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:

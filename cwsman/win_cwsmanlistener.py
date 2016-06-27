@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwsmanlistener
 version_added: 
-short_description: Generated from DSC module cwsman version 1.0.1.31 at 5/24/2016 8:49:50 PM
+short_description: Generated from DSC module cwsman version 1.0.1.31 at 6/25/2016 12:24:09 AM
 description:
      - DSC Resource for configuring WS-Management Listeners
 options:

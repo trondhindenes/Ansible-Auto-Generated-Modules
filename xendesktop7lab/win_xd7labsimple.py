@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xd7labsimple
 version_added: 
-short_description: Generated from DSC module xendesktop7lab version 2.3.3 at 5/24/2016 8:59:26 PM
+short_description: Generated from DSC module xendesktop7lab version 2.3.3 at 6/25/2016 12:42:45 AM
 description:
      - Citrix XenDesktop 7 Lab DSC Composite Resources.
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_zonesite
 version_added: 
-short_description: Generated from DSC module internetsettings version 1.1.0 at 5/24/2016 2:17:07 AM
+short_description: Generated from DSC module internetsettings version 1.1.0 at 6/25/2016 1:12:24 AM
 description:
      - Contains the ZoneSite resource, which adds or removes sites from zones for the current user in Internet Exporer Internet Settings.
 options:

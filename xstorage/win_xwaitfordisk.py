@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwaitfordisk
 version_added: 
-short_description: Generated from DSC module xstorage version 2.6.0.0 at 5/24/2016 2:15:14 AM
+short_description: Generated from DSC module xstorage version 2.6.0.0 at 6/25/2016 1:10:28 AM
 description:
      - This module contains all resources related to the PowerShell Storage module, or pertaining to disk management.
 options:

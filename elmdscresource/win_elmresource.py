@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_elmresource
 version_added: 
-short_description: Generated from DSC module elmdscresource version 1.0 at 5/24/2016 8:49:55 PM
+short_description: Generated from DSC module elmdscresource version 1.0 at 6/25/2016 12:24:14 AM
 description:
      - PowerShell DSC Provide that compiles Elm language files
 options:

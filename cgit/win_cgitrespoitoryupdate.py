@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cgitrespoitoryupdate
 version_added: 
-short_description: Generated from DSC module cgit version 0.1.1 at 5/24/2016 8:41:15 PM
+short_description: Generated from DSC module cgit version 0.1.1 at 6/25/2016 12:15:36 AM
 description:
      - A Demo module for working with local git repositories
 options:

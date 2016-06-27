@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmdttasksequence
 version_added: 
-short_description: Generated from DSC module cmdt version 1.0.0.4 at 5/24/2016 8:44:10 PM
+short_description: Generated from DSC module cmdt version 1.0.0.4 at 6/25/2016 12:18:22 AM
 description:
      - A DSC Module for installing Microsoft Deployment Toolkit
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_accountandbasicauditing
 version_added: 
-short_description: Generated from DSC module csecurityoptions version 3.0 at 5/24/2016 8:32:18 PM
+short_description: Generated from DSC module csecurityoptions version 3.0 at 6/25/2016 12:06:41 AM
 description:
      - This module is designed to modify Windows security options (Local Security Policy Administrative Tool).  The Local Security Policy
                 is responsible for managing many of the security features of Windows.  This module is built to manage the following commponents:

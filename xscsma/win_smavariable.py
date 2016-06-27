@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_smavariable
 version_added: 
-short_description: Generated from DSC module xscsma version 1.3.0.0 at 5/24/2016 8:53:41 PM
+short_description: Generated from DSC module xscsma version 1.3.0.0 at 6/25/2016 12:28:17 AM
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft System Center Service Management Automation.
 options:

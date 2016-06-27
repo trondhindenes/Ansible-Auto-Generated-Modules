@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xmicrosoftupdate
 version_added: 
-short_description: Generated from DSC module xwindowsupdate version 2.5.0.0 at 5/24/2016 1:59:44 AM
+short_description: Generated from DSC module xwindowsupdate version 2.5.0.0 at 6/25/2016 12:52:21 AM
 description:
      - Module with DSC Resources for Windows Update
 options:

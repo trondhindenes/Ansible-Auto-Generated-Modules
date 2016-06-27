@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdismfeature
 version_added: 
-short_description: Generated from DSC module xdismfeature version 1.1.0.0 at 5/24/2016 9:02:07 PM
+short_description: Generated from DSC module xdismfeature version 1.1.0.0 at 6/25/2016 12:45:26 AM
 description:
      - Module with DSC Resources for Deployment Image Servicing and Management features.
 options:

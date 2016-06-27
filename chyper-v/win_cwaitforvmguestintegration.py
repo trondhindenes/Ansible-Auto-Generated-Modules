@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwaitforvmguestintegration
 version_added: 
-short_description: Generated from DSC module chyper-v version 2.6.1 at 5/24/2016 8:48:34 PM
+short_description: Generated from DSC module chyper-v version 2.6.1 at 6/25/2016 12:22:48 AM
 description:
      - Module with DSC Resources for Hyper-V Networking
 options:

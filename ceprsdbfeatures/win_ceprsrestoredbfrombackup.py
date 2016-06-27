@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprsrestoredbfrombackup
 version_added: 
-short_description: Generated from DSC module ceprsdbfeatures version 1.0 at 5/24/2016 8:38:33 PM
+short_description: Generated from DSC module ceprsdbfeatures version 1.0 at 6/25/2016 12:13:04 AM
 description:
      - cEPRSDBfeatures Module helps in managing the DBFeatures like cEPRSKillDBSessions - Resource helps in Stopping the DB processes, cEPRSRestoreDBFromBackup - Resource helps in restoring the DB from Backup, cEPRSRestoreSnapshot - Resource helps in restoring the DBSnapshot, cEPRSExecuteSql - Resource helps in executing the sql files, and cEPRSDBSnapShot - Resource helps in generating the DBSnapshot
 options:

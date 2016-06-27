@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cwindowscontainer
 version_added: 
-short_description: Generated from DSC module cwindowscontainer version 1.1 at 5/24/2016 8:49:03 PM
+short_description: Generated from DSC module cwindowscontainer version 1.1 at 6/25/2016 12:23:22 AM
 description:
      - DSC Resource to deploy Windows Containers with including initialization scripts
 options:

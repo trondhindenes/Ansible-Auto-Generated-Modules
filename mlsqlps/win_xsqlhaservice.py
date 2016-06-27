@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlhaservice
 version_added: 
-short_description: Generated from DSC module mlsqlps version 1.0.0.3 at 5/24/2016 2:12:04 AM
+short_description: Generated from DSC module mlsqlps version 1.0.0.3 at 6/25/2016 1:06:17 AM
 description:
      - SQL Server Desired State Configuration module. Modified from xSqlPs and will contain all custom resources before they are Pulled back into the main xSqlPs repository. Tweet me for questions and bug fixes @matticusau
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xnetconnectionprofile
 version_added: 
-short_description: Generated from DSC module xnetworking version 2.9.0.0 at 5/24/2016 2:00:34 AM
+short_description: Generated from DSC module xnetworking version 2.9.0.0 at 6/25/2016 12:53:11 AM
 description:
      - Module with DSC Resources for Networking area
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cfolderquota
 version_added: 
-short_description: Generated from DSC module cfolderquota version 1.0 at 5/24/2016 8:39:19 PM
+short_description: Generated from DSC module cfolderquota version 1.0 at 6/25/2016 12:13:48 AM
 description:
      - DSC Resource for Creating Quotas and Quotas Templates
 options:

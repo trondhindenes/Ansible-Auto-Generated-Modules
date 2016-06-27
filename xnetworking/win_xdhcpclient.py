@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdhcpclient
 version_added: 
-short_description: Generated from DSC module xnetworking version 2.9.0.0 at 5/24/2016 9:01:29 PM
+short_description: Generated from DSC module xnetworking version 2.9.0.0 at 6/25/2016 12:44:49 AM
 description:
      - Module with DSC Resources for Networking area
 options:

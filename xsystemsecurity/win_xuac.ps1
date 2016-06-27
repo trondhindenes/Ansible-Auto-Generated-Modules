@@ -19,8 +19,8 @@
 
 # WANT_JSON
 # POWERSHELL_COMMON
-
-$params = Parse-Args $args
+Set-StrictMode -Off
+$params = Parse-Args $args -supports_check_mode $true
 $result = New-Object psobject
 Set-Attr $result "changed" $false
 
@@ -156,6 +156,17 @@ $params.Keys | foreach-object {
     }
 #>
 
+$CheckMode = $False
+$CheckFlag = $params.psobject.Properties | where {$_.Name -eq "_ansible_check_mode"}
+if ($CheckFlag)
+{
+    if (($CheckFlag.Value) -eq $True)
+    {
+        $CheckMode = $True    
+    }
+    
+}
+
 $Keys = $params.psobject.Properties | where {$_.MemberTYpe -eq "Noteproperty"} | where {$_.Name -ne "resource_name"} |where {$_.Name -ne "autoinstallmodule"} |where {$_.Name -ne "autoconfigurelcm"} | where {$_.Name -notlike "_ansible*"} |  select -ExpandProperty Name
 foreach ($key in $keys)
 {
@@ -284,7 +295,15 @@ try
     if ($PSVersionTable.PSVersion.CompareTo($TargetVersion) -ge 0)
     {
         #Current hosts version is production prevoew or higher. Use modulename when invoking.
-        $Params = @{"Modulename"=$resource.Modulename}
+        if ($resource.ModuleName -ne $null)
+        {
+            $Params = @{"Modulename"=$resource.Modulename}    
+        }
+        else 
+        {
+            $Params = @{"Modulename"="PSDesiredStateConfiguration"}    
+        }
+        
     }
     else
     {
@@ -298,9 +317,13 @@ try
     }
     ElseIf (($testResult.InDesiredState) -ne $true) 
     {
-        Invoke-DscResource -Method Set @Config  @params -ErrorVariable SetError -ErrorAction SilentlyContinue
+        if ($CheckMode -eq $False)
+        {
+            $Set = Invoke-DscResource -Method Set @Config  @params -ErrorVariable SetError -ErrorAction SilentlyContinue
+        }
+        
         Set-Attr $result "changed" $true
-        if ($SetError)
+        if ((get-variable | where {$_.Name -eq "seterror"}) -and ($SetError.Count -gt 0))
         {
            throw ($SetError[0].Exception.Message)
         }

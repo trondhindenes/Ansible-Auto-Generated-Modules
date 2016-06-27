@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwefsubscription
 version_added: 
-short_description: Generated from DSC module xwindowseventforwarding version 1.0.0.0 at 5/24/2016 2:16:32 AM
+short_description: Generated from DSC module xwindowseventforwarding version 1.0.0.0 at 6/25/2016 1:11:49 AM
 description:
      - This module can be used to manage configuration of a Windows Event Forwarding server in a Colelctor role.
 options:

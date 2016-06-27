@@ -19,7 +19,7 @@
 
 # WANT_JSON
 # POWERSHELL_COMMON
-
+Set-StrictMode -Off
 $params = Parse-Args $args -supports_check_mode $true
 $result = New-Object psobject
 Set-Attr $result "changed" $false
@@ -28,6 +28,8 @@ Set-Attr $result "changed" $false
 
 #ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
+#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
+$Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:Params;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Params = Get-Attr -obj $params -name Params -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -42,6 +44,17 @@ $Version = Get-Attr -obj $params -name Version -failifempty $False -resultobj $r
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
+If ($Ensure)
+{
+    If (('Absent','Present') -contains $Ensure ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
 If ($AutoInstallModule)
 {
     If (('true','false') -contains $AutoInstallModule ) {

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdscsepvie
 version_added: 
-short_description: Generated from DSC module xdscsepvie version 2.6 at 5/24/2016 9:03:12 PM
+short_description: Generated from DSC module xdscsepvie version 2.6 at 6/25/2016 12:46:29 AM
 description:
      - Runs the Symantec Endpoint Protection VIE tool against any currently configured drives along with any newly added drives. Config example available on project site.
 options:

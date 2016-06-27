@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ciscsivirtualdisk
 version_added: 
-short_description: Generated from DSC module ciscsi version 1.2.1.95 at 5/24/2016 8:42:22 PM
+short_description: Generated from DSC module ciscsi version 1.2.1.95 at 6/25/2016 12:16:39 AM
 description:
      - DSC resources for configuring Windows iSCSI Targets and Initiators.
 options:

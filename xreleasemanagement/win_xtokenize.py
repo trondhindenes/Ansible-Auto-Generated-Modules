@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xtokenize
 version_added: 
-short_description: Generated from DSC module xreleasemanagement version 1.0.0.0 at 5/24/2016 2:14:20 AM
+short_description: Generated from DSC module xreleasemanagement version 1.0.0.0 at 6/25/2016 1:09:32 AM
 description:
      - Host a custom DSC Resource to transform files based on a token file for release management.
 options:

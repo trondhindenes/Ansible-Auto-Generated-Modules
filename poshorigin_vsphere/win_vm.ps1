@@ -19,7 +19,7 @@
 
 # WANT_JSON
 # POWERSHELL_COMMON
-
+Set-StrictMode -Off
 $params = Parse-Args $args -supports_check_mode $true
 $result = New-Object psobject
 Set-Attr $result "changed" $false
@@ -66,8 +66,12 @@ $Provisioners = Get-Attr -obj $params -name Provisioners -failifempty $False -re
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:ResourcePool;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ResourcePool = Get-Attr -obj $params -name ResourcePool -failifempty $False -resultobj $result
 #ATTRIBUTE:TotalvCPU;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $TotalvCPU = Get-Attr -obj $params -name TotalvCPU -failifempty $False -resultobj $result
+#ATTRIBUTE:vApp;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$vApp = Get-Attr -obj $params -name vApp -failifempty $False -resultobj $result
 #ATTRIBUTE:vCenter;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $vCenter = Get-Attr -obj $params -name vCenter -failifempty $False -resultobj $result
 #ATTRIBUTE:vCenterCredentials_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -76,6 +80,8 @@ $vCenterCredentials_username = Get-Attr -obj $params -name vCenterCredentials_us
 $vCenterCredentials_password = Get-Attr -obj $params -name vCenterCredentials_password -failifempty $False -resultobj $result
 #ATTRIBUTE:VMFolder;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMFolder = Get-Attr -obj $params -name VMFolder -failifempty $False -resultobj $result
+#ATTRIBUTE:VMHost;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$VMHost = Get-Attr -obj $params -name VMHost -failifempty $False -resultobj $result
 #ATTRIBUTE:VMTemplate;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $VMTemplate = Get-Attr -obj $params -name VMTemplate -failifempty $False -resultobj $result
 #ATTRIBUTE:vRAM;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:

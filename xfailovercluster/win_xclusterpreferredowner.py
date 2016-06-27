@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xclusterpreferredowner
 version_added: 
-short_description: Generated from DSC module xfailovercluster version 1.3.0.0 at 5/24/2016 8:58:48 PM
+short_description: Generated from DSC module xfailovercluster version 1.3.0.0 at 6/25/2016 12:41:15 AM
 description:
      - Module containing DSC resources used to configure Failover Clusters.
 options:

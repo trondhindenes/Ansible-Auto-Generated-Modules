@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_ceprskillprocess
 version_added: 
-short_description: Generated from DSC module ceprskillprocess version 1.0 at 5/24/2016 8:38:12 PM
+short_description: Generated from DSC module ceprskillprocess version 1.0 at 6/25/2016 12:12:45 AM
 description:
      - cEPRSKillProcess Module helps in stopping a Process on a  machine
 options:

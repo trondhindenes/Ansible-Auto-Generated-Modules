@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_chostsfile
 version_added: 
-short_description: Generated from DSC module graniresource version 3.7.6 at 5/24/2016 8:41:26 PM
+short_description: Generated from DSC module graniresource version 3.7.6 at 6/25/2016 12:15:47 AM
 description:
      - DSC Resource for Windows Configuration Management.
 options:

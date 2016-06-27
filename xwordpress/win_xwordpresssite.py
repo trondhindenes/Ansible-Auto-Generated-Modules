@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xwordpresssite
 version_added: 
-short_description: Generated from DSC module xwordpress version 1.1.0.0 at 5/24/2016 2:17:01 AM
+short_description: Generated from DSC module xwordpress version 1.1.0.0 at 6/25/2016 1:12:18 AM
 description:
      - Module with DSC Resources for configuring WordPress
 options:

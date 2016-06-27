@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cazurestorage
 version_added: 
-short_description: Generated from DSC module cazurestorage version 1.0.0.1 at 5/24/2016 8:34:46 PM
+short_description: Generated from DSC module cazurestorage version 1.0.0.1 at 6/25/2016 12:09:22 AM
 description:
      - Sample Azure Storage DSC resource that copies files from Azure storage account using a key
 options:

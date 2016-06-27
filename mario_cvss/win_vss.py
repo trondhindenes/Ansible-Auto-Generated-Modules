@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_vss
 version_added: 
-short_description: Generated from DSC module mario_cvss version 1.0.1 at 5/24/2016 8:54:25 PM
+short_description: Generated from DSC module mario_cvss version 1.0.1 at 6/25/2016 12:36:53 AM
 description:
      - DSC Class Base Resources contains DSC Resources VSS and VSSTaskScheduler , which allows creating VSS on the Drives and registering scheduled jobs
 options:

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_cmdtbootstrapini
 version_added: 
-short_description: Generated from DSC module cmdt version 1.0.0.4 at 5/24/2016 8:43:26 PM
+short_description: Generated from DSC module cmdt version 1.0.0.4 at 6/25/2016 12:17:40 AM
 description:
      - A DSC Module for installing Microsoft Deployment Toolkit
 options:
