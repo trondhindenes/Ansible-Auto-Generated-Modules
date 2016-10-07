@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_carbon_privilege
 version_added: 
-short_description: Generated from DSC module carbon version 2.2.0 at 6/27/2016 8:46:58 PM
+short_description: Generated from DSC module carbon version 2.3.0 at 07.10.2016 00.22.01
 description:
      - Carbon is a PowerShell module for automating the configuration Windows 7, 8, 2008, and 2012 and automation the installation and configuration of Windows applications, websites, and services. It can configure and manage:
 
@@ -47,41 +47,6 @@ description:
 
 All functions are idempotent: when run multiple times with the same arguments, your system will be in the same state without failing or producing errors.
 options:
-  Identity:
-    description:
-      - 
-    required: True
-    default: 
-    aliases: []
-
-  Ensure:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-    choices:      - Absent      - Present
-  Privilege:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  PsDscRunAsCredential_username:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  PsDscRunAsCredential_password:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager

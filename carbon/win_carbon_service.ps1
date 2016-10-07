@@ -26,116 +26,10 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:Command;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Command = Get-Attr -obj $params -name Command -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Credential_username = Get-Attr -obj $params -name Credential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:Credential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Credential_password = Get-Attr -obj $params -name Credential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:Dependency;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Dependency = Get-Attr -obj $params -name Dependency -failifempty $False -resultobj $result
-#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
-#ATTRIBUTE:DisplayName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$DisplayName = Get-Attr -obj $params -name DisplayName -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
-$Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:OnFirstFailure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Reboot,Restart,RunCommand,TakeNoAction
-$OnFirstFailure = Get-Attr -obj $params -name OnFirstFailure -failifempty $False -resultobj $result
-#ATTRIBUTE:OnSecondFailure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Reboot,Restart,RunCommand,TakeNoAction
-$OnSecondFailure = Get-Attr -obj $params -name OnSecondFailure -failifempty $False -resultobj $result
-#ATTRIBUTE:OnThirdFailure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Reboot,Restart,RunCommand,TakeNoAction
-$OnThirdFailure = Get-Attr -obj $params -name OnThirdFailure -failifempty $False -resultobj $result
-#ATTRIBUTE:Path;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Path = Get-Attr -obj $params -name Path -failifempty $False -resultobj $result
-#ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:RebootDelay;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$RebootDelay = Get-Attr -obj $params -name RebootDelay -failifempty $False -resultobj $result
-#ATTRIBUTE:ResetFailureCount;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$ResetFailureCount = Get-Attr -obj $params -name ResetFailureCount -failifempty $False -resultobj $result
-#ATTRIBUTE:RestartDelay;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$RestartDelay = Get-Attr -obj $params -name RestartDelay -failifempty $False -resultobj $result
-#ATTRIBUTE:RunCommandDelay;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$RunCommandDelay = Get-Attr -obj $params -name RunCommandDelay -failifempty $False -resultobj $result
-#ATTRIBUTE:StartupType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Automatic,Disabled,Manual
-$StartupType = Get-Attr -obj $params -name StartupType -failifempty $False -resultobj $result
-#ATTRIBUTE:UserName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:LocalService,LocalSystem,NetworkService
-$UserName = Get-Attr -obj $params -name UserName -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
-If ($Ensure)
-{
-    If (('Absent','Present') -contains $Ensure ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
-    }
-}
-
-
-If ($OnFirstFailure)
-{
-    If (('Reboot','Restart','RunCommand','TakeNoAction') -contains $OnFirstFailure ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option OnFirstFailure has invalid value $OnFirstFailure. Valid values are 'Reboot','Restart','RunCommand','TakeNoAction'"
-    }
-}
-
-
-If ($OnSecondFailure)
-{
-    If (('Reboot','Restart','RunCommand','TakeNoAction') -contains $OnSecondFailure ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option OnSecondFailure has invalid value $OnSecondFailure. Valid values are 'Reboot','Restart','RunCommand','TakeNoAction'"
-    }
-}
-
-
-If ($OnThirdFailure)
-{
-    If (('Reboot','Restart','RunCommand','TakeNoAction') -contains $OnThirdFailure ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option OnThirdFailure has invalid value $OnThirdFailure. Valid values are 'Reboot','Restart','RunCommand','TakeNoAction'"
-    }
-}
-
-
-If ($StartupType)
-{
-    If (('Automatic','Disabled','Manual') -contains $StartupType ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option StartupType has invalid value $StartupType. Valid values are 'Automatic','Disabled','Manual'"
-    }
-}
-
-
-If ($UserName)
-{
-    If (('LocalService','LocalSystem','NetworkService') -contains $UserName ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option UserName has invalid value $UserName. Valid values are 'LocalService','LocalSystem','NetworkService'"
-    }
-}
-
-
 If ($AutoInstallModule)
 {
     If (('true','false') -contains $AutoInstallModule ) {
@@ -158,19 +52,9 @@ If ($AutoConfigureLcm)
 }
 
 
-if ($Credential_username)
-{
-$Credential_securepassword = $Credential_password | ConvertTo-SecureString -asPlainText -Force
-$Credential = New-Object System.Management.Automation.PSCredential($Credential_username,$Credential_securepassword)
-}
-
-if ($PsDscRunAsCredential_username)
-{
-$PsDscRunAsCredential_securepassword = $PsDscRunAsCredential_password | ConvertTo-SecureString -asPlainText -Force
-$PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($PsDscRunAsCredential_username,$PsDscRunAsCredential_securepassword)
-}
-
 $DscResourceName = "Carbon_Service"
+
+$DscModuleName = "carbon"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_caccountadministrativetemplatesetting
 version_added: 
-short_description: Generated from DSC module policyfileeditor version 2.0.2 at 6/27/2016 8:30:07 PM
+short_description: Generated from DSC module policyfileeditor version 2.0.2 at 07.10.2016 00.17.40
 description:
      - Commands and DSC resource for modifying Administrative Templates settings in local GPO registry.pol files.
 options:

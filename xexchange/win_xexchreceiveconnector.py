@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xexchreceiveconnector
 version_added: 
-short_description: Generated from DSC module xexchange version 1.7.0.0 at 6/27/2016 8:44:55 PM
+short_description: Generated from DSC module xexchange version 1.10.0.0 at 07.10.2016 02.28.54
 description:
      - This DSC Module allows you to configure many different properties of Exchange 2013 servers, including individual server properties, databases and mount points, and Database Availability Groups.
 options:

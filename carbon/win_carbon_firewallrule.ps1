@@ -26,125 +26,10 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
-#ATTRIBUTE:Action;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Allow,Block,Bypass
-$Action = Get-Attr -obj $params -name Action -failifempty $False -resultobj $result
-#ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
-#ATTRIBUTE:Direction;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:In,Out
-$Direction = Get-Attr -obj $params -name Direction -failifempty $False -resultobj $result
-#ATTRIBUTE:EdgeTraversalPolicy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:DeferApp,DeferUser,No,Yes
-$EdgeTraversalPolicy = Get-Attr -obj $params -name EdgeTraversalPolicy -failifempty $False -resultobj $result
-#ATTRIBUTE:Enabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Enabled = Get-Attr -obj $params -name Enabled -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
-$Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:InterfaceType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Any,LAN,RAS,Wireless
-$InterfaceType = Get-Attr -obj $params -name InterfaceType -failifempty $False -resultobj $result
-#ATTRIBUTE:LocalIPAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$LocalIPAddress = Get-Attr -obj $params -name LocalIPAddress -failifempty $False -resultobj $result
-#ATTRIBUTE:LocalPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$LocalPort = Get-Attr -obj $params -name LocalPort -failifempty $False -resultobj $result
-#ATTRIBUTE:Profile;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Any,Domain,Private,Public
-$Profile = Get-Attr -obj $params -name Profile -failifempty $False -resultobj $result
-#ATTRIBUTE:Program;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Program = Get-Attr -obj $params -name Program -failifempty $False -resultobj $result
-#ATTRIBUTE:Protocol;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Protocol = Get-Attr -obj $params -name Protocol -failifempty $False -resultobj $result
-#ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:RemoteIPAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$RemoteIPAddress = Get-Attr -obj $params -name RemoteIPAddress -failifempty $False -resultobj $result
-#ATTRIBUTE:RemotePort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$RemotePort = Get-Attr -obj $params -name RemotePort -failifempty $False -resultobj $result
-#ATTRIBUTE:Security;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:AuthDynEnc,AuthEnc,Authenticate,AuthNoEncap,NotRequired
-$Security = Get-Attr -obj $params -name Security -failifempty $False -resultobj $result
-#ATTRIBUTE:Service;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Service = Get-Attr -obj $params -name Service -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
-If ($Action)
-{
-    If (('Allow','Block','Bypass') -contains $Action ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option Action has invalid value $Action. Valid values are 'Allow','Block','Bypass'"
-    }
-}
-
-
-If ($Direction)
-{
-    If (('In','Out') -contains $Direction ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option Direction has invalid value $Direction. Valid values are 'In','Out'"
-    }
-}
-
-
-If ($EdgeTraversalPolicy)
-{
-    If (('DeferApp','DeferUser','No','Yes') -contains $EdgeTraversalPolicy ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option EdgeTraversalPolicy has invalid value $EdgeTraversalPolicy. Valid values are 'DeferApp','DeferUser','No','Yes'"
-    }
-}
-
-
-If ($Ensure)
-{
-    If (('Absent','Present') -contains $Ensure ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
-    }
-}
-
-
-If ($InterfaceType)
-{
-    If (('Any','LAN','RAS','Wireless') -contains $InterfaceType ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option InterfaceType has invalid value $InterfaceType. Valid values are 'Any','LAN','RAS','Wireless'"
-    }
-}
-
-
-If ($Profile)
-{
-    If (('Any','Domain','Private','Public') -contains $Profile ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option Profile has invalid value $Profile. Valid values are 'Any','Domain','Private','Public'"
-    }
-}
-
-
-If ($Security)
-{
-    If (('AuthDynEnc','AuthEnc','Authenticate','AuthNoEncap','NotRequired') -contains $Security ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option Security has invalid value $Security. Valid values are 'AuthDynEnc','AuthEnc','Authenticate','AuthNoEncap','NotRequired'"
-    }
-}
-
-
 If ($AutoInstallModule)
 {
     If (('true','false') -contains $AutoInstallModule ) {
@@ -167,13 +52,9 @@ If ($AutoConfigureLcm)
 }
 
 
-if ($PsDscRunAsCredential_username)
-{
-$PsDscRunAsCredential_securepassword = $PsDscRunAsCredential_password | ConvertTo-SecureString -asPlainText -Force
-$PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($PsDscRunAsCredential_username,$PsDscRunAsCredential_securepassword)
-}
-
 $DscResourceName = "Carbon_FirewallRule"
+
+$DscModuleName = "carbon"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

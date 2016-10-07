@@ -26,6 +26,10 @@ Set-Attr $result "changed" $false
 
 
 
+#ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
+#ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:DownloadUri;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DownloadUri = Get-Attr -obj $params -name DownloadUri -failifempty $True -resultobj $result
 #ATTRIBUTE:MySQLVersion;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -72,6 +76,12 @@ If ($AutoConfigureLcm)
 }
 
 
+if ($PsDscRunAsCredential_username)
+{
+$PsDscRunAsCredential_securepassword = $PsDscRunAsCredential_password | ConvertTo-SecureString -asPlainText -Force
+$PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($PsDscRunAsCredential_username,$PsDscRunAsCredential_securepassword)
+}
+
 if ($RootCredential_username)
 {
 $RootCredential_securepassword = $RootCredential_password | ConvertTo-SecureString -asPlainText -Force
@@ -85,6 +95,8 @@ $UserCredential = New-Object System.Management.Automation.PSCredential($UserCred
 }
 
 $DscResourceName = "xMySqlProvision"
+
+$DscModuleName = "xmysql"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

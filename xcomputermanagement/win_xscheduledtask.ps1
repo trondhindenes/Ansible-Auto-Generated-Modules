@@ -38,6 +38,8 @@ $TaskName = Get-Attr -obj $params -name TaskName -failifempty $True -resultobj $
 $ActionArguments = Get-Attr -obj $params -name ActionArguments -failifempty $False -resultobj $result
 #ATTRIBUTE:ActionWorkingPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ActionWorkingPath = Get-Attr -obj $params -name ActionWorkingPath -failifempty $False -resultobj $result
+#ATTRIBUTE:Enable;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Enable = Get-Attr -obj $params -name Enable -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:ExecuteAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -113,6 +115,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xScheduledTask"
+
+$DscModuleName = "xcomputermanagement"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

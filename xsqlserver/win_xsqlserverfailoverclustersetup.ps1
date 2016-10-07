@@ -217,6 +217,8 @@ $SourceCredential = New-Object System.Management.Automation.PSCredential($Source
 
 $DscResourceName = "xSQLServerFailoverClusterSetup"
 
+$DscModuleName = "xsqlserver"
+
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 
 #Verify powershell version

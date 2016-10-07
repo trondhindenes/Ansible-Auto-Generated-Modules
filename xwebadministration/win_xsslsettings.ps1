@@ -26,7 +26,7 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Bindings;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+#ATTRIBUTE:Bindings;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:,Ssl,Ssl128,SslNegotiateCert,SslRequireCert
 $Bindings = Get-Attr -obj $params -name Bindings -failifempty $True -resultobj $result
 #ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
@@ -40,6 +40,17 @@ $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredentia
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
+If ($Bindings)
+{
+    If (('','Ssl','Ssl128','SslNegotiateCert','SslRequireCert') -contains $Bindings ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option Bindings has invalid value $Bindings. Valid values are '','Ssl','Ssl128','SslNegotiateCert','SslRequireCert'"
+    }
+}
+
+
 If ($Ensure)
 {
     If (('Absent','Present') -contains $Ensure ) {
@@ -80,6 +91,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xSSLSettings"
+
+$DscModuleName = "xwebadministration"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

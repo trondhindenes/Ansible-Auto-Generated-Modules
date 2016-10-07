@@ -42,7 +42,7 @@ $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredentia
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:ValueData;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ValueData = Get-Attr -obj $params -name ValueData -failifempty $False -resultobj $result
-#ATTRIBUTE:ValueType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Binary,Dword,ExpandString,MultiString,Qword,String
+#ATTRIBUTE:ValueType;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Binary,DWord,ExpandString,MultiString,QWord,String
 $ValueType = Get-Attr -obj $params -name ValueType -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
@@ -61,11 +61,11 @@ If ($Ensure)
 
 If ($ValueType)
 {
-    If (('Binary','Dword','ExpandString','MultiString','Qword','String') -contains $ValueType ) {
+    If (('Binary','DWord','ExpandString','MultiString','QWord','String') -contains $ValueType ) {
     }
     Else
     {
-        Fail-Json $result "Option ValueType has invalid value $ValueType. Valid values are 'Binary','Dword','ExpandString','MultiString','Qword','String'"
+        Fail-Json $result "Option ValueType has invalid value $ValueType. Valid values are 'Binary','DWord','ExpandString','MultiString','QWord','String'"
     }
 }
 
@@ -99,6 +99,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xRegistry"
+
+$DscModuleName = "xpsdesiredstateconfiguration"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

@@ -38,6 +38,8 @@ $Credential_password = Get-Attr -obj $params -name Credential_password -failifem
 $Dependencies = Get-Attr -obj $params -name Dependencies -failifempty $False -resultobj $result
 #ATTRIBUTE:Description;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Description = Get-Attr -obj $params -name Description -failifempty $False -resultobj $result
+#ATTRIBUTE:DesktopInteract;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$DesktopInteract = Get-Attr -obj $params -name DesktopInteract -failifempty $False -resultobj $result
 #ATTRIBUTE:DisplayName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DisplayName = Get-Attr -obj $params -name DisplayName -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
@@ -54,6 +56,8 @@ $StartupTimeout = Get-Attr -obj $params -name StartupTimeout -failifempty $False
 $StartupType = Get-Attr -obj $params -name StartupType -failifempty $False -resultobj $result
 #ATTRIBUTE:State;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Running,Stopped
 $State = Get-Attr -obj $params -name State -failifempty $False -resultobj $result
+#ATTRIBUTE:TerminateTimeout;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$TerminateTimeout = Get-Attr -obj $params -name TerminateTimeout -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
@@ -137,6 +141,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xService"
+
+$DscModuleName = "xpsdesiredstateconfiguration"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

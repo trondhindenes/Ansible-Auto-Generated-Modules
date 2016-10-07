@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_psrepo
 version_added: 
-short_description: Generated from DSC module nuget version 1.3.2 at 6/27/2016 8:52:42 PM
+short_description: Generated from DSC module nuget version 1.3.2 at 07.10.2016 01.09.37
 description:
      - Create Nuget repos, Register Repos, Manage Modules and Packages with a single DSC Module.  This Module Exports 5 Resources, Nuget, PSRepo, PackageRepo, Nuget_Module, and Nuget_Package 
 Examples show off all the core functionality as well as support Kitchen integration. 

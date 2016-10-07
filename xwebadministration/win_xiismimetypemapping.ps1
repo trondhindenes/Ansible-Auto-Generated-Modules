@@ -81,6 +81,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 
 $DscResourceName = "xIisMimeTypeMapping"
 
+$DscModuleName = "xwebadministration"
+
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 
 #Verify powershell version

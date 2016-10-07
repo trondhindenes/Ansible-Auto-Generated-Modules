@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xazuresubscription
 version_added: 
-short_description: Generated from DSC module xazure version 0.2.0.0 at 6/27/2016 8:49:59 PM
+short_description: Generated from DSC module xazure version 0.2.0.0 at 07.10.2016 02.02.29
 description:
      - Module with DSC Resources for Azure Resources
 options:

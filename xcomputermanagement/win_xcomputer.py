@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xcomputer
 version_added: 
-short_description: Generated from DSC module xcomputermanagement version 1.6.0.0 at 6/27/2016 8:27:06 PM
+short_description: Generated from DSC module xcomputermanagement version 1.8.0.0 at 07.10.2016 02.05.34
 description:
      - The xComputerManagement module is originally part of the Windows PowerShell Desired State Configuration (DSC) Resource Kit. This version has been modified for use in Azure. This module contains the xComputer and xDisk resources. These DSC Resources allow you to perform computer management tasks, like joining a domain or initializing disks.
 

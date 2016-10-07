@@ -26,11 +26,25 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlserverdatabase
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 6/27/2016 8:27:55 PM
+short_description: Generated from DSC module xsqlserver version 2.0.0.0 at 07.10.2016 03.09.44
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:
-  Database:
+  Name:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  SQLInstanceName:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  SQLServer:
     description:
       - 
     required: True
@@ -52,20 +66,6 @@ options:
     aliases: []
 
   PsDscRunAsCredential_password:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  SQLInstanceName:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  SQLServer:
     description:
       - 
     required: False

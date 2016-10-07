@@ -38,10 +38,18 @@ $Credential_password = Get-Attr -obj $params -name Credential_password -failifem
 $Headers = Get-Attr -obj $params -name Headers -failifempty $False -resultobj $result
 #ATTRIBUTE:MatchSource;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $MatchSource = Get-Attr -obj $params -name MatchSource -failifempty $False -resultobj $result
+#ATTRIBUTE:Proxy;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Proxy = Get-Attr -obj $params -name Proxy -failifempty $False -resultobj $result
+#ATTRIBUTE:ProxyCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ProxyCredential_username = Get-Attr -obj $params -name ProxyCredential_username -failifempty $False -resultobj $result
+#ATTRIBUTE:ProxyCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$ProxyCredential_password = Get-Attr -obj $params -name ProxyCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
+#ATTRIBUTE:TimeoutSec;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$TimeoutSec = Get-Attr -obj $params -name TimeoutSec -failifempty $False -resultobj $result
 #ATTRIBUTE:UserAgent;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $UserAgent = Get-Attr -obj $params -name UserAgent -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
@@ -76,6 +84,12 @@ $Credential_securepassword = $Credential_password | ConvertTo-SecureString -asPl
 $Credential = New-Object System.Management.Automation.PSCredential($Credential_username,$Credential_securepassword)
 }
 
+if ($ProxyCredential_username)
+{
+$ProxyCredential_securepassword = $ProxyCredential_password | ConvertTo-SecureString -asPlainText -Force
+$ProxyCredential = New-Object System.Management.Automation.PSCredential($ProxyCredential_username,$ProxyCredential_securepassword)
+}
+
 if ($PsDscRunAsCredential_username)
 {
 $PsDscRunAsCredential_securepassword = $PsDscRunAsCredential_password | ConvertTo-SecureString -asPlainText -Force
@@ -83,6 +97,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xRemoteFile"
+
+$DscModuleName = "xpsdesiredstateconfiguration"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

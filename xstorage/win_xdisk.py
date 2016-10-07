@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdisk
 version_added: 
-short_description: Generated from DSC module xstorage version 2.6.0.0 at 6/27/2016 8:39:01 PM
+short_description: Generated from DSC module xstorage version 2.7.0.0 at 07.10.2016 02.14.34
 description:
      - This module contains all resources related to the PowerShell Storage module, or pertaining to disk management.
 options:

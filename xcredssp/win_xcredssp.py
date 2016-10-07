@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xcredssp
 version_added: 
-short_description: Generated from DSC module xcredssp version 1.1.0.0 at 6/27/2016 8:49:13 PM
+short_description: Generated from DSC module xcredssp version 1.1.0.0 at 07.10.2016 02.05.45
 description:
      - Module with DSC Resources for WSMan CredSSP.
 options:

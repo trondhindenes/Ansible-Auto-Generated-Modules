@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xrdsessioncollection
 version_added: 
-short_description: Generated from DSC module xremotedesktopsessionhost version 1.2.0.0 at 6/27/2016 8:52:16 PM
+short_description: Generated from DSC module xremotedesktopsessionhost version 1.2.0.0 at 07.10.2016 02.41.30
 description:
      - Module with DSC Resources for Remote Desktop Session Host
 options:

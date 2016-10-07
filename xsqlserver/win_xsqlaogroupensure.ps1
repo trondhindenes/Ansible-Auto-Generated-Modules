@@ -34,8 +34,8 @@ $Ensure = Get-Attr -obj $params -name Ensure -failifempty $True -resultobj $resu
 $SetupCredential_username = Get-Attr -obj $params -name SetupCredential_username -failifempty $True -resultobj $result
 #ATTRIBUTE:SetupCredential_password;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SetupCredential_password = Get-Attr -obj $params -name SetupCredential_password -failifempty $True -resultobj $result
-#ATTRIBUTE:AutoBackupPrefernce;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Primary,Secondary
-$AutoBackupPrefernce = Get-Attr -obj $params -name AutoBackupPrefernce -failifempty $False -resultobj $result
+#ATTRIBUTE:AutoBackupPreference;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Primary,Secondary
+$AutoBackupPreference = Get-Attr -obj $params -name AutoBackupPreference -failifempty $False -resultobj $result
 #ATTRIBUTE:AvailabilityGroupNameIP;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AvailabilityGroupNameIP = Get-Attr -obj $params -name AvailabilityGroupNameIP -failifempty $False -resultobj $result
 #ATTRIBUTE:AvailabilityGroupNameListener;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -44,6 +44,10 @@ $AvailabilityGroupNameListener = Get-Attr -obj $params -name AvailabilityGroupNa
 $AvailabilityGroupPort = Get-Attr -obj $params -name AvailabilityGroupPort -failifempty $False -resultobj $result
 #ATTRIBUTE:AvailabilityGroupSubMask;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $AvailabilityGroupSubMask = Get-Attr -obj $params -name AvailabilityGroupSubMask -failifempty $False -resultobj $result
+#ATTRIBUTE:BackupPriority;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$BackupPriority = Get-Attr -obj $params -name BackupPriority -failifempty $False -resultobj $result
+#ATTRIBUTE:EndPointPort;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$EndPointPort = Get-Attr -obj $params -name EndPointPort -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -69,13 +73,13 @@ If ($Ensure)
 }
 
 
-If ($AutoBackupPrefernce)
+If ($AutoBackupPreference)
 {
-    If (('Primary','Secondary') -contains $AutoBackupPrefernce ) {
+    If (('Primary','Secondary') -contains $AutoBackupPreference ) {
     }
     Else
     {
-        Fail-Json $result "Option AutoBackupPrefernce has invalid value $AutoBackupPrefernce. Valid values are 'Primary','Secondary'"
+        Fail-Json $result "Option AutoBackupPreference has invalid value $AutoBackupPreference. Valid values are 'Primary','Secondary'"
     }
 }
 
@@ -126,6 +130,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xSQLAOGroupEnsure"
+
+$DscModuleName = "xsqlserver"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

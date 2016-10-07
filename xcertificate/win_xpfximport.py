@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xpfximport
 version_added: 
-short_description: Generated from DSC module xcertificate version 2.0.0.0 at 6/27/2016 8:40:29 PM
+short_description: Generated from DSC module xcertificate version 2.1.0.0 at 07.10.2016 02.40.26
 description:
      - This module includes DSC resources that simplify administration of certificates on a Windows Server
 options:

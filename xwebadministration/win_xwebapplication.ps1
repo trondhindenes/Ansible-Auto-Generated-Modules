@@ -50,7 +50,7 @@ $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredentia
 $ServiceAutoStartEnabled = Get-Attr -obj $params -name ServiceAutoStartEnabled -failifempty $False -resultobj $result
 #ATTRIBUTE:ServiceAutoStartProvider;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServiceAutoStartProvider = Get-Attr -obj $params -name ServiceAutoStartProvider -failifempty $False -resultobj $result
-#ATTRIBUTE:SslFlags;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Ssl,SslNegotiateCert,SslRequireCert
+#ATTRIBUTE:SslFlags;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:,Ssl,Ssl128,SslNegotiateCert,SslRequireCert
 $SslFlags = Get-Attr -obj $params -name SslFlags -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
@@ -69,11 +69,11 @@ If ($Ensure)
 
 If ($SslFlags)
 {
-    If (('Ssl','SslNegotiateCert','SslRequireCert') -contains $SslFlags ) {
+    If (('','Ssl','Ssl128','SslNegotiateCert','SslRequireCert') -contains $SslFlags ) {
     }
     Else
     {
-        Fail-Json $result "Option SslFlags has invalid value $SslFlags. Valid values are 'Ssl','SslNegotiateCert','SslRequireCert'"
+        Fail-Json $result "Option SslFlags has invalid value $SslFlags. Valid values are '','Ssl','Ssl128','SslNegotiateCert','SslRequireCert'"
     }
 }
 
@@ -107,6 +107,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xWebApplication"
+
+$DscModuleName = "xwebadministration"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

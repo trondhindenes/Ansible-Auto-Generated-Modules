@@ -26,18 +26,18 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Database;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Database = Get-Attr -obj $params -name Database -failifempty $True -resultobj $result
+#ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
+#ATTRIBUTE:SQLInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SQLInstanceName = Get-Attr -obj $params -name SQLInstanceName -failifempty $True -resultobj $result
+#ATTRIBUTE:SQLServer;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SQLServer = Get-Attr -obj $params -name SQLServer -failifempty $True -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLInstanceName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$SQLInstanceName = Get-Attr -obj $params -name SQLInstanceName -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$SQLServer = Get-Attr -obj $params -name SQLServer -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
@@ -82,6 +82,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xSQLServerDatabase"
+
+$DscModuleName = "xsqlserver"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

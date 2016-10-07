@@ -100,6 +100,8 @@ $Pager = Get-Attr -obj $params -name Pager -failifempty $False -resultobj $resul
 $Password_username = Get-Attr -obj $params -name Password_username -failifempty $False -resultobj $result
 #ATTRIBUTE:Password_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Password_password = Get-Attr -obj $params -name Password_password -failifempty $False -resultobj $result
+#ATTRIBUTE:PasswordAuthentication;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Default,Negotiate
+$PasswordAuthentication = Get-Attr -obj $params -name PasswordAuthentication -failifempty $False -resultobj $result
 #ATTRIBUTE:PasswordNeverExpires;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PasswordNeverExpires = Get-Attr -obj $params -name PasswordNeverExpires -failifempty $False -resultobj $result
 #ATTRIBUTE:Path;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -133,6 +135,17 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($PasswordAuthentication)
+{
+    If (('Default','Negotiate') -contains $PasswordAuthentication ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option PasswordAuthentication has invalid value $PasswordAuthentication. Valid values are 'Default','Negotiate'"
     }
 }
 
@@ -178,6 +191,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xADUser"
+
+$DscModuleName = "xactivedirectory"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

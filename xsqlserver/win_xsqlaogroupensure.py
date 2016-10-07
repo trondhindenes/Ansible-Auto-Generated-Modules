@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlaogroupensure
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 6/27/2016 8:27:27 PM
+short_description: Generated from DSC module xsqlserver version 2.0.0.0 at 07.10.2016 03.06.52
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:
@@ -58,7 +58,7 @@ options:
     default: 
     aliases: []
 
-  AutoBackupPrefernce:
+  AutoBackupPreference:
     description:
       - 
     required: False
@@ -87,6 +87,20 @@ options:
     aliases: []
 
   AvailabilityGroupSubMask:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  BackupPriority:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  EndPointPort:
     description:
       - 
     required: False

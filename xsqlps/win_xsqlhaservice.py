@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlhaservice
 version_added: 
-short_description: Generated from DSC module xsqlps version 1.3.0.0 at 6/27/2016 8:51:10 PM
+short_description: Generated from DSC module xsqlps version 1.4.0.0 at 07.10.2016 03.08.33
 description:
      - SQL module.
 options:

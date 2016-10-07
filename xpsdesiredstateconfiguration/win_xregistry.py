@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xregistry
 version_added: 
-short_description: Generated from DSC module xpsdesiredstateconfiguration version 3.10.0.0 at 6/27/2016 8:24:21 PM
+short_description: Generated from DSC module xpsdesiredstateconfiguration version 4.0.0.0 at 07.10.2016 02.42.02
 description:
      - The xPSDesiredStateConfiguration module is a part of the Windows PowerShell Desired State Configuration (DSC) Resource Kit, which is a collection of DSC Resources produced by the PowerShell Team. This module contains the xDscWebService, xWindowsProcess, xService, xPackage, xArchive, xRemoteFile, xPSEndpoint and xWindowsOptionalFeature resources. Please see the Details section for more information on the functionalities provided by these resources.
 
@@ -94,7 +94,7 @@ options:
     required: False
     default: 
     aliases: []
-    choices:      - Binary      - Dword      - ExpandString      - MultiString      - Qword      - String
+    choices:      - Binary      - DWord      - ExpandString      - MultiString      - QWord      - String
   AutoInstallModule:
     description:
       - If true, the required dsc resource/module will be auto-installed using the Powershell package manager

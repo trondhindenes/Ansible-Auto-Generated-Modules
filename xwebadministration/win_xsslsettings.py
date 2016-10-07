@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xsslsettings
 version_added: 
-short_description: Generated from DSC module xwebadministration version 1.11.0.0 at 6/27/2016 8:23:03 PM
+short_description: Generated from DSC module xwebadministration version 1.14.0.0 at 07.10.2016 03.15.31
 description:
      - Module with DSC Resources for Web Administration
 options:
@@ -36,7 +36,7 @@ options:
     required: True
     default: 
     aliases: []
-
+    choices:      -       - Ssl      - Ssl128      - SslNegotiateCert      - SslRequireCert
   Name:
     description:
       - 

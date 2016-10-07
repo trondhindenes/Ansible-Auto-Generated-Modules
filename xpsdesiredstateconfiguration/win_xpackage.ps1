@@ -62,10 +62,6 @@ $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredentia
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:ReturnCode;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ReturnCode = Get-Attr -obj $params -name ReturnCode -failifempty $False -resultobj $result
-#ATTRIBUTE:RunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$RunAsCredential_username = Get-Attr -obj $params -name RunAsCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:RunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$RunAsCredential_password = Get-Attr -obj $params -name RunAsCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:ServerCertificateValidationCallback;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $ServerCertificateValidationCallback = Get-Attr -obj $params -name ServerCertificateValidationCallback -failifempty $False -resultobj $result
 #ATTRIBUTE:SignerSubject;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -143,13 +139,9 @@ $PsDscRunAsCredential_securepassword = $PsDscRunAsCredential_password | ConvertT
 $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($PsDscRunAsCredential_username,$PsDscRunAsCredential_securepassword)
 }
 
-if ($RunAsCredential_username)
-{
-$RunAsCredential_securepassword = $RunAsCredential_password | ConvertTo-SecureString -asPlainText -Force
-$RunAsCredential = New-Object System.Management.Automation.PSCredential($RunAsCredential_username,$RunAsCredential_securepassword)
-}
-
 $DscResourceName = "xPackage"
+
+$DscModuleName = "xpsdesiredstateconfiguration"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

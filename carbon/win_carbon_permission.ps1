@@ -26,49 +26,10 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:Identity;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Identity = Get-Attr -obj $params -name Identity -failifempty $True -resultobj $result
-#ATTRIBUTE:Path;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Path = Get-Attr -obj $params -name Path -failifempty $True -resultobj $result
-#ATTRIBUTE:ApplyTo;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:ChildContainers,ChildContainersA
-ndChildLeaves,ChildLeaves,Container,ContainerAndChildContainers,ContainerAndChildContainersAndChildLeaves,ContainerAndChildLeaves,ContainerAndLeaves,ContainerAndSubContainers,ContainerAndSubContainersAndLeaves,Leaves,SubContainers,SubContainersAndLeaves
-$ApplyTo = Get-Attr -obj $params -name ApplyTo -failifempty $False -resultobj $result
-#ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
-$Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
-#ATTRIBUTE:Permission;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$Permission = Get-Attr -obj $params -name Permission -failifempty $False -resultobj $result
-#ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
-#ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
 $AutoInstallModule = Get-Attr -obj $params -name AutoInstallModule -failifempty $False -resultobj $result -default false
 #ATTRIBUTE:AutoConfigureLcm;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, LCM will be auto-configured for directly invoking DSC resources (which is a one-time requirement for Ansible DSC modules);CHOICES:true,false
 $AutoConfigureLcm = Get-Attr -obj $params -name AutoConfigureLcm -failifempty $False -resultobj $result -default false
-If ($ApplyTo)
-{
-    If (('ChildContainers','ChildContainersA
-ndChildLeaves','ChildLeaves','Container','ContainerAndChildContainers','ContainerAndChildContainersAndChildLeaves','ContainerAndChildLeaves','ContainerAndLeaves','ContainerAndSubContainers','ContainerAndSubContainersAndLeaves','Leaves','SubContainers','SubContainersAndLeaves') -contains $ApplyTo ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option ApplyTo has invalid value $ApplyTo. Valid values are 'ChildContainers','ChildContainersA
-ndChildLeaves','ChildLeaves','Container','ContainerAndChildContainers','ContainerAndChildContainersAndChildLeaves','ContainerAndChildLeaves','ContainerAndLeaves','ContainerAndSubContainers','ContainerAndSubContainersAndLeaves','Leaves','SubContainers','SubContainersAndLeaves'"
-    }
-}
-
-
-If ($Ensure)
-{
-    If (('Absent','Present') -contains $Ensure ) {
-    }
-    Else
-    {
-        Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
-    }
-}
-
-
 If ($AutoInstallModule)
 {
     If (('true','false') -contains $AutoInstallModule ) {
@@ -91,13 +52,9 @@ If ($AutoConfigureLcm)
 }
 
 
-if ($PsDscRunAsCredential_username)
-{
-$PsDscRunAsCredential_securepassword = $PsDscRunAsCredential_password | ConvertTo-SecureString -asPlainText -Force
-$PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($PsDscRunAsCredential_username,$PsDscRunAsCredential_securepassword)
-}
-
 $DscResourceName = "Carbon_Permission"
+
+$DscModuleName = "carbon"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

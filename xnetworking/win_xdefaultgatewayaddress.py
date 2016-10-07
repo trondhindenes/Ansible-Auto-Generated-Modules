@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xdefaultgatewayaddress
 version_added: 
-short_description: Generated from DSC module xnetworking version 2.9.0.0 at 6/27/2016 8:24:44 PM
+short_description: Generated from DSC module xnetworking version 2.12.0.0 at 07.10.2016 02.11.34
 description:
      - Module with DSC Resources for Networking area
 options:

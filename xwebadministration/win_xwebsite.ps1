@@ -42,6 +42,18 @@ $DefaultPage = Get-Attr -obj $params -name DefaultPage -failifempty $False -resu
 $EnabledProtocols = Get-Attr -obj $params -name EnabledProtocols -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
+#ATTRIBUTE:LogFlags;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:BytesRecv,BytesSent,ClientIP,ComputerName,Cookie,Date,Host,HttpStatus,HttpSubStatus,Method,ProtocolVersion,Referer,ServerIP,ServerPort,SiteName,Time,TimeTaken,UriQuery,UriStem,UserAgent,UserName,Win32Status
+$LogFlags = Get-Attr -obj $params -name LogFlags -failifempty $False -resultobj $result
+#ATTRIBUTE:LogFormat;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:IIS,NCSA,W3C
+$LogFormat = Get-Attr -obj $params -name LogFormat -failifempty $False -resultobj $result
+#ATTRIBUTE:LoglocalTimeRollover;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$LoglocalTimeRollover = Get-Attr -obj $params -name LoglocalTimeRollover -failifempty $False -resultobj $result
+#ATTRIBUTE:LogPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$LogPath = Get-Attr -obj $params -name LogPath -failifempty $False -resultobj $result
+#ATTRIBUTE:LogPeriod;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Daily,Hourly,MaxSize,Monthly,Weekly
+$LogPeriod = Get-Attr -obj $params -name LogPeriod -failifempty $False -resultobj $result
+#ATTRIBUTE:LogTruncateSize;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$LogTruncateSize = Get-Attr -obj $params -name LogTruncateSize -failifempty $False -resultobj $result
 #ATTRIBUTE:PhysicalPath;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PhysicalPath = Get-Attr -obj $params -name PhysicalPath -failifempty $False -resultobj $result
 #ATTRIBUTE:PreloadEnabled;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -67,6 +79,39 @@ If ($Ensure)
     Else
     {
         Fail-Json $result "Option Ensure has invalid value $Ensure. Valid values are 'Absent','Present'"
+    }
+}
+
+
+If ($LogFlags)
+{
+    If (('BytesRecv','BytesSent','ClientIP','ComputerName','Cookie','Date','Host','HttpStatus','HttpSubStatus','Method','ProtocolVersion','Referer','ServerIP','ServerPort','SiteName','Time','TimeTaken','UriQuery','UriStem','UserAgent','UserName','Win32Status') -contains $LogFlags ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option LogFlags has invalid value $LogFlags. Valid values are 'BytesRecv','BytesSent','ClientIP','ComputerName','Cookie','Date','Host','HttpStatus','HttpSubStatus','Method','ProtocolVersion','Referer','ServerIP','ServerPort','SiteName','Time','TimeTaken','UriQuery','UriStem','UserAgent','UserName','Win32Status'"
+    }
+}
+
+
+If ($LogFormat)
+{
+    If (('IIS','NCSA','W3C') -contains $LogFormat ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option LogFormat has invalid value $LogFormat. Valid values are 'IIS','NCSA','W3C'"
+    }
+}
+
+
+If ($LogPeriod)
+{
+    If (('Daily','Hourly','MaxSize','Monthly','Weekly') -contains $LogPeriod ) {
+    }
+    Else
+    {
+        Fail-Json $result "Option LogPeriod has invalid value $LogPeriod. Valid values are 'Daily','Hourly','MaxSize','Monthly','Weekly'"
     }
 }
 
@@ -111,6 +156,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xWebsite"
+
+$DscModuleName = "xwebadministration"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

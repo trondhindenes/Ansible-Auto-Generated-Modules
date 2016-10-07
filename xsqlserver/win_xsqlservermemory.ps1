@@ -28,6 +28,8 @@ Set-Attr $result "changed" $false
 
 #ATTRIBUTE:DynamicAlloc;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $DynamicAlloc = Get-Attr -obj $params -name DynamicAlloc -failifempty $True -resultobj $result
+#ATTRIBUTE:SQLInstanceName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$SQLInstanceName = Get-Attr -obj $params -name SQLInstanceName -failifempty $True -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:MaxMemory;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -38,8 +40,6 @@ $MinMemory = Get-Attr -obj $params -name MinMemory -failifempty $False -resultob
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_password = Get-Attr -obj $params -name PsDscRunAsCredential_password -failifempty $False -resultobj $result
-#ATTRIBUTE:SQLInstanceName;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$SQLInstanceName = Get-Attr -obj $params -name SQLInstanceName -failifempty $False -resultobj $result
 #ATTRIBUTE:SQLServer;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $SQLServer = Get-Attr -obj $params -name SQLServer -failifempty $False -resultobj $result
 #ATTRIBUTE:AutoInstallModule;MANDATORY:False;DEFAULTVALUE:false;DESCRIPTION:If true, the required dsc resource/module will be auto-installed using the Powershell package manager;CHOICES:true,false
@@ -86,6 +86,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xSQLServerMemory"
+
+$DscModuleName = "xsqlserver"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

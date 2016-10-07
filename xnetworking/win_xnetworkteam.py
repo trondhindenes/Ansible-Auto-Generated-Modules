@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xnetworkteam
 version_added: 
-short_description: Generated from DSC module xnetworking version 2.9.0.0 at 6/27/2016 8:25:48 PM
+short_description: Generated from DSC module xnetworking version 2.12.0.0 at 07.10.2016 02.39.27
 description:
      - Module with DSC Resources for Networking area
 options:

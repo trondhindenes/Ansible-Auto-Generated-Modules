@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xjeatoolkit
 version_added: 
-short_description: Generated from DSC module xjea version 0.3.0.0 at 6/27/2016 8:30:49 PM
+short_description: Generated from DSC module xjea version 0.3.0.0 at 07.10.2016 02.36.44
 description:
      - Module with DSC Resources for Just Enough Admin (JEA).  Jea makes it simple to create custom RBAC solutions using PowerShell.
 options:

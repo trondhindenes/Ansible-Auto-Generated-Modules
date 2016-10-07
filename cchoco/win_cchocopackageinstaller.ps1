@@ -28,6 +28,8 @@ Set-Attr $result "changed" $false
 
 #ATTRIBUTE:Name;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $Name = Get-Attr -obj $params -name Name -failifempty $True -resultobj $result
+#ATTRIBUTE:chocoParams;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$chocoParams = Get-Attr -obj $params -name chocoParams -failifempty $False -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
 #ATTRIBUTE:Params;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -84,6 +86,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "cChocoPackageInstaller"
+
+$DscModuleName = "cchoco"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

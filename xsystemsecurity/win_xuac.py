@@ -26,10 +26,24 @@ DOCUMENTATION = '''
 ---
 module: win_xuac
 version_added: 
-short_description: Generated from DSC module xsystemsecurity version 1.1.0.0 at 6/27/2016 8:39:25 PM
+short_description: Generated from DSC module xsystemsecurity version 1.2.0.0 at 07.10.2016 03.16.35
 description:
      - Handles Windows related security settings like UAC and IE ESC. xUAC enables or disables the User Account Control prompt, while xIEEsc enables or disables IE Enhanced Security Configuration.
 options:
+  PsDscRunAsCredential_username:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
+  PsDscRunAsCredential_password:
+    description:
+      - 
+    required: False
+    default: 
+    aliases: []
+
   Setting:
     description:
       - 

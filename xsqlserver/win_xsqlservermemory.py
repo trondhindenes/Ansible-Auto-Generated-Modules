@@ -26,11 +26,18 @@ DOCUMENTATION = '''
 ---
 module: win_xsqlservermemory
 version_added: 
-short_description: Generated from DSC module xsqlserver version 1.6.0.0 at 6/27/2016 8:29:10 PM
+short_description: Generated from DSC module xsqlserver version 2.0.0.0 at 07.10.2016 03.13.01
 description:
      - Module with DSC Resources for deployment and configuration of Microsoft SQL Server.
 options:
   DynamicAlloc:
+    description:
+      - 
+    required: True
+    default: 
+    aliases: []
+
+  SQLInstanceName:
     description:
       - 
     required: True
@@ -66,13 +73,6 @@ options:
     aliases: []
 
   PsDscRunAsCredential_password:
-    description:
-      - 
-    required: False
-    default: 
-    aliases: []
-
-  SQLInstanceName:
     description:
       - 
     required: False

@@ -26,12 +26,12 @@ Set-Attr $result "changed" $false
 
 
 
-#ATTRIBUTE:hostName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$hostName = Get-Attr -obj $params -name hostName -failifempty $True -resultobj $result
-#ATTRIBUTE:ipAddress;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
-$ipAddress = Get-Attr -obj $params -name ipAddress -failifempty $True -resultobj $result
+#ATTRIBUTE:HostName;MANDATORY:True;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$HostName = Get-Attr -obj $params -name HostName -failifempty $True -resultobj $result
 #ATTRIBUTE:Ensure;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:Absent,Present
 $Ensure = Get-Attr -obj $params -name Ensure -failifempty $False -resultobj $result
+#ATTRIBUTE:IPAddress;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
+$IPAddress = Get-Attr -obj $params -name IPAddress -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_username;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
 $PsDscRunAsCredential_username = Get-Attr -obj $params -name PsDscRunAsCredential_username -failifempty $False -resultobj $result
 #ATTRIBUTE:PsDscRunAsCredential_password;MANDATORY:False;DEFAULTVALUE:;DESCRIPTION:;CHOICES:
@@ -80,6 +80,8 @@ $PsDscRunAsCredential = New-Object System.Management.Automation.PSCredential($Ps
 }
 
 $DscResourceName = "xHostsFile"
+
+$DscModuleName = "xnetworking"
 
 #This code comes from powershell2_dscresourceverify.ps1 in the DSC-->Ansible codegen tool
 

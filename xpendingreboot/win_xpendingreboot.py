@@ -26,7 +26,7 @@ DOCUMENTATION = '''
 ---
 module: win_xpendingreboot
 version_added: 
-short_description: Generated from DSC module xpendingreboot version 0.3.0.0 at 6/27/2016 8:29:59 PM
+short_description: Generated from DSC module xpendingreboot version 0.3.0.0 at 07.10.2016 02.40.14
 description:
      - This module identifies pending reboots in Windows Server and acts on them.
 options:
